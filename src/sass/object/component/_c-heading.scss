@@ -7,7 +7,7 @@
   @include mq(md) {
     max-width: 1440px;
     margin: 0 auto;
-    padding: 0 myrem(70) 0;
+    padding: 0;
   }
 }
 
@@ -18,7 +18,7 @@
 .c-heading01 {
   position: relative;
   font-family: $font-main;
-  color: $black;
+  color: $black_sub;
   font-weight: bold;
   letter-spacing: 0.06em;
   display: inline-block;
@@ -32,11 +32,13 @@
   position: absolute;
   left: myrem(0);
   width: myrem(16);
-  height: myrem(4);
+  height: myrem(2);
   background: linear-gradient(to right, $black 50%, $black_base 50%);
 
   @include mq(md) {
     width: myrem(32);
+    height: myrem(4);
+
   }
 }
 
@@ -45,18 +47,13 @@
   display: block;
   color: $black;
   font-family: $font-sub;
-  font-size: myrem(20);
   font-weight: 500;
   line-height: 1;
   letter-spacing: 0;
   text-transform: uppercase;
   position: absolute;
-  left: 0;
-  top: myrem(-37);
 
   @include mq(md) {
-    font-size: myrem(60);
-    left: 0;
   }
 }
 
@@ -107,13 +104,10 @@
 }
 
 // spタイトル用
-
 .c-heading01--message,
 .c-heading01--works {
   font-size: myrem(14);
   padding-left: myrem(30);
-  padding-left: myrem(30);
-
   top: myrem(-37);
 
   @include mq(md) {
@@ -133,7 +127,7 @@
 
   @include mq(md) {
     width: myrem(32);
-    bottom: myrem(5);
+    height: myrem(4);
     left: 0;
   }
 }
@@ -142,6 +136,19 @@
 .c-heading01--message::after,
 .c-heading01--works::after {
   font-size: myrem(36);
+  top: myrem(-37);
+  left: 0;
+
+  @include mq(md) {
+    font-size: myrem(60);
+    top: myrem(-58);
+    left: 0;
+  }
+
+
+    @include mq(md) {
+      font-size: myrem(60);
+    }
 }
 
 /***************************

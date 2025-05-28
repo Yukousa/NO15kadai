@@ -6,8 +6,9 @@
   padding: myrem(154) 0 0;
 
     @include mq(md) {
-      margin-top: myrem(80);
-      padding: myrem(100) myrem(20) 0;
+      max-width: 1300px;
+      margin: myrem(80) auto 0;
+      padding: myrem(200) 0 0;
         }
 
 }
