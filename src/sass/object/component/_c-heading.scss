@@ -1,0 +1,165 @@
+@use "global" as *;
+
+.c-heading {
+  width: 100%;
+  padding: 0 myrem(20);
+
+  @include mq(md) {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 myrem(70) 0;
+  }
+}
+
+/********************************
+ c-heading01 英語と日本語 2色の線の装飾
+********************************/
+
+.c-heading01 {
+  position: relative;
+  font-family: $font-main;
+  color: $black;
+  font-weight: bold;
+  letter-spacing: 0.06em;
+  display: inline-block;
+
+  @include mq(md) {
+  }
+}
+
+.c-heading01::before {
+  content: "";
+  position: absolute;
+  left: myrem(0);
+  width: myrem(16);
+  height: myrem(4);
+  background: linear-gradient(to right, $black 50%, $black_base 50%);
+
+  @include mq(md) {
+    width: myrem(32);
+  }
+}
+
+.c-heading01::after {
+  content: attr(data-en);
+  display: block;
+  color: $black;
+  font-family: $font-sub;
+  font-size: myrem(20);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  position: absolute;
+  left: 0;
+  top: myrem(-37);
+
+  @include mq(md) {
+    font-size: myrem(60);
+    left: 0;
+  }
+}
+
+// 背景色$black_base用の　装飾線
+.c-heading01--lineWhite::before {
+  content: "";
+  background: linear-gradient(to right, $black 50%, $white 50%);
+}
+
+// 白文字
+.c-heading01--white {
+  color: $white;
+}
+
+.c-heading01--white::after {
+  color: $white;
+}
+
+// 白文字　センター
+.c-heading01--whiteCenter {
+  text-align: center;
+  padding: 0;
+  color: $white;
+}
+
+.c-heading01--whiteCenter::before {
+  bottom: myrem(20);
+  left: 50%;
+  transform: translateX(-50%);
+  color: $white;
+
+  @include mq(md) {
+    left: 0;
+    transform: translateX(0);
+  }
+}
+
+.c-heading01--whiteCenter::after {
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: myrem(30);
+  color: $white;
+
+  @include mq(md) {
+    transform: translateX(0);
+    bottom: myrem(-20);
+  }
+}
+
+// spタイトル用
+
+.c-heading01--message,
+.c-heading01--works {
+  font-size: myrem(14);
+  padding-left: myrem(30);
+  padding-left: myrem(30);
+
+  top: myrem(-37);
+
+  @include mq(md) {
+    font-size: myrem(16);
+    padding-left: myrem(42);
+  }
+
+}
+
+.c-heading01--message::before,
+.c-heading01--works::before {
+  top: 50%;
+  left: myrem(5);
+  width: myrem(16);
+  height: myrem(2);
+  background: linear-gradient(to right, $black 50%, $black_base 50%);
+
+  @include mq(md) {
+    width: myrem(32);
+    bottom: myrem(5);
+    left: 0;
+  }
+}
+
+
+.c-heading01--message::after,
+.c-heading01--works::after {
+  font-size: myrem(36);
+}
+
+/***************************
+  c-heading02 背景黒グラデーション
+  ***************************/
+.c-heading02 {
+  font-family: $font-main;
+  font-size: myrem(20);
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  width: fit-content;
+  padding: myrem(4) myrem(5) myrem(5);
+  margin-top: myrem(5);
+  color: $white;
+  background: linear-gradient(to right, #000 0%, #929292 100%);
+
+  @include mq(md) {
+    font-size: myrem(34);
+    margin-top: myrem(0);
+  }
+}

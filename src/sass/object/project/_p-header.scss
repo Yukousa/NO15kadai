@@ -1,0 +1,246 @@
+@use "global" as *;
+
+.p-header {
+  width: 100%;
+  height: myrem(56);
+  position: fixed;
+  top: 0;
+  background-color: transparent;
+  z-index: 50;
+
+  @include mq(md) {
+    height: myrem(80);
+  }
+}
+
+.p-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: myrem(20);
+
+  @include mq(md) {
+    padding-left: myrem(70);
+    padding-right: 0;
+    justify-content: flex-end;
+  }
+}
+
+// ロゴ
+.p-header-inner__siteTitle {
+  color: #353535;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  font-size: myrem(28);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  display: block;
+  z-index: 10000;
+  @include mq(md) {
+    color: #000;
+    flex-grow: 1;
+    text-align: left;
+    font-size: myrem(32);
+  }
+}
+
+// ナビメニュー（spはドロワー）
+.p-header-inner__nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: $white;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  z-index: 9999;
+
+  @include mq(md) {
+    max-width: myrem(730);
+    position: static;
+    height: myrem(80);
+    opacity: 1;
+    visibility: visible;
+    background-color: transparent;
+  }
+}
+
+// ドロワーが開いたとき
+.p-header-inner__nav.is-active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.p-header-inner-nav-list {
+  padding: myrem(20);
+  margin-top: myrem(85);
+
+  @include mq(md) {
+    height: myrem(80);
+    line-height: 1;
+    margin-top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+  }
+}
+
+.p-header-inner-nav__item {
+  width: 100%;
+  border-bottom: 1px solid $black_sub;
+  font-weight: bold;
+  letter-spacing: 0.06em;
+
+  @include mq(md) {
+    border-bottom: none;
+  }
+}
+
+.p-header-inner-nav__link {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 0; // 上下の間隔
+  padding: myrem(13) 0 myrem(15);
+
+  @include mq(md) {
+    text-align: center;
+  }
+}
+
+.p-header-inner-nav__ja {
+  font-size: myrem(12);
+  position: relative;
+  padding-left: myrem(25);
+  letter-spacing: 0.06em;
+
+  @include mq(md) {
+    display: none;
+  }
+}
+
+.p-header-inner-nav__ja::before {
+  content: "";
+  display: block;
+  width: myrem(16);
+  height: myrem(2);
+  background: linear-gradient(to right, $black 50%, $black_base 50%);
+  position: absolute;
+  bottom: myrem(7);
+  left: myrem(2);
+}
+
+.p-header-inner-nav__en {
+  font-size: myrem(16);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+// ボタン群
+.p-header-inner__btn {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.p-header-inner-btn__mail {
+  width: myrem(60);
+  height: myrem(56);
+  background: linear-gradient(to bottom, #000 0%, #929292 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: myrem(10);
+  z-index: 10000;
+
+  @include mq(md) {
+    width: myrem(170);
+    height: myrem(80);
+    gap: myrem(4);
+  }
+}
+
+.p-header-inner-btn__mail-image img {
+  width: myrem(20);
+  height: myrem(15);
+
+  @include mq(md) {
+    width: myrem(27);
+    height: myrem(20);
+    margin-right: myrem(4);
+  }
+}
+
+.p-header-inner-btn__mailText {
+  display: none;
+  @include mq(md) {
+    display: block;
+    color: $white;
+    font-family: $font-sub;
+    font-size: myrem(16);
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+}
+
+// ハンバーガーボタン
+.p-header-inner-btn__hamburger {
+  width: myrem(60);
+  height: myrem(56);
+  background: #000;
+  display: block;
+  border: none;
+  position: relative;
+  cursor: pointer;
+  padding: myrem(10);
+  z-index: 10000;
+
+  @include mq(md) {
+    display: none;
+  }
+}
+
+.p-header-inner-btn__hamburger span {
+  position: absolute;
+  right: myrem(20);
+  width: myrem(20);
+  height: myrem(2);
+  background-color: $white;
+  border-radius: myrem(1);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.p-header-inner-btn__hamburger span:nth-child(1) {
+  top: 50%;
+  transform: translateY(-10px);
+}
+
+.p-header-inner-btn__hamburger span:nth-child(2) {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.p-header-inner-btn__hamburger span:nth-child(3) {
+  bottom: 50%;
+  transform: translateY(10px);
+  width: myrem(12);
+}
+
+/* ハンバーガーがアクティブ（X）状態 */
+.p-header-inner-btn__hamburger.is-active span:nth-child(1) {
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.p-header-inner-btn__hamburger.is-active span:nth-child(2) {
+  opacity: 0;
+}
+
+.p-header-inner-btn__hamburger.is-active span:nth-child(3) {
+  top: 50%;
+  transform: translateY(-50%) rotate(-45deg);
+  width: myrem(20);
+}

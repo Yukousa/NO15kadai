@@ -1,0 +1,43 @@
+@use "global" as *;
+
+.c-breadcrumbs {
+  width: fit-content;
+  margin-left: auto;
+  margin-right: myrem(20);
+  font-size: myrem(11);
+  font-weight: bold;
+  text-align: right;
+  letter-spacing: 0;
+  color: $black;
+  padding: 0 myrem(20);
+  display: flex;
+  justify-content: flex-end;
+
+  @include mq(md) {
+    font-size: myrem(14);
+    margin-right: myrem(70);
+  }
+}
+
+.c-breadcrumbs a,
+.c-breadcrumbs span {
+    display: inline-block;
+  padding: myrem(10);
+}
+
+.c-breadcrumbs__top {
+  font-weight: bold;
+}
+
+.c-breadcrumbs__current {
+  color: $black_sub;
+  text-transform: uppercase;
+}
+
+.c-breadcrumbs__separator {
+  margin: 0 myrem(4);
+
+  @include mq(md) {
+    margin: 0 myrem(10);
+  }
+}

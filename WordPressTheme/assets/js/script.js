@@ -36,3 +36,109 @@ jQuery(function ($) {
   });
 
 });
+
+  // ハンバーガーボタンをクリックで開閉
+  $(".js-hamburger").on("click", function () {
+    $(this).toggleClass("is-active");
+    $(".js-drawer").toggleClass("is-active");
+  });
+
+  // ナビリンクをクリックで閉じる
+  $(".js-drawer-overlay, .js-drawer a").on("click", function () {
+    $(".js-hamburger").removeClass("is-active");
+    $(".js-drawer").removeClass("is-active");
+  });
+
+  // Swiper
+  // 共通Swiper（.swiperに使っているもの）
+  if (document.querySelector(".swiper")) {
+    new Swiper(".swiper", {
+      loop: true,
+    });
+  }
+
+  // フロントページ FV の Swiper
+  if (document.querySelector(".js-front-fv-swiper")) {
+    new Swiper(".p-front-fv-swiper", {
+      loop: true,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+      effect: "slide",
+      speed: 1000,
+      // navigation: {
+      //   nextEl: '.swiper-fv .swiper-button-next',
+      //   prevEl: '.swiper-fv .swiper-button-prev',
+      // },
+    });
+  }
+
+  // FVアニメーション - タイピング風＋フェード
+  const $typingParts = $(".typing-part");
+  let partIndex = 0;
+  let charIndex = 0;
+
+  function startUnderlineAndFade() {
+    const subText = document.querySelector(".p-front-fv-text__catch3");
+    if (subText) {
+      subText.classList.add("is-animated");
+    }
+  }
+
+  function typeNextChar() {
+    const $el = $typingParts.eq(partIndex);
+    // 🔒 安全対策：存在しない .typing-part を参照しないようにする
+    if ($el.length === 0) {
+      console.warn(
+        "存在しない .typing-part にアクセスしました（partIndex: " +
+          partIndex +
+          "）"
+      );
+      return;
+    }
+    const text = $el.data("text");
+    // 🔒 data-text が設定されていない場合もスキップして次へ
+    if (typeof text !== "string") {
+      console.warn(
+        "data-text が設定されていない .typing-part が見つかりました:",
+        $el
+      );
+      partIndex++;
+      charIndex = 0;
+      if (partIndex < $typingParts.length) {
+        setTimeout(typeNextChar, 100);
+      }
+      return;
+    }
+    const span = $("<span>").text(text.charAt(charIndex)).css({
+      opacity: 0,
+      display: "inline-block",
+    });
+    $el.append(span);
+    span.animate(
+      {
+        opacity: 1,
+      },
+      300
+    );
+    charIndex++;
+    if (charIndex < text.length) {
+      setTimeout(typeNextChar, 100);
+    } else {
+      partIndex++;
+      charIndex = 0;
+      if (partIndex < $typingParts.length) {
+        setTimeout(typeNextChar, 100);
+      } else {
+        setTimeout(startUnderlineAndFade, 300);
+      }
+    }
+  }
+  //  .typing-part があるページのみアニメーション処理を実行
+  if ($typingParts.length > 0) {
+    $typingParts.each(function () {
+      $(this).empty();
+    });
+    typeNextChar();
+  }

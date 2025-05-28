@@ -1,0 +1,236 @@
+@use "global" as *;
+// フロントページのfv
+.p-front-fv {
+  width: 100%;
+  height: myrem(600);
+  overflow: hidden;
+  position: relative;
+
+  @include mq(md) {
+    height: myrem(750);
+  }
+}
+
+// フロントページのswiper
+
+.p-front-fv__text {
+  width: 100%;
+  min-height: myrem(240); /* テキストの高さを先に確保する */
+  position: absolute;
+  top: 50%;
+  transform: translateY(-37%);
+  left: calc(21 / 375 * 100%);
+  z-index: 10;
+  color: $white;
+  line-height: 1;
+  margin: 0 auto;
+
+  @include mq(md) {
+    min-height: myrem(240); /* テキストの高さを先に確保する */
+    max-width: 1300px;
+    left: myrem(70);
+    // bottom: myrem(85);
+    top: calc(433 / 750 * 100%);
+
+    transform: translate(0, 0);
+    }
+}
+
+.p-front-fv-text__catch3 {
+  width: fit-content;
+  display: inline-flex;
+  align-items: baseline;
+  font-family: $font-sub;
+  font-weight: 600;
+  font-size: myrem(18);
+  letter-spacing: 0.1em;
+  position: relative;
+  gap: myrem(10);
+  opacity: 0;
+  transform: translateY(myrem(20));
+  transition: none;
+
+  @include mq(md) {
+    font-size: myrem(40);
+    align-items: center;
+    margin-left: myrem(10);
+  }
+}
+
+.p-front-fv-text__catch3.is-animated {
+  animation: fadeUp 0.6s ease-out 0.6s forwards;
+}
+
+.p-front-fv-text__catch3::after {
+  content: "";
+  width: 0;
+  position: absolute;
+  left: myrem(180);
+  top: 50%;
+  height: 2px;
+  background-color: $white;
+  display: inline-block;
+  pointer-events: none;
+  opacity: 0;
+
+  @include mq(md) {
+    left: myrem(385);
+  }
+}
+
+.is-animated.p-front-fv-text__catch3::after {
+  opacity: 1;
+  animation: underlineGrow-sm 0.6s ease-out 1.2s forwards;
+
+  @include mq(md) {
+    animation: underlineGrow-md 0.6s ease-out 1.2s forwards;
+  }
+}
+
+// キャッチコピー英語部分のアニメーション
+// 線を左から右へ伸ばす
+@keyframes underlineGrow-sm {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: myrem(125);
+  }
+}
+
+@keyframes underlineGrow-md {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: myrem(230);
+  }
+}
+
+// テキストを下からフェードアップ
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(myrem(20));
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.p-front-fv-text__catch1 {
+  font-family: $font-main;
+  font-size: myrem(44);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  margin-top: myrem(15);
+
+  @include mq(md) {
+    font-size: myrem(74);
+    margin-top: myrem(10);
+  }
+}
+
+.p-front-fv-text__catch1--small {
+  font-size: myrem(32);
+  margin-left: myrem(-10);
+  @include mq(md) {
+    font-size: myrem(62);
+  }
+}
+
+.p-front-fv-text__catch2 {
+  font-family: $font-main;
+  font-size: myrem(52);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  margin-top: myrem(10);
+
+  @include mq(md) {
+    font-size: myrem(99);
+    font-weight: 800;
+    margin-top: myrem(15);
+  }
+}
+
+// スクロールアニメーション
+.p-front-fv__scroll {
+  display: none;
+
+  @include mq(md) {
+    display: block;
+    position: absolute;
+    bottom: myrem(0);
+    right: clamp(4%, 7.3%, 300px);
+    width: 2px;
+    height: myrem(120);
+    background: linear-gradient(
+      to bottom,
+      $black,
+      $black myrem(48),
+      $white myrem(48),
+      $white 100%
+    );
+    z-index: 100;
+  }
+}
+
+.p-front-fv-scroll__text {
+  @include mq(md) {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    font-size: myrem(16);
+    font-family: $font-sub;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: $black;
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-transform: uppercase;
+    padding-bottom: myrem(16);
+  }
+}
+
+/* アニメーションする縦線 */
+.p-front-fv-scroll::after {
+  content: "";
+  position: absolute;
+  top: myrem(48); // ← 開始位置
+  left: 0;
+  width: 100%;
+  height: myrem(72); // 120 - 48
+  background-color: $black;
+  transform: scaleY(0);
+  transform-origin: top;
+  animation: drawBlackDown 2s ease-in-out infinite;
+}
+
+@keyframes drawBlackDown {
+  0% {
+    transform: scaleY(0);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  50% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+
+  80% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scaleY(1); // ← ずっと伸びたまま！
+    opacity: 0; // ← ここでフェードアウト！
+  }
+}
+
