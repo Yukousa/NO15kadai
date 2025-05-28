@@ -42,7 +42,7 @@ else {
     <h2 class="c-heading01<?php echo $modifier ? ' c-heading01--' . esc_attr($modifier) : ''; ?>" data-en="<?php echo esc_attr($modifier); ?>">
         <?php echo esc_html($ja_title); ?>
     </h2>
-</div>
+　　</div>
 
 <!-- fv画像(アイキャッチ) -->
 <?php if (has_post_thumbnail()): ?>

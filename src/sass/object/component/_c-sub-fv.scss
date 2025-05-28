@@ -3,23 +3,25 @@
 .c-sub-fv {
   width: 100%;
   margin-top: myrem(56);
-  padding: myrem(154) 0 0;
+  padding-top: myrem(119);
 
     @include mq(md) {
-      max-width: 1300px;
       margin: myrem(80) auto 0;
-      padding: myrem(200) 0 0;
+      padding-top: myrem(172);
         }
 
 }
 
 .c-sub-fv__image {
     width: 100%;
-    height: myrem(230);
+    aspect-ratio: 375 / 230;
+    margin-top: myrem(20);
 
       @include mq(md) {
         width: 100%;
-        height: myrem(480);
+        aspect-ratio: 1440 / 480;
+        margin-top: myrem(30);
+
       }
 }
 

@@ -3,6 +3,7 @@
 .c-heading {
   width: 100%;
   padding: 0 myrem(20);
+  position: relative;
 
   @include mq(md) {
     max-width: 1440px;
@@ -16,14 +17,18 @@
 ********************************/
 
 .c-heading01 {
-  position: relative;
+  width: 100%; 
   font-family: $font-main;
   color: $black_sub;
   font-weight: bold;
   letter-spacing: 0.06em;
   display: inline-block;
+  position: absolute;
 
   @include mq(md) {
+    max-width: $innerWidth;
+    padding:0 myrem(70) ;
+
   }
 }
 
@@ -63,16 +68,47 @@
   background: linear-gradient(to right, $black 50%, $white 50%);
 }
 
-// 白文字
+/***************************
+ページ下　contact/faq　用
+***************************/
 .c-heading01--white {
+  font-size: myrem(13);
   color: $white;
+  top: 50%;
+  left: myrem(20);
+  padding: 0 myrem(30);
+
+    @include mq(md) {
+      font-size: myrem(16);
+      top: 56%;
+      left: myrem(70);
+      padding: 0 myrem(50);
+    
+    }
+}
+
+.c-heading01--white::before {
+  height: myrem(4);
+  top: 50%;
+  left: myrem(4);
+
+
 }
 
 .c-heading01--white::after {
   color: $white;
+  font-size: myrem(20);
+  bottom: myrem(20);
+  left: 0;
+
+
+  @include mq(md) {
+    font-size: myrem(60);
+  }
+
+
 }
 
-// 白文字　センター
 .c-heading01--whiteCenter {
   text-align: center;
   padding: 0;
@@ -105,36 +141,39 @@
 
 // spタイトル用
 .c-heading01--message,
-.c-heading01--works {
+.c-heading01--works,
+.c-heading01--service {
   font-size: myrem(14);
+  letter-spacing: 0.02em;
   padding-left: myrem(30);
-  top: myrem(-37);
+  top: 0;
 
   @include mq(md) {
     font-size: myrem(16);
-    padding-left: myrem(42);
+    padding-left: myrem(117);
   }
 
 }
 
 .c-heading01--message::before,
-.c-heading01--works::before {
+.c-heading01--works::before,
+.c-heading01--service::before {
   top: 50%;
-  left: myrem(5);
+  left: myrem(4);
   width: myrem(16);
   height: myrem(2);
-  background: linear-gradient(to right, $black 50%, $black_base 50%);
 
   @include mq(md) {
     width: myrem(32);
     height: myrem(4);
-    left: 0;
+    left: myrem(70);
   }
 }
 
 
 .c-heading01--message::after,
-.c-heading01--works::after {
+.c-heading01--works::after,
+.c-heading01--service::after {
   font-size: myrem(36);
   top: myrem(-37);
   left: 0;
@@ -142,7 +181,7 @@
   @include mq(md) {
     font-size: myrem(60);
     top: myrem(-58);
-    left: 0;
+    left: myrem(70);
   }
 
 

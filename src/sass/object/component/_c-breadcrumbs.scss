@@ -1,5 +1,6 @@
 @use "global" as *;
 
+
 .c-breadcrumbs {
   width: fit-content;
   margin-left: auto;
@@ -9,7 +10,6 @@
   text-align: right;
   letter-spacing: 0;
   color: $black;
-  padding: 0 myrem(20);
   display: flex;
   justify-content: flex-end;
 
@@ -22,22 +22,34 @@
 .c-breadcrumbs a,
 .c-breadcrumbs span {
     display: inline-block;
-  padding: myrem(10);
 }
 
 .c-breadcrumbs__top {
   font-weight: bold;
+  padding: myrem(10) myrem(4);
+
+  @include mq(md) {
+    padding: myrem(20) myrem(10);
+  }
+
 }
 
 .c-breadcrumbs__current {
   color: $black_sub;
   text-transform: uppercase;
+  padding: myrem(10) myrem(4);
+
+    @include mq(md) {
+      padding: myrem(20) myrem(10);
+    }
+
 }
 
 .c-breadcrumbs__separator {
-  margin: 0 myrem(4);
+  margin: 0 ;
+  padding: myrem(10) 0;
 
   @include mq(md) {
-    margin: 0 myrem(10);
+    padding: myrem(20) 0;
   }
 }
