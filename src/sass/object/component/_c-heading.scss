@@ -17,7 +17,6 @@
 ********************************/
 
 .c-heading01 {
-  width: 100%; 
   font-family: $font-main;
   color: $black_sub;
   font-weight: bold;
@@ -72,11 +71,12 @@
 ページ下　contact/faq　用
 ***************************/
 .c-heading01--white {
+  width: fit-content;
   font-size: myrem(13);
   color: $white;
   top: 50%;
   left: myrem(20);
-  padding: 0 myrem(30);
+  padding-left: myrem(30);
 
     @include mq(md) {
       font-size: myrem(16);
@@ -142,7 +142,8 @@
 // spタイトル用
 .c-heading01--message,
 .c-heading01--works,
-.c-heading01--service {
+.c-heading01--service,
+.c-heading01--news {
   font-size: myrem(14);
   letter-spacing: 0.02em;
   padding-left: myrem(30);
@@ -157,7 +158,8 @@
 
 .c-heading01--message::before,
 .c-heading01--works::before,
-.c-heading01--service::before {
+.c-heading01--service::before,
+.c-heading01--news::before {
   top: 50%;
   left: myrem(4);
   width: myrem(16);
@@ -173,7 +175,8 @@
 
 .c-heading01--message::after,
 .c-heading01--works::after,
-.c-heading01--service::after {
+.c-heading01--service::after,
+.c-heading01--news:after{
   font-size: myrem(36);
   top: myrem(-37);
   left: 0;

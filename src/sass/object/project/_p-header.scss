@@ -37,6 +37,7 @@
   display: block;
   z-index: 10000;
   @include mq(md) {
+    width: fit-content;
     color: #000;
     flex-grow: 1;
     text-align: left;
@@ -143,6 +144,11 @@
   display: flex;
   justify-content: flex-end;
   align-items: flex-start;
+
+    @include mq(md) {
+      width: myrem(170);
+      height: myrem(80);
+    }
 }
 
 .p-header-inner-btn__mail {
@@ -243,4 +249,9 @@
   top: 50%;
   transform: translateY(-50%) rotate(-45deg);
   width: myrem(20);
+}
+
+body.is-drawer-open {
+  overflow: hidden;
+  touch-action: none;
 }

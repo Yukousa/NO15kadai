@@ -1,6 +1,8 @@
 <?php get_header(); ?>
-
-<main>
+<main class="p-archive-news">
+    <section class="p-archive-news__fv c-sub-fv">
+        <?php get_template_part('template-parts/section', 'sub-fv'); ?>
+    </section>
 
     <!-- contact / faq -->
     <section class="p-section-wrapper">
@@ -9,6 +11,4 @@
     </section>
 
 </main>
-
-
 <?php get_footer(); ?>

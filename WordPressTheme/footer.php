@@ -1,10 +1,12 @@
 <footer class="p-footer">
+
   <div class="p-footer__inner p-footer-inner">
     <div class="p-footer-inner__wrapper p-footer-inner-wrapper">
       <a href="<?php echo esc_url(home_url('/')); ?>" class="p-footer-inner-wrapper__title">
-        codo assist
+        <?php bloginfo('name'); ?>
       </a>
-      <ul class="p-footer-inner-wrapper__sns p-footer-inner-wrapper-sns">
+
+<ul class="p-footer-inner-wrapper__sns p-footer-inner-wrapper-sns">
         <li class="p-footer-inner-wrapper-sns__item">
           <a href="https://line.me/" rel="noopener noreferrer">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/line02.png" alt="LINE">
@@ -26,11 +28,12 @@
           </a>
         </li>
       </ul>
+
+
       <div class="p-footer-inner-wrapper__privacy">
         <a href="<?php echo esc_url(home_url('/privacy/')); ?>" rel="noopener noreferrer" target="_blank">プライバシーポリシー</a>
       </div>
     </div>
-
     <?php
     wp_nav_menu(array(
       'theme_location' => 'footer',

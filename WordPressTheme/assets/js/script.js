@@ -41,12 +41,14 @@ jQuery(function ($) {
   $(".js-hamburger").on("click", function () {
     $(this).toggleClass("is-active");
     $(".js-drawer").toggleClass("is-active");
+    $("body").toggleClass("is-drawer-open"); 
   });
 
   // ナビリンクをクリックで閉じる
   $(".js-drawer-overlay, .js-drawer a").on("click", function () {
     $(".js-hamburger").removeClass("is-active");
     $(".js-drawer").removeClass("is-active");
+    $("body").removeClass("is-drawer-open"); 
   });
 
   // Swiper
