@@ -112,3 +112,23 @@ class BEM_Walker_Nav_Menu extends Walker_Nav_Menu {
 		$output .= '</a></li>';
 	}
 }
+
+// カスタム投稿で月別アーカイブを出力させる
+function custom_news_date_rewrite_rules($wp_rewrite)
+{
+	$rules = [];
+
+	//news/2025/05/ → 月別アーカイブ
+	$rules['news/([0-9]{4})/([0-9]{1,2})/?$'] = 'index.php?post_type=news&year=$matches[1]&monthnum=$matches[2]';
+
+	// 必ず追加する
+	$wp_rewrite->rules = $rules + $wp_rewrite->rules;
+}
+add_filter('generate_rewrite_rules', 'custom_news_date_rewrite_rules');
+
+// パーマリンク更新後に反映する
+function flush_rewrite_on_activation()
+{
+	flush_rewrite_rules();
+}
+register_activation_hook(__FILE__, 'flush_rewrite_on_activation');

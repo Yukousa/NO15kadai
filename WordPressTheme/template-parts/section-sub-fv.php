@@ -46,7 +46,7 @@ else {
 
 <!-- fv画像(アイキャッチ) -->
 <?php if (has_post_thumbnail()): ?>
-    <div class="c-sub-fv__image">
+    <div class="c-sub-fv__image<?php echo $modifier ? ' c-sub-fv__image--' . esc_attr($modifier) : ''; ?>">
         <?php the_post_thumbnail('full'); ?>
     </div>
 <?php endif; ?>

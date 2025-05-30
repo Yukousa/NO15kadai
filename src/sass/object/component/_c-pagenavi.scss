@@ -1,0 +1,50 @@
+@use "global" as *;
+
+.wp-pagenavi {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: myrem(15); // 全要素間の余白
+    margin-inline: auto;
+
+}
+
+.wp-pagenavi .page {
+  display: inline-block;
+  text-align: center;
+  width: myrem(40);
+  line-height: myrem(40);
+  border: solid 1px $black;
+  transition: 0.3s ease-out;
+}
+
+.wp-pagenavi .current {
+  display: inline-block;
+  text-align: center;
+  width: myrem(40);
+  line-height: myrem(40);
+  color: $white;
+  background: $black;
+  border: solid 1px $black;
+}
+.wp-pagenavi .previouspostslink,
+.wp-pagenavi .nextpostslink,
+.wp-pagenavi .extend,
+.wp-pagenavi .first,
+.wp-pagenavi .last {
+  display: inline-block;
+  text-align: center;
+  width: myrem(40);
+  line-height: myrem(40);
+  font-weight: bold;
+  border: solid 2px $black;
+
+  transition: 0.3s ease-out;
+
+}
+
+.wp-pagenavi .disabled {
+  color: #ccc;
+  border-color: #ccc;
+  pointer-events: none;
+}

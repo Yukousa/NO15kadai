@@ -26,8 +26,7 @@
 
   @include mq(md) {
     max-width: $innerWidth;
-    padding:0 myrem(70) ;
-
+    padding: 0 myrem(70);
   }
 }
 
@@ -42,7 +41,6 @@
   @include mq(md) {
     width: myrem(32);
     height: myrem(4);
-
   }
 }
 
@@ -78,21 +76,18 @@
   left: myrem(20);
   padding-left: myrem(30);
 
-    @include mq(md) {
-      font-size: myrem(16);
-      top: 56%;
-      left: myrem(70);
-      padding: 0 myrem(50);
-    
-    }
+  @include mq(md) {
+    font-size: myrem(16);
+    top: 56%;
+    left: myrem(70);
+    padding: 0 myrem(50);
+  }
 }
 
 .c-heading01--white::before {
   height: myrem(4);
   top: 50%;
   left: myrem(4);
-
-
 }
 
 .c-heading01--white::after {
@@ -101,12 +96,9 @@
   bottom: myrem(20);
   left: 0;
 
-
   @include mq(md) {
     font-size: myrem(60);
   }
-
-
 }
 
 .c-heading01--whiteCenter {
@@ -139,11 +131,14 @@
   }
 }
 
+/***************************
 // spタイトル用
+***************************/
 .c-heading01--message,
 .c-heading01--works,
 .c-heading01--service,
-.c-heading01--news {
+.c-heading01--news,
+.c-news-sidebar__title {
   font-size: myrem(14);
   letter-spacing: 0.02em;
   padding-left: myrem(30);
@@ -153,13 +148,13 @@
     font-size: myrem(16);
     padding-left: myrem(117);
   }
-
 }
 
 .c-heading01--message::before,
 .c-heading01--works::before,
 .c-heading01--service::before,
-.c-heading01--news::before {
+.c-heading01--news::before,
+.c-news-sidebar__title {
   top: 50%;
   left: myrem(4);
   width: myrem(16);
@@ -172,11 +167,11 @@
   }
 }
 
-
 .c-heading01--message::after,
 .c-heading01--works::after,
 .c-heading01--service::after,
-.c-heading01--news:after{
+.c-heading01--news:after,
+.c-news-sidebar__title {
   font-size: myrem(36);
   top: myrem(-37);
   left: 0;
@@ -187,9 +182,41 @@
     left: myrem(70);
   }
 
+  @include mq(md) {
+    font-size: myrem(60);
+  }
+}
+
+/***************************
+サイドバー用
+***************************/
+.c-heading01--sidebar {
+  margin-top: myrem(30);
+  padding-left: myrem(27);
+  font-size: myrem(14);
+
+
+
+  @include mq(md) {
+    font-size: myrem(16);
+  }
+}
+
+.c-heading01--sidebar::before {
+  height: myrem(4);
+  left: myrem(2);
+  top: 50%;
+  transform: translateY(-50%);
+
+}
+
+.c-heading01--sidebar::after {
+  font-size: myrem(36);
+  top: myrem(-34);
+  left: 0;
 
     @include mq(md) {
-      font-size: myrem(60);
+      font-size: myrem(50);
     }
 }
 
