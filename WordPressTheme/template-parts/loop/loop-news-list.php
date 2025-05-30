@@ -1,4 +1,4 @@
-<div class="c-news-list-container__content c-news-list-container-content">
+<div class="c-news-list">
     <?php
     $paged = get_query_var('paged') ? get_query_var('paged') : 1;
 
@@ -15,12 +15,12 @@
     if ($news_query->have_posts()) :
         while ($news_query->have_posts()) : $news_query->the_post();
     ?>
-            <article class="c-news-list-container-content__post c-news-list-container-content-post">
+            <article class="c-news-list__post c-news-list-post">
                 <!-- 投稿日時とカテゴリー -->
                 <?php get_template_part('template-parts/section', 'meta'); ?>
 
                 <!-- 記事タイトル -->
-                <h3 class="c-news-list-container-content-post__title<?php echo isset($args['modifier']) ? ' c-news-list-container-content-post__title--' . esc_attr($args['modifier']) : ''; ?>"> <a href="<?php the_permalink(); ?>"><?php echo esc_html(get_the_title()); ?></a>
+                <h3 class="c-news-list-post__title<?php echo isset($args['modifier']) ? ' c-news-list-container-content-post__title--' . esc_attr($args['modifier']) : ''; ?>"> <a href="<?php the_permalink(); ?>"><?php echo esc_html(get_the_title()); ?></a>
                 </h3>
             </article>
         <?php
@@ -28,11 +28,11 @@
         wp_reset_postdata();
     else :
         ?>
-        <p class="c-news-list-container__none">まだ投稿がありません。</p>
+        <p class="c-news-list__none">まだ投稿がありません。</p>
     <?php endif; ?>
 
     <!-- ページネーション　SP用 -->
-    <div class="c-news-list-container__pagenavi--sp u-mobile">
+    <div class="c-news-list__pagenavi--sp u-mobile">
         <?php get_template_part('template-parts/section', 'pagenavi'); ?>
     </div>
 </div>

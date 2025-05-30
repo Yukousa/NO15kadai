@@ -116,7 +116,7 @@
     
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    column-gap: 0;
+    // column-gap: myrem(90);
     margin-top: 0;
   }
 }
@@ -129,6 +129,7 @@
     border: none;
   }
 }
+
 
 .p-footer-nav__link {
   display: flex;
@@ -153,6 +154,7 @@
 
   @include mq(md) {
     width: fit-content;
+    font-size: clamp(myrem(12), 1.4vw, myrem(20));
   }
 }
 
@@ -161,6 +163,11 @@
   font-size: myrem(12);
   font-weight: 800;
   letter-spacing: 0.1em;
+
+    @include mq(md) {
+      font-size: clamp(myrem(8), 0.8vw, myrem(12));
+
+    }
 }
 
 .p-footer__copyright {

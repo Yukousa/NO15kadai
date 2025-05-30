@@ -195,10 +195,10 @@
   padding-left: myrem(27);
   font-size: myrem(14);
 
-
-
   @include mq(md) {
     font-size: myrem(16);
+    top: myrem(25);
+    padding-left: myrem(41);
   }
 }
 
@@ -208,6 +208,9 @@
   top: 50%;
   transform: translateY(-50%);
 
+    @include mq(md) {
+
+    }
 }
 
 .c-heading01--sidebar::after {
@@ -215,9 +218,11 @@
   top: myrem(-34);
   left: 0;
 
-    @include mq(md) {
-      font-size: myrem(50);
-    }
+  @include mq(md) {
+    font-size: myrem(50);
+    top: myrem(-60);
+
+  }
 }
 
 /***************************

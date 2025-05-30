@@ -6,17 +6,19 @@
     </section>
 
     <!-- メイン部分 -->
-    <section class="p-archive-news__content">
+    <section class="p-archive-news__content p-archive-news-content">
         <!-- newsのリスト -->
-         <div class="c-news-list__container c-news-list-container">
+         <div class="p-archive-news-content__list">
              <?php get_template_part('template-parts/loop/loop-news-list', null, ['modifier' => 'front-news']); ?>
          </div>
         <!-- サイドバー -->
-        <?php get_template_part('template-parts/sidebar/sidebar-news'); ?>
+         <div class="p-archive-news-content__sidebar">
+             <?php get_template_part('template-parts/sidebar/sidebar-news'); ?>
+         </div>
     </section>
     
     <!-- ページネーション　pc用 -->
-    <div class="c-news-list-container__pagenavi--pc u-desktop">
+    <div class="p-archive-news__pagenavi--pc u-desktop">
         <?php get_template_part('template-parts/section', 'pagenavi'); ?>
     </div>
 

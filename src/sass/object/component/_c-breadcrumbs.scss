@@ -56,4 +56,8 @@
 
 .c-breadcrumbs__wrapper--news {
 margin-top: myrem(50);
+
+  @include mq(md) {
+    margin-top: myrem(0);
+  }
 }
