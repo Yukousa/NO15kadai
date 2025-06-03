@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Functions
  */
@@ -6,7 +7,8 @@
 /**
  * WordPress標準機能
  */
-function my_setup() {
+function my_setup()
+{
 	add_theme_support('post-thumbnails');
 	add_theme_support('automatic-feed-links');
 	add_theme_support('title-tag');
@@ -20,7 +22,8 @@ add_action('after_setup_theme', 'my_setup');
 /**
  * CSSとJavaScriptの読み込み
  */
-function my_script_init() {
+function my_script_init()
+{
 	wp_deregister_script('jquery');
 	wp_enqueue_script('jquery', '//cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js', "", "1.0.1");
 	wp_enqueue_style('swiper', get_template_directory_uri() . '/assets/css/swiper-bundle.min.css', array(), '1.0.1', 'all');
@@ -33,7 +36,8 @@ add_action('wp_enqueue_scripts', 'my_script_init');
 /**
  * Google Fontsの読み込み
  */
-function my_enqueue_google_fonts() {
+function my_enqueue_google_fonts()
+{
 	wp_enqueue_style(
 		'google-fonts',
 		'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Inter:wght@100;300;400;500;700;900&family=Roboto:wght@100;300;400;500;700;900&display=swap',
@@ -47,7 +51,8 @@ add_action('admin_enqueue_scripts', 'my_enqueue_google_fonts');
 /**
  * アーカイブタイトル書き換え
  */
-function my_archive_title($title) {
+function my_archive_title($title)
+{
 	if (is_home()) {
 		$title = 'ブログ';
 	} elseif (is_category()) {
@@ -81,7 +86,8 @@ add_filter('get_the_archive_title', 'my_archive_title');
 /**
  * メニューの登録
  */
-function my_menu_init() {
+function my_menu_init()
+{
 	register_nav_menus(array(
 		'global'  => 'ヘッダーメニュー',
 		'utility' => 'ユーティリティメニュー',
@@ -94,8 +100,10 @@ add_action('init', 'my_menu_init');
 /**
  * カスタム Walker クラス（BEM + 説明表示対応）
  */
-class BEM_Walker_Nav_Menu extends Walker_Nav_Menu {
-	function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0) {
+class BEM_Walker_Nav_Menu extends Walker_Nav_Menu
+{
+	function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0)
+	{
 		$base_class = isset($args->bem_base_class) ? $args->bem_base_class : 'menu';
 
 		$output .= '<li class="' . esc_attr($base_class . '__item') . '">';
@@ -113,7 +121,9 @@ class BEM_Walker_Nav_Menu extends Walker_Nav_Menu {
 	}
 }
 
-// カスタム投稿で月別アーカイブを出力させる
+/**
+ *カスタム投稿で月別アーカイブを出力させる
+ */
 function custom_news_date_rewrite_rules($wp_rewrite)
 {
 	$rules = [];
@@ -132,3 +142,4 @@ function flush_rewrite_on_activation()
 	flush_rewrite_rules();
 }
 register_activation_hook(__FILE__, 'flush_rewrite_on_activation');
+

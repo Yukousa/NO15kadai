@@ -7,6 +7,7 @@
   gap: myrem(22);
 
   @include mq(md) {
+    gap: myrem(25);
   }
 }
 
@@ -36,4 +37,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  
+
+    @include mq(md) {
+
+    }
 }

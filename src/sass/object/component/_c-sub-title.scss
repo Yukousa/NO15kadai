@@ -1,0 +1,46 @@
+@use "global" as *;
+
+// 見出し
+.c-subtitle {
+  width: fit-content;
+  font-family: $font-main;
+  font-weight: 900;
+  font-size: myrem(20);
+  line-height: calc(28 / 20);
+  letter-spacing: 0.06em;
+  font-feature-settings: "palt" on;
+  color: $black;
+  display: block;
+
+    @include mq(md) {
+      font-size: myrem(34);
+
+    }
+}
+
+.c-subtitle--line1 {
+  padding: myrem(5) myrem(7) myrem(6);
+  display: block;
+
+  
+    @include mq(md) {
+      letter-spacing: 0.2em;
+
+    }
+}
+
+
+.c-subtitle--line2 {
+  padding: myrem(5) myrem(7) myrem(6);
+  color: $white;
+  background: linear-gradient(to right, #000 0%, #929292 100%);
+  display: block;
+
+  @include mq(md) {
+    margin-top: myrem(5);
+    font-size: myrem(34);
+    letter-spacing: 0.2em;
+    padding: myrem(0) myrem(12);
+  }
+
+}

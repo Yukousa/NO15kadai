@@ -1,0 +1,105 @@
+@use "global" as *;
+
+.c-arrow01_right,
+.c-arrow01_left {
+  width: myrem(30);
+  height: myrem(30);
+  background: linear-gradient(to bottom, #000000 0%, #929292 100%);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  aspect-ratio: 1 / 1;
+
+  @include mq(md) {
+    width: myrem(42);
+    height: myrem(42);
+  }
+}
+
+.c-arrow01_right::before {
+  content: "";
+  width: 40%;
+  height: 40%;
+  background-color: white;
+  clip-path: polygon(0 0, 0 100%, 80% 50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-30%, -50%);
+}
+
+.c-arrow01_left::before {
+  content: "";
+  width: 40%;
+  height: 40%;
+  background-color: white;
+  clip-path: polygon(100% 0, 100% 100%, 20% 50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-70%, -50%);
+}
+
+.c-arrow01_right--white,
+.c-arrow01_left--white {
+  background: $white;
+}
+
+.c-arrow01_right--white::before,
+.c-arrow01_left--white::before {
+  background-color: $black;
+}
+
+.c-arrow-svg {
+  width: myrem(50);
+  height: myrem(50);
+  border-radius: 50%;
+  border: 2px solid $black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 1 / 1;
+
+  @include mq(md) {
+    width: myrem(60);
+    height: myrem(60);
+  }
+
+  svg {
+    width: myrem(14);
+    height: myrem(14);
+    stroke: $black;
+
+    @include mq(md) {
+      width: myrem(18);
+      height: myrem(18);
+    }
+  }
+}
+
+.c-arrow02_left,
+.c-arrow02_right {
+  width: myrem(40);
+  height: myrem(40);
+  border: 2px solid $black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.c-arrow02_left::after,
+.c-arrow02_right::after {
+  font-weight: bold;
+  font-size: myrem(20);
+  font-family: $font-main;
+}
+
+.c-arrow02_left::after {
+  content: ">";
+}
+
+.c-arrow02_right::after {
+  content: "<";
+}

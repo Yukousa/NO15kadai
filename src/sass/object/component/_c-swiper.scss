@@ -1,0 +1,43 @@
+@use "global" as *;
+
+
+// 関連記事　swiper
+
+.c-swiper-related .swiper-slide {
+  transition: transform 0.3s ease;
+  position: relative;
+  padding-bottom: myrem(50);
+  aspect-ratio: 257 / 246;
+}
+
+
+
+
+.c-swiper-related.swiper-slide:hover {
+  transform: scale(1.03); 
+  z-index: 2;
+}
+
+
+.c-swiper-related__nav {
+  display: flex;
+  justify-content: flex-end;
+  gap: myrem(20); 
+  z-index: 10;
+  padding: 0 myrem(20);
+  margin-top: myrem(20);
+
+  @include mq(md) {
+    gap: myrem(12);
+  }
+}
+
+.c-swiper-related-nav__prev,
+.c-swiper-related-nav__next {
+  width: myrem(50);
+  height: myrem(50);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}

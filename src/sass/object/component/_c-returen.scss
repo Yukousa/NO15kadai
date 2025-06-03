@@ -1,0 +1,22 @@
+@use "global" as *;
+
+.c-return {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  gap: myrem(10);
+
+  @include mq(md) {
+    gap: myrem(12);
+  }
+}
+.c-return--single-news {
+  margin-top: myrem(30);
+  font-size: myrem(18);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #000000;
+  margin-top: myrem(85);
+  
+}
