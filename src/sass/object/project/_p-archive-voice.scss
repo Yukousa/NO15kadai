@@ -1,0 +1,9 @@
+@use "global" as *;
+
+.p-archive-voice__container {
+    padding: myrem(25) myrem(20) myrem(100);
+}
+
+.p-archive-voice__pagenavi {
+    margin-top: myrem(95);
+}

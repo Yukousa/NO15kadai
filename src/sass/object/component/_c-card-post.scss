@@ -78,22 +78,43 @@
 }
 
 
-
-
 /****************************
-voice用
+関連記事　swiper 用
 ****************************/
-.c-card-post--voice .c-card-post-inner__image {
+
+
+.c-swiper-related .c-card-post-inner__image {
   @include mq(md) {
     width: 100%;
     aspect-ratio: 340 / 230;
   }
 }
 
-.c-card-post--voice .c-card-post-inner__image img {
+.c-swiper-related .c-card-post-inner__image img {
   @include mq(md) {
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
+}
+
+/****************************
+voice アーカイブ一覧　用
+****************************/
+.c-card-post--voice + .c-card-post--voice {
+  margin-top: myrem(-30);
+}
+
+.c-card-post--voice .c-card-post__summary {
+  width: calc(301 / 335 * 100%);
+}
+
+
+
+
+.c-card-post--voice .c-card-post-summary--text {
+  font-size: myrem(16);
+  letter-spacing: 0.06em;
+  max-height: myrem(87); // 24px × 3行 
+
 }

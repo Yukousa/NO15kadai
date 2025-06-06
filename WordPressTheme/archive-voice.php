@@ -4,7 +4,7 @@
   <!-- fv -->
   <section class="p-archive-voice__fv c-sub-fv">
     <!-- フロントページ以外のfv -->
-    <?php get_template_part('template-parts/section', 'sub-fv'); ?>
+    <?php get_template_part('template-parts/sections/section-sub-fv'); ?>
   </section>
 
   <!-- メイン部分 -->
@@ -18,7 +18,9 @@
       </div>
     <?php endif; ?>
     <!-- ページネーション -->
-    <?php get_template_part('template-parts/sections/section-pagenavi'); ?>
+    <div class="p-archive-voice__pagenavi">
+      <?php get_template_part('template-parts/sections/section-pagenavi'); ?>
+    </div>
   </section>
   </section>
 

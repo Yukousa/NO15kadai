@@ -143,3 +143,23 @@ function flush_rewrite_on_activation()
 }
 register_activation_hook(__FILE__, 'flush_rewrite_on_activation');
 
+
+/**
+ *投稿タイプごとにアーカイブページの表示件数を変更する(voice,works)
+ */
+function custom_archive_posts_per_page($query) {
+	if (!is_admin() && $query->is_main_query()) {
+  
+	  // voice アーカイブでは 6件表示
+	  if (is_post_type_archive('voice')) {
+		$query->set('posts_per_page', 6);
+	  }
+  
+	  // works アーカイブでは 3件表示
+	  if (is_post_type_archive('works')) {
+		$query->set('posts_per_page', 3);
+	  }
+	}
+  }
+  add_action('pre_get_posts', 'custom_archive_posts_per_page');
+  

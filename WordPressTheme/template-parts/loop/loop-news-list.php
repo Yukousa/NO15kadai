@@ -17,7 +17,7 @@
     ?>
             <article class="c-news-list__post c-news-list-post">
                 <!-- 投稿日時とカテゴリー -->
-                <?php get_template_part('template-parts/section', 'meta'); ?>
+                <?php get_template_part('template-parts/sections/section-meta'); ?>
 
                 <!-- 記事タイトル -->
                 <h3 class="c-news-list-post__title<?php echo isset($args['modifier']) ? ' c-news-list-container-content-post__title--' . esc_attr($args['modifier']) : ''; ?>"> <a href="<?php the_permalink(); ?>"><?php echo esc_html(get_the_title()); ?></a>
@@ -33,6 +33,6 @@
 
     <!-- ページネーション　SP用 -->
     <div class="c-news-list__pagenavi--sp u-mobile">
-        <?php get_template_part('template-parts/section', 'pagenavi'); ?>
+        <?php get_template_part('template-parts/sections/section-pagenavi'); ?>
     </div>
 </div>
