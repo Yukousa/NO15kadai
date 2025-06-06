@@ -1,12 +1,39 @@
 @use "global" as *;
 
+.p-single-voice__wrapper {
+
+    @include mq(md) {
+      max-width: 1440px;
+      padding: myrem(100) myrem(70) myrem(110);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: myrem(30);
+      }
+}
+
+
+.p-single-voice__content {
+  @include mq(md) {
+    width: calc(950 / 1300 * 100%);
+  }
+}
+
+
 .p-single-voice-content-body__slider {
   margin-top: myrem(10);
 }
 
 .p-single-voice__profile {
   margin-top: myrem(50);
-  padding: 0 myrem(20);
+  padding: 0 myrem(20) myrem(60);
+
+    @include mq(md) {
+      margin-top: 0;
+
+      padding: 0 0 myrem(60);
+    }
 }
 
 .p-single-voice__profile .c-profile-card__image {
@@ -21,5 +48,10 @@
 }
 
 .p-single-voice__slider {
+  background-color: $black_base;
   padding: myrem(100) 0 myrem(60);
+
+    @include mq(md) {
+      padding: myrem(80) 0 myrem(60);
+    }
 }

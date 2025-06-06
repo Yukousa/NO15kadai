@@ -42,8 +42,6 @@
             <a href="#" class="c-return c-return--single-voice u-desktop">
                 一覧に戻る<span class="c-arrow01_right"></span>
             </a>
-
-
         </aside>
     </section>
 

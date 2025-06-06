@@ -25,6 +25,8 @@
   
     @include mq(md) {
       letter-spacing: 0.2em;
+      padding: myrem(5) myrem(10) myrem(3);
+
 
     }
 }
@@ -37,10 +39,10 @@
   display: block;
 
   @include mq(md) {
-    margin-top: myrem(5);
+    // margin-top: myrem(5);
     font-size: myrem(34);
     letter-spacing: 0.2em;
-    padding: myrem(0) myrem(12);
+    padding: myrem(0) myrem(15);
   }
 
 }

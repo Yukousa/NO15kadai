@@ -1,26 +1,36 @@
 @use "global" as *;
 
-
 .c-card-post {
   width: 100%;
-  aspect-ratio: 257 / 246;
-  display: block;
+  display: flex;
+  flex-direction: column;
   transition: transform 0.3s ease;
 
   @include mq(md) {
-    width: myrem(320);
   }
 }
-
 
 .c-card-post:hover {
   transform: scale(1.1);
 }
 
-.c-card-post__inner {
-  width: 100%;
-  overflow: hidden;
-  position: relative;
+.c-card-post-inner__label {
+  width: fit-content;
+  height: myrem(25);
+  background-color: $black;
+  color: $white;
+  font-size: myrem(12);
+  padding: myrem(4) myrem(8);
+  white-space: nowrap;
+  font-family: "Open Sans";
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  align-self: flex-end;
+  transform: translateY(100%);
+
+  @include mq(md) {
+    height: myrem(30);
+  }
 }
 
 .c-card-post-inner__image {
@@ -30,7 +40,7 @@
 
 .c-card-post-inner__image img {
   width: 100%;
-  height: 100%;
+  height: 100%; 
   object-fit: cover;
   object-position: 85% 80%;
 
@@ -38,34 +48,21 @@
     // aspect-ratio: 410 / 278;
   }
 }
-.c-card-post-inner__label {
-  position: absolute;
-  top: 0;
-  right: 0;
-  background-color: $black;
-  color: $white;
-  font-size: myrem(12);
-  padding: myrem(4) myrem(8);
-  z-index: 5;
-  white-space: nowrap;
-  font-family: "Open Sans";
-  font-weight: 800;
-  letter-spacing: 0.1em;
-  display: flex;
-  align-items: center;
-}
 
 .c-card-post__summary {
   width: calc(234 / 257 * 100%);
-  position: absolute;
-  bottom: myrem(12);
-  left: 0;
+  padding-bottom: myrem(10);
+  background-color: #fff;
+  transform: translateY(-25%);
+
+}
+
+.c-card-post-summary--text {
+  max-height: myrem(72); // 24px × 3行 
   background-color: $white;
   padding: myrem(10) myrem(5) myrem(0) myrem(12);
   font-size: myrem(14);
   letter-spacing: 0.06em;
-  line-height: calc(24 / 14);
-
   display: -webkit-box;
   -webkit-box-orient: vertical;
   overflow: hidden;
@@ -73,8 +70,30 @@
   -webkit-line-clamp: 3; // ← 3行で省略
 
   @include mq(md) {
-    width: calc(370 / 410 * 100%);
-    height: myrem(111);
-    bottom: myrem(-100);
+    width: calc(310 / 340 * 100%);
+    height: myrem(100);
+    padding: myrem(10) myrem(15) myrem(0) myrem(12);
+    letter-spacing: 0.08em;
+  }
+}
+
+
+
+
+/****************************
+voice用
+****************************/
+.c-card-post--voice .c-card-post-inner__image {
+  @include mq(md) {
+    width: 100%;
+    aspect-ratio: 340 / 230;
+  }
+}
+
+.c-card-post--voice .c-card-post-inner__image img {
+  @include mq(md) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 }

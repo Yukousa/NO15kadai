@@ -2,14 +2,15 @@
 
 <main class="p-profile">
     <!-- fv -->
-    <section class="p-profile__fv c-sub-fv">
-        <?php get_template_part('template-parts/section', 'sub-fv'); ?>
+    <section class="p-single-voice__fv c-sub-fv">
+        <!-- フロントページ以外のfv -->
+        <?php get_template_part('template-parts/sections/section-sub-fv'); ?>
     </section>
 
     <!-- メイン部分 -->
     <!-- コードスキル　アイコン群 -->
     <section class="p-profile-skill">
-        <?php get_template_part('template-parts/section', 'profile-icons'); ?>
+        <?php get_template_part('template-parts/sections/section-profile-icons'); ?>
     </section>
 
     <!-- pc時　2カラム -->
@@ -52,7 +53,7 @@
 
             <!-- スライダー -->
             <article class="p-profile-body__slider">
-                <?php get_template_part('template-parts/section', 'slide'); ?>
+                <?php get_template_part('template-parts/sections/section-css-slide'); ?>
             </article>
         </div>
 
@@ -60,7 +61,7 @@
         <aside class="p-profile__profile p-profile-profile">
             <?php
             set_query_var('hide_back_button', true);
-            get_template_part('template-parts/section', 'profile-card');
+            get_template_part('template-parts/cards/card-president-profile');
             ?>
 
             <div class="p-profile-profile__content">
@@ -77,10 +78,10 @@
 
 
 
-    <!-- contact / faq -->
+    <!-- リンクバナー contact / faq -->
     <section class="p-section-wrapper">
-        <?php get_template_part('template-parts/section', 'contact'); ?>
-        <?php get_template_part('template-parts/section', 'faq'); ?>
+        <?php get_template_part('template-parts/sections/section-contact'); ?>
+        <?php get_template_part('template-parts/sections/section-faq'); ?>
     </section>
 
 </main>

@@ -5,9 +5,8 @@
 
 .c-swiper-related .swiper-slide {
   transition: transform 0.3s ease;
-  position: relative;
-  padding-bottom: myrem(50);
-  aspect-ratio: 257 / 246;
+  padding-bottom: myrem(0);
+  // aspect-ratio: 257 / 246;
 }
 
 
@@ -20,15 +19,20 @@
 
 
 .c-swiper-related__nav {
+  width: fit-content;
   display: flex;
   justify-content: flex-end;
   gap: myrem(20); 
   z-index: 10;
   padding: 0 myrem(20);
   margin-top: myrem(20);
+  margin-right: 0;
+  margin-left: auto;
 
   @include mq(md) {
-    gap: myrem(12);
+    gap: myrem(20);
+    margin-right: myrem(70);
+
   }
 }
 

@@ -35,3 +35,12 @@ news用　fv画像なし
 .c-sub-fv__image--news {
   display: none;
 }
+
+/*************************
+voice用　
+*************************/
+.c-sub-fv__image--voice img{
+  @include mq(md) {
+    object-position: left bottom;
+  }
+}

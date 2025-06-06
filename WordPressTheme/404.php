@@ -8,10 +8,10 @@
         <a href="#" class="p-404__return">TOPへ戻る</a>
     </section>
 
-    <!-- contact / faq -->
+    <!-- リンクバナー contact / faq -->
     <section class="p-section-wrapper">
-        <?php get_template_part('template-parts/section', 'contact'); ?>
-        <?php get_template_part('template-parts/section', 'faq'); ?>
+        <?php get_template_part('template-parts/sections/section-contact'); ?>
+        <?php get_template_part('template-parts/sections/section-faq'); ?>
     </section>
 </main>
 

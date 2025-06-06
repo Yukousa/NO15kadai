@@ -7,15 +7,17 @@ $modifier = 'c-card-post--' . esc_attr($post_type);
 ?>
 
 <a href="<?php the_permalink(); ?>" class="c-card-post <?php echo $modifier; ?>">
-  <div class="c-card-post__inner c-card-post-inner">
-    <?php if ($terms && !is_wp_error($terms)) : ?>
-      <span class="c-card-post-inner__label"><?php echo esc_html($terms[0]->name); ?></span>
-    <?php endif; ?>
-    <div class="c-card-post-inner__image">
-      <?php the_post_thumbnail('large'); ?>
-    </div>
-  </div>
-  <?php if ($summary = get_field($summary_field)) : ?>
-    <p class="c-card-post__summary"><?php echo esc_html($summary); ?></p>
+
+  <?php if ($terms && !is_wp_error($terms)) : ?>
+    <span class="c-card-post-inner__label"><?php echo esc_html($terms[0]->name); ?></span>
   <?php endif; ?>
+  <div class="c-card-post-inner__image">
+    <?php the_post_thumbnail('large'); ?>
+  </div>
+  <div class="c-card-post__summary c-card-post__summary">
+    <?php if ($summary = get_field($summary_field)) : ?>
+      <p class="c-card-post-summary--text"><?php echo esc_html($summary); ?></p>
+    <?php endif; ?>
+  </div>
+
 </a>

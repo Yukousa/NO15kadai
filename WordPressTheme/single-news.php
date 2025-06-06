@@ -2,10 +2,10 @@
 
 <main class="p-single-news">
     <!-- fv -->
-    <section class="p-single-news__fv c-sub-fv">
-        <?php get_template_part('template-parts/section', 'sub-fv'); ?>
+    <section class="p-single-voice__fv c-sub-fv">
+        <!-- フロントページ以外のfv -->
+        <?php get_template_part('template-parts/sections/section-sub-fv'); ?>
     </section>
-
     <!-- メイン部分 -->
     <section class="p-single-news__content p-single-news-content">
         <!-- newsの投稿記事 -->
@@ -39,11 +39,10 @@
         </div>
 
     </section>
-
-    <!-- contact / faq -->
+    <!-- リンクバナー contact / faq -->
     <section class="p-section-wrapper">
-        <?php get_template_part('template-parts/section', 'contact'); ?>
-        <?php get_template_part('template-parts/section', 'faq'); ?>
+        <?php get_template_part('template-parts/sections/section-contact'); ?>
+        <?php get_template_part('template-parts/sections/section-faq'); ?>
     </section>
 
 </main>

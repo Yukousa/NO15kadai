@@ -6,7 +6,7 @@
         <?php bloginfo('name'); ?>
       </a>
 
-<ul class="p-footer-inner-wrapper__sns p-footer-inner-wrapper-sns">
+      <ul class="p-footer-inner-wrapper__sns p-footer-inner-wrapper-sns">
         <li class="p-footer-inner-wrapper-sns__item">
           <a href="https://line.me/" rel="noopener noreferrer">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/line02.png" alt="LINE">

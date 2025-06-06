@@ -158,20 +158,23 @@ if (document.querySelector(".c-swiper-related")) {
     //   delay: 4000,
     //   disableOnInteraction: false,
     // },
-    spaceBetween: 20,
-    slidesOffsetBefore: 20,
+    
     navigation: {
       nextEl: ".c-swiper-related-nav__next",
       prevEl: ".c-swiper-related-nav__prev",
     },
     breakpoints: {
       0: {
+        spaceBetween: 20,
         slidesPerView: 1.42,
         centeredSlides: false,
+
       },
       768: {
-        slidesPerView: 4,
+        slidesPerView: 3.95,
         centeredSlides: false,
+        spaceBetween: 50,
+
       },
     },
   });
