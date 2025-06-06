@@ -1,0 +1,65 @@
+
+@use "global" as *;
+
+/**************************
+works投稿記事　内　テーブル用スタイル
+**************************/
+
+.wp-block-table table {
+  border: 1px solid $black_sub;
+  line-height: calc(24 / 16);
+  letter-spacing: 0.1em;
+  width: 100%;
+  font-size: myrem(16);
+  margin-bottom: myrem(20);
+  margin-top: myrem(20);
+  border-collapse: collapse;
+
+
+  @include mq(md) {
+    display: table;
+  }
+}
+
+.wp-block-table tbody {
+  @include mq(md) {
+    display: table-row-group;
+  }
+}
+
+.wp-block-table tr {
+  background-color: $white;
+  display: block;
+
+  @include mq(md) {
+    display: table-row;
+  }
+}
+
+.wp-block-table tr:not(:last-child) {
+  border-bottom: 1px solid $black_sub;
+}
+
+.wp-block-table td {
+  border: none !important;
+  padding: myrem(8) myrem(15) myrem(7);
+  display: block;
+
+  @include mq(md) {
+    display: table-cell;
+    padding: myrem(15) myrem(20);
+    border: 1px solid $black_sub !important;
+    vertical-align: top;
+  }
+}
+
+.wp-block-table td:first-child {
+  font-weight: bold;
+  background-color: #f5f5f5;
+  padding: myrem(10) myrem(15);
+
+  @include mq(md) {
+    width: 30%;
+    background-color: #f5f5f5;
+  }
+}

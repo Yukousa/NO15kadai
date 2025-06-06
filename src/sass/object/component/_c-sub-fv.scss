@@ -14,7 +14,7 @@
 .c-sub-fv__image {
   width: 100%;
   aspect-ratio: 375 / 230;
-  margin-top: myrem(20);
+  margin-top: myrem(40);
 
   @include mq(md) {
     width: 100%;

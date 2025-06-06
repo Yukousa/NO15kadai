@@ -39,7 +39,7 @@
             get_template_part('template-parts/cards/card-president-profile');
             ?>
 
-            <a href="#" class="c-return c-return--single-voice u-desktop">
+            <a href="#" class="c-return c-return--single-voice">
                 一覧に戻る<span class="c-arrow01_right"></span>
             </a>
         </aside>

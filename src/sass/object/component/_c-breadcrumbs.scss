@@ -63,6 +63,9 @@
     }
 }
 
+/****************************
+news　用
+****************************/
 .c-breadcrumbs__wrapper--news {
 margin-top: myrem(50);
 
@@ -75,6 +78,14 @@ margin-top: myrem(50);
   background-color: $black_base;
 }
 
-.c-breadcrumbs__wrapper--voice {
+/****************************
+archive-voice用
+****************************/
+
+.p-archive-voice .c-breadcrumbs__wrapper--voice {
   margin-top: myrem(30);
+
+    @include mq(md) {
+      margin-top: myrem(40);
+    }
 }

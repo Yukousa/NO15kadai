@@ -22,7 +22,7 @@
   @include mq(md) {
     padding-left: myrem(70);
     padding-right: 0;
-    justify-content: flex-end;
+    justify-content: space-between;
   }
 }
 
@@ -39,9 +39,9 @@
   @include mq(md) {
     width: fit-content;
     color: #000;
-    flex-grow: 1;
     text-align: left;
     font-size: myrem(32);
+    letter-spacing: 0.12em;
   }
 }
 
@@ -59,13 +59,14 @@
   z-index: 9999;
 
   @include mq(md) {
-    width: calc(740 / 1440 *100%);
+    width: calc(710 / 1200 * 100%);
     font-size: myrem(16);
     position: static;
     height: auto;
     opacity: 1;
     visibility: visible;
     background-color: transparent;
+    flex-grow: 1;
   }
 }
 
@@ -88,8 +89,7 @@
     justify-content: flex-end;
     align-items: center;
     flex-wrap: wrap;
-    column-gap:myrem(40);
-
+    column-gap: myrem(45);
     padding: 0;
   }
 }
@@ -107,10 +107,9 @@
 }
 
 .p-header-inner-nav__item:last-child {
-
-    @include mq(md) {
-      padding-right: myrem(40);
-    }
+  @include mq(md) {
+    padding-right: myrem(40);
+  }
 }
 
 .p-header-inner-nav__link {
@@ -179,7 +178,6 @@
     height: auto;
     gap: myrem(4);
     padding: myrem(28) myrem(10);
-
   }
 }
 

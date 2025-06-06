@@ -42,6 +42,22 @@
   transform: translate(-70%, -50%);
 }
 
+/*********************************
+サイズ違い single-voice,single-works
+*********************************/
+.c-arrow01_right--large,
+.c-arrow01_left--large {
+  width: myrem(42);
+  height: myrem(42);
+
+}
+
+
+
+/*********************************
+白
+*********************************/
+
 .c-arrow01_right--white,
 .c-arrow01_left--white {
   background: $white;

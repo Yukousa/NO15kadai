@@ -103,18 +103,31 @@ voice アーカイブ一覧　用
 ****************************/
 .c-card-post--voice + .c-card-post--voice {
   margin-top: myrem(-30);
+
+    @include mq(md) {}
+    margin-top: 0;
+    
+
 }
 
 .c-card-post--voice .c-card-post__summary {
   width: calc(301 / 335 * 100%);
+
+    @include mq(md) {
+      transform: translateY(-40%);
+    }
 }
-
-
-
 
 .c-card-post--voice .c-card-post-summary--text {
   font-size: myrem(16);
   letter-spacing: 0.06em;
-  max-height: myrem(87); // 24px × 3行 
+  max-height: myrem(87); 
+
+    @include mq(md) {
+      width: 100%;
+      padding: myrem(15) myrem(15) myrem(0) myrem(15);
+      letter-spacing: 0.1em;
+
+    }
 
 }

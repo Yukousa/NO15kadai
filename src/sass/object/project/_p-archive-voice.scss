@@ -1,9 +1,38 @@
 @use "global" as *;
 
-.p-archive-voice__container {
-    padding: myrem(25) myrem(20) myrem(100);
+.p-archive-voice__fv {
+      @include mq(md) {
+
+      }
 }
+
+.p-archive-voice__container {
+    width: 100%;
+    padding: myrem(25) myrem(20) myrem(100);
+
+      @include mq(md) {
+        max-width: $innerWidth;
+        margin:0 auto;
+        padding: myrem(50) myrem(70) myrem(110);
+    }
+
+}
+
+.p-archive-voice-container__post {
+    @include mq(md) {
+        display: grid;
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
+        row-gap: myrem(0);
+        column-gap: myrem(34);
+        
+      }
+    }
 
 .p-archive-voice__pagenavi {
     margin-top: myrem(95);
+
+      @include mq(md) {
+        margin-top: myrem(35);
+    }
 }
