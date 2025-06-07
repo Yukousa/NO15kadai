@@ -287,5 +287,7 @@
   @include mq(md) {
     font-size: myrem(34);
     margin-top: myrem(0);
+    letter-spacing: 0.22em;
+
   }
 }

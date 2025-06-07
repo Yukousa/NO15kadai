@@ -1,9 +1,10 @@
 @use "global" as *;
 
 .p-single-voice__wrapper {
+  width: 100%;
 
     @include mq(md) {
-      max-width: 1440px;
+      max-width: $innerWidth;
       padding: myrem(100) myrem(70) myrem(110);
       margin: 0 auto;
       display: flex;
@@ -31,7 +32,6 @@
 
     @include mq(md) {
       margin-top: 0;
-
       padding: 0 0 myrem(60);
     }
 }

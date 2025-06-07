@@ -2,14 +2,14 @@
 
 .c-single-page-nation {
   width: 100%;
-  max-width: 335px;
+  max-width: myrem(335);
   display: flex;
   justify-content: space-between;
   gap: myrem(0);
   margin: 0 auto;
 
   @include mq(md) {
-    width: myrem(360);
+    max-width: myrem(370);
     margin: 0 auto;
   }
 }
@@ -30,6 +30,7 @@
   img {
     width: myrem(16);
     height: auto;
+    letter-spacing: 0;
   }
 }
 

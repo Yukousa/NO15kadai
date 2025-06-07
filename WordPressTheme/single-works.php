@@ -6,18 +6,16 @@
         <!-- フロントページ以外のfv -->
         <?php get_template_part('template-parts/sections/section-sub-fv'); ?>
     </section>
+    <!-- 記事タイトル -->
+    <h3 class="p-single-works-content-body__title">
+        <?php echo nl2br(get_field('works_heading')); ?>
+    </h3>
 
     <!-- pc時　2カラム -->
     <section class="p-single-works__wrapper">
         <div class="p-single-works__content p-single-works-content">
             <!-- 本文 -->
             <article class="p-single-works-content__body p-single-works-content-body">
-                <!-- 記事タイトル -->
-                <h3 class="p-single-works-content-body__title">
-                    <?php echo nl2br(get_field('works_heading')); ?>
-                </h3>
-
-
                 <!-- 投稿画面ACFのループ -->
                 <?php
                 $args = array(
@@ -29,7 +27,9 @@
                 get_template_part('template-parts/loop/loop-post-content', null, $args);
                 ?>
                 <!-- singleページ用ページネーション -->
-                <?php get_template_part('template-parts/sections/section-single-page-nation'); ?>
+                 <div class="p-single-works-content-body__page-nation">
+                     <?php get_template_part('template-parts/sections/section-single-page-nation'); ?>
+                 </div>
             </article>
 
         </div>

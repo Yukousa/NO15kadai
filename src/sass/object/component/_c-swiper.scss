@@ -18,6 +18,8 @@
 }
 
 
+
+
 .c-swiper-related__nav {
   width: fit-content;
   display: flex;
@@ -32,6 +34,8 @@
   @include mq(md) {
     gap: myrem(20);
     margin-right: myrem(70);
+    padding-right: myrem(8) ;
+
 
   }
 }
@@ -50,4 +54,10 @@
 .p-single-works__slider .c-swiper-related__nav {
   margin-top: myrem(10);
   gap: myrem(15);
+
+    @include mq(md) {
+      margin-top: myrem(30);
+      gap: myrem(30);
+
+    }
 }

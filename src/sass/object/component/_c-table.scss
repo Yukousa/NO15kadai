@@ -18,6 +18,7 @@ works投稿記事　内　テーブル用スタイル
 
   @include mq(md) {
     display: table;
+    margin-top: myrem(32);
   }
 }
 
@@ -50,6 +51,9 @@ works投稿記事　内　テーブル用スタイル
     padding: myrem(15) myrem(20);
     border: 1px solid $black_sub !important;
     vertical-align: top;
+    letter-spacing: 0.15em;
+    line-height: calc(24 / 16);
+    font-size: myrem(16);
   }
 }
 
@@ -59,7 +63,9 @@ works投稿記事　内　テーブル用スタイル
   padding: myrem(10) myrem(15);
 
   @include mq(md) {
-    width: 30%;
+    width:23%;
     background-color: #f5f5f5;
+    padding: myrem(17) myrem(20);
+
   }
 }

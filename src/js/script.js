@@ -171,7 +171,7 @@ if (document.querySelector(".c-swiper-related")) {
 
       },
       768: {
-        slidesPerView: 3.95,
+        slidesPerView: 3.85,
         centeredSlides: false,
         spaceBetween: 50,
 
