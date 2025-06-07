@@ -131,3 +131,35 @@ voice アーカイブ一覧　用
     }
 
 }
+
+/****************************
+works アーカイブ一覧　用
+****************************/
+.c-card-post--works + .c-card-post--works {
+  margin-top: myrem(-30);
+
+    @include mq(md) {}
+
+}
+
+
+.c-card-post--works .c-card-post__summary {
+  width: calc(301 / 335 * 100%);
+  transform: translateY(-30%);
+
+
+    @include mq(md) {
+    }
+}
+
+.c-card-post--works .c-card-post-summary--text {
+  font-size: myrem(16);
+  letter-spacing: 0.07em;
+  max-height: myrem(87); 
+
+    @include mq(md) {
+
+    }
+
+}
+

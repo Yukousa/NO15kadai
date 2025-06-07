@@ -1,0 +1,15 @@
+@use "global" as *;
+
+.p-archive-works__container {
+    padding-top: myrem(20);
+    padding-bottom: myrem(95);
+    
+}
+
+.p-archive-works-container__post {
+padding: 0 myrem(20) myrem(40);
+}
+
+.p-archive-works__pagenavi {
+    margin-top:0;
+}
