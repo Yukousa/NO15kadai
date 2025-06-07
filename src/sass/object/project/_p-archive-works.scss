@@ -1,15 +1,35 @@
 @use "global" as *;
 
 .p-archive-works__container {
-    padding-top: myrem(20);
-    padding-bottom: myrem(95);
-    
+  width: 100%;
+  padding-top: myrem(20);
+  padding-bottom: myrem(95);
+
+  @include mq(md) {
+    max-width: $innerWidth;
+    padding: myrem(50) myrem(70) myrem(100);
+    margin: 0 auto;
+  }
 }
 
 .p-archive-works-container__post {
-padding: 0 myrem(20) myrem(40);
+  padding: 0 myrem(20) myrem(40);
+
+  @include mq(md) {
+    padding: 0 ;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    column-gap: myrem(34);
+
+  }
 }
 
 .p-archive-works__pagenavi {
-    margin-top:0;
+  margin-top: 0;
+
+  @include mq(md) {
+    margin-top: myrem(30);
+}
+
 }
