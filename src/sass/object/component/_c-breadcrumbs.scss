@@ -64,6 +64,22 @@
 }
 
 /****************************
+service　用
+****************************/
+.c-breadcrumbs__wrapper--service {
+  background-color: $black_base;
+
+  
+    @include mq(md) {
+      margin-top: myrem(10);
+    }
+  }
+  
+  .c-breadcrumbs__wrapper--profile {
+    background-color: $black_base;
+  }
+  
+/****************************
 news　用
 ****************************/
 .c-breadcrumbs__wrapper--news {

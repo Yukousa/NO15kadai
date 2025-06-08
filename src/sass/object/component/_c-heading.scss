@@ -58,8 +58,17 @@
   @include mq(md) {
   }
 }
+/***************************
+背景色$black_base用の　装飾線
+***************************/
+.c-heading01--linwhite {
 
-// 背景色$black_base用の　装飾線
+}
+
+.c-heading01--linwhite::before {
+
+}
+
 .c-heading01--lineWhite::before {
   content: "";
   background: linear-gradient(to right, $black 50%, $white 50%);

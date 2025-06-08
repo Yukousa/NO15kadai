@@ -1,0 +1,363 @@
+@use "global" as *;
+
+.p-service {
+  margin-top: myrem(40);
+
+  @include mq(md) {
+    margin-top: myrem(110);
+  }
+}
+
+.p-service__title {
+  width: 100%;
+
+  @include mq(md) {
+    max-width: 1440px;
+    padding: 0 myrem(70);
+    margin: 0 auto;
+  }
+}
+
+.p-service-title__inner {
+  padding-left: myrem(22);
+  top: 50%;
+
+  @include mq(md) {
+    padding-left: myrem(22);
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+}
+
+.p-service-title__inner::before {
+  margin-left: 0;
+  top: 50%;
+
+  @include mq(md) {
+    margin-left: 0;
+    left: 0;
+  }
+}
+
+.p-service-title__inner::after {
+  margin-left: 0;
+  font-size: myrem(36);
+  top: myrem(-40);
+
+  @include mq(md) {
+    margin-left: 0;
+    font-size: myrem(60);
+    top: myrem(-60);
+    left: 0;
+  }
+}
+
+.p-service-price {
+  width: 100%;
+  padding: myrem(90) 0 myrem(100);
+  background-color: $black_base;
+  font-size: myrem(36);
+
+
+  @include mq(md) {
+    font-size: myrem(60);
+
+  }
+}
+
+.p-service-price__inner {
+  width: 100%;
+  background-color: $black_base;
+  @include mq(md) {
+    max-width: $innerWidth;
+    margin: 0 auto;
+    padding: myrem(110) myrem(70) myrem(0);
+  }
+}
+
+.p-service-price__title {
+  padding-left: myrem(22);
+  font-size: myrem(14);
+
+  @include mq(md) {
+    padding-left: myrem(42);
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+}
+
+.p-service-price__title::before {
+  margin-left: 0;
+
+  @include mq(md) {
+    margin-left: 0;
+  }
+}
+
+.p-service-price__title::after {
+  margin-left: 0;
+  font-size: myrem(36);
+
+  @include mq(md) {
+    margin-left: 0;
+    font-size: myrem(60);
+  }
+}
+
+.p-service__breadcrumbs {
+  padding: myrem(10) myrem(20);
+  text-align: right;
+  background-color: $black_base;
+
+  @include mq(md) {
+    padding: 0;
+    padding-top: myrem(20);
+  }
+}
+
+
+
+// FAQ
+.p-service__faq {
+  padding: myrem(110) myrem(20);
+  background-color: $black_base;
+
+  @include mq(md) {
+    padding: myrem(180) 0;
+  }
+}
+
+.p-service-faq__title {
+  width: 100%;
+
+  @include mq(md) {
+    max-width: 1440;
+    padding: 0 myrem(70);
+  }
+}
+
+.p-service-faq-title__inner {
+  width: 100%;
+  padding-left: myrem(22);
+
+  @include mq(md) {
+    max-width: 1300px;
+    padding-left: myrem(42);
+    margin: 0 auto;
+  }
+}
+
+.p-service-faq-title__inner::before {
+  margin-left: myrem(0);
+}
+.p-service-faq-title__inner::after {
+  margin-left: myrem(0);
+}
+
+.p-service-faq__list {
+  margin-top: myrem(40);
+
+  @include mq(md) {
+    width: 100%;
+    max-width: 1440px;
+    padding: 0 myrem(70);
+    margin: myrem(40) auto 0;
+  }
+}
+
+.p-service-faq-list__item {
+  background-color: $white;
+  border-radius: myrem(10);
+  padding: myrem(24) myrem(16);
+
+  @include mq(md) {
+    padding: myrem(20) myrem(30) myrem(14);
+  }
+}
+
+.p-service-faq-list__item.is-hidden {
+  display: none;
+}
+
+.p-service-faq-list__item + .p-service-faq-list__item {
+  margin-top: myrem(10);
+}
+
+.p-service-faq-list__item-label {
+  flex-shrink: 0; /* Q1 を縮めない */
+  font-family: $font-sub;
+  font-weight: 500;
+  font-size: myrem(18);
+
+  @include mq(md) {
+    font-size: myrem(26);
+  }
+}
+
+.p-service-faq-list__item-text {
+  @include mq(md) {
+    font-size: myrem(20);
+  }
+}
+
+.p-service-faq-list__item-question {
+  font-family: "Open Sans";
+  font-size: myrem(18);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  line-height: calc(24 / 18);
+  text-align: left;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  gap: myrem(10);
+
+  @include mq(md) {
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    gap: myrem(23);
+    letter-spacing: 0.11em;
+  }
+}
+
+.p-service-faq-list__item-answer {
+  font-family: "Open Sans";
+  font-size: myrem(14);
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: calc(26 / 14);
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+  will-change: max-height, opacity;
+  transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out,
+    padding 0.5s ease-in-out;
+}
+
+.p-service-faq-list__item.is-open .p-service-faq-list__item-answer {
+  max-height: myrem(500); /* 中身の高さより少し多めに */
+  opacity: 1;
+  padding-top: myrem(19);
+
+  @include mq(md) {
+    padding: myrem(10) 0 0 myrem(62);
+    letter-spacing: 0.14em;
+    line-height: 2;
+  }
+}
+
+.p-service-faq-list__item-icon {
+  flex-shrink: 0;
+  margin-left: auto; /* 右端に配置 */
+  width: 1em;
+  height: 1em;
+  position: relative;
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+.p-service-faq-list__item-icon::before,
+.p-service-faq-list__item-icon::after {
+  content: "";
+  position: absolute;
+  background-color: $black;
+  border-radius: 1px;
+  transition: 0.3s;
+}
+
+/* 横線 */
+.p-service-faq-list__item-icon::before {
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  transform: translateY(-50%);
+}
+
+/* 縦線（＋用） */
+.p-service-faq-list__item-icon::after {
+  left: 50%;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  transform: translateX(-50%);
+}
+
+/* is-open 時は縦線を消して「−」にする */
+.p-service-faq-list__item.is-open .p-service-faq-list__item-icon::after {
+  opacity: 0;
+}
+
+.p-service-faq-more {
+  margin-top: myrem(40);
+
+  @include mq(md) {
+    margin-top: myrem(50);
+  }
+}
+
+.p-service-faq-more__btn {
+  margin-inline: auto;
+  width: myrem(260);
+  height: myrem(64);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: myrem(8);
+  padding: 0 myrem(20);
+  font-family: $font-main;
+  font-size: myrem(18);
+  color: $white;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    linear-gradient(180deg, #000000 0%, #929292 100%);
+  border: none;
+  border-radius: myrem(40);
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  position: relative;
+
+  @include mq(md) {
+    width: myrem(300);
+    height: myrem(60);
+    margin: 0 auto;
+  }
+}
+
+.p-service-faq-more__arrow {
+  position: absolute;
+  display: inline-block;
+  width: myrem(12);
+  height: myrem(12);
+  top: 30%;
+  right: calc(30 / 260 * 100%);
+}
+
+.p-service-faq-more__arrow::before,
+.p-service-faq-more__arrow::after {
+  content: "";
+  position: absolute;
+  width: myrem(1);
+  height: myrem(12);
+  background-color: $white;
+  border-radius: 9999px;
+  top: 50%;
+  left: calc(50% + 1px);
+  transform-origin: 50% calc(100% - 1px);
+}
+
+.p-service-faq-more__arrow::before {
+  transform: rotate(45deg);
+}
+
+.p-service-faq-more__arrow::after {
+  left: myrem(6);
+  transform: rotate(-45deg);
+}
