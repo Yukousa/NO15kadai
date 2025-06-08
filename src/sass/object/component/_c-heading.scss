@@ -62,11 +62,9 @@
 背景色$black_base用の　装飾線
 ***************************/
 .c-heading01--linwhite {
-
 }
 
 .c-heading01--linwhite::before {
-
 }
 
 .c-heading01--lineWhite::before {
@@ -163,7 +161,6 @@
 
 .c-heading01--message::before,
 .c-heading01--works::before,
-.c-heading01--service::before,
 .c-heading01--profile::before,
 .c-heading01--profile02::before,
 .c-heading01--news::before,
@@ -196,6 +193,43 @@
     font-size: myrem(60);
     top: myrem(-58);
     left: myrem(70);
+  }
+}
+
+.c-heading01--service {
+  font-size: myrem(14);
+  letter-spacing: 0.02em;
+  padding-left: myrem(30);
+  top: 0;
+
+  @include mq(md) {
+    font-size: myrem(16);
+    padding-left: myrem(42);
+  }
+}
+
+.c-heading01--service::before {
+  top: 50%;
+  left: myrem(4);
+  width: myrem(16);
+  height: myrem(2);
+
+  @include mq(md) {
+    width: myrem(32);
+    height: myrem(4);
+    left: 0;
+  }
+}
+
+.c-heading01--service::after {
+  font-size: myrem(36);
+  top: myrem(-37);
+  left: 0;
+
+  @include mq(md) {
+    font-size: myrem(60);
+    top: myrem(-58);
+    left: 0;
   }
 }
 
@@ -281,7 +315,7 @@
 /***************************
   c-heading02 背景黒グラデーション
   ***************************/
-  .c-subtitle .c-heading02 {
+.c-subtitle .c-heading02 {
   font-family: $font-main;
   font-size: myrem(20);
   font-weight: 900;
@@ -297,6 +331,5 @@
     font-size: myrem(34);
     margin-top: myrem(0);
     letter-spacing: 0.22em;
-
   }
 }

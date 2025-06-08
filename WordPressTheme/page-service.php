@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <main class="p-service">
-    <section class="p-single-voice__fv c-sub-fv">
+    <section class="p-service__fv c-sub-fv">
         <!-- フロントページ以外のfv -->
         <?php get_template_part('template-parts/sections/section-sub-fv'); ?>
     </section>

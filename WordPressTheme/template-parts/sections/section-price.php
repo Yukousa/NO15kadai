@@ -1,7 +1,7 @@
     <div class="p-service-price__inner">
 
         <div class="c-heading c-heading--service">
-            <h2 class="c-heading01 c-heading01--lineWhite c-heading01--service" data-en="price">料金</h2>
+            <h3 class="c-heading01 c-heading01--lineWhite c-heading01--service" data-en="price">料金</h3>
         </div>
 
         <!-- 料金表のタイル表示 -->

@@ -46,5 +46,12 @@ voice用　
 }
 
 /*************************
-works用　
+service用　
 *************************/
+.c-sub-fv__image--service {
+
+    @include mq(md) {
+
+      margin-top: myrem(60);
+    }
+} 

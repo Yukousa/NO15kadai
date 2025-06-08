@@ -8,6 +8,14 @@
   }
 }
 
+.p-service__fv {
+
+    @include mq(md) {
+      padding-top: myrem(140);
+    }
+}
+
+
 .p-service__title {
   width: 100%;
 
@@ -62,7 +70,7 @@
 
   @include mq(md) {
     font-size: myrem(60);
-
+    padding: myrem(0) 0 myrem(100);
   }
 }
 
@@ -72,7 +80,7 @@
   @include mq(md) {
     max-width: $innerWidth;
     margin: 0 auto;
-    padding: myrem(110) myrem(70) myrem(0);
+    padding: myrem(100) myrem(70) myrem(0);
   }
 }
 
