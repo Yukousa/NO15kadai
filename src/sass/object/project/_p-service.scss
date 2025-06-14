@@ -63,20 +63,21 @@
 
 .p-service-price {
   width: 100%;
-  padding: myrem(90) 0 myrem(100);
+  padding: myrem(90) 0 0;
   background-color: $black_base;
   font-size: myrem(36);
 
-
   @include mq(md) {
     font-size: myrem(60);
-    padding: myrem(0) 0 myrem(100);
+    padding: 0;
+    
   }
 }
 
 .p-service-price__inner {
   width: 100%;
   background-color: $black_base;
+  
   @include mq(md) {
     max-width: $innerWidth;
     margin: 0 auto;
@@ -129,11 +130,11 @@
 
 // FAQ
 .p-service__faq {
-  padding: myrem(110) myrem(20);
+  padding: myrem(106) 0 myrem(60);
   background-color: $black_base;
 
   @include mq(md) {
-    padding: myrem(180) 0;
+    padding: myrem(180) myrem(70) myrem(115);
   }
 }
 
@@ -165,23 +166,24 @@
 }
 
 .p-service-faq__list {
-  margin-top: myrem(40);
+  margin-top: myrem(65);
+  padding: 0 myrem(20);
 
   @include mq(md) {
     width: 100%;
     max-width: 1440px;
-    padding: 0 myrem(70);
-    margin: myrem(40) auto 0;
+    padding: 0;
+    margin: myrem(65) auto 0;
   }
 }
 
 .p-service-faq-list__item {
   background-color: $white;
   border-radius: myrem(10);
-  padding: myrem(24) myrem(16);
+  padding: myrem(25) myrem(16) myrem(20);
 
   @include mq(md) {
-    padding: myrem(20) myrem(30) myrem(14);
+    padding: myrem(19) myrem(35) myrem(17);
   }
 }
 
@@ -205,8 +207,10 @@
 }
 
 .p-service-faq-list__item-text {
+  letter-spacing: 0.04em;
   @include mq(md) {
     font-size: myrem(20);
+    letter-spacing: 0.14em;
   }
 }
 
@@ -217,6 +221,7 @@
   letter-spacing: 0.03em;
   line-height: calc(24 / 18);
   text-align: left;
+  padding-bottom: myrem(3);
 
   display: flex;
   justify-content: space-between;
@@ -228,6 +233,7 @@
     width: 100%;
     max-width: 1300px;
     margin: 0 auto;
+    padding-bottom: 0;
     gap: myrem(23);
     letter-spacing: 0.11em;
   }
@@ -237,7 +243,7 @@
   font-family: "Open Sans";
   font-size: myrem(14);
   font-weight: 400;
-  letter-spacing: 0;
+  letter-spacing: 0.03em;
   line-height: calc(26 / 14);
   max-height: 0;
   opacity: 0;
@@ -246,16 +252,20 @@
   will-change: max-height, opacity;
   transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out,
     padding 0.5s ease-in-out;
+
+      @include mq(md) {
+
+      }
 }
 
 .p-service-faq-list__item.is-open .p-service-faq-list__item-answer {
   max-height: myrem(500); /* 中身の高さより少し多めに */
   opacity: 1;
-  padding-top: myrem(19);
+  padding-top: myrem(16);
 
   @include mq(md) {
-    padding: myrem(10) 0 0 myrem(62);
-    letter-spacing: 0.14em;
+    padding: myrem(15) 0 0 myrem(69);
+    letter-spacing: 0.18em;
     line-height: 2;
   }
 }
@@ -308,7 +318,7 @@
   margin-top: myrem(40);
 
   @include mq(md) {
-    margin-top: myrem(50);
+    margin-top: myrem(52);
   }
 }
 
@@ -323,6 +333,7 @@
   padding: 0 myrem(20);
   font-family: $font-main;
   font-size: myrem(18);
+  letter-spacing: 0.06em;
   color: $white;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
     linear-gradient(180deg, #000000 0%, #929292 100%);
@@ -345,7 +356,7 @@
   width: myrem(12);
   height: myrem(12);
   top: 30%;
-  right: calc(30 / 260 * 100%);
+  right: calc(32 / 260 * 100%);
 }
 
 .p-service-faq-more__arrow::before,
@@ -353,7 +364,7 @@
   content: "";
   position: absolute;
   width: myrem(1);
-  height: myrem(12);
+  height: myrem(10);
   background-color: $white;
   border-radius: 9999px;
   top: 50%;

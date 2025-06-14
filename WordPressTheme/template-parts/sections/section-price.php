@@ -1,7 +1,7 @@
     <div class="p-service-price__inner">
 
         <div class="c-heading c-heading--service">
-            <h3 class="c-heading01 c-heading01--lineWhite c-heading01--service" data-en="price">料金</h3>
+            <h3 class="c-heading01 c-heading01--lineWhite c-heading01--serviceH3" data-en="price">料金</h3>
         </div>
 
         <!-- 料金表のタイル表示 -->
@@ -11,7 +11,7 @@
                 <div class="c-card-price__title">お見積もり</div>
                 <div class="c-card-price__body c-card-price-body c-card-price-body--estimate">
                     <p class="c-card-price-body__text">
-                        <span class="js-count-num">100</span><span>円</span>
+                        <span class="js-count-num">0</span><span>円</span>
                     </p>
                 </div>
             </div>

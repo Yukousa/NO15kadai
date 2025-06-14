@@ -46,12 +46,14 @@ voice用　
 }
 
 /*************************
-service用　
+service, profile用　
 *************************/
-.c-sub-fv__image--service {
+.c-sub-fv__image--service,
+.c-sub-fv__image--profile  {
 
     @include mq(md) {
 
       margin-top: myrem(60);
     }
 } 
+

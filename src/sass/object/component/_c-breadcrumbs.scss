@@ -1,6 +1,5 @@
 @use "global" as *;
 
-
 .c-breadcrumbs {
   width: fit-content;
   margin-left: auto;
@@ -14,14 +13,17 @@
   justify-content: flex-end;
 
   @include mq(md) {
+    width: 100%;
+    max-width: $innerWidth;
+    padding: 0 myrem(70);
     font-size: myrem(14);
-    margin-right: myrem(70);
+    margin: 0 auto;
   }
 }
 
 .c-breadcrumbs a,
 .c-breadcrumbs span {
-    display: inline-block;
+  display: inline-block;
 }
 
 .c-breadcrumbs__top {
@@ -31,7 +33,6 @@
   @include mq(md) {
     padding: myrem(20) myrem(10);
   }
-
 }
 
 .c-breadcrumbs__current {
@@ -39,14 +40,13 @@
   text-transform: uppercase;
   padding: myrem(10) myrem(4);
 
-    @include mq(md) {
-      padding: myrem(20) myrem(10);
-    }
-
+  @include mq(md) {
+    padding: myrem(20) myrem(10);
+  }
 }
 
 .c-breadcrumbs__separator {
-  margin: 0 ;
+  margin: 0;
   padding: myrem(10) 0;
 
   @include mq(md) {
@@ -57,10 +57,9 @@
 .c-breadcrumbs__wrapper {
   width: 100%;
 
-    @include mq(md) {
-      max-width: $innerWidth;
-      margin: 0 auto;
-    }
+  @include mq(md) {
+    margin: 0 auto;
+  }
 }
 
 /****************************
@@ -68,18 +67,22 @@ service　用
 ****************************/
 .c-breadcrumbs__wrapper--service {
   background-color: $black_base;
+}
 
-  }
-  
-  .c-breadcrumbs__wrapper--profile {
-    background-color: $black_base;
-  }
-  
+/****************************
+sprofile　用
+****************************/
+
+.c-breadcrumbs__wrapper--profile {
+  background-color: $black_base;
+}
+
 /****************************
 news　用
 ****************************/
 .c-breadcrumbs__wrapper--news {
-margin-top: myrem(50);
+  margin-top: myrem(50);
+  max-width: $innerWidth;
 
   @include mq(md) {
     margin-top: myrem(10);
@@ -97,9 +100,9 @@ archive-voice用
 .p-archive-voice .c-breadcrumbs__wrapper--voice {
   margin-top: myrem(30);
 
-    @include mq(md) {
-      margin-top: myrem(40);
-    }
+  @include mq(md) {
+    margin-top: myrem(40);
+  }
 }
 
 /****************************
@@ -108,7 +111,7 @@ archive-works用
 .p-archive-works .c-breadcrumbs__wrapper--works {
   margin-top: myrem(75);
 
-    @include mq(md) {
-      margin-top: myrem(40);
-    }
+  @include mq(md) {
+    margin-top: myrem(40);
+  }
 }

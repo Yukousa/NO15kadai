@@ -26,7 +26,9 @@ jQuery(function ($) {
     return false;
   });
 
-  // スムーススクロール (絶対パスのリンク先が現在のページであった場合でも作動。ヘッダーの高さ考慮。)
+  /*****************************
+スムーススクロール (絶対パスのリンク先が現在のページであった場合でも作動。ヘッダーの高さ考慮。)
+*****************************/
   $(document).on("click", 'a[href*="#"]', function () {
     let time = 400;
     let header = $("header").innerHeight();
@@ -38,7 +40,9 @@ jQuery(function ($) {
   });
 });
 
-// ハンバーガーボタンをクリックで開閉
+/*****************************
+ハンバーガーボタン
+*****************************/
 $(".js-hamburger").on("click", function () {
   $(this).toggleClass("is-active");
   $(".js-drawer").toggleClass("is-active");
@@ -52,15 +56,9 @@ $(".js-drawer-overlay, .js-drawer a").on("click", function () {
   $("body").removeClass("is-drawer-open");
 });
 
-// Swiper
-// 共通Swiper（.swiperに使っているもの）
-if (document.querySelector(".swiper")) {
-  new Swiper(".swiper", {
-    loop: true,
-  });
-}
-
-// FVアニメーション - タイピング風＋フェード
+/*****************************
+FVアニメーション - タイピング風＋フェード
+*****************************/
 const $typingParts = $(".typing-part");
 let partIndex = 0;
 let charIndex = 0;
@@ -130,8 +128,14 @@ if ($typingParts.length > 0) {
 }
 
 /*****************************
-   swiper
-   *****************************/
+swiper
+*****************************/
+// 共通Swiper（.swiperに使っているもの）
+if (document.querySelector(".swiper")) {
+  new Swiper(".swiper", {
+    loop: true,
+  });
+}
 
 // フロントページ FV の Swiper
 if (document.querySelector(".js-front-fv-swiper")) {
@@ -158,7 +162,7 @@ if (document.querySelector(".c-swiper-related")) {
     //   delay: 4000,
     //   disableOnInteraction: false,
     // },
-    
+
     navigation: {
       nextEl: ".c-swiper-related-nav__next",
       prevEl: ".c-swiper-related-nav__prev",
@@ -168,14 +172,38 @@ if (document.querySelector(".c-swiper-related")) {
         spaceBetween: 20,
         slidesPerView: 1.42,
         centeredSlides: false,
-
       },
       768: {
         slidesPerView: 3.85,
         centeredSlides: false,
         spaceBetween: 50,
-
       },
     },
   });
 }
+
+/*****************************
+service faq アコーディオンの開閉
+*****************************/
+$(".js-faq-toggle").on("click", function () {
+  const $item = $(this).closest(".p-service-faq-list__item");
+  $item.toggleClass("is-open");
+});
+// 「もっと見る」ボタンの処理
+$(".js-faq-more").on("click", function () {
+  $(".p-service-faq-list__item.is-hidden").each(function () {
+    const $item = $(this);
+
+    // ① 一旦非表示 → アニメでふわっと表示
+    $item
+      .hide()
+      .removeClass("is-hidden") // 表示状態にする
+      .slideDown(400); // ← アコーディオンと同じようにふわっと
+
+    // ② is-open クラスは付けない（閉じた状態のまま）
+  });
+
+  // ③ ボタンをフェードアウトで非表示に
+  $(this).fadeOut();
+});
+

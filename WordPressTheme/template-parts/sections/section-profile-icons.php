@@ -1,5 +1,5 @@
-    <h2 class="c-heading01 c-heading01--profile02" data-en="CODE SKILL">対応が可能なコーディングスキルと<br class="u-mobile">デザインデータ</h2>
-    <div class="p-profile-skill__inner p-profile-skill-inner">
+<div class="p-profile-skill__inner p-profile-skill-inner">
+        <h2 class="c-heading01 c-heading01--profile02" data-en="CODE SKILL">対応が可能なコーディングスキルと<br class="u-mobile">デザインデータ</h2>
 
         <div class="p-profile-skill-inner-box__wrapper-top">
             <!-- コーディング -->

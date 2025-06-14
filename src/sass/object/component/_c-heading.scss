@@ -25,7 +25,9 @@
   position: absolute;
 
   @include mq(md) {
+    width: 100%;
     max-width: $innerWidth;
+    margin: 0 auto;
     padding: 0 myrem(70);
   }
 }
@@ -159,8 +161,10 @@
   }
 }
 
+
 .c-heading01--message::before,
 .c-heading01--works::before,
+.c-heading01--service::before,
 .c-heading01--profile::before,
 .c-heading01--profile02::before,
 .c-heading01--news::before,
@@ -196,7 +200,7 @@
   }
 }
 
-.c-heading01--service {
+.c-heading01--serviceH3 {
   font-size: myrem(14);
   letter-spacing: 0.02em;
   padding-left: myrem(30);
@@ -208,7 +212,7 @@
   }
 }
 
-.c-heading01--service::before {
+.c-heading01--serviceH3::before {
   top: 50%;
   left: myrem(4);
   width: myrem(16);
@@ -221,7 +225,7 @@
   }
 }
 
-.c-heading01--service::after {
+.c-heading01--serviceH3::after {
   font-size: myrem(36);
   top: myrem(-37);
   left: 0;
@@ -236,15 +240,16 @@
 .c-heading01--profile02 {
   font-size: myrem(14);
   letter-spacing: 0.06em;
-  top: myrem(85);
+  top: myrem(-95);
   left: myrem(28);
   padding-left: myrem(22);
 
   @include mq(md) {
     font-size: myrem(16);
     padding-left: myrem(117);
-    top: myrem(110);
+    top: myrem(10);
     left: myrem(0);
+    margin: 0 auto;
   }
 }
 

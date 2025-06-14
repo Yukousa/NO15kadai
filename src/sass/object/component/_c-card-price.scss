@@ -26,6 +26,7 @@
   background-color: $white;
   color: $black;
   padding: myrem(20) myrem(6) myrem(10) myrem(10);
+  border-radius: myrem(4);
 
   @include mq(md) {
     padding: myrem(50) myrem(65);
@@ -51,7 +52,7 @@
 }
 
 .c-card-price-body--estimate {
-  margin-top: myrem(20);
+  margin-top: myrem(15);
   
     @include mq(md) {
         margin-top: myrem(90);
@@ -227,28 +228,32 @@
   font-weight: 700;
   font-size: myrem(14);
   letter-spacing: 0.04em;
-  width: myrem(150);
+  // width: myrem(150);
+  margin-left: myrem(5);
+
+
 
   @include mq(md) {
     font-size: myrem(32);
   }
 }
 
-// お見積り　カウントダウン用のスタイル
+// お見積り金額用のスタイル
 .c-card-price-body__text .js-count-num {
   font-size: myrem(70);
   font-family: $font-sub;
   display: inline-block;
-  min-width: 3ch; // 数字3桁分のスペースを保持
-  text-align: right; // 右揃えで自然に見せる
+  // min-width: 3ch; 
+  // 数字3桁分のスペースを保持
+  text-align: center;
+  transform: translateX(myrem(5));
+
 
   @include mq(md) {
     font-size: myrem(100);
   }
 }
 
-.c-card-price-body__image {
-}
 
 .c-card-price-body__image--basicFee {
   margin-top: myrem(15);

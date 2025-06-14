@@ -16,6 +16,7 @@
 .p-profile-skill__inner {
   padding: 0 myrem(20);
   margin-top: myrem(85);
+  position: relative;
 
   @include mq(md) {
     max-width: $innerWidth;
