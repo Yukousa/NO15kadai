@@ -9,7 +9,7 @@
   padding: myrem(100) 0 myrem(60);
 
   @include mq(md) {
-    padding-bottom: myrem(130);
+    padding-bottom: myrem(120);
   }
 }
 
@@ -34,12 +34,12 @@
 
   @include mq(md) {
     max-width: 1300px;
-    height: myrem(300);
-    padding: myrem(30) myrem(20) myrem(20) myrem(60);
+    height: myrem(310);
+    padding: myrem(30) myrem(20) myrem(30) myrem(60);
   }
 }
 
-.p-profile-skill-inner__box:not(:first-child) {
+.p-profile-skill-inner__box {
   margin-top: myrem(20);
 
   @include mq(md) {
@@ -68,7 +68,7 @@
 }
 
 .p-profile-skill-inner-box-icons--coding {
-  margin-top: myrem(30);
+  margin-top: myrem(25);
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(3, auto);
@@ -86,9 +86,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: myrem(15);
+  margin-top: myrem(27);
 
   @include mq(md) {
+    margin-top: myrem(20);
   }
 }
 
@@ -104,7 +105,6 @@
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(1, 1fr);
     margin-top: myrem(43);
-
   }
 }
 
@@ -200,6 +200,7 @@
 
   @include mq(md) {
     width: myrem(133);
+    aspect-ratio: 134 / 130;
     margin-right: myrem(30);
   }
 }
@@ -264,7 +265,7 @@
     grid-template-columns: calc(865 / 1300 * 100%) auto;
     grid-template-rows: repeat(1, 1fr);
     column-gap: myrem(20);
-    height: myrem(300);
+    height: myrem(310);
   }
 }
 // 2段目
@@ -277,7 +278,6 @@
     column-gap: myrem(20);
     margin-top: myrem(20);
     height: myrem(300);
-
   }
 }
 
@@ -285,7 +285,7 @@
 メイン部分
 ******************************/
 .p-profile__wrapper {
-  padding-top: myrem(60);
+  padding-top: myrem(50);
 
   @include mq(md) {
     max-width: 1440px;
@@ -298,21 +298,21 @@
   }
 }
 
-.p-profile__content {
+.p-profile__container {
   @include mq(md) {
     width: calc(950 / 1300 * 100%);
   }
 }
 
-.p-profile-content__body {
-  padding-bottom: myrem(45);
+.p-profile-container__body + .p-profile-container__body {
+  margin-top: myrem(55);
 
   @include mq(md) {
     padding-bottom: myrem(0);
   }
 }
 
-.p-profile-body__paragraph {
+.p-profile-container-body__wrapper {
   padding: 0 myrem(20);
 
   @include mq(md) {
@@ -320,15 +320,7 @@
   }
 }
 
-.p-profile-body__paragraph:not(:first-child) {
-  margin-top: myrem(60);
-
-  @include mq(md) {
-    margin-top: myrem(110);
-  }
-}
-
-.p-profile-body__paragraph--text {
+.p-profile-container-body-wrapper__text {
   margin-top: myrem(20);
   font-family: $font-main;
   font-size: myrem(16);
@@ -343,67 +335,40 @@
   }
 }
 
-.p-profile-body__image01 {
-  width: 100%;
-  margin-top: myrem(55);
-
-  @include mq(md) {
-    margin-top: myrem(80);
-    height: myrem(327);
-  }
+.p-profile-container-body-wrapper__text p:not(:first-child) {
+  margin-top: myrem(28);
 }
 
-.p-profile-body__image01 picture,
-.p-profile-body__image01 img {
+.p-profile-container-body__image {
   width: 100%;
-  object-fit: contain;
   aspect-ratio: 375 / 270;
+  margin-top: myrem(55);
 
   @include mq(md) {
     max-width: 950px;
     aspect-ratio: 950 / 327;
+    margin-top: myrem(80);
+    overflow: hidden;
+    position: relative;
+}
+}
+
+.p-profile-container-body__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  @include mq(md) {
+    position: absolute;
     object-fit: cover;
+    object-position: bottom;
   }
 }
 
-.p-profile-body__image02 {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: myrem(20);
-
-    @include mq(md) {
-      flex-direction: row;
-      margin-top: myrem(75);
-    }
-}
-
-.p-profile-body-image02__left,
-.p-profile-body-image02__right {
-  width: calc(282 / 375 * 100%);
-  aspect-ratio: 282 / 182;
-
-    @include mq(md) {
-      width: calc(462 / 950 * 100%);
-      aspect-ratio: 462 / 298;
-    
-        }
-}
-
-
-.p-profile-body-image02__right {
-  margin-left: auto;
-  margin-right: 0;
-
-    @include mq(md) {
-      margin-top: myrem(52);
-    }
-}
-
-.p-profile-body-image02__left img,
-.p-profile-body__image02__right img {
-  width: 100%;
-  object-fit: cover;
+/******************************
+スライダー
+******************************/
+.p-profile-body__slider {
+  margin-top: myrem(35);
 }
 
 /******************************
@@ -417,7 +382,7 @@
     width: calc(320 / 1300 * 100%);
     padding: 0;
     padding-bottom: myrem(20);
-    margin-top: myrem(10);
+    margin-top: myrem(5);
   }
 }
 
@@ -437,10 +402,10 @@
   letter-spacing: 0.1em;
   position: relative;
 
-    @include mq(md) {
-      font-size: myrem(28);
-      margin-top: myrem(0);
-    }
+  @include mq(md) {
+    font-size: myrem(28);
+    margin-top: myrem(0);
+  }
 }
 
 .p-profile-profile__title::after {
@@ -478,13 +443,12 @@
   letter-spacing: 0.1em;
   margin-top: myrem(10);
 
-    @include mq(md) {
-      margin-top: myrem(25);
-      line-height: calc(24 / 14);
-      line-height: 1.8;
-      letter-spacing: 0.14em;
-      padding-bottom: myrem(0);
-      margin-top: myrem(20);
-
-    }
+  @include mq(md) {
+    margin-top: myrem(25);
+    line-height: calc(24 / 14);
+    line-height: 1.8;
+    letter-spacing: 0.14em;
+    padding-bottom: myrem(0);
+    margin-top: myrem(20);
+  }
 }

@@ -15,40 +15,46 @@
 
     <!-- pc時　2カラム -->
     <section class="p-profile__wrapper">
-        <div class="p-profile__content p-profile-content">
-            <!-- 本文 -->
-            <article class="p-profile-content__body p-profile-content-body">
-                <!-- 段落1 -->
-                <div class="p-profile-body__paragraph p-profile-body-paragraph">
-                    <h3 class="c-subtitle__wrapper">
-                        <span class="c-subtitle c-subtitle--line1">丁寧な作業とコミュニケーションで</span>
-                        <span class="c-subtitle c-subtitle--line2">ハイクオリティなコードを納品。</span>
+        <div class="p-profile__container p-profile-container">
+            <!-- 本文1 -->
+            <article class="p-profile-container__body p-profile-container-body">
+                <!-- 本文１　タイトル -->
+                <div class="p-profile-container-body__wrapper p-profile-container-body-wrapper">
+                    <h3 class="c-subtitle">
+                        <span class="c-subtitle--line1"><?php the_field('section_heading_1_top'); ?></span>
+                        <span class="c-subtitle--line2 c-heading02"><?php the_field('section_heading_1_bottom'); ?></span>
                     </h3>
-                    <p class="p-profile-body__paragraph--ext">
-                        ここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入る<br><br>
-                        ここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入る
-                    </p>
+                    <!-- 本文１　テキスト -->
+                    <div class="p-profile-container-body-wrapper__text"><?php the_field('section_content_1'); ?></div>
                 </div>
+                <!-- 本文１　画像 -->
+                <?php $image1 = get_field('section_image_1'); ?>
+                <?php if ($image1): ?>
+                    <div class="p-profile-container-body__image">
+                        <img src="<?php echo esc_url($image1['url']); ?>" alt="">
+                    </div>
+                <?php endif; ?>
+            </article>
 
-                <!-- 画像1 -->
-                <div class="p-profile-body__image01">
-                    <picture>
-                        <source srcset="<?php echo get_template_directory_uri(); ?>/assets/images/image22.png" media="(max-width: 767px)">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/image23.png" alt="イメージ画像">
-                    </picture>
-                </div>
+            <!-- 本文2 -->
+            <article class="p-profile-container__body p-profile-container-body">
+                <!-- 本文１　タイトル -->
+                <div class="p-profile-container-body__wrapper p-profile-container-body-wrapper">
 
-                <!-- 段落2 -->
-                <div class="p-profile-body__paragraph p-profile-body-paragraph">
-                    <h3 class="c-subtitle__wrapper">
-                        <span class="c-subtitle c-subtitle--line1">丁寧な作業とコミュニケーションで</span>
-                        <span class="c-subtitle c-subtitle--line2 c-heading02">ハイクオリティなコードを納品。</span>
+                    <h3 class="c-subtitle">
+                        <span class="c-subtitle--line1"><?php the_field('section_heading_2_top'); ?></span>
+                        <span class="c-subtitle--line2 c-heading02"><?php the_field('section_heading_2_bottom'); ?></span>
                     </h3>
-                    <p class="p-profile-body__paragraph--text">
-                        ここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入る<br><br>
-                        ここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入る
-                    </p>
+                    <!-- 本文１　テキスト -->
+                    <div class="p-profile-container-body-wrapper__text"><?php the_field('section_content_2'); ?></div>
                 </div>
+                <!-- 本文１　画像 -->
+                <?php $image2 = get_field('section_image_2'); ?>
+                <?php if ($image2): ?>
+                    <div class="p-profile-container-body__image">
+                        <img src="<?php echo esc_url($image1['url']); ?>" alt="">
+                    </div>
+                <?php endif; ?>
             </article>
 
             <!-- スライダー -->
@@ -57,7 +63,7 @@
             </article>
         </div>
 
-        <!-- プロフィール -->
+        <!-- プロフィール pc時サイドバー -->
         <aside class="p-profile__profile p-profile-profile">
             <?php
             set_query_var('hide_back_button', true);

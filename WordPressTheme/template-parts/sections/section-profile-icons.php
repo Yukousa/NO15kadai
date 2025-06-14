@@ -28,6 +28,7 @@
                     </div>
                 </div>
             </div>
+           
             <!-- cms -->
             <div class="p-profile-skill-inner__box  p-profile-skill-inner-box">
                 <h3 class="p-profile-skill-inner-box__title">CMS</h3>
@@ -64,6 +65,7 @@
                     </div>
                 </div>
             </div>
+            
             <!-- コミュニケーション -->
             <div class="p-profile-skill-inner__box  p-profile-skill-inner-box">
                 <h3 class="p-profile-skill-inner-box__title">コミュニケーション</h3>

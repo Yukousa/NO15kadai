@@ -1,0 +1,34 @@
+@use "global" as *;
+
+.p-message-container__body {
+    padding: myrem(40) myrem(20)myrem(60);
+}
+
+.p-message-container-body__text {
+    margin-top: myrem(20);
+  font-family: $font-main;
+  font-size: myrem(16);
+  line-height: calc(28 / 16);
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  color: $black;
+
+  @include mq(md) {
+    letter-spacing: 0.14em;
+    line-height: 1.8;
+  }
+
+}
+
+.p-message-container-body__text p:not(:first-child) {
+    margin-top: myrem(28);
+  }
+  
+
+  .p-message-container__profile {
+    padding: 0 myrem(20);
+  }
+
+  .p-message__slider {
+    margin-top: myrem(60);
+  }
