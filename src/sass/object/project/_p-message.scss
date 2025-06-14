@@ -1,11 +1,41 @@
 @use "global" as *;
 
-.p-message-container__body {
-    padding: myrem(40) myrem(20)myrem(60);
+.p-message__container {
+
+      @include mq(md) {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        max-width: $innerWidth;
+        margin: 0 auto;
+        padding: myrem(30) myrem(70) 0;
+
+}
 }
 
+.p-message-container__body {
+  width: 100%;
+  padding: myrem(40) myrem(20) myrem(60);
+
+
+    @include mq(md) {
+        width: calc(950 / 1300 * 100%);
+        padding: 0;
+
+      }
+    
+  }
+
+  .p-message-container__body--02 {
+      @include mq(md) {
+        width: 100%;
+        padding-bottom: myrem(110);
+      }
+  }
+
+
 .p-message-container-body__text {
-    margin-top: myrem(20);
+  margin-top: myrem(20);
   font-family: $font-main;
   font-size: myrem(16);
   line-height: calc(28 / 16);
@@ -16,19 +46,48 @@
   @include mq(md) {
     letter-spacing: 0.14em;
     line-height: 1.8;
+    margin-top: myrem(40);
+
+  }
+}
+
+.p-message-container__body--02 .p-message-container-body__text {
+      @include mq(md) {
+        margin-top: myrem(30);
+    }
+}
+
+.p-message-container-body__text p:not(:first-child) {
+  margin-top: myrem(28);
+
+    @include mq(md) {
+        margin-top: myrem(25);
+    }
+
+}
+
+
+
+
+.p-message-container__profile {
+  padding: 0 myrem(20);
+
+  @include mq(md) {
+    width: calc(320 / 1300 * 100%);
+    padding: 0;
+    padding-bottom: myrem(20);
+    margin-top: myrem(15);
   }
 
 }
 
-.p-message-container-body__text p:not(:first-child) {
-    margin-top: myrem(28);
-  }
+.p-message__slider {
+  margin-top: myrem(60);
   
+    @include mq(md) {
+        margin-top: 0;
+        padding-bottom: myrem(75);
+    }
+}
 
-  .p-message-container__profile {
-    padding: 0 myrem(20);
-  }
 
-  .p-message__slider {
-    margin-top: myrem(60);
-  }

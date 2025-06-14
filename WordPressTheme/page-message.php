@@ -36,22 +36,24 @@
     </article>
 
     <!-- 本文2 -->
-    <article class="p-message-container__body p-message-container-body">
-        <!-- 本文１　タイトル -->
-        <h3 class="c-subtitle">
-            <span class="c-subtitle--line1"><?php the_field('section_heading_2_top'); ?></span>
-            <span class="c-subtitle--line2 c-heading02"><?php the_field('section_heading_2_bottom'); ?></span>
-        </h3>
-        <!-- 本文１　テキスト -->
-        <div class="p-message-container-body__text"><?php the_field('section_content_2'); ?></div>
-        <!-- 本文１　画像 -->
-        <?php $image2 = get_field('section_image_2'); ?>
-        <?php if ($image2): ?>
-            <div class="p-message-container-body__image">
-                <img src="<?php echo esc_url($image1['url']); ?>" alt="">
-            </div>
-        <?php endif; ?>
-    </article>
+    <section class="p-message__container p-message-container">
+         <article class="p-message-container__body p-message-container__body--02 p-message-container-body">
+             <!-- 本文１　タイトル -->
+             <h3 class="c-subtitle">
+                 <span class="c-subtitle--line1"><?php the_field('section_heading_2_top'); ?></span>
+                 <span class="c-subtitle--line2 c-heading02"><?php the_field('section_heading_2_bottom'); ?></span>
+             </h3>
+             <!-- 本文１　テキスト -->
+             <div class="p-message-container-body__text"><?php the_field('section_content_2'); ?></div>
+             <!-- 本文１　画像 -->
+             <?php $image2 = get_field('section_image_2'); ?>
+             <?php if ($image2): ?>
+                 <div class="p-message-container-body__image">
+                     <img src="<?php echo esc_url($image1['url']); ?>" alt="">
+                 </div>
+             <?php endif; ?>
+         </article>
+     </section>
 
     <!-- リンクバナー contact / faq -->
     <section class="p-section-wrapper">

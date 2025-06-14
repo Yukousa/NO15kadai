@@ -57,8 +57,16 @@ service, profile用　
     }
 } 
 /*************************
-service, profile用　
+message用　
 *************************/
+
+
 .c-sub-fv__image--message {
-  height: myrem(250);
+  aspect-ratio: 375 / 250;
+ 
+    @include mq(md) {
+      width: 100%;
+      aspect-ratio: 1440 / 480;
+      margin-top: myrem(60);
+      }
 }
