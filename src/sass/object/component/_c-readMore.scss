@@ -1,0 +1,18 @@
+@use "global" as *;
+
+.c-readMore {
+  display: flex;
+  justify-content: flex-end;
+  gap: myrem(10);
+  align-items: center;
+  font-family: $font-sub;
+  font-weight: 500;
+  font-size: myrem(22);
+  letter-spacing: 0.1em;
+  color: $black;
+  padding: myrem(10) 0;
+}
+
+.c-readMore--white {
+  color: $white;
+}

@@ -1,5 +1,8 @@
 @use "global" as *;
-// フロントページのfv
+
+/***********************************
+フロントページのfv
+***********************************/
 .p-front-fv {
   width: 100%;
   height: myrem(600);
@@ -33,7 +36,7 @@
     top: calc(433 / 750 * 100%);
 
     transform: translate(0, 0);
-    }
+  }
 }
 
 .p-front-fv-text__catch3 {
@@ -234,3 +237,72 @@
   }
 }
 
+/***********************************
+フロントページ works
+***********************************/
+.p-front__works {
+  padding-top: myrem(90);
+  background-color: $black_base;
+}
+
+.p-front__works__title {
+  padding: 0 myrem(20);
+}
+
+// swiper
+.p-front-works-swiper {
+  margin-top: myrem(42);
+  position: relative;
+}
+
+.p-front-works-swiper__nav {
+  width: 100%;
+  height: 100%;
+  pointer-events: none; // スライダーに干渉させない
+}
+
+.p-front-works-swiper-nav__prev,
+.p-front-works-swiper-nav__next {
+  position: absolute;
+  top: 42%;
+  z-index: 10;
+  pointer-events: auto; // ボタンはクリックできるように
+  cursor: pointer;
+}
+
+.p-front-works-swiper-nav__prev {
+  left: myrem(20);
+}
+
+.p-front-works-swiper-nav__next {
+  right: myrem(20);
+}
+
+.c-arrow01_left,
+.c-arrow01_right {
+  display: block;
+}
+
+/***********************************
+フロントページ content
+***********************************/
+
+/***********************************
+フロントページ message
+***********************************/
+
+/***********************************
+フロントページ voice
+***********************************/
+
+/***********************************
+フロントページ service
+***********************************/
+
+/***********************************
+フロントページ profile
+***********************************/
+
+/***********************************
+フロントページ news
+***********************************/

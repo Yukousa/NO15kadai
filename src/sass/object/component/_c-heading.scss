@@ -141,6 +141,45 @@
 }
 
 /***************************
+// フロントページ用
+***************************/
+.c-heading01--front {
+  font-size: myrem(13);
+  letter-spacing: 0.06em;
+  padding-left: myrem(30);
+
+  @include mq(md) {
+    font-size: myrem(16);
+    padding-left: myrem(117);
+  }
+}
+
+.c-heading01--front::before {
+  top: 50%;
+  left: myrem(4);
+  width: myrem(16);
+  height: myrem(2);
+
+  @include mq(md) {
+    width: myrem(32);
+    height: myrem(4);
+    left: myrem(70);
+  }
+}
+
+.c-heading01--front::after {
+  font-size: myrem(28);
+  top: myrem(-32);
+  left: 0;
+
+  @include mq(md) {
+    font-size: myrem(60);
+    top: myrem(-58);
+    left: myrem(70);
+  }
+}
+
+/***************************
 // その他　共通タイトル用
 ***************************/
 .c-heading01--message,
@@ -160,7 +199,6 @@
     padding-left: myrem(117);
   }
 }
-
 
 .c-heading01--message::before,
 .c-heading01--works::before,

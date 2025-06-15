@@ -154,8 +154,40 @@ if (document.querySelector(".js-front-fv-swiper")) {
   });
 }
 
+// フロントページ　worksの Swiper
+if (document.querySelector(".c-swiper-related--front")) {
+  new Swiper(".c-swiper-related--front", {
+    loop: true,
+    // autoplay: {
+    //   delay: 4000,
+    //   disableOnInteraction: false,
+    // },
+
+    navigation: {
+      nextEl: ".p-front-works-swiper-nav__next",
+      prevEl: ".p-front-works-swiper-nav__prev",
+    },
+    breakpoints: {
+      0: {
+        spaceBetween: 20,
+        slidesPerView: 1.25,
+        centeredSlides: false,
+      },
+      768: {
+        slidesPerView: 3.85,
+        centeredSlides: false,
+        spaceBetween: 50,
+      },
+    },
+  });
+}
+
 // 関連記事の Swiper（works・voice共通）
-if (document.querySelector(".c-swiper-related")) {
+// フロントページ専用の Swiper（.c-swiper-related--front）が存在しない場合のみ実行することで、初期化の重複を防ぐ
+if (
+  document.querySelector(".c-swiper-related") && // Swiperの共通クラスが存在する場合
+  !document.querySelector(".c-swiper-related--front") // フロントページではないことを確認
+) {
   new Swiper(".c-swiper-related", {
     loop: true,
     // autoplay: {
