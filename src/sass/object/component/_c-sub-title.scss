@@ -35,6 +35,10 @@
 .c-subtitle--line2 {
   padding: myrem(5) myrem(7) myrem(6);
   color: $white;
+  font-size: myrem(18);
+  line-height: calc(30 / 18);
+  font-weight: 900;
+  letter-spacing: 0.1em;
   background: linear-gradient(to right, #000 0%, #929292 100%);
   display: block;
 
@@ -45,4 +49,9 @@
     padding: myrem(0) myrem(15);
   }
 
+}
+
+// フロントページ用
+.p-front-container-content .c-subtitle--line2 {
+  width: fit-content;
 }

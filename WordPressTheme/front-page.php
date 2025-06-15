@@ -31,22 +31,61 @@
     <div class="p-front-works__readmore">
       <a href="#" class="c-readMore ">Read more<span class="c-arrow01_right"></span></a>
     </div>
-
   </section>
 
   <!-- pc時　2カラム 部分-->
   <section class="p-front__container p-front-container">
-    <div class="p-front__container p-front-container">
+    <div class="p-front-container__wrapper p-front-container-wrapper">
       <!-- container テキスト -->
-      <article class="p-front-container__content">
-
+      <article class="p-front-container__content p-front-container-content">
+        <p class="p-front-container-content__text">丁寧な作業とコミュニケーションで</p>
+        <p class="c-subtitle--line2">ハイクオリティなコードを納品。</p>
+        <p class="p-front-container-content__text">ここにテキストここにテキストここにテキスト<br>ここにテキストここにテキスト</p>
+        <p class="c-subtitle--line2">ここにテキストここにテキスト</p>
+        <p class="p-front-container-content__text">ここにテキストここにテキストここにテキスト<br>ここにテキストここにテキスト</p>
+        <p class="p-front-container-content__text">ここにテキストここにテキスト</p>
+        <p class="c-subtitle--line2">ここにテキスト</p>
       </article>
+      <!-- 画像 -->
       <div class="p-front-container__image">
-        <img src="" alt="">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/image20.png" alt="画像の説明"> </ｄ>
       </div>
-      <article class="p-front-container__message">
+      <!-- message -->
+      <article class="p-front-container__message p-front-container-message">
+        <div class="p-front-container-message__title">
+          <h2 class="c-heading01 c-heading01--front-message" data-en="message">メッセージ</h2>
+        </div>
+        <!-- sp 非表示 -->
+        <div class="p-front-container-message__wrapper u-desktop">
+          <p class="p-frontMain-main__text">丁寧な作業とコミュニケーションで</p>
+          <p class="c-heading02">ハイクオリティなコードを納品。</p>
 
+          <a href="/message/" class="c-readMore">Read more<span class="c-arrow01_right"></span></a>
+        </div>
+        <!-- 画像エリア -->
+        <div class="p-front-container-message__inner p-front-container-message-inner">
+          <div class="p-front-container-message-inner__bgGray"></div>
+          <div class="p-front-container-message-inner__image">
+            <div class="p-front-container-message-inner__image-01">
+              <img src="<?php echo get_template_directory_uri(); ?>/assets/images/president01.png" alt="画像の説明">
+            </div>
+            <!-- 背景の動く文字レイヤー -->
+            <div class="p-front-container-message-inner__text">
+              <p>CODO</p>
+              <span class="p-front-container-message-inner__text-second">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/assist.png" alt="画像の説明">
+              </span>
+            </div>
+            <div class="p-front-container-message-inner__image-02">
+              <img src="<?php echo get_template_directory_uri(); ?>/assets/images/image06.png" alt="画像の説明">
+            </div>
+            <div class="p-front-container-message-inner__image-03">
+              <img src="<?php echo get_template_directory_uri(); ?>/assets/images/image07.png" alt="画像の説明">
+            </div>
+          </div>
+        </div>
       </article>
+
     </div>
     <aside class="p-front__voice">
       <div class="p-front__voice__readmore">
