@@ -122,6 +122,7 @@
   text-align: center;
   padding: 0;
   color: $white;
+  font-size: myrem(13);
 }
 
 .c-heading01--whiteCenter::before {
@@ -139,8 +140,9 @@
 .c-heading01--whiteCenter::after {
   left: 50%;
   transform: translateX(-50%);
-  bottom: myrem(30);
+  bottom: myrem(35);
   color: $white;
+  font-size: myrem(28);
 
   @include mq(md) {
     transform: translateX(0);

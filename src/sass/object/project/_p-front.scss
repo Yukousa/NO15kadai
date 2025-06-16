@@ -537,7 +537,6 @@
   margin-top: myrem(20);
 }
 
-
 /***********************************
 フロントページ service
 ***********************************/
@@ -547,7 +546,7 @@
   background-image: url("../../assets/images/bg-grid_sp.png");
   background-repeat: no-repeat;
   background-size: cover;
-  padding: myrem(110) 0 myrem(50);
+  padding: myrem(110) 0 myrem(75);
 
   @include mq(md) {
     height: myrem(600);
@@ -731,7 +730,82 @@
 /***********************************
 フロントページ profile
 ***********************************/
+.p-front-profile {
+  width: 100%;
+  text-align: center;
+  margin-top: myrem(-25);
+  position: relative;
+  display: block;
+  transition: transform 0.3s ease;
+  @include mq(md) {
+    color: $white;
+    padding: myrem(105) myrem(100) myrem(80);
+    text-align: left;
+  }
+}
+
+.p-front-profile__overlay {
+  position: absolute;
+  inset: 0;
+  background: #959595;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+
+}
+
+.p-front-profile__content {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 40%;
+  left: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.p-front-profile__image {
+  width: 100%;
+  aspect-ratio: 375 / 268;
+  position: relative;
+
+  @include mq(md) {
+    max-width: 1240px;
+    aspect-ratio: 1240 / 343;
+    margin: 0 auto;
+  }
+}
+
+.p-front-profile__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.p-front-profile-content__text {
+  width: myrem(335);
+  font-family: "Open Sans";
+  font-size: myrem(14);
+  font-weight: bold;
+  letter-spacing: 0.06em;
+  line-height: 170%;
+  z-index: 10;
+  color: $white;
+  margin-top: myrem(30);
+ 
+
+  @include mq(md) {
+    width: myrem(507);
+    letter-spacing: 0.2em;
+    line-height: 170%;
+  }
+}
 
 /***********************************
 フロントページ news
 ***********************************/
+.p-frontNews__link {
+}
+
+.p-frontNews__link:hover {
+  transform: scale(1.1);
+}
