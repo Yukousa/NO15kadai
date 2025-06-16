@@ -101,14 +101,22 @@
 
 .c-heading01--white::after {
   color: $white;
-  font-size: myrem(20);
+  font-size: myrem(28);
   bottom: myrem(20);
   left: 0;
+  letter-spacing: 0;
 
   @include mq(md) {
     font-size: myrem(60);
   }
 }
+/***************************
+// フロントページ用
+***************************/
+.p-front__service .c-heading01--white {
+  top:17%;
+}
+
 
 .c-heading01--whiteCenter {
   text-align: center;

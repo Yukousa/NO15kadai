@@ -530,13 +530,12 @@
 フロントページ voice
 ***********************************/
 .p-front__voice {
-  padding: myrem(90) myrem(20);
+  padding: myrem(90) myrem(20) myrem(50);
 }
 
 .p-front-voice__list {
   margin-top: myrem(20);
 }
-
 
 
 /***********************************
@@ -548,7 +547,7 @@
   background-image: url("../../assets/images/bg-grid_sp.png");
   background-repeat: no-repeat;
   background-size: cover;
-  padding: myrem(90) 0 myrem(52);
+  padding: myrem(110) 0 myrem(50);
 
   @include mq(md) {
     height: myrem(600);
@@ -559,6 +558,10 @@
 }
 
 .p-front-service__header {
+  width: fit-content;
+  margin-left: auto;
+  padding: 0 myrem(20);
+
   @include mq(md) {
     width: 100%;
     max-width: 1440px;
@@ -573,7 +576,7 @@
 
 .p-front-service__bgTextWrapper {
   overflow: hidden;
-  margin-top: myrem(-20);
+  padding: myrem(20) 0 myrem(20);
 }
 
 .p-front-service-bgText {
