@@ -11,7 +11,7 @@
 }
 
 .c-card-post:hover {
-  // transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .c-card-post-inner__label {
@@ -81,7 +81,7 @@
 ****************************/
 .c-card-post--front {
   margin-top: myrem(35);
-  padding-bottom:0;
+  padding-bottom: 0;
   position: relative;
 }
 
@@ -146,6 +146,59 @@
     padding: myrem(10) myrem(15) myrem(0) myrem(12);
     letter-spacing: 0.08em;
   }
+}
+
+/****************************
+フロントページ　voice 用
+****************************/
+.p-front-voice-list__item:nth-child(n + 4) {
+  display: none;
+
+  @include mq(md) {
+    display: block;
+  }
+}
+
+.p-front-voice-list__item .c-card-post {
+  margin-top: myrem(30);
+}
+
+.p-front-voice-list__item:not(:first-child) {
+margin-top: myrem(-50);
+}
+
+.p-front-voice__list .c-card-post-inner__image {
+  width: 100%;
+  aspect-ratio: 335 / 227;
+}
+
+.p-front-voice__list .c-card-post-inner__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.p-front-voice__list .c-card-post-inner__label {
+  width: fit-content;
+  height: myrem(29);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 myrem(15);
+}
+
+.p-front-voice__list .c-card-post__summary {
+  width: calc(303 / 335 * 100%);
+  transform: translateY(-30%);
+  margin-left: 0;
+}
+
+.p-front-voice__list .c-card-post-summary--text {
+  line-height: 1.7;
+}
+
+.p-front-voice__readmore {
+margin-top: myrem(-5);
 }
 
 /****************************

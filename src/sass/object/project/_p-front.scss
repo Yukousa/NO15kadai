@@ -335,7 +335,6 @@
   @include mq(md) {
     margin-top: myrem(170);
   }
-
 }
 
 .p-front-container-message__title {
@@ -350,7 +349,6 @@
   @include mq(md) {
     margin-top: myrem(-30);
   }
-
 }
 
 .p-front-container-message-inner__bgGray {
@@ -422,7 +420,6 @@
   justify-content: flex-end;
   z-index: 0;
   aspect-ratio: 294 / 162;
-
 
   @include mq(md) {
     width: myrem(533);
@@ -502,8 +499,7 @@
   @include mq(md) {
     max-width: myrem(620);
     height: myrem(111);
-    flex-shrink: 0; 
-
+    flex-shrink: 0;
   }
 }
 
@@ -530,15 +526,204 @@
   }
 }
 
-
-
 /***********************************
 フロントページ voice
 ***********************************/
+.p-front__voice {
+  padding: myrem(90) myrem(20);
+}
+
+.p-front-voice__list {
+  margin-top: myrem(20);
+}
+
+
 
 /***********************************
 フロントページ service
 ***********************************/
+.p-front__service {
+  width: 100%;
+  position: relative;
+  background-image: url("../../assets/images/bg-grid_sp.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: myrem(90) 0 myrem(52);
+
+  @include mq(md) {
+    height: myrem(600);
+    background-image: url("../../assets/images/bg-grid_pc.png");
+    background-size: cover;
+    padding: myrem(100) 0 myrem(52);
+  }
+}
+
+.p-front-service__header {
+  @include mq(md) {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    height: myrem(102);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 myrem(400) 0 0;
+  }
+}
+
+.p-front-service__bgTextWrapper {
+  overflow: hidden;
+  margin-top: myrem(-20);
+}
+
+.p-front-service-bgText {
+  animation-name: loopText;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  will-change: transform;
+  white-space: nowrap;
+  z-index: 10;
+  color: $white;
+  font-weight: 900;
+  opacity: 0.5;
+  transform: translateX(0);
+  padding: 0 myrem(20);
+}
+
+.line1,
+.line2,
+.line3,
+.line4,
+.line5,
+.line6 {
+  display: inline-flex;
+  line-height: 1.2;
+}
+
+// 行別アニメーション速度
+.line1 {
+  animation-duration: 30s;
+}
+.line2 {
+  animation-duration: 50s;
+}
+.line3 {
+  animation-duration: 70s;
+}
+.line4 {
+  animation-duration: 30s;
+}
+.line5 {
+  animation-duration: 50s;
+}
+.line6 {
+  animation-duration: 60s;
+}
+
+.p-front-service-bgText span {
+  display: flex;
+  align-items: flex-end;
+}
+
+// PCでは非表示にする行
+.line4,
+.line5,
+.line6 {
+  @include mq(md) {
+    display: none;
+  }
+}
+
+// 各行のフォントサイズ
+.line1-01 {
+  font-size: myrem(40);
+  @include mq(md) {
+    font-size: myrem(98);
+  }
+}
+.line1-02 {
+  @include mq(md) {
+    font-size: myrem(50);
+  }
+}
+.line1-03 {
+  @include mq(md) {
+    font-size: myrem(70);
+  }
+}
+
+.line2-01 {
+  font-size: myrem(30);
+  @include mq(md) {
+    font-size: myrem(60);
+  }
+}
+.line2-02 {
+  @include mq(md) {
+    font-size: myrem(80);
+  }
+}
+.line2-03 {
+  @include mq(md) {
+    font-size: myrem(87);
+  }
+}
+
+.line3-01 {
+  font-size: myrem(40);
+  @include mq(md) {
+    font-size: myrem(98);
+  }
+}
+.line3-02 {
+  @include mq(md) {
+    font-size: myrem(70);
+  }
+}
+.line3-03 {
+  @include mq(md) {
+    font-size: myrem(87);
+  }
+}
+
+.line4 {
+  font-size: myrem(40);
+  @include mq(md) {
+    font-size: myrem(98);
+  }
+}
+
+.line5 {
+  font-size: myrem(30);
+  @include mq(md) {
+    font-size: myrem(80);
+  }
+}
+
+.line6 {
+  font-size: myrem(40);
+
+  @include mq(md) {
+    font-size: myrem(98);
+  }
+}
+.line6-02 {
+  font-size: myrem(30);
+}
+
+/* 逆方向クラス */
+.is-reverse {
+  animation-direction: reverse;
+}
+
+@keyframes loopText {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
 
 /***********************************
 フロントページ profile

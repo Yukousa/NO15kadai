@@ -143,8 +143,8 @@
 /***************************
 // フロントページ用
 ***************************/
-.c-heading01--front,
-.c-heading01--front-message {
+.c-heading01--front-message,
+.c-heading01--front-voice {
   font-size: myrem(13);
   letter-spacing: 0.06em;
   padding-left: myrem(30);
@@ -155,8 +155,8 @@
   }
 }
 
-.c-heading01--front::before,
-.c-heading01--front-message::before {
+.c-heading01--front-message::before,
+.c-heading01--front-voice::before {
   top: 50%;
   left: myrem(4);
   width: myrem(16);
@@ -169,8 +169,8 @@
   }
 }
 
-.c-heading01--front::after,
-.c-heading01--front-message::after {
+.c-heading01--front-message::after,
+.c-heading01--front-voice::after {
   font-size: myrem(28);
   top: myrem(-32);
   left: 0;

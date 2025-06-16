@@ -35,6 +35,7 @@
 
   <!-- pc時　2カラム 部分-->
   <section class="p-front__container p-front-container">
+    <!-- voice pc時 メイン部分　 -->
     <div class="p-front-container__wrapper p-front-container-wrapper">
       <!-- container テキスト -->
       <article class="p-front-container__content p-front-container-content">
@@ -87,10 +88,38 @@
       </article>
 
     </div>
-    <aside class="p-front__voice">
-      <div class="p-front__voice__readmore">
+    <!-- voice pc時　サイドバー　 -->
+    <aside class="p-front__voice p-front-voice">
+      <h2 class="c-heading01 c-heading01--front-voice" data-en="voice">お客様の声</h2>
+      <!-- voice 記事のリスト -->
+      <div class="p-front-voice__list p-front-voice-list">
+        <?php
+        $args = array(
+          'post_type'      => 'voice',
+          'posts_per_page' => 6,
+        );
+        $the_query = new WP_Query($args);
+
+        $index = 0;
+        if ($the_query->have_posts()) :
+          while ($the_query->have_posts()) : $the_query->the_post();
+            $index++;
+        ?>
+            <div class="p-front-voice-list__item" data-index="<?php echo $index; ?>">
+              <?php get_template_part('template-parts/cards/card-post'); ?>
+            </div>
+        <?php
+          endwhile;
+          wp_reset_postdata();
+        else :          echo '<p>まだ投稿がありません。</p>';
+        endif;
+        ?>
+      </div>
+
+      <div class="p-front-voice__readmore">
         <a href="#" class="c-readMore ">Read more<span class="c-arrow01_right"></span></a>
       </div>
+
     </aside>
   </section>
 
