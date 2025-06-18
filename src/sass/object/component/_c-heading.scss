@@ -153,20 +153,20 @@
 /***************************
 // フロントページ用
 ***************************/
-.c-heading01--front-message,
-.c-heading01--front-voice {
+.c-heading01--front {
   font-size: myrem(13);
   letter-spacing: 0.06em;
   padding-left: myrem(30);
 
   @include mq(md) {
     font-size: myrem(16);
-    padding-left: myrem(117);
+    padding-left: myrem(97);
+    margin: 0 auto;
+    position: static;
   }
 }
 
-.c-heading01--front-message::before,
-.c-heading01--front-voice::before {
+.c-heading01--front::before {
   top: 50%;
   left: myrem(4);
   width: myrem(16);
@@ -179,8 +179,7 @@
   }
 }
 
-.c-heading01--front-message::after,
-.c-heading01--front-voice::after {
+.c-heading01--front::after {
   font-size: myrem(28);
   top: myrem(-32);
   left: 0;

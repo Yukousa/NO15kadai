@@ -43,3 +43,24 @@
 
     }
 }
+
+/***************************
+ページ　news用
+***************************/
+.c-meta--front .c-meta__category {
+    width: fit-content;
+    
+  font-size: myrem(14);
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  line-height: calc(28 / 14);
+  font-family: $font-main;
+  color: $white;
+  background-color: $black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: myrem(15);
+  border-radius: myrem(15);
+
+}

@@ -40,3 +40,22 @@
 .c-news-list__pagenavi--sp {
   margin-top: myrem(55);
 }
+
+/***********************************
+フロントページ news
+***********************************/
+
+.p-front-news-inner__content .c-news-list-post__title {
+  padding: myrem(10) 0 myrem(12);
+  font-weight: 500;
+  font-size: myrem(16);
+  line-height: calc(28 / 16);
+  letter-spacing: 0.06em;
+  color: $black;
+  border-bottom: 1px solid #f5f5f5;
+
+  @include mq(md) {
+    padding: myrem(10) 0 myrem(15);
+  }
+
+}

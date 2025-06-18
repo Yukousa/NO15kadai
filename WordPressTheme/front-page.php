@@ -54,7 +54,7 @@
       <!-- message -->
       <article class="p-front-container__message p-front-container-message">
         <div class="p-front-container-message__title">
-          <h2 class="c-heading01 c-heading01--front-message" data-en="message">メッセージ</h2>
+          <h2 class="c-heading01 c-heading01--front" data-en="message">メッセージ</h2>
         </div>
         <!-- sp 非表示 -->
         <div class="p-front-container-message__wrapper u-desktop">
@@ -90,7 +90,7 @@
     </div>
     <!-- voice pc時　サイドバー　 -->
     <aside class="p-front__voice p-front-voice">
-      <h2 class="c-heading01 c-heading01--front-voice" data-en="voice">お客様の声</h2>
+      <h2 class="c-heading01 c-heading01--front" data-en="voice">お客様の声</h2>
       <!-- voice 記事のリスト -->
       <div class="p-front-voice__list p-front-voice-list">
         <?php
@@ -125,9 +125,11 @@
 
   <!-- フロント　service -->
   <section class="p-front__service p-front-service">
-    <div class="p-front-service__header">
+    <div class="p-front-service__header p-front-service-header">
       <h2 class="c-heading01 c-heading01--white c-heading01--front-service" data-en="service">サービス</h2>
-      <a href="/service/" class="c-readMore c-readMore--white">Read more<span class="c-arrow01_right c-arrow01_right--white"></span></a>
+      <div class="p-front-service-header__readMore">
+        <a href="/service/" class="c-readMore c-readMore--white">Read more<span class="c-arrow01_right c-arrow01_right--white"></span></a>
+      </div>
     </div>
     <div class="p-front-service__bgTextWrapper p-front-service-bgTextWrapper">
       <div class="p-front-service-bgText line1">
@@ -171,7 +173,24 @@
     </a>
   </section>
 
-
+  <!-- フロント　news -->
+  <section class="p-front-news">
+    <div class="p-front-news__inner p-front-news-inner">
+      <div class="p-front-news-inner__titleArea">
+        <h2 class="c-heading01 c-heading01--front" data-en="news">お知らせ</h2>
+        <div class="p-front-news__readmore p-front-news__readmore--desktop">
+          <a href="/news/" class="c-readMore">Read more<span class="c-arrow01_right"></span></a>
+        </div>
+      </div>
+      <!-- newsのリスト -->
+      <div class="p-front-news-inner__content p-front-news-inner-content">
+        <?php get_template_part('template-parts/loop/loop-news-list', null, ['modifier' => 'frontNews']); ?>
+      </div>
+    </div>
+    <div class="p-front-news__readmore u-mobile">
+      <a href="/news/" class="c-readMore">Read more<span class="c-arrow01_right"></span></a>
+    </div>
+  </section>
 
   <!-- リンクバナー contact / faq -->
   <section class="p-section-wrapper">

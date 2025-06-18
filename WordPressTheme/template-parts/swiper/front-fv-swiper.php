@@ -22,7 +22,7 @@
       <?php if ($pc_image && $sp_image): ?>
         <div class="swiper-slide">
           <picture>
-            <source srcset="<?php echo esc_url($sp_image['url']); ?>" media="(max-width: 767px)">
+            <source srcset="<?php echo esc_url($sp_image['url']); ?>" media="(max-width: 768px)">
             <img src="<?php echo esc_url($pc_image['url']); ?>" alt="<?php echo esc_attr($pc_image['alt']); ?>">
           </picture>
         </div>

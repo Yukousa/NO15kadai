@@ -1,6 +1,8 @@
 jQuery(function ($) {
-  // ページトップボタン
-  var topBtn = $(".js-pagetop");
+/*****************************
+   ページトップボタン
+*****************************/
+var topBtn = $(".js-pagetop");
   topBtn.hide();
 
   // ページトップボタンの表示設定
@@ -26,7 +28,7 @@ jQuery(function ($) {
     return false;
   });
 
-  /*****************************
+/*****************************
 スムーススクロール (絶対パスのリンク先が現在のページであった場合でも作動。ヘッダーの高さ考慮。)
 *****************************/
   $(document).on("click", 'a[href*="#"]', function () {
@@ -239,3 +241,13 @@ $(".js-faq-more").on("click", function () {
   $(this).fadeOut();
 });
 
+/*****************************
+フロントページの流れるテキスト
+*****************************/
+
+  // 対象を .p-frontService-bgText（かつ lineクラスが付いてる）に変更
+  var $lines = $(".p-frontService-bgText");
+
+  // シャッフルして2つ選び、.is-reverse を追加
+  var shuffled = $lines.toArray().sort(() => Math.random() - 0.5);
+  $(shuffled.slice(0, 2)).addClass("is-reverse");

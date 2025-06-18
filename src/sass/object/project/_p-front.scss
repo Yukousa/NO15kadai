@@ -6,7 +6,6 @@
 .p-front-fv {
   width: 100%;
   height: myrem(600);
-  overflow: hidden;
   position: relative;
 
   @include mq(md) {
@@ -14,8 +13,25 @@
   }
 }
 
-// フロントページのswiper
+// swiper
+.p-front-fv-swiper .swiper-slide {
+  width: 100%;
+  aspect-ratio: 375 / 600;
+  overflow: hidden;
 
+  @include mq(md) {
+    aspect-ratio: 1440 / 750;
+  }
+}
+
+.p-front-fv-swiper .swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+// テキスト部分
 .p-front-fv__text {
   width: 100%;
   min-height: myrem(240); /* テキストの高さを先に確保する */
@@ -132,6 +148,7 @@
   @include mq(md) {
     font-size: myrem(74);
     margin-top: myrem(10);
+    letter-spacing: -0.01em;
   }
 }
 
@@ -154,6 +171,7 @@
     font-size: myrem(99);
     font-weight: 800;
     margin-top: myrem(15);
+    letter-spacing: 0em;
   }
 }
 
@@ -243,10 +261,18 @@
 .p-front__works {
   padding: myrem(90) 0 myrem(35);
   background-color: $black_base;
+
+  @include mq(md) {
+    padding: myrem(120) 0 myrem(35);
+  }
 }
 
 .p-front__works__title {
   padding: 0 myrem(20);
+
+  @include mq(md) {
+    margin: 0 auto;
+  }
 }
 
 // swiper
@@ -294,10 +320,29 @@
 フロントページ content
 ***********************************/
 .p-front__container {
+  width: 100%;
+  @include mq(md) {
+    max-width: $innerWidth;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: myrem(30);
+  }
+}
+
+.p-front-container__wrapper {
+  @include mq(md) {
+    width: calc(1020 / 1440 * 100%);
+  }
 }
 
 .p-front-container__content {
   padding: myrem(40) myrem(20) 0;
+
+  @include mq(md) {
+    padding: myrem(40) 0 0 myrem(70);
+  }
 }
 
 .p-front-container-content__text {
@@ -315,6 +360,11 @@
   width: 100%;
   aspect-ratio: 375 / 222;
   margin-top: myrem(60);
+
+  @include mq(md) {
+    padding: myrem(40) 0 0 myrem(70);
+    aspect-ratio: 950 / 370;
+  }
 }
 
 .p-front-container__image img {
@@ -531,6 +581,11 @@
 ***********************************/
 .p-front__voice {
   padding: myrem(90) myrem(20) myrem(50);
+
+  @include mq(md) {
+    padding: myrem(90) myrem(70) myrem(50) 0;
+    width: calc(390 / 1440 * 100%);
+  }
 }
 
 .p-front-voice__list {
@@ -563,13 +618,11 @@
 
   @include mq(md) {
     width: 100%;
-    max-width: 1440px;
+    max-width: $innerWidth;
     margin: 0 auto;
+    padding: 0 myrem(70);
+
     height: myrem(102);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 myrem(400) 0 0;
   }
 }
 
@@ -590,6 +643,21 @@
   opacity: 0.5;
   transform: translateX(0);
   padding: 0 myrem(20);
+
+  @include mq(md) {
+    padding: 0;
+    width: 200%; // アニメーションに必要な横幅
+    white-space: nowrap;
+    animation-name: loopText;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    will-change: transform;
+    z-index: 10;
+    color: $white;
+    font-weight: 900;
+    opacity: 0.5;
+    transform: translateX(0);
+  }
 }
 
 .line1,
@@ -623,7 +691,7 @@
 }
 
 .p-front-service-bgText span {
-  display: flex;
+  display: inline-flex;
   align-items: flex-end;
 }
 
@@ -727,6 +795,15 @@
   }
 }
 
+.p-front-service-header__readMore {
+  width: fit-content;
+
+  @include mq(md) {
+    margin-left: auto;
+    margin-right: 0;
+  }
+}
+
 /***********************************
 フロントページ profile
 ***********************************/
@@ -738,8 +815,12 @@
   display: block;
   transition: transform 0.3s ease;
   @include mq(md) {
+    max-width: $innerWidth;
+    margin: 0 auto;
+
     color: $white;
-    padding: myrem(105) myrem(100) myrem(80);
+    padding: myrem(105) myrem(70) myrem(80);
+
     text-align: left;
   }
 }
@@ -750,7 +831,6 @@
   background: #959595;
   mix-blend-mode: multiply;
   pointer-events: none;
-
 }
 
 .p-front-profile__content {
@@ -791,7 +871,6 @@
   z-index: 10;
   color: $white;
   margin-top: myrem(30);
- 
 
   @include mq(md) {
     width: myrem(507);
@@ -803,9 +882,39 @@
 /***********************************
 フロントページ news
 ***********************************/
-.p-frontNews__link {
+.p-front-news {
+  width: 100%;
+  padding: myrem(90) myrem(20) myrem(48);
+
+  @include mq(md) {
+    max-width: $innerWidth;
+    margin: 0 auto;
+    padding: 0 myrem(70);
+  }
 }
 
-.p-frontNews__link:hover {
-  transform: scale(1.1);
+.p-front-news-inner__titleArea {
+  min-height: myrem(55);
+}
+
+.p-front-news-inner__content {
+  margin-top: myrem(0);
+}
+
+.p-front-news__readmore {
+  width: fit-content;
+  margin-right: 0;
+  margin-left: auto;
+  margin-top: myrem(-32);
+}
+
+.p-front-news__readmore--desktop {
+  display: none;
+
+  @include mq(md) {
+    display: block;
+  }
+}
+
+.p-front-news__readmore--mobile {
 }
