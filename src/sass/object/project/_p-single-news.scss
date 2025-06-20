@@ -7,7 +7,7 @@
 
   @include mq(md) {
     max-width: $innerWidth;
-    padding: 0 myrem(70) myrem(45);
+    padding: 0 0 myrem(45);
     margin-top: myrem(80);
     margin-inline: auto;
     display: flex;

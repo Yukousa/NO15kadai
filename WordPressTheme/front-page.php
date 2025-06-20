@@ -105,8 +105,8 @@
           while ($the_query->have_posts()) : $the_query->the_post();
             $index++;
         ?>
-            <div class="p-front-voice-list__item" data-index="<?php echo $index; ?>">
-              <?php get_template_part('template-parts/cards/card-post'); ?>
+            <div class="p-front-voice-list__item p-front-voice-list-item" data-index="<?php echo $index; ?>">
+              <?php get_template_part('template-parts/cards/card-front-voice'); ?>
             </div>
         <?php
           endwhile;

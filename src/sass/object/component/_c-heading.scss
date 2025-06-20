@@ -22,13 +22,13 @@
   font-weight: bold;
   letter-spacing: 0.06em;
   display: inline-block;
-  position: absolute;
+  position: relative;
 
   @include mq(md) {
     width: 100%;
     max-width: $innerWidth;
     margin: 0 auto;
-    padding: 0 myrem(70);
+    padding: 0;
   }
 }
 
@@ -160,9 +160,8 @@
 
   @include mq(md) {
     font-size: myrem(16);
-    padding-left: myrem(97);
+    padding-left: myrem(112);
     margin: 0 auto;
-    position: static;
   }
 }
 
@@ -186,7 +185,7 @@
 
   @include mq(md) {
     font-size: myrem(60);
-    top: myrem(-58);
+    top: myrem(-60);
     left: myrem(70);
   }
 }

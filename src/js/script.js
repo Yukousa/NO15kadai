@@ -157,8 +157,8 @@ if (document.querySelector(".js-front-fv-swiper")) {
 }
 
 // フロントページ　worksの Swiper
-if (document.querySelector(".c-swiper-related--front")) {
-  new Swiper(".c-swiper-related--front", {
+if (document.querySelector(".p-front-works-swiper")) {
+  new Swiper(".p-front-works-swiper", {
     loop: true,
     // autoplay: {
     //   delay: 4000,
@@ -172,7 +172,7 @@ if (document.querySelector(".c-swiper-related--front")) {
     breakpoints: {
       0: {
         spaceBetween: 20,
-        slidesPerView: 1.25,
+        slidesPerView: 1.18,
         centeredSlides: false,
       },
       768: {

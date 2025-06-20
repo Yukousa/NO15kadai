@@ -50,7 +50,7 @@ if (is_singular(['works', 'voice'])) {
         <?php while ($related_query->have_posts()) : $related_query->the_post(); ?>
           <div class="swiper-slide">
             <!-- 投稿記事カード -->
-            <?php get_template_part('template-parts/cards/card-post'); ?>
+            <?php get_template_part('template-parts/cards/card-related-swiper'); ?>
           </div>
         <?php endwhile; ?>
       </div>

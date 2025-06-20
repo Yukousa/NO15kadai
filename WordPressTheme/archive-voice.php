@@ -13,7 +13,7 @@
       <div class="p-archive-voice-container__post">
         <?php while (have_posts()) : the_post(); ?>
           <!-- 投稿記事 -->
-          <?php get_template_part('template-parts/cards/card-post'); ?>
+          <?php get_template_part('template-parts/cards/card-archive'); ?>
         <?php endwhile; ?>
       </div>
     <?php endif; ?>

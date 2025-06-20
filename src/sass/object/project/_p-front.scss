@@ -14,9 +14,15 @@
 }
 
 // swiper
+.p-front-fv-swiper .swiper-wrapper {
+  @include mq(md) {
+    height: myrem(750);
+  }
+}
+
 .p-front-fv-swiper .swiper-slide {
   width: 100%;
-  aspect-ratio: 375 / 600;
+  height: 100%;
   overflow: hidden;
 
   @include mq(md) {
@@ -26,14 +32,18 @@
 
 .p-front-fv-swiper .swiper-slide img {
   width: 100%;
-  height: 100%;
+  height: myrem(600);
   object-fit: cover;
   display: block;
+
+  @include mq(md) {
+    height: myrem(750);
+  }
 }
 
 // テキスト部分
 .p-front-fv__text {
-  width: 100%;
+  width: fit-content;
   min-height: myrem(240); /* テキストの高さを先に確保する */
   position: absolute;
   top: 50%;
@@ -46,17 +56,15 @@
 
   @include mq(md) {
     min-height: myrem(240); /* テキストの高さを先に確保する */
-    max-width: 1300px;
+    width: fit-content;
     left: myrem(70);
-    // bottom: myrem(85);
     top: calc(433 / 750 * 100%);
-
     transform: translate(0, 0);
   }
 }
 
 .p-front-fv-text__catch3 {
-  width: fit-content;
+  width: 100%;
   display: inline-flex;
   align-items: baseline;
   font-family: $font-sub;
@@ -148,7 +156,6 @@
   @include mq(md) {
     font-size: myrem(74);
     margin-top: myrem(10);
-    letter-spacing: -0.01em;
   }
 }
 
@@ -171,7 +178,6 @@
     font-size: myrem(99);
     font-weight: 800;
     margin-top: myrem(15);
-    letter-spacing: 0em;
   }
 }
 
@@ -263,7 +269,7 @@
   background-color: $black_base;
 
   @include mq(md) {
-    padding: myrem(120) 0 myrem(35);
+    padding: myrem(115) 0 myrem(35);
   }
 }
 
@@ -272,13 +278,71 @@
 
   @include mq(md) {
     margin: 0 auto;
+    padding: 0;
   }
 }
 
 // swiper
 .p-front-works-swiper {
-  margin-top: myrem(42);
+  margin-top: myrem(35);
   position: relative;
+}
+
+.p-front-works-swiper .swiper-slide {
+  width: 100%;
+  aspect-ratio: 315 / 300;
+}
+
+.p-front-works-swiper__card {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.p-front-works-swiper-card__label {
+  width: fit-content;
+  color: $white;
+  background-color: $black;
+  font-size: myrem(14);
+  font-family: "Open Sans";
+  font-weight: 800;
+  line-height: calc(28 / 14);
+  letter-spacing: 0.1em;
+  height: myrem(25);
+  display: inline-block;
+  position: absolute;
+  padding: 0 myrem(6);
+  top: 0;
+  right: 0;
+}
+
+.p-front-works-swiper-card__image {
+  width: 100%;
+  aspect-ratio: 315 / 200;
+  padding-left: myrem(17);
+}
+
+.p-front-works-swiper-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.p-front-works-swiper-card__summary {
+  width: calc(257 / 314 * 100%);
+  background-color: $white;
+  transform: translateY(-20%);
+  padding: myrem(8) myrem(20) myrem(10) myrem(17);
+
+}
+
+.p-front-works-swiper-card__summary-text {
+  font-family: $font-main;
+  font-weight: 500;
+  font-size: myrem(14);
+  line-height: calc(26 / 14);
+  letter-spacing: 0.06em;
+
 }
 
 .p-front-works-swiper__nav {
@@ -290,7 +354,7 @@
 .p-front-works-swiper-nav__prev,
 .p-front-works-swiper-nav__next {
   position: absolute;
-  top: 42%;
+  top: 30%;
   z-index: 10;
   pointer-events: auto; // ボタンはクリックできるように
   cursor: pointer;
@@ -592,6 +656,64 @@
   margin-top: myrem(20);
 }
 
+.p-front-voice-list__item {
+  padding-bottom: myrem(70);
+}
+
+.p-front-voice-list-item__card {
+  width: 100%;
+  position: relative;
+}
+
+.p-front-voice-list-item__card  + .p-front-voice-list-item__card {
+  margin-top: myrem(30);
+} 
+
+.p-front-voice-list-item-card__label {
+  width: fit-content;
+  height: myrem(31);
+  font-family: "Open Sans";
+  font-weight: 800;
+  font-size: myrem(14);
+  line-height: calc(28 / 14);
+  letter-spacing: 0.1em;
+  color: $white;
+  background-color: $black;
+  padding: myrem(6) myrem(13);
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.p-front-voice-list-item-card__image {
+  width: 100%;
+  aspect-ratio: 335 / 227;
+}
+
+.p-front-voice-list-item-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.p-front-voice-list-item-card__summary {
+  width: calc(303 / 335 * 100%);
+  background-color: $white;
+  padding: myrem(10) myrem(15);
+  position: absolute;
+  bottom: myrem(-30);
+}
+
+.p-front-voice-list-item-card-text {
+font-family: $font-main;
+font-weight: 500;
+font-size: myrem(14);
+line-height: calc(24 / 14);
+letter-spacing: 0.06em;
+
+
+}
+
 /***********************************
 フロントページ service
 ***********************************/
@@ -620,7 +742,7 @@
     width: 100%;
     max-width: $innerWidth;
     margin: 0 auto;
-    padding: 0 myrem(70);
+    padding: 0;
 
     height: myrem(102);
   }
@@ -819,7 +941,7 @@
     margin: 0 auto;
 
     color: $white;
-    padding: myrem(105) myrem(70) myrem(80);
+    padding: myrem(105) 0 myrem(80);
 
     text-align: left;
   }
@@ -889,7 +1011,7 @@
   @include mq(md) {
     max-width: $innerWidth;
     margin: 0 auto;
-    padding: 0 myrem(70);
+    padding: 0;
   }
 }
 

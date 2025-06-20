@@ -20,7 +20,7 @@
 
   @include mq(md) {
     max-width: $innerWidth;
-    padding: myrem(80) myrem(70) 0;
+    padding: myrem(80) 0 0;
     margin-top: myrem(-10);
     margin-inline: auto;
   }

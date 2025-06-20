@@ -13,11 +13,11 @@ if (is_front_page()) {
 
   if ($works_query->have_posts()) :
 ?>
-    <div class="swiper c-swiper-related c-swiper-related--front">
+    <div class="swiper p-front-works__swiper p-front-works-swiper">
       <div class="swiper-wrapper">
         <?php while ($works_query->have_posts()) : $works_query->the_post(); ?>
           <div class="swiper-slide">
-            <?php get_template_part('template-parts/cards/card-post'); ?>
+            <?php get_template_part('template-parts/cards/card-front-works-swiper'); ?>
           </div>
         <?php endwhile; ?>
       </div>
