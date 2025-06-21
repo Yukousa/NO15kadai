@@ -75,7 +75,7 @@
 }
 
 /***************************
-ページ下　contact/faq　用
+フロントページ service　用
 ***************************/
 .c-heading01--white {
   width: fit-content;
@@ -110,6 +110,43 @@
     font-size: myrem(60);
   }
 }
+
+/***************************
+フロントページ contact,faq　用
+***************************/
+.c-heading01--white-small {
+  width: fit-content;
+  font-size: myrem(13);
+  color: $white;
+  left: myrem(20);
+  padding-left: myrem(30);
+
+  @include mq(md) {
+    font-size: myrem(16);
+    top: 56%;
+    left: myrem(70);
+    padding: 0 myrem(50);
+  }
+}
+
+.c-heading01--white-small::before {
+  height: myrem(4);
+  top: 50%;
+  left: myrem(4);
+}
+
+.c-heading01--white-small::after {
+  color: $white;
+  font-size: myrem(20);
+  bottom: myrem(20);
+  left: 0;
+  letter-spacing: 0;
+
+  @include mq(md) {
+    font-size: myrem(60);
+  }
+}
+
 /***************************
 // フロントページ用
 ***************************/

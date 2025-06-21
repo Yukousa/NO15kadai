@@ -1,6 +1,6 @@
 @use "global" as *;
 
-.p-section-wrapper {
+.p-section-banner {
   @include mq(md) {
     display: flex;
     justify-content: center;
@@ -8,36 +8,51 @@
   }
 }
 
-.p-section-wrapper__item {
+.p-section-banner__item {
   width: 100%;
   aspect-ratio: 375 / 225;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 60% center;
   position: relative;
-  padding-top: myrem(110);
+  // padding-top: myrem(110);
 
   @include mq(md) {
     aspect-ratio: 720 / 410;
   }
 }
 
-.p-section-wrapper__item--contact {
+.p-section-banner__item--contact {
   background-image: url("../../assets/images/image10.png");
   display: block;
 }
 
+.p-section-banner__item--contact {
+  position: relative;
+}
 
-.p-section-wrapper__item--faq {
+.p-section-banner__item--faq {
+  position: relative;
+}
+
+
+.p-section-banner__item--faq {
   background-image: url("../../assets/images/image09.png");
   display: block;
 }
 
 
-.p-section-wrapper__overlay {
+.p-section-banner__overlay {
   position: absolute;
   inset: 0;
   background: rgba(0, 0, 0, 0.5);
   mix-blend-mode: multiply;
   pointer-events: none;
+}
+
+.p-section-banner__title--contact,
+.p-section-banner__title--faq {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 }

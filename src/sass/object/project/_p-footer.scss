@@ -4,7 +4,7 @@
   color: $white;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
     linear-gradient(180deg, #000000 0%, #929292 100%);
-  padding: myrem(65) myrem(35) myrem(30);
+  padding: myrem(65) myrem(40) myrem(30);
 
   @include mq(md) {
     padding: myrem(62) myrem(70) myrem(19);
