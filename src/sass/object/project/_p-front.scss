@@ -817,7 +817,7 @@
     height: myrem(600);
     background-image: url("../../assets/images/bg-grid_pc.png");
     background-size: cover;
-    padding: myrem(100) 0 myrem(52);
+    padding: myrem(140) 0 myrem(52);
   }
 }
 
@@ -827,11 +827,10 @@
 
   @include mq(md) {
     width: 100%;
-    max-width: $innerWidth;
+    max-width: 1440px;
     margin: 0 auto;
     padding: 0;
 
-    height: myrem(102);
   }
 }
 
@@ -841,12 +840,6 @@
   margin-right: auto;
 }
 
-.p-front-service-header__readMore {
-  width: fit-content;
-  margin-top: myrem(10);
-  margin-left: auto;
-  margin-right: myrem(20);
-}
 
 .p-front-service__bgTextWrapper {
   overflow: hidden;
@@ -1019,12 +1012,17 @@
 
 .p-front-service-header__readMore {
   width: fit-content;
+  margin-top: myrem(10);
+  margin-left: auto;
+  margin-right: myrem(20);
 
   @include mq(md) {
-    margin-left: auto;
-    margin-right: 0;
+    margin-right:calc(420 / 1440 * 100%);
+    margin-top: myrem(-60);
+
   }
 }
+
 
 /***********************************
 フロントページ profile
