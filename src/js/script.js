@@ -176,9 +176,9 @@ if (document.querySelector(".p-front-works-swiper")) {
         centeredSlides: false,
       },
       768: {
-        slidesPerView: 3.85,
+        slidesPerView: 3.9,
         centeredSlides: false,
-        spaceBetween: 50,
+        spaceBetween: 0,
       },
     },
   });

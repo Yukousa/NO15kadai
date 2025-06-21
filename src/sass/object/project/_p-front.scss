@@ -291,6 +291,12 @@
 .p-front-works-swiper .swiper-slide {
   width: 100%;
   aspect-ratio: 315 / 300;
+
+    @include mq(md) {
+      max-width: myrem(369);
+      aspect-ratio: 369 / 316;
+      margin-left: myrem(20);
+    }
 }
 
 .p-front-works-swiper__card {
@@ -309,17 +315,31 @@
   line-height: calc(28 / 14);
   letter-spacing: 0.1em;
   height: myrem(25);
-  display: inline-block;
+  display: flex;
+  justify-content: center;
   position: absolute;
   padding: 0 myrem(6);
   top: 0;
   right: 0;
+
+    @include mq(md) {
+      height: myrem(30);
+      padding: myrem(0) myrem(13);
+
+    }
 }
 
 .p-front-works-swiper-card__image {
   width: 100%;
   aspect-ratio: 315 / 200;
   padding-left: myrem(17);
+
+    @include mq(md) {
+      width: myrem(348);
+      aspect-ratio: 348 / 236;
+      padding-left: myrem(21);
+
+    }
 }
 
 .p-front-works-swiper-card__image img {
@@ -333,6 +353,10 @@
   background-color: $white;
   transform: translateY(-20%);
   padding: myrem(8) myrem(20) myrem(10) myrem(17);
+
+    @include mq(md) {
+      width: calc(301 / 369 * 100%);
+    }
 }
 
 .p-front-works-swiper-card__summary-text {
@@ -376,6 +400,12 @@
   padding: 0 myrem(20);
   margin-top: myrem(23);
   margin-left: auto;
+
+    @include mq(md) {
+      padding: 0 myrem(70);
+      margin-top: myrem(10);
+
+    }
 }
 
 /***********************************
