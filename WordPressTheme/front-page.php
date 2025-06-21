@@ -126,7 +126,9 @@
   <!-- フロント　service -->
   <section class="p-front__service p-front-service">
     <div class="p-front-service__header p-front-service-header">
-      <h2 class="c-heading01 c-heading01--white c-heading01--front-service" data-en="service">サービス</h2>
+      <div class="p-front-service-header__title">
+        <h2 class="c-heading01 c-heading01--white" data-en="service">サービス</h2>
+      </div>
       <div class="p-front-service-header__readMore">
         <a href="/service/" class="c-readMore c-readMore--white">Read more<span class="c-arrow01_right c-arrow01_right--white"></span></a>
       </div>

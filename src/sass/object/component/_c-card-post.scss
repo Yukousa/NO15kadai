@@ -179,9 +179,7 @@
   margin-top: myrem(30);
 }
 
-.p-front-voice-list__item:not(:first-child) {
-margin-top: myrem(-50);
-}
+
 
 .p-front-voice__list .c-card-post-inner__image {
   width: 100%;
@@ -213,9 +211,6 @@ margin-top: myrem(-50);
   line-height: 1.7;
 }
 
-.p-front-voice__readmore {
-margin-top: myrem(-5);
-}
 
 /****************************
 関連記事　swiper 用

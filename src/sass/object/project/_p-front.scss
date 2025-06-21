@@ -333,7 +333,6 @@
   background-color: $white;
   transform: translateY(-20%);
   padding: myrem(8) myrem(20) myrem(10) myrem(17);
-
 }
 
 .p-front-works-swiper-card__summary-text {
@@ -342,7 +341,6 @@
   font-size: myrem(14);
   line-height: calc(26 / 14);
   letter-spacing: 0.06em;
-
 }
 
 .p-front-works-swiper__nav {
@@ -376,7 +374,7 @@
 .p-front-works__readmore {
   width: fit-content;
   padding: 0 myrem(20);
-
+  margin-top: myrem(23);
   margin-left: auto;
 }
 
@@ -402,7 +400,7 @@
 }
 
 .p-front-container__content {
-  padding: myrem(40) myrem(20) 0;
+  padding: myrem(45) myrem(20) 0;
 
   @include mq(md) {
     padding: myrem(40) 0 0 myrem(70);
@@ -441,7 +439,7 @@
 フロントページ message
 ***********************************/
 .p-front-container__message {
-  padding-top: myrem(95);
+  padding-top: myrem(90);
   width: 100%;
   grid-area: message;
   position: relative;
@@ -457,7 +455,7 @@
 
 .p-front-container-message__inner {
   position: relative;
-  margin-top: myrem(60);
+  margin-top: myrem(40);
   overflow: hidden;
 
   @include mq(md) {
@@ -653,21 +651,17 @@
 }
 
 .p-front-voice__list {
-  margin-top: myrem(20);
+  margin-top: myrem(40);
 }
 
-.p-front-voice-list__item {
-  padding-bottom: myrem(70);
+.p-front-voice-list__item:not(:nth-child(3)) {
+  padding-bottom: myrem(100);
 }
 
 .p-front-voice-list-item__card {
   width: 100%;
   position: relative;
 }
-
-.p-front-voice-list-item__card  + .p-front-voice-list-item__card {
-  margin-top: myrem(30);
-} 
 
 .p-front-voice-list-item-card__label {
   width: fit-content;
@@ -701,17 +695,22 @@
   background-color: $white;
   padding: myrem(10) myrem(15);
   position: absolute;
-  bottom: myrem(-30);
+  top: 87%;
 }
 
 .p-front-voice-list-item-card-text {
-font-family: $font-main;
-font-weight: 500;
-font-size: myrem(14);
-line-height: calc(24 / 14);
-letter-spacing: 0.06em;
+  font-family: $font-main;
+  font-weight: 500;
+  font-size: myrem(14);
+  line-height: calc(24 / 14);
+  letter-spacing: 0.06em;
+}
 
-
+.p-front-voice__readmore {
+  width: fit-content;
+  margin-top: myrem(88);
+  margin-left: auto;
+  margin-right: 0;
 }
 
 /***********************************
@@ -723,7 +722,7 @@ letter-spacing: 0.06em;
   background-image: url("../../assets/images/bg-grid_sp.png");
   background-repeat: no-repeat;
   background-size: cover;
-  padding: myrem(110) 0 myrem(75);
+  padding: myrem(80) 0 myrem(75);
 
   @include mq(md) {
     height: myrem(600);
@@ -734,9 +733,8 @@ letter-spacing: 0.06em;
 }
 
 .p-front-service__header {
-  width: fit-content;
+  width: 100%;
   margin-left: auto;
-  padding: 0 myrem(20);
 
   @include mq(md) {
     width: 100%;
@@ -748,9 +746,23 @@ letter-spacing: 0.06em;
   }
 }
 
+.p-front-service-header__title {
+  width: fit-content;
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.p-front-service-header__readMore {
+  width: fit-content;
+  margin-top: myrem(10);
+  margin-left: auto;
+  margin-right: myrem(20);
+
+}
+
 .p-front-service__bgTextWrapper {
   overflow: hidden;
-  padding: myrem(20) 0 myrem(20);
+  padding: myrem(15) 0 myrem(20);
 }
 
 .p-front-service-bgText {

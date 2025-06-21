@@ -54,4 +54,6 @@
 // フロントページ用
 .p-front-container-content .c-subtitle--line2 {
   width: fit-content;
+  padding: myrem(2) myrem(0) myrem(3) myrem(7);
+  margin-top: myrem(5);
 }
