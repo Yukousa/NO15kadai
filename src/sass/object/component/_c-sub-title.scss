@@ -12,25 +12,20 @@
   color: $black;
   display: block;
 
-    @include mq(md) {
-      font-size: myrem(34);
-
-    }
+  @include mq(md) {
+    font-size: myrem(34);
+  }
 }
 
 .c-subtitle--line1 {
   padding: myrem(6) myrem(0);
   display: block;
 
-  
-    @include mq(md) {
-      letter-spacing: 0.2em;
-      padding: myrem(5) myrem(10) myrem(3);
-
-
-    }
+  @include mq(md) {
+    letter-spacing: 0.2em;
+    padding: myrem(5) myrem(10) myrem(3);
+  }
 }
-
 
 .c-subtitle--line2 {
   padding: myrem(5) myrem(7) myrem(6);
@@ -48,12 +43,21 @@
     letter-spacing: 0.2em;
     padding: myrem(0) myrem(15);
   }
-
 }
 
 // フロントページ用
-.p-front-container-content .c-subtitle--line2 {
+.p-front-container-content .c-subtitle--line2,
+.p-front-container__message .c-subtitle--line2 {
   width: fit-content;
   padding: myrem(2) myrem(0) myrem(3) myrem(7);
   margin-top: myrem(5);
+
+  @include mq(md) {
+    padding: myrem(9) myrem(0) myrem(12) myrem(7);
+    font-size: myrem(34);
+    line-height: 1;
+    letter-spacing: 0.1em;
+    margin-top: myrem(0);
+
+  }
 }

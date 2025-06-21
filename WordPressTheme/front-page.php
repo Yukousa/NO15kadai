@@ -57,11 +57,12 @@
           <h2 class="c-heading01 c-heading01--front" data-en="message">メッセージ</h2>
         </div>
         <!-- sp 非表示 -->
-        <div class="p-front-container-message__wrapper u-desktop">
-          <p class="p-frontMain-main__text">丁寧な作業とコミュニケーションで</p>
-          <p class="c-heading02">ハイクオリティなコードを納品。</p>
-
-          <a href="/message/" class="c-readMore">Read more<span class="c-arrow01_right"></span></a>
+        <div class="p-front-container-message__wrapper p-front-container-message-wrapper u-desktop">
+          <p class="p-front-container-message-wrapper__text">丁寧な作業とコミュニケーションで</p>
+          <p class="c-subtitle--line2">ハイクオリティなコードを納品。</p>
+          <div class="p-front-container-message-wrapper__readMore">
+            <a href="/message/" class="c-readMore">Read more<span class="c-arrow01_right"></span></a>
+          </div>
         </div>
         <!-- 画像エリア -->
         <div class="p-front-container-message__inner p-front-container-message-inner">
