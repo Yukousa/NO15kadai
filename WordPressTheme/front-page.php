@@ -166,11 +166,17 @@
   <section class="p-front__profile p-front-profile">
     <a href="/profile/">
       <div class="p-front-profile__image">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/image11.png" alt="イメージ画像">
+        
+        <picture>
+            <source srcset="<?php echo get_template_directory_uri(); ?>/assets/images/image11.png" alt="イメージ画像" media="(max-width: 768px)">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/image26.png" alt="イメージ画像">
+          </picture>
+
+        
         <div class="p-front-profile__overlay"></div>
         <div class="p-front-profile__content p-front-profile-content">
           <h2 class="c-heading01 c-heading01--whiteCenter c-heading01--front-profile" data-en="profile">経歴・職歴</h2>
-          <p class="p-front-profile-content__text">ここにテキスト入れるここにテキスト入れるここにテキスト入れるここにテキスト入れるここにテキスト入れる</p>
+          <p class="p-front-profile-content__text">ここにテキスト入れるここにテキスト入れるここにテキスト入れる<br>ここにテキスト入れるここにテキスト入れる</p>
         </div>
       </div>
     </a>
