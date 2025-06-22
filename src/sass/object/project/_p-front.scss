@@ -274,9 +274,11 @@
 }
 
 .p-front__works__title {
+  width: 100%;
   padding: 0 myrem(20);
 
   @include mq(md) {
+    max-width: 1300px;
     margin: 0 auto;
     padding: 0;
   }
@@ -286,6 +288,10 @@
 .p-front-works-swiper {
   margin-top: myrem(35);
   position: relative;
+}
+
+.p-front-works-swiper .swiper-wrapper {
+  transition-timing-function: linear;
 }
 
 .p-front-works-swiper .swiper-slide {
@@ -1027,11 +1033,11 @@
   display: block;
   transition: transform 0.3s ease;
   @include mq(md) {
-    max-width: $innerWidth;
+    max-width: 1440px;
     margin-top: 0;
     margin: 0 auto;
     color: $white;
-    padding: myrem(80) 0 myrem(80);
+    padding: myrem(80) myrem(70) myrem(80);
     text-align: left;
   }
 }

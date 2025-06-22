@@ -1,8 +1,8 @@
 jQuery(function ($) {
-/*****************************
+  /*****************************
    ページトップボタン
 *****************************/
-var topBtn = $(".js-pagetop");
+  var topBtn = $(".js-pagetop");
   topBtn.hide();
 
   // ページトップボタンの表示設定
@@ -28,7 +28,7 @@ var topBtn = $(".js-pagetop");
     return false;
   });
 
-/*****************************
+  /*****************************
 スムーススクロール (絶対パスのリンク先が現在のページであった場合でも作動。ヘッダーの高さ考慮。)
 *****************************/
   $(document).on("click", 'a[href*="#"]', function () {
@@ -130,12 +130,20 @@ if ($typingParts.length > 0) {
 }
 
 /*****************************
-swiper
+Swiper 初期化
 *****************************/
-// 共通Swiper（.swiperに使っているもの）
+
+// test Swiper（共通 .swiper）
 if (document.querySelector(".swiper")) {
   new Swiper(".swiper", {
     loop: true,
+    speed: 8000,
+    allowTouchMove: false,
+    slidesPerView: 5,
+    spaceBetween: 20,
+    autoplay: {
+      delay: 0,
+    },
   });
 }
 
@@ -149,54 +157,42 @@ if (document.querySelector(".js-front-fv-swiper")) {
     },
     effect: "slide",
     speed: 1000,
-    // navigation: {
-    //   nextEl: '.swiper-fv .swiper-button-next',
-    //   prevEl: '.swiper-fv .swiper-button-prev',
-    // },
   });
 }
 
-// フロントページ　worksの Swiper
+// フロントページ works の Swiper
 if (document.querySelector(".p-front-works-swiper")) {
   new Swiper(".p-front-works-swiper", {
     loop: true,
-    // autoplay: {
-    //   delay: 4000,
-    //   disableOnInteraction: false,
-    // },
-
+    speed: 8000,
+    allowTouchMove: false,
+    spaceBetween: 20,
+    autoplay: {
+      delay: 0,
+      disableOnInteraction: false,
+    },
+    breakpoints: {
+      0: {
+        slidesPerView: 1.1,
+      },
+      768: {
+        slidesPerView: 3.85,
+      },
+    },
     navigation: {
       nextEl: ".p-front-works-swiper-nav__next",
       prevEl: ".p-front-works-swiper-nav__prev",
     },
-    breakpoints: {
-      0: {
-        spaceBetween: 20,
-        slidesPerView: 1.18,
-        centeredSlides: false,
-      },
-      768: {
-        slidesPerView: 3.9,
-        centeredSlides: false,
-        spaceBetween: 0,
-      },
-    },
   });
 }
 
-// 関連記事の Swiper（works・voice共通）
-// フロントページ専用の Swiper（.c-swiper-related--front）が存在しない場合のみ実行することで、初期化の重複を防ぐ
+// 関連記事の Swiper（フロントページ以外）
 if (
-  document.querySelector(".c-swiper-related") && // Swiperの共通クラスが存在する場合
-  !document.querySelector(".c-swiper-related--front") // フロントページではないことを確認
+  document.querySelector(".c-swiper-related") &&
+  !document.querySelector(".c-swiper-related--front")
 ) {
   new Swiper(".c-swiper-related", {
     loop: true,
-    // autoplay: {
-    //   delay: 4000,
-    //   disableOnInteraction: false,
-    // },
-
     navigation: {
       nextEl: ".c-swiper-related-nav__next",
       prevEl: ".c-swiper-related-nav__prev",
@@ -245,9 +241,9 @@ $(".js-faq-more").on("click", function () {
 フロントページの流れるテキスト
 *****************************/
 
-  // 対象を .p-frontService-bgText（かつ lineクラスが付いてる）に変更
-  var $lines = $(".p-frontService-bgText");
+// 対象を .p-frontService-bgText（かつ lineクラスが付いてる）に変更
+var $lines = $(".p-frontService-bgText");
 
-  // シャッフルして2つ選び、.is-reverse を追加
-  var shuffled = $lines.toArray().sort(() => Math.random() - 0.5);
-  $(shuffled.slice(0, 2)).addClass("is-reverse");
+// シャッフルして2つ選び、.is-reverse を追加
+var shuffled = $lines.toArray().sort(() => Math.random() - 0.5);
+$(shuffled.slice(0, 2)).addClass("is-reverse");
