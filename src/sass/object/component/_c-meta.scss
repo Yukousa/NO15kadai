@@ -7,7 +7,7 @@
   gap: myrem(22);
 
   @include mq(md) {
-    gap: myrem(25);
+    gap: myrem(20);
   }
 }
 
@@ -45,16 +45,30 @@
 }
 
 /***************************
-ページ　news用
+フロントページ　news用
 ***************************/
-.c-meta--front .c-meta__category {
-    width: fit-content;
+.c-meta .c-meta--front{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: myrem(22);
+
+
+
+  
+
+  @include mq(md) {
+    gap: myrem(20);
+  }
+
+
+
     
   font-size: myrem(14);
   font-weight: bold;
   letter-spacing: 0.1em;
   line-height: calc(28 / 14);
-  font-family: $font-main;
+  font-family: $font-sub;
   color: $white;
   background-color: $black;
   display: flex;
@@ -62,5 +76,39 @@
   align-items: center;
   padding: myrem(15);
   border-radius: myrem(15);
+
+}
+
+.c-meta--front .c-meta__date {
+font-family: $font-sub;
+font-weight: 600;
+line-height: calc(28 / 16);
+letter-spacing: 0.1em;
+
+}
+
+
+
+
+
+
+/***************************
+s用
+***************************/
+.c-meta__category {
+  width: fit-content;
+  
+font-size: myrem(14);
+font-weight: bold;
+letter-spacing: 0.1em;
+line-height: calc(28 / 14);
+font-family: $font-main;
+color: $white;
+background-color: $black;
+display: flex;
+justify-content: center;
+align-items: center;
+padding: myrem(15);
+border-radius: myrem(15);
 
 }

@@ -186,7 +186,7 @@
   <section class="p-front-news">
     <div class="p-front-news__inner p-front-news-inner">
       <div class="p-front-news-inner__titleArea">
-        <h2 class="c-heading01 c-heading01--front" data-en="news">お知らせ</h2>
+        <h2 class="c-heading01 c-heading01--lineWhite" data-en="news">お知らせ</h2>
         <div class="p-front-news__readmore p-front-news__readmore--desktop">
           <a href="/news/" class="c-readMore">Read more<span class="c-arrow01_right"></span></a>
         </div>
@@ -202,7 +202,7 @@
   </section>
 
   <!-- リンクバナー contact / faq -->
-  <section class="p-section-wrapper">
+  <section class="p-section-banner">
     <?php get_template_part('template-parts/sections/section-contact'); ?>
     <?php get_template_part('template-parts/sections/section-faq'); ?>
   </section>

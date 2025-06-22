@@ -63,16 +63,44 @@
 /***************************
 背景色$black_base用の　装飾線
 ***************************/
-.c-heading01--linwhite {
-}
+.c-heading01--lineWhite {
+  font-size: myrem(13);
+  letter-spacing: 0.06em;
+  padding-left: myrem(30);
 
-.c-heading01--linwhite::before {
+  @include mq(md) {
+    font-size: myrem(16);
+    padding-left: myrem(45);
+    margin: 0 auto;
+  }
+
 }
 
 .c-heading01--lineWhite::before {
   content: "";
   background: linear-gradient(to right, $black 50%, $white 50%);
+
+    @include mq(md) {
+      top:45%;
+      left: 0;
+    
+    }
 }
+
+
+.c-heading01--lineWhite::after {
+  font-size: myrem(28);
+  top: myrem(-32);
+  left: 0;
+
+  @include mq(md) {
+    font-size: myrem(60);
+    top: myrem(-60);
+    left:0;
+  }
+
+}
+
 
 /***************************
 フロントページ service　用
