@@ -22,14 +22,16 @@
 
   <!-- works -->
   <section class="p-front__works p-front-works">
-    <div class="p-front__works__title">
-      <h2 class="c-heading01 c-heading01--front" data-en="works">実績</h2>
+    <div class="p-front-works__title">
+      <a href="/works/">
+        <h2 class="c-heading01 c-heading01--front" data-en="works">実績</h2>
+      </a>
     </div>
     <!-- フロント works swiper -->
     <?php get_template_part('template-parts/swiper/front-works-swiper'); ?>
 
-    <div class="p-front-works__readmore">
-      <a href="#" class="c-readMore ">Read more<span class="c-arrow01_right"></span></a>
+    <div class="p-front-works__readMore">
+      <a href="/works/" class="c-readMore ">Read more<span class="c-arrow01_right"></span></a>
     </div>
   </section>
 
@@ -54,7 +56,9 @@
       <!-- message -->
       <article class="p-front-container__message p-front-container-message">
         <div class="p-front-container-message__title">
-          <h2 class="c-heading01 c-heading01--front" data-en="message">メッセージ</h2>
+          <a href="/message/">
+            <h2 class="c-heading01 c-heading01--front" data-en="message">メッセージ</h2>
+          </a>
         </div>
         <!-- sp 非表示 -->
         <div class="p-front-container-message__wrapper p-front-container-message-wrapper u-desktop">
@@ -91,7 +95,11 @@
     </div>
     <!-- voice pc時　サイドバー　 -->
     <aside class="p-front__voice p-front-voice">
-      <h2 class="c-heading01 c-heading01--front" data-en="voice">お客様の声</h2>
+      <div class="p-front-voice__title">
+        <a href="/voice/">
+          <h2 class="c-heading01 c-heading01--front" data-en="voice">お客様の声</h2>
+        </a>
+      </div>
       <!-- voice 記事のリスト -->
       <div class="p-front-voice__list p-front-voice-list">
         <?php
@@ -118,7 +126,7 @@
       </div>
 
       <div class="p-front-voice__readmore">
-        <a href="#" class="c-readMore ">Read more<span class="c-arrow01_right"></span></a>
+        <a href="/voice/" class="c-readMore ">Read more<span class="c-arrow01_right"></span></a>
       </div>
 
     </aside>
@@ -128,7 +136,9 @@
   <section class="p-front__service p-front-service">
     <div class="p-front-service__header p-front-service-header">
       <div class="p-front-service-header__title">
-        <h2 class="c-heading01 c-heading01--white" data-en="service">サービス</h2>
+        <a href="/service/">
+          <h2 class="c-heading01 c-heading01--white" data-en="service">サービス</h2>
+        </a>
       </div>
       <div class="p-front-service-header__readMore">
         <a href="/service/" class="c-readMore c-readMore--white">Read more<span class="c-arrow01_right c-arrow01_right--white"></span></a>
@@ -176,7 +186,7 @@
         <div class="p-front-profile__overlay"></div>
         <div class="p-front-profile__content p-front-profile-content">
           <h2 class="c-heading01 c-heading01--whiteCenter c-heading01--front-profile" data-en="profile">経歴・職歴</h2>
-          <p class="p-front-profile-content__text">ここにテキスト入れるここにテキスト入れるここにテキスト入れる<br>ここにテキスト入れるここにテキスト入れる</p>
+          <p class="p-front-profile-content__text">ここにテキスト入れるここにテキスト入れるここにテキスト入れるここにテキスト入れるここにテキスト入れる</p>
         </div>
       </div>
     </a>
@@ -186,13 +196,22 @@
   <section class="p-front-news">
     <div class="p-front-news__inner p-front-news-inner">
       <div class="p-front-news-inner__titleArea">
-        <h2 class="c-heading01 c-heading01--lineWhite" data-en="news">お知らせ</h2>
+
+        <div class="p-front-news-inner__title">
+          <a href="/news/">
+            <h2 class="c-heading01 c-heading01--lineWhite" data-en="news">お知らせ</h2>
+          </a>
+        </div>
         <div class="p-front-news__readmore p-front-news__readmore--desktop">
           <a href="/news/" class="c-readMore">Read more<span class="c-arrow01_right"></span></a>
         </div>
       </div>
       <!-- newsのリスト -->
       <div class="p-front-news-inner__content p-front-news-inner-content">
+
+
+
+      
         <?php get_template_part('template-parts/loop/loop-news-list', null, ['modifier' => 'frontNews']); ?>
       </div>
     </div>

@@ -79,7 +79,7 @@
 .c-heading01--lineWhite::before {
   content: "";
   background: linear-gradient(to right, $black 50%, $white 50%);
-
+top:50%;
     @include mq(md) {
       top:45%;
       left: 0;

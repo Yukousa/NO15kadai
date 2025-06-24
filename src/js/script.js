@@ -133,17 +133,10 @@ if ($typingParts.length > 0) {
 Swiper 初期化
 *****************************/
 
-// test Swiper（共通 .swiper）
+// （共通 .swiper）
 if (document.querySelector(".swiper")) {
   new Swiper(".swiper", {
     loop: true,
-    speed: 8000,
-    allowTouchMove: false,
-    slidesPerView: 5,
-    spaceBetween: 20,
-    autoplay: {
-      delay: 0,
-    },
   });
 }
 

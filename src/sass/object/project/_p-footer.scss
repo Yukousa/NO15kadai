@@ -4,7 +4,7 @@
   color: $white;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
     linear-gradient(180deg, #000000 0%, #929292 100%);
-  padding: myrem(65) myrem(40) myrem(30);
+  padding: myrem(65) myrem(30) myrem(30);
 
   @include mq(md) {
     padding: myrem(62) myrem(70) myrem(19);
@@ -24,6 +24,8 @@
 }
 
 .p-footer-inner__wrapper {
+
+
   @include mq(md) {
     width: 50%;
   }
@@ -35,6 +37,7 @@
   text-transform: uppercase;
   font-family: $font-sub;
   font-weight: 500;
+  padding: myrem(10);
 
   @include mq(md) {
   }
@@ -46,7 +49,7 @@
   align-items: center;
   gap: 0;
   margin-top: myrem(15);
-  padding-left: myrem(5);
+  margin-left: myrem(10);
 
   @include mq(md) {
     padding-left: 0;
@@ -81,6 +84,7 @@
 
 .p-footer-inner-wrapper__privacy {
   margin-top: myrem(30);
+  margin-left: myrem(10);
 
   @include mq(md) {
     margin-top: myrem(45);
@@ -101,9 +105,11 @@
 
 .p-footer-nav {
   width: 100%;
+  padding: 0 myrem(10);
 
   @include mq(md) {
     width: 50%;
+    padding: inherit;
     padding-left: myrem(18);
   }
 }
@@ -123,11 +129,15 @@
 
 .p-footer-nav__item {
   border-bottom: 1px solid $white;
-  padding: myrem(20) 0;
 
   @include mq(md) {
     border: none;
   }
+}
+
+.p-footer-nav__item a {
+  height: 100%;
+  padding: myrem(20) 0;
 }
 
 .p-footer-nav__item:nth-child(2),

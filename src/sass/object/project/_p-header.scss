@@ -28,14 +28,26 @@
 
 // ロゴ
 .p-header-inner__siteTitle {
+  height: 100%;
+  display: block;
+  z-index: 10000;
+  line-height: myrem(56);
+
+  @include mq(md) {
+    line-height: myrem(80);
+  }
+}
+
+.p-header-inner__siteTitle a {
+  height: 100%;
+  display: block;
   color: #353535;
   font-family: "Roboto", sans-serif;
   font-weight: 600;
   font-size: myrem(28);
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  display: block;
-  z-index: 10000;
+
   @include mq(md) {
     width: fit-content;
     color: #000;
