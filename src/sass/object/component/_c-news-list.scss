@@ -41,6 +41,12 @@ border-bottom: 1px solid #000;
 margin-top: myrem(27);
 padding-bottom: myrem(15);
 display: block;
+
+  @include mq(md) {
+    margin-top: 0;
+    padding-bottom:0;
+
+  }
 }
 
 .c-news-list__link--front + .c-news-list__link--front {
@@ -49,7 +55,7 @@ margin-top:myrem(27);
 
   @include mq(md) {
     padding-top: 0;
-
+    margin-top:myrem(22);
   }
 
 }

@@ -51,6 +51,7 @@
   gap: myrem(12);
 
   @include mq(md) {
+    gap: myrem(20);
   }
 
 }

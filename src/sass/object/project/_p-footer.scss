@@ -40,6 +40,7 @@
   padding: myrem(10);
 
   @include mq(md) {
+    padding: myrem(10) myrem(10) myrem(10) 0;
   }
 }
 
@@ -52,7 +53,7 @@
   margin-left: myrem(10);
 
   @include mq(md) {
-    padding-left: 0;
+    margin-left: 0;
   }
 }
 
@@ -87,8 +88,9 @@
   margin-left: myrem(10);
 
   @include mq(md) {
-    margin-top: myrem(45);
-  }
+    margin-top: myrem(40);
+    margin-left: 0;
+}
 }
 
 .p-footer-inner-wrapper__privacy > a {
@@ -109,8 +111,7 @@
 
   @include mq(md) {
     width: 50%;
-    padding: inherit;
-    padding-left: myrem(18);
+    padding: myrem(0) 0 myrem(0) myrem(18);
   }
 }
 
