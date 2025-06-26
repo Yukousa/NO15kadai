@@ -12,32 +12,131 @@
         <div class="p-single-voice__content p-single-voice-content">
             <!-- 本文 -->
             <article class="p-single-voice-content__body p-single-voice-content-body">
-                <!-- 投稿画面ACFのループ -->
-                <?php
-                $args = array(
-                    'post_type'     => 'voice',
-                    'taxonomy'      => 'voice_category',
-                    'posts_per_page' => 6,
-                    'summary_field' => 'voice_summary',
-                );
-                get_template_part('template-parts/loop/loop-post-content', null, $args);
-                ?>
-                <!-- singleページ用ページネーション -->
-                <?php get_template_part('template-parts/sections/section-single-page-nation'); ?>
-            </article>
+    <!-- 投稿画面ACFのループ -->
+    <?php for ($i = 1; $i <= 10; $i++) :
+        $heading_top = get_field("section_heading_{$i}_top");
+        $heading_bottom = get_field("section_heading_{$i}_bottom");
+        $content = get_field("section_content_{$i}");
+        $image = get_field("section_image_{$i}");
+
+        if (empty($heading_top) && empty($heading_bottom) && empty($content) && empty($image)) {
+            continue;
+        }
+    ?>
+        <section class="c-single-content">
+            <div class="c-single-content__wrapper">
+                <h3 class="c-subtitle">
+                    <?php if ($heading_top) : ?>
+                        <span class="c-subtitle--line1"><?php echo esc_html($heading_top); ?></span>
+                    <?php endif; ?>
+                    <?php if ($heading_bottom) : ?>
+                        <span class="c-subtitle--line2 c-heading02"><?php echo esc_html($heading_bottom); ?></span>
+                    <?php endif; ?>
+                </h3>
+
+                <?php if ($content) : ?>
+                    <div class="c-single-content__post">
+                        <?php echo wp_kses_post($content); ?>
+                    </div>
+                <?php endif; ?>
+            </div>
+
+            <?php if ($image) : ?>
+                <div class="c-single-content__image">
+                    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>">
+                </div>
+            <?php endif; ?>
+        </section>
+    <?php endfor; ?>
+
+    <!-- singleページ用ページネーション -->
+    <nav class="c-single-page-nation">
+        <?php
+        $prev_post = get_previous_post(false);
+        if ($prev_post) :
+        ?>
+            <div class="c-single-page-nation__prev">
+                <a href="<?php echo get_permalink($prev_post->ID); ?>" class="c-single-page-nation__link">
+                    <div class="c-arrow02_right"></div>
+                    <span>前の記事へ</span>
+                </a>
+            </div>
+        <?php endif; ?>
+
+        <?php
+        $next_post = get_next_post(false);
+        if ($next_post) :
+        ?>
+            <div class="c-single-page-nation__next">
+                <a href="<?php echo get_permalink($next_post->ID); ?>" class="c-single-page-nation__link">
+                    <span>次の記事へ</span>
+                    <div class="c-arrow02_left"></div>
+                </a>
+            </div>
+        <?php endif; ?>
+    </nav>
+</article>
 
             <!-- cssのスライダー -->
             <article class="p-single-voice-content-body__slider">
-                <?php get_template_part('template-parts/sections/section-css-slide'); ?>
+                <!-- template-parts/section-slide.php -->
+                <section class="c-slide">
+                    <div class="c-slide-track">
+                        <div class="c-slide-item">
+                            <div class="c-slide-row1">
+                                <div class="c-slide-image1">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/image11.png" alt="WORKイメージ">
+                                </div>
+                                <div class="c-slide-image2">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/image19.png" alt="WORKイメージ">
+                                </div>
+                            </div>
+                            <div class="c-slide-row2">
+                                <div class="c-slide-image3">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/image04.png" alt="WORKイメージ">
+                                </div>
+                                <div class="c-slide-image4">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/image12.png" alt="WORKイメージ">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- クローンをつなげて無限ループ感を出す -->
+                        <div class="c-slide-item">
+                            <div class="c-slide-row1">
+                                <div class="c-slide-image1">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/image11.png" alt="WORKイメージ">
+                                </div>
+                                <div class="c-slide-image2">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/image19.png" alt="WORKイメージ">
+                                </div>
+                            </div>
+                            <div class="c-slide-row2">
+                                <div class="c-slide-image3">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/image04.png" alt="WORKイメージ">
+                                </div>
+                                <div class="c-slide-image4">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/image12.png" alt="WORKイメージ">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </article>
         </div>
         <!-- プロフィール -->
         <aside class="p-single-voice__profile p-single-voice-profile">
             <!-- 社長プロフィールのカード -->
-            <?php
-            set_query_var('hide_back_button', true);
-            get_template_part('template-parts/cards/card-president-profile');
-            ?>
+            <div class="p-single-voice-profile__body">
+                <div class="p-single-voice-profile__image">
+                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/president01.png" alt="代表 田中 太郎の写真">
+                </div>
+                <div class="p-single-voice-profile__text">
+                    <p class="p-single-voice-profile__text--company">株式会社 XXXXXX</p>
+                    <p class="p-single-voice-profile__text--ja">代表 田中 太郎</p>
+                    <p class="p-single-voice-profile__text--en">Tanaka Taro</p>
+                </div>
+            </div>
 
             <a href="#" class="c-return c-return--single-voice">
                 一覧に戻る<span class="c-arrow01_right"></span>
@@ -47,7 +146,105 @@
 
     <!-- 関連記事 Swiper -->
     <div class="p-single-voice__slider">
-        <?php get_template_part('template-parts/swiper/related-swiper'); ?>
+        <?php
+        // シングルページのみ処理（安全対策として明示的に）
+        if (is_singular(['works', 'voice'])) {
+
+            $post_type = get_post_type(); // 現在の投稿タイプ
+
+            // 投稿タイプに応じた設定
+            if ($post_type === 'voice') {
+                $taxonomy = 'voice_category';
+                $summary_field = 'voice_summary';
+            } else {
+                $taxonomy = 'works_category';
+                $summary_field = 'works_summary';
+            }
+
+            // 現在の投稿のターム取得
+            $term_ids = [];
+            $terms = get_the_terms(get_the_ID(), $taxonomy);
+            if ($terms && !is_wp_error($terms)) {
+                $term_ids = wp_list_pluck($terms, 'term_id');
+            }
+
+            // クエリの引数設定
+            $related_args = [
+                'post_type'      => $post_type,
+                'posts_per_page' => 10,
+                'post__not_in'   => [get_the_ID()],
+                'orderby'        => 'date',
+                'order'          => 'DESC',
+            ];
+
+            // 同じタクソノミーに属する投稿だけに絞る
+            if (!empty($term_ids)) {
+                $related_args['tax_query'] = [
+                    [
+                        'taxonomy' => $taxonomy,
+                        'field'    => 'term_id',
+                        'terms'    => $term_ids,
+                    ],
+                ];
+            }
+
+            // クエリ実行
+            $related_query = new WP_Query($related_args);
+
+            if ($related_query->have_posts()) :
+        ?>
+                <div class="swiper c-swiper-related">
+                    <div class="swiper-wrapper">
+                        <?php while ($related_query->have_posts()) : $related_query->the_post(); ?>
+                            <div class="swiper-slide">
+                                <!-- 投稿記事カード -->
+                                <?php
+                                $terms = get_the_terms(get_the_ID(), 'voice_category');
+                                $summary = get_field('voice_summary');
+                                ?>
+
+                                <a href="<?php the_permalink(); ?>" class="c-related-swiper-card">
+                                    <?php if ($terms && !is_wp_error($terms)) : ?>
+                                        <span class="c-related-swiper-card__label"><?php echo esc_html($terms[0]->name); ?></span>
+                                    <?php endif; ?>
+
+                                    <div class="c-related-swiper-card__image">
+                                        <?php the_post_thumbnail('large'); ?>
+                                    </div>
+
+                                    <div class="c-related-swiper-card__summary">
+                                        <?php if ($summary) : ?>
+                                            <p class="c-related-swiper-card__summary-text"><?php echo esc_html($summary); ?></p>
+                                        <?php endif; ?>
+                                    </div>
+                                </a>
+                            </div>
+                        <?php endwhile; ?>
+                    </div>
+                </div>
+
+                <!-- Swiperナビゲーション -->
+                <nav class="c-swiper-related__nav c-swiper-related-nav">
+                    <div class="c-swiper-related-nav__prev">
+                        <div class="c-arrow-svg">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="16 4 8 12 16 20" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="c-swiper-related-nav__next">
+                        <div class="c-arrow-svg c-arrow-svg--left">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="8 4 16 12 8 20" />
+                            </svg>
+                        </div>
+                    </div>
+                </nav>
+                <?php wp_reset_postdata(); ?>
+        <?php
+            endif;
+        }
+        ?>
     </div>
 
     <!-- リンクバナー contact / faq -->

@@ -10,8 +10,98 @@
     <!-- メイン部分 -->
     <!-- コードスキル　アイコン群 -->
     <section class="p-profile-skill">
-        <?php get_template_part('template-parts/sections/section-profile-icons'); ?>
-    </section>
+    <div class="p-profile-skill__inner p-profile-skill-inner">
+        <h2 class="c-heading01 c-heading01--profile02" data-en="CODE SKILL">対応が可能なコーディングスキルと<br class="u-mobile">デザインデータ</h2>
+
+        <div class="p-profile-skill-inner-box__wrapper-top">
+            <!-- コーディング -->
+            <div class="p-profile-skill-inner__box  p-profile-skill-inner-box">
+                <h3 class="p-profile-skill-inner-box__title">コーディング</h3>
+                <div class="p-profile-skill-inner-box__icons p-profile-skill-inner-box-icons p-profile-skill-inner-box-icons--coding">
+                    <div class="p-profile-skill-inner-box-icons__item p-profile-skill-inner-box-icons__item--html">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/html.png" alt="icon">
+                        <p>HTML</p>
+                    </div>
+                    <div class="p-profile-skill-inner-box-icons__item p-profile-skill-inner-box-icons__item--css">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/css.png" alt="icon">
+                        <p>CSS</p>
+                    </div>
+                    <div class="p-profile-skill-inner-box-icons__item p-profile-skill-inner-box-icons__item--sass">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/sass.png" alt="icon">
+                        <p>Sass</p>
+                    </div>
+                    <div class="p-profile-skill-inner-box-icons__item p-profile-skill-inner-box-icons__item--js">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/js.png" alt="icon">
+                        <p>JavaScript</p>
+                    </div>
+                    <div class="p-profile-skill-inner-box-icons__item p-profile-skill-inner-box-icons__item--php">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/php.png" alt="icon">
+                        <p>PHP</p>
+                    </div>
+                </div>
+            </div>
+           
+            <!-- cms -->
+            <div class="p-profile-skill-inner__box  p-profile-skill-inner-box">
+                <h3 class="p-profile-skill-inner-box__title">CMS</h3>
+                <div class="p-profile-skill-inner-box__icons p-profile-skill-inner-box-icons p-profile-skill-inner-box-icons--cms">
+                    <div class="p-profile-skill-inner-box-icons__item p-profile-skill-inner-box-icons__item--wordpress">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/wordpress.png" alt="icon">
+                        <p>WordPress</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="p-profile-skill-inner-box__wrapper-bottom">
+            <!-- デザイン -->
+            <div class="p-profile-skill-inner__box  p-profile-skill-inner-box">
+                <h3 class="p-profile-skill-inner-box__title">デザイン</h3>
+                <div class="p-profile-skill-inner-box__icons p-profile-skill-inner-box-icons p-profile-skill-inner-box-icons--design">
+                    <div class="p-profile-skill-inner-box-icons__item p-profile-skill-inner-box-icons__item--ai">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/ai.png" alt="icon">
+                        <p>Illustrator</p>
+                    </div>
+                    <div class="p-profile-skill-inner-box-icons__item p-profile-skill-inner-box-icons__item--ps">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/ps.png" alt="icon">
+                        <p>Photshop</p>
+                    </div>
+                    <div class="p-profile-skill-inner-box-icons__item p-profile-skill-inner-box-icons__item--xd">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/xd.png" alt="icon">
+                        <p>XD</p>
+                    </div>
+                    <div class="p-profile-skill-inner-box-icons__item p-profile-skill-inner-box-icons__item--figma">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/figma.png" alt="icon">
+                        <p>Figma</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- コミュニケーション -->
+            <div class="p-profile-skill-inner__box  p-profile-skill-inner-box">
+                <h3 class="p-profile-skill-inner-box__title">コミュニケーション</h3>
+                <div class="p-profile-skill-inner-box__icons p-profile-skill-inner-box-icons p-profile-skill-inner-box-icons--communication">
+                    <div class="p-profile-skill-inner-box-icons__item p-profile-skill-inner-box-icons__item--chatwork">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/chatwork.png" alt="icon">
+                        <p>Chatwork</p>
+                    </div>
+                    <div class="p-profile-skill-inner-box-icons__item p-profile-skill-inner-box-icons__item--mail">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/mail.png" alt="icon">
+                        <p>メール</p>
+                    </div>
+                    <div class="p-profile-skill-inner-box-icons__item p-profile-skill-inner-box-icons__item--slack">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/slack.png" alt="icon">
+                        <p>Slack</p>
+                    </div>
+                    <div class="p-profile-skill-inner-box-icons__item p-profile-skill-inner-box-icons__item--line">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/line.png" alt="icon">
+                        <p>line</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    </section>
 
     <!-- pc時　2カラム -->
     <section class="p-profile__wrapper">
@@ -59,16 +149,63 @@
 
             <!-- スライダー -->
             <article class="p-profile-body__slider">
-                <?php get_template_part('template-parts/sections/section-css-slide'); ?>
-            </article>
+<!-- template-parts/section-slide.php -->
+<section class="c-slide">
+  <div class="c-slide-track">
+    <div class="c-slide-item">
+      <div class="c-slide-row1">
+        <div class="c-slide-image1">
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/image11.png" alt="WORKイメージ">
+        </div>
+        <div class="c-slide-image2">
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/image19.png" alt="WORKイメージ">
+        </div>
+      </div>
+      <div class="c-slide-row2">
+        <div class="c-slide-image3">
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/image04.png" alt="WORKイメージ">
+        </div>
+        <div class="c-slide-image4">
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/image12.png" alt="WORKイメージ">
+        </div>
+      </div>
+    </div>
+
+    <!-- クローンをつなげて無限ループ感を出す -->
+    <div class="c-slide-item">
+      <div class="c-slide-row1">
+        <div class="c-slide-image1">
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/image11.png" alt="WORKイメージ">
+        </div>
+        <div class="c-slide-image2">
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/image19.png" alt="WORKイメージ">
+        </div>
+      </div>
+      <div class="c-slide-row2">
+        <div class="c-slide-image3">
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/image04.png" alt="WORKイメージ">
+        </div>
+        <div class="c-slide-image4">
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/image12.png" alt="WORKイメージ">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>            </article>
         </div>
 
         <!-- プロフィール pc時サイドバー -->
         <aside class="p-profile__profile p-profile-profile">
-            <?php
-            set_query_var('hide_back_button', true);
-            get_template_part('template-parts/cards/card-president-profile');
-            ?>
+            <div class="p-profile-profile__body">
+                <div class="p-profile-profile__image">
+                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/president01.png" alt="代表 田中 太郎の写真">
+                </div>
+                <div class="p-profile-profile__text">
+                    <p class="p-profile-profile__text--company">株式会社 XXXXXX</p>
+                    <p class="p-profile-profile__text--ja">代表 田中 太郎</p>
+                    <p class="p-profile-profile__text--en">Tanaka Taro</p>
+                </div>
+            </div>
 
             <div class="p-profile-profile__content">
                 <h4 class="p-profile-profile__title">経歴</h4>
@@ -84,12 +221,6 @@
 
 
 
-    <!-- リンクバナー contact / faq -->
-    <section class="p-section-wrapper">
-        <?php get_template_part('template-parts/sections/section-contact'); ?>
-        <?php get_template_part('template-parts/sections/section-faq'); ?>
-    </section>
-
 </main>
-
+<?php get_template_part('template-parts/sections/section-cta'); ?>
 <?php get_footer(); ?>

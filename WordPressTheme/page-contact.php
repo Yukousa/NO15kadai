@@ -6,12 +6,7 @@
         <?php get_template_part('template-parts/sections/section-sub-fv'); ?>
     </section>
 
-    <!-- リンクバナー contact / faq -->
-    <section class="p-section-wrapper">
-        <?php get_template_part('template-parts/sections/section-contact'); ?>
-        <?php get_template_part('template-parts/sections/section-faq'); ?>
-    </section>
 
 </main>
-
+<?php get_template_part('template-parts/sections/section-cta'); ?>
 <?php get_footer(); ?>

@@ -1,0 +1,52 @@
+@use "global" as *;
+
+.c-archive-card {
+  position: relative;
+  width: 100%;
+  margin-bottom: myrem(40); // 各カード間の余白
+  padding-bottom: myrem(60); // summary食い込み分を確保
+  z-index: 0;
+}
+
+.c-archive-card__label {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: myrem(26);
+  padding: 0 myrem(8);
+  background-color: $black;
+  color: $white;
+  font-size: myrem(14);
+  line-height: calc(28 / 14);
+  letter-spacing: 0.1em;
+  z-index: 2;
+}
+
+.c-archive-card__image {
+  width: 100%;
+  aspect-ratio: 334 / 226;
+  z-index: 1;
+}
+
+.c-archive-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.c-archive-card__summary {
+  position: absolute;
+  bottom: myrem(10); // 少しだけ画像からはみ出すように
+  left: 0;
+  width: calc(301 / 335 * 100%);
+  padding: myrem(10);
+  background-color: pink;
+  z-index: 3;
+}
+
+.c-archive-card__summary-text {
+  font-size: myrem(16);
+  line-height: calc(24 / 16);
+  letter-spacing: 0.06em;
+}

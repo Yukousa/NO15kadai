@@ -3,7 +3,6 @@
 <main class="p-front">
   <!-- fv -->
   <section class="p-front-fv">
-    <!-- テキストアニメーション -->
     <div class="p-front-fv__text p-front-fv-text">
       <p class="p-front-fv-text__catch3">High quality code</p>
       <h2 class="p-front-fv-text__catch1">
@@ -13,7 +12,17 @@
       <p class="p-front-fv-text__catch2 typing-part" data-text="パートナーに。"></p>
     </div>
     <!-- swiper -->
-    <?php get_template_part('template-parts/swiper/front-fv-swiper'); ?>
+    <div class="swiper p-front-fv-swiper js-front-fv-swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/fv-top01.png" alt="イメージ画像">
+        </div>
+        <div class="swiper-slide"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/fv-top02.png" alt="イメージ画像">
+        </div>
+        <div class="swiper-slide"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/fv-top03.png" alt="イメージ画像">
+        </div>
+      </div>
+    </div>
     <!-- スクロールアニメーション -->
     <div class="p-front-fv__scroll p-front-fv-scroll">
       <span class="p-front-fv-scroll__text">scroll</span>
@@ -21,15 +30,67 @@
   </section>
 
   <!-- works -->
-  <section class="p-front__works p-front-works">
+  <section class="p-front__works js-front-works">
     <div class="p-front-works__title">
       <a href="/works/">
-        <h2 class="c-heading01 c-heading01--front" data-en="works">実績</h2>
+        <h2 class="c-heading01" data-en="works">実績</h2>
       </a>
     </div>
-    <!-- フロント works swiper -->
-    <?php get_template_part('template-parts/swiper/front-works-swiper'); ?>
 
+    <!-- フロント works swiper -->
+    <?php
+    // フロントページでのみ実行
+    if (is_front_page()) {
+      // クエリの引数設定
+      $works_args = [
+        'post_type'      => 'works',
+        'posts_per_page' => -1,
+        'orderby'        => 'date',
+        'order'          => 'DESC',
+      ];
+
+      $works_query = new WP_Query($works_args);
+
+      if ($works_query->have_posts()) :
+    ?>
+        <div class="swiper p-front-works__swiper p-front-works-swiper">
+          <div class="swiper-wrapper">
+            <?php while ($works_query->have_posts()) : $works_query->the_post(); ?>
+              <div class="swiper-slide">
+                <a href="<?php the_permalink(); ?>" class="p-front-works-swiper__card p-front-works-swiper-card">
+                  <?php
+                  // worksカテゴリー取得
+                  $terms = get_the_terms(get_the_ID(), 'works_category');
+                  ?>
+                  <?php if ($terms && !is_wp_error($terms)) : ?>
+                    <span class="p-front-works-swiper-card__label"><?php echo esc_html($terms[0]->name); ?></span>
+                  <?php endif; ?>
+
+                  <div class="p-front-works-swiper-card__image">
+                    <?php the_post_thumbnail('large'); ?>
+                  </div>
+
+                  <div class="p-front-works-swiper-card__summary">
+                    <?php if ($summary = get_field('works_summary')) : ?>
+                      <p class="p-front-works-swiper-card__summary-text"><?php echo esc_html($summary); ?></p>
+                    <?php endif; ?>
+                  </div>
+                </a>
+              </div>
+            <?php endwhile; ?>
+          </div>
+          <!-- Swiperナビゲーション -->
+          <div class="p-front-works-swiper__nav">
+            <button class="p-front-works-swiper-nav__prev c-arrow01_left" aria-label="前へ"></button>
+            <button class="p-front-works-swiper-nav__next c-arrow01_right" aria-label="次へ"></button>
+          </div>
+
+        </div>
+        <?php wp_reset_postdata(); ?>
+    <?php
+      endif;
+    }
+    ?>
     <div class="p-front-works__readMore">
       <a href="/works/" class="c-readMore ">Read more<span class="c-arrow01_right"></span></a>
     </div>
@@ -115,7 +176,25 @@
             $index++;
         ?>
             <div class="p-front-voice-list__item p-front-voice-list-item" data-index="<?php echo $index; ?>">
-              <?php get_template_part('template-parts/cards/card-front-voice'); ?>
+              <a href="<?php the_permalink(); ?>" class="p-front-voice-list-item__card p-front-voice-list-item-card">
+                <?php
+                // voiceカテゴリー取得
+                $terms = get_the_terms(get_the_ID(), 'voice_category');
+                ?>
+                <?php if ($terms && !is_wp_error($terms)) : ?>
+                  <span class="p-front-voice-list-item-card__label"><?php echo esc_html($terms[0]->name); ?></span>
+                <?php endif; ?>
+
+                <div class="p-front-voice-list-item-card__image">
+                  <?php the_post_thumbnail('large'); ?>
+                </div>
+
+                <div class="p-front-voice-list-item-card__summary">
+                  <?php if ($summary = get_field('voice_summary')) : ?>
+                    <p class="p-front-voice-list-item-card-text"><?php echo esc_html($summary); ?></p>
+                  <?php endif; ?>
+                </div>
+              </a>
             </div>
         <?php
           endwhile;
@@ -208,11 +287,74 @@
       </div>
       <!-- newsのリスト -->
       <div class="p-front-news-inner__content p-front-news-inner-content">
+        <?php
+        $is_front = is_front_page();
+        $modifier = $is_front ? ' c-news-list--front' : '';
+        $link_modifier = $is_front ? ' c-news-list__link--front' : '';
+        ?>
 
+        <div class="c-news-list<?php echo $modifier; ?>">
+          <?php
+          $paged = get_query_var('paged') ? get_query_var('paged') : 1;
+          $posts_per_page = $is_front ? 3 : 10;
 
+          $args = [
+            'post_type'      => 'news',
+            'posts_per_page' => $posts_per_page,
+            'paged'          => $paged,
+          ];
 
-      
-        <?php get_template_part('template-parts/loop/loop-news-list', null, ['modifier' => 'frontNews']); ?>
+          // フロントページならカテゴリ「new」だけを表示
+          if ($is_front) {
+            $args['tax_query'] = [
+              [
+                'taxonomy' => 'news_category',
+                'field'    => 'slug',
+                'terms'    => 'new',
+              ],
+            ];
+          }
+
+          $news_query = new WP_Query($args);
+          if ($news_query->have_posts()) :
+            while ($news_query->have_posts()) : $news_query->the_post();
+          ?>
+              <a href="<?php the_permalink(); ?>" class="c-news-list__link<?php echo $link_modifier; ?>">
+                <article class="c-news-list__post c-news-list-post">
+                  <?php $meta_modifier = $is_front ? ' c-meta--front' : ''; ?>
+                  <div class="c-meta<?php echo $meta_modifier; ?>">
+                    <span class="c-meta__date"><?php echo get_the_date('Y.m.d'); ?></span>
+
+                    <?php
+                    $terms = get_the_terms(get_the_ID(), 'news_category');
+                    if (!empty($terms) && !is_wp_error($terms)) :
+                    ?>
+                      <span class="c-meta__category">
+                        <?php foreach ($terms as $term) : ?>
+                          <span class="c-meta__category-name"><?php echo esc_html($term->name); ?></span>
+                        <?php endforeach; ?>
+                      </span>
+                    <?php endif; ?>
+                  </div>
+                  <h3 class="c-news-list-post__title">
+                    <?php echo esc_html(get_the_title()); ?>
+                  </h3>
+                </article>
+              </a>
+            <?php
+            endwhile;
+            wp_reset_postdata();
+          else :
+            ?>
+            <p class="c-news-list__none">まだ投稿がありません。</p>
+          <?php endif; ?>
+
+          <div class="c-news-list__pagenavi--sp u-mobile">
+            <?php if (function_exists('wp_pagenavi')) : ?>
+              <?php wp_pagenavi(); ?>
+            <?php endif; ?>
+          </div>
+        </div>
       </div>
     </div>
     <div class="p-front-news__readmore u-mobile">
@@ -220,11 +362,6 @@
     </div>
   </section>
 
-  <!-- リンクバナー contact / faq -->
-  <section class="p-section-banner">
-    <?php get_template_part('template-parts/sections/section-contact'); ?>
-    <?php get_template_part('template-parts/sections/section-faq'); ?>
-  </section>
 </main>
-
+<?php get_template_part('template-parts/sections/section-cta'); ?>
 <?php get_footer(); ?>

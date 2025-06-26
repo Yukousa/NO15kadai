@@ -1,28 +1,20 @@
 @use "global" as *;
 
-.c-heading {
-  width: 100%;
-  padding: 0 myrem(20);
-  position: relative;
-
-  @include mq(md) {
-    max-width: 1440px;
-    margin: 0 auto;
-    padding: 0;
-  }
-}
-
-/********************************
- c-heading01 英語と日本語 2色の線の装飾
-********************************/
+/***************************************
+c-heading01 英語と日本語 2色(黒・白)の線の装飾
+****************************************/
 
 .c-heading01 {
+  width: 100%;
   font-family: $font-main;
   color: $black_sub;
+  font-size: myrem(13);
+  line-height: calc(16 / 13);
   font-weight: bold;
   letter-spacing: 0.06em;
   display: inline-block;
   position: relative;
+  padding-left: myrem(26);
 
   @include mq(md) {
     width: 100%;
@@ -35,10 +27,12 @@
 .c-heading01::before {
   content: "";
   position: absolute;
-  left: myrem(0);
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
   width: myrem(16);
-  height: myrem(2);
-  background: linear-gradient(to right, $black 50%, $black_base 50%);
+  height: myrem(4);
+  background: linear-gradient(to right, $black 50%, $white 50%);
 
   @include mq(md) {
     width: myrem(32);
@@ -51,11 +45,14 @@
   display: block;
   color: $black;
   font-family: $font-sub;
+  font-size: myrem(28);
   font-weight: 500;
   line-height: 1;
   letter-spacing: 0;
   text-transform: uppercase;
   position: absolute;
+  top: myrem(-32);
+  left: myrem(-4);
 
   @include mq(md) {
   }
@@ -139,41 +136,6 @@ top:50%;
   }
 }
 
-/***************************
-フロントページ contact,faq　用
-***************************/
-.c-heading01--white-small {
-  width: fit-content;
-  font-size: myrem(13);
-  color: $white;
-  left: myrem(20);
-  padding-left: myrem(30);
-
-  @include mq(md) {
-    font-size: myrem(16);
-    top: 56%;
-    left: myrem(70);
-    padding: 0 myrem(50);
-  }
-}
-
-.c-heading01--white-small::before {
-  height: myrem(4);
-  top: 50%;
-  left: myrem(4);
-}
-
-.c-heading01--white-small::after {
-  color: $white;
-  font-size: myrem(20);
-  bottom: myrem(20);
-  left: 0;
-  letter-spacing: 0;
-
-  @include mq(md) {
-    font-size: myrem(60);
-  }
-}
 
 /***************************
 // フロントページ用
@@ -464,3 +426,7 @@ top:50%;
     letter-spacing: 0.22em;
   }
 }
+
+
+
+

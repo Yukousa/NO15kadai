@@ -1,6 +1,6 @@
 @use "global" as *;
 
-.p-section-banner {
+.p-cta {
   @include mq(md) {
     display: flex;
     justify-content: center;
@@ -8,41 +8,21 @@
   }
 }
 
-.p-section-banner__item {
+.p-cta__item {
   width: 100%;
   aspect-ratio: 375 / 225;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 60% center;
   position: relative;
-  // padding-top: myrem(110);
 
   @include mq(md) {
+    width: 50%;
     aspect-ratio: 720 / 410;
   }
 }
 
-.p-section-banner__item--contact {
-  background-image: url("../../assets/images/image10.png");
-  display: block;
-}
-
-.p-section-banner__item--contact {
-  position: relative;
-}
-
-.p-section-banner__item--faq {
-  position: relative;
-}
-
-
-.p-section-banner__item--faq {
-  background-image: url("../../assets/images/image09.png");
-  display: block;
-}
-
-
-.p-section-banner__overlay {
+.p-cta-item__overlay {
   position: absolute;
   inset: 0;
   background: rgba(0, 0, 0, 0.5);
@@ -50,12 +30,80 @@
   pointer-events: none;
 }
 
-.p-section-banner__title--contact,
-.p-section-banner__title--faq {
+
+.p-cta__item--contact {
+  background-image: url("../../assets/images/image10.png");
+  display: block;
+  position: relative;
+}
+
+.p-cta__item--faq {
+  background-image: url("../../assets/images/image09.png");
+  display: block;
+  position: relative;
+}
+
+.p-cta-item__title {
   position: absolute;
   top: 45%;
 
     @include mq(md) {
       top: 55%;
     }
+}
+
+.p-cta-item-title__text {
+  width: fit-content;
+  font-size: myrem(13);
+  color: $white;
+  left: myrem(20);
+  padding-left: myrem(30);
+  position: relative;
+
+  @include mq(md) {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0;
+    font-size: myrem(16);
+    top: 56%;
+    left: myrem(70);
+    padding: 0 myrem(50);
+  }
+}
+
+.p-cta-item-title__text::before {
+  content: "";
+  top: 50%;
+  left: myrem(4);
+  position: absolute;
+  left: myrem(0);
+  width: myrem(16);
+  height: myrem(4);
+  background: linear-gradient(to right, #929292 50%, $white 50%);
+
+  @include mq(md) {
+    width: myrem(32);
+    height: myrem(4);
+  }
+
+}
+
+.p-cta-item-title__text::after {
+  content: attr(data-en);
+  display: block;
+  color: $white;
+  font-size: myrem(20);
+  bottom: myrem(20);
+  left: 0;
+  letter-spacing: 0;
+  font-family: $font-sub;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  position: absolute;
+
+  @include mq(md) {
+    font-size: myrem(60);
+  }
 }

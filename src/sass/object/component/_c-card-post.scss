@@ -75,21 +75,6 @@
     letter-spacing: 0.08em;
   }
 }
-/****************************
-フロントページ　 swiper用
-****************************/
-.p-front__works .c-card-post--front {
-
-    @include mq(md) {
-      margin-top: myrem(10);
-    }
-}
-
-.p-front__works .c-card-post__summary {
-    @include mq(md) {
-      transform: translateY(-20%);
-    }
-}
 
 
 /****************************
