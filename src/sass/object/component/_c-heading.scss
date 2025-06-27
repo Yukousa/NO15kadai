@@ -18,9 +18,9 @@ c-heading01 英語と日本語 2色(黒・白)の線の装飾
 
   @include mq(md) {
     width: 100%;
-    max-width: $innerWidth;
+    font-size: myrem(16);
     margin: 0 auto;
-    padding: 0;
+    padding-left: myrem(42);
   }
 }
 
@@ -55,8 +55,19 @@ c-heading01 英語と日本語 2色(黒・白)の線の装飾
   left: myrem(-4);
 
   @include mq(md) {
+    font-size: myrem(60);
+    top: myrem(-60);
   }
 }
+
+//pc サイドバー用　英語のサイズ違い
+.c-heading01--sidebar::after{
+  font-size:myrem(50);
+  top: myrem(-65);
+  left: myrem(0);
+}
+
+
 /***************************
 背景色$black_base用の　装飾線
 ***************************/
@@ -70,20 +81,17 @@ c-heading01 英語と日本語 2色(黒・白)の線の装飾
     padding-left: myrem(45);
     margin: 0 auto;
   }
-
 }
 
 .c-heading01--lineWhite::before {
   content: "";
   background: linear-gradient(to right, $black 50%, $white 50%);
-top:50%;
-    @include mq(md) {
-      top:45%;
-      left: 0;
-    
-    }
+  top: 50%;
+  @include mq(md) {
+    top: 45%;
+    left: 0;
+  }
 }
-
 
 .c-heading01--lineWhite::after {
   font-size: myrem(28);
@@ -93,11 +101,9 @@ top:50%;
   @include mq(md) {
     font-size: myrem(60);
     top: myrem(-60);
-    left:0;
+    left: 0;
   }
-
 }
-
 
 /***************************
 フロントページ service　用
@@ -114,7 +120,7 @@ top:50%;
     font-size: myrem(16);
     top: 56%;
     left: myrem(70);
-    padding: 0 myrem(50);
+    padding: 0 myrem(40);
   }
 }
 
@@ -122,6 +128,12 @@ top:50%;
   height: myrem(4);
   top: 50%;
   left: myrem(4);
+  background: linear-gradient(to right, $black_sub 50%, $white 50%);
+
+
+  @include mq(md) {
+    left: myrem(0);
+  }
 }
 
 .c-heading01--white::after {
@@ -140,293 +152,297 @@ top:50%;
 /***************************
 // フロントページ用
 ***************************/
-.p-front__service .c-heading01--white {
-  top: 17%;
-}
+// .p-front__service .c-heading01--white {
+//   top: 17%;
+// }
 
-.c-heading01--whiteCenter {
-  text-align: center;
-  padding: 0;
-  color: $white;
-  font-size: myrem(13);
+// .c-heading01--whiteCenter {
+//   text-align: center;
+//   padding: 0;
+//   color: $white;
+//   font-size: myrem(13);
 
-  @include mq(md) {
-    font-size: myrem(16);
-    text-align: left;
-    padding-left: myrem(52);
-  }
-}
+//   @include mq(md) {
+//     font-size: myrem(16);
+//     text-align: left;
+//     padding-left: myrem(52);
+//   }
+// }
 
-.c-heading01--whiteCenter::before {
-  bottom: myrem(20);
-  left: 50%;
-  transform: translateX(-50%);
-  color: $white;
+// .c-heading01--whiteCenter::before {
+//   bottom: myrem(20);
+//   left: 50%;
+//   transform: translateX(-50%);
+//   color: $white;
 
-  @include mq(md) {
-    left: myrem(20);
-    bottom: 48%;
-  }
-}
+//   @include mq(md) {
+//     left: myrem(20);
+//     bottom: 48%;
+//   }
+// }
 
-.c-heading01--whiteCenter::after {
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: myrem(35);
-  color: $white;
-  font-size: myrem(28);
+// .c-heading01--whiteCenter::after {
+//   left: 50%;
+//   transform: translateX(-50%);
+//   bottom: myrem(35);
+//   color: $white;
+//   font-size: myrem(28);
 
-  @include mq(md) {
-    font-size: myrem(60);
-    transform: translateX(0);
-    bottom: myrem(25);
-    left: 0;
-}
-}
+//   @include mq(md) {
+//     font-size: myrem(60);
+//     transform: translateX(0);
+//     bottom: myrem(25);
+//     left: 0;
+//   }
+// }
 
-/***************************
-// フロントページ用
-***************************/
-.c-heading01--front {
-  font-size: myrem(13);
-  letter-spacing: 0.06em;
-  padding-left: myrem(30);
+// /***************************
+// // フロントページ用
+// ***************************/
+// .c-heading01--front {
+//   font-size: myrem(13);
+//   letter-spacing: 0.06em;
+//   padding-left: myrem(30);
 
-  @include mq(md) {
-    font-size: myrem(16);
-    padding-left: myrem(42);
-    margin: 0 auto;
-  }
-}
+//   @include mq(md) {
+//     font-size: myrem(16);
+//     padding-left: myrem(42);
+//     margin: 0 auto;
+//   }
+// }
 
-.c-heading01--front::before {
-  top: 50%;
-  left: myrem(4);
-  width: myrem(16);
-  height: myrem(2);
+// .c-heading01--front::before {
+//   top: 50%;
+//   left: myrem(4);
+//   width: myrem(16);
+//   height: myrem(2);
 
-  @include mq(md) {
-    width: myrem(32);
-    height: myrem(4);
-    left: myrem(0);
-  }
-}
+//   @include mq(md) {
+//     width: myrem(32);
+//     height: myrem(4);
+//     left: myrem(0);
+//   }
+// }
 
-.c-heading01--front::after {
-  font-size: myrem(28);
-  top: myrem(-32);
-  left: 0;
+// .c-heading01--front::after {
+//   font-size: myrem(28);
+//   top: myrem(-32);
+//   left: 0;
 
-  @include mq(md) {
-    font-size: myrem(60);
-    top: myrem(-60);
-    left: myrem(0);
-  }
-}
+//   @include mq(md) {
+//     font-size: myrem(60);
+//     top: myrem(-60);
+//     left: myrem(0);
+//   }
+// }
 
-.p-front__voice .c-heading01--front::after {
-  @include mq(md) {
-    font-size: myrem(50);
-  }
-}
+// .p-front__voice .c-heading01--front::after {
+//   @include mq(md) {
+//     font-size: myrem(50);
+//   }
+// }
 /***************************
 // その他　共通タイトル用
 ***************************/
-.c-heading01--message,
-.c-heading01--works,
-.c-heading01--service,
-.c-heading01--profile,
-.c-heading01--news,
-.c-heading01--voice,
-.c-news-sidebar__title {
-  font-size: myrem(14);
-  letter-spacing: 0.02em;
-  padding-left: myrem(30);
-  top: 0;
+// .c-heading01--message,
+// .c-heading01--works,
+// .c-heading01--service,
+// .c-heading01--profile,
+// .c-heading01--news,
+// .c-heading01--voice,
+// .c-news-sidebar__title {
+//   font-size: myrem(14);
+//   letter-spacing: 0.02em;
+//   padding-left: myrem(30);
+//   top: 0;
 
-  @include mq(md) {
-    font-size: myrem(16);
-    padding-left: myrem(117);
-  }
-}
+//   @include mq(md) {
+//     font-size: myrem(16);
+//     padding-left: myrem(117);
+//   }
+// }
 
-.c-heading01--message::before,
-.c-heading01--works::before,
-.c-heading01--service::before,
-.c-heading01--profile::before,
-.c-heading01--profile02::before,
-.c-heading01--news::before,
-.c-heading01--voice::before,
-.c-news-sidebar__title::before {
-  top: 50%;
-  left: myrem(4);
-  width: myrem(16);
-  height: myrem(2);
+// .c-heading01--message::before,
+// .c-heading01--works::before,
+// .c-heading01--service::before,
+// .c-heading01--profile::before,
+// .c-heading01--profile02::before,
+// .c-heading01--news::before,
+// .c-heading01--voice::before,
+// .c-news-sidebar__title::before {
+//   top: 50%;
+//   left: myrem(4);
+//   width: myrem(16);
+//   height: myrem(2);
 
-  @include mq(md) {
-    width: myrem(32);
-    height: myrem(4);
-    left: myrem(70);
-  }
-}
+//   @include mq(md) {
+//     width: myrem(32);
+//     height: myrem(4);
+//     left: myrem(70);
+//   }
+// }
 
-.c-heading01--message::after,
-.c-heading01--works::after,
-.c-heading01--service::after,
-.c-heading01--profile::after,
-.c-heading01--news:after,
-.c-heading01--voice::after,
-.c-news-sidebar__title::after {
-  font-size: myrem(36);
-  top: myrem(-37);
-  left: 0;
+// .c-heading01--message::after,
+// .c-heading01--works::after,
+// .c-heading01--service::after,
+// .c-heading01--profile::after,
+// .c-heading01--news:after,
+// .c-heading01--voice::after,
+// .c-news-sidebar__title::after {
+//   font-size: myrem(36);
+//   top: myrem(-37);
+//   left: 0;
 
-  @include mq(md) {
-    font-size: myrem(60);
-    top: myrem(-58);
-    left: myrem(70);
-  }
-}
+//   @include mq(md) {
+//     font-size: myrem(60);
+//     top: myrem(-58);
+//     left: myrem(70);
+//   }
+// }
 
-.c-heading01--serviceH3 {
-  font-size: myrem(14);
-  letter-spacing: 0.02em;
-  padding-left: myrem(30);
-  top: 0;
+// .c-heading01--serviceH3 {
+//   font-size: myrem(14);
+//   letter-spacing: 0.02em;
+//   padding-left: myrem(30);
+//   top: 0;
 
-  @include mq(md) {
-    font-size: myrem(16);
-    padding-left: myrem(42);
-  }
-}
+//   @include mq(md) {
+//     font-size: myrem(16);
+//     padding-left: myrem(42);
+//   }
+// }
 
-.c-heading01--serviceH3::before {
-  top: 50%;
-  left: myrem(4);
-  width: myrem(16);
-  height: myrem(2);
+// .c-heading01--serviceH3::before {
+//   top: 50%;
+//   left: myrem(4);
+//   width: myrem(16);
+//   height: myrem(2);
 
-  @include mq(md) {
-    width: myrem(32);
-    height: myrem(4);
-    left: 0;
-  }
-}
+//   @include mq(md) {
+//     width: myrem(32);
+//     height: myrem(4);
+//     left: 0;
+//   }
+// }
 
-.c-heading01--serviceH3::after {
-  font-size: myrem(36);
-  top: myrem(-37);
-  left: 0;
+// .c-heading01--serviceH3::after {
+//   font-size: myrem(36);
+//   top: myrem(-37);
+//   left: 0;
 
-  @include mq(md) {
-    font-size: myrem(60);
-    top: myrem(-58);
-    left: 0;
-  }
-}
+//   @include mq(md) {
+//     font-size: myrem(60);
+//     top: myrem(-58);
+//     left: 0;
+//   }
+// }
 
-.c-heading01--profile02 {
-  font-size: myrem(14);
-  letter-spacing: 0.06em;
-  top: myrem(-95);
-  left: myrem(28);
-  padding-left: myrem(22);
+// .c-heading01--profile02 {
+//   font-size: myrem(14);
+//   letter-spacing: 0.06em;
+//   top: myrem(-95);
+//   left: myrem(28);
+//   padding-left: myrem(22);
 
-  @include mq(md) {
-    font-size: myrem(16);
-    padding-left: myrem(117);
-    top: myrem(10);
-    left: myrem(0);
-    margin: 0 auto;
-  }
-}
+//   @include mq(md) {
+//     font-size: myrem(16);
+//     padding-left: myrem(117);
+//     top: myrem(10);
+//     left: myrem(0);
+//     margin: 0 auto;
+//   }
+// }
 
-.c-heading01--profile02::before {
-  top: myrem(10);
-  left: myrem(-4);
-  width: myrem(16);
-  height: myrem(2);
-  background: linear-gradient(to right, $black 50%, $white 50%);
+// .c-heading01--profile02::before {
+//   top: myrem(10);
+//   left: myrem(-4);
+//   width: myrem(16);
+//   height: myrem(2);
+//   background: linear-gradient(to right, $black 50%, $white 50%);
 
-  @include mq(md) {
-    width: myrem(32);
-    height: myrem(4);
-    left: myrem(70);
-  }
-}
+//   @include mq(md) {
+//     width: myrem(32);
+//     height: myrem(4);
+//     left: myrem(70);
+//   }
+// }
 
-.c-heading01--profile02::after {
-  font-size: myrem(36);
-  top: myrem(-36);
-  left: myrem(-10);
+// .c-heading01--profile02::after {
+//   font-size: myrem(36);
+//   top: myrem(-36);
+//   left: myrem(-10);
 
-  @include mq(md) {
-    font-size: myrem(50);
-    top: myrem(-60);
-    left: myrem(70);
-    letter-spacing: 0.02em;
-  }
-}
+//   @include mq(md) {
+//     font-size: myrem(50);
+//     top: myrem(-60);
+//     left: myrem(70);
+//     letter-spacing: 0.02em;
+//   }
+// }
 
 /***************************
 サイドバー用
 ***************************/
-.c-heading01--sidebar {
-  margin-top: myrem(30);
-  padding-left: myrem(27);
-  font-size: myrem(14);
+// .c-heading01--sidebar {
+//   margin-top: myrem(30);
+//   padding-left: myrem(27);
+//   font-size: myrem(14);
 
-  @include mq(md) {
-    font-size: myrem(16);
-    top: myrem(20);
-    padding-left: myrem(41);
-  }
-}
+//   @include mq(md) {
+//     font-size: myrem(16);
+//     top: myrem(20);
+//     padding-left: myrem(41);
+//   }
+// }
 
-.c-heading01--sidebar::before {
-  height: myrem(4);
-  left: myrem(2);
-  top: 50%;
-  transform: translateY(-50%);
+// .c-heading01--sidebar::before {
+//   height: myrem(4);
+//   left: myrem(2);
+//   top: 50%;
+//   transform: translateY(-50%);
 
-  @include mq(md) {
-  }
-}
+//   @include mq(md) {
+//   }
+// }
 
-.c-heading01--sidebar::after {
-  font-size: myrem(36);
-  top: myrem(-34);
-  left: 0;
-  letter-spacing: 0;
+// .c-heading01--sidebar::after {
+//   font-size: myrem(36);
+//   top: myrem(-34);
+//   left: 0;
+//   letter-spacing: 0;
 
-  @include mq(md) {
-    font-size: myrem(50);
-    top: myrem(-60);
-  }
-}
+//   @include mq(md) {
+//     font-size: myrem(50);
+//     top: myrem(-60);
+//   }
+// }
 
 /***************************
   c-heading02 背景黒グラデーション
   ***************************/
-.c-subtitle .c-heading02 {
-  font-family: $font-main;
-  font-size: myrem(20);
-  font-weight: 900;
-  letter-spacing: 0.06em;
-  line-height: 1;
+.c-heading02 {
   width: fit-content;
-  padding: myrem(7) myrem(7) myrem(7) myrem(10);
+  height: myrem(35);
+  font-weight: 900;
+  font-size: myrem(18);
+  line-height: 1;
+  letter-spacing: 0.1em;
   color: $white;
+  padding: 0 myrem(6);
   background: linear-gradient(to right, #000 0%, #929292 100%);
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  margin-top: myrem(5);
 
   @include mq(md) {
+    height: myrem(52);
+    font-weight: 800;
     font-size: myrem(34);
+    line-height: calc(54 / 34);
+    padding: 0 myrem(18) 0 myrem(8);
     margin-top: myrem(0);
-    letter-spacing: 0.22em;
+    margin-left: myrem(-8);
+
   }
 }
-
-
-
 

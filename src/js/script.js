@@ -154,30 +154,30 @@ if (document.querySelector(".js-front-fv-swiper")) {
 }
 
 // フロントページ works の Swiper
-if (document.querySelector(".p-front-works-swiper")) {
-  new Swiper(".p-front-works-swiper", {
-    loop: true,
-    speed: 8000,
-    allowTouchMove: false,
-    spaceBetween: 20,
-    autoplay: {
-      delay: 0,
-      disableOnInteraction: false,
-    },
-    breakpoints: {
-      0: {
-        slidesPerView: 1.1,
-      },
-      768: {
-        slidesPerView: 3.85,
-      },
-    },
-    navigation: {
-      nextEl: ".p-front-works-swiper-nav__next",
-      prevEl: ".p-front-works-swiper-nav__prev",
-    },
-  });
-}
+// if (document.querySelector(".p-front-works-swiper")) {
+//   new Swiper(".p-front-works-swiper", {
+//     loop: true,
+//     speed: 8000,
+//     allowTouchMove: false,
+//     spaceBetween: 20,
+//     autoplay: {
+//       delay: 0,
+//       disableOnInteraction: false,
+//     },
+//     breakpoints: {
+//       0: {
+//         slidesPerView: 1.1,
+//       },
+//       768: {
+//         slidesPerView: 3.85,
+//       },
+//     },
+//     navigation: {
+//       nextEl: ".p-front-works-swiper-nav__next",
+//       prevEl: ".p-front-works-swiper-nav__prev",
+//     },
+//   });
+// }
 
 // 関連記事の Swiper（フロントページ以外）
 if (
