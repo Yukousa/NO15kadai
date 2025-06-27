@@ -267,7 +267,7 @@
         </picture>
         <div class="p-front-profile__overlay"></div>
         <div class="p-front-profile__content p-front-profile-content">
-          <h2 class="c-heading01" data-en="profile">経歴・職歴</h2>
+          <h2 class="c-heading01 c-heading01--white" data-en="profile">経歴・職歴</h2>
           <p class="p-front-profile-content__text">ここにテキスト入れるここにテキスト入れるここにテキスト入れるここにテキスト入れるここにテキスト入れる</p>
         </div>
       </div>

@@ -37,7 +37,7 @@
 
       <!-- メールボタン＋ハンバーガー -->
       <div class="p-header-inner__btn p-header-inner-btn">
-        <a href="<?php echo esc_url(home_url('/contact/')); ?>" class="p-header-inner-btn__mail">
+        <a href="#contact" class="p-header-inner-btn__mail">
           <div class="p-header-inner-btn__mail-image">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/contact.png" alt="お問合せメールのアイコン">
           </div>

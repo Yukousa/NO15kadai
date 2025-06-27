@@ -1,4 +1,4 @@
-<section class="p-cta">
+<section class="p-cta" id="contact">
     <a href="/contact/" class="p-cta__item p-cta-item p-cta__item--contact">
         <div class="p-cta-item__overlay"></div>
         <div class="p-cta-item__title p-cta-item-title">
