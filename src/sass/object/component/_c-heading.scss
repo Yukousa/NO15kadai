@@ -61,12 +61,11 @@ c-heading01 英語と日本語 2色(黒・白)の線の装飾
 }
 
 //pc サイドバー用　英語のサイズ違い
-.c-heading01--sidebar::after{
-  font-size:myrem(50);
+.c-heading01--sidebar::after {
+  font-size: myrem(50);
   top: myrem(-65);
   left: myrem(0);
 }
-
 
 /***************************
 背景色$black_base用の　装飾線
@@ -126,7 +125,6 @@ c-heading01 英語と日本語 2色(黒・白)の線の装飾
   left: myrem(4);
   background: linear-gradient(to right, $black_sub 50%, $white 50%);
 
-
   @include mq(md) {
     left: myrem(0);
   }
@@ -144,99 +142,46 @@ c-heading01 英語と日本語 2色(黒・白)の線の装飾
   }
 }
 
-
 /***************************
-// フロントページ用
+// 下層ページタイトル用
 ***************************/
-// .p-front__service .c-heading01--white {
-//   top: 17%;
-// }
+.c-heading01--mv {
+  font-size: myrem(14);
+  letter-spacing: 0.02em;
+  padding-left: myrem(30);
+  top: 0;
 
-// .c-heading01--whiteCenter {
-//   text-align: center;
-//   padding: 0;
-//   color: $white;
-//   font-size: myrem(13);
+  @include mq(md) {
+    font-size: myrem(16);
+    padding-left: myrem(117);
+  }
+}
 
-//   @include mq(md) {
-//     font-size: myrem(16);
-//     text-align: left;
-//     padding-left: myrem(52);
-//   }
-// }
+.c-heading01--mv::before {
+  top: 50%;
+  left: myrem(4);
+  width: myrem(16);
+  height: myrem(2);
 
-// .c-heading01--whiteCenter::before {
-//   bottom: myrem(20);
-//   left: 50%;
-//   transform: translateX(-50%);
-//   color: $white;
+  @include mq(md) {
+    width: myrem(32);
+    height: myrem(4);
+    left: myrem(70);
+  }
+}
 
-//   @include mq(md) {
-//     left: myrem(20);
-//     bottom: 48%;
-//   }
-// }
+.c-heading01--mv::after {
+  font-size: myrem(36);
+  top: myrem(-37);
+  left: 0;
 
-// .c-heading01--whiteCenter::after {
-//   left: 50%;
-//   transform: translateX(-50%);
-//   bottom: myrem(35);
-//   color: $white;
-//   font-size: myrem(28);
+  @include mq(md) {
+    font-size: myrem(60);
+    top: myrem(-58);
+    left: myrem(70);
+  }
+}
 
-//   @include mq(md) {
-//     font-size: myrem(60);
-//     transform: translateX(0);
-//     bottom: myrem(25);
-//     left: 0;
-//   }
-// }
-
-// /***************************
-// // フロントページ用
-// ***************************/
-// .c-heading01--front {
-//   font-size: myrem(13);
-//   letter-spacing: 0.06em;
-//   padding-left: myrem(30);
-
-//   @include mq(md) {
-//     font-size: myrem(16);
-//     padding-left: myrem(42);
-//     margin: 0 auto;
-//   }
-// }
-
-// .c-heading01--front::before {
-//   top: 50%;
-//   left: myrem(4);
-//   width: myrem(16);
-//   height: myrem(2);
-
-//   @include mq(md) {
-//     width: myrem(32);
-//     height: myrem(4);
-//     left: myrem(0);
-//   }
-// }
-
-// .c-heading01--front::after {
-//   font-size: myrem(28);
-//   top: myrem(-32);
-//   left: 0;
-
-//   @include mq(md) {
-//     font-size: myrem(60);
-//     top: myrem(-60);
-//     left: myrem(0);
-//   }
-// }
-
-// .p-front__voice .c-heading01--front::after {
-//   @include mq(md) {
-//     font-size: myrem(50);
-//   }
-// }
 /***************************
 // その他　共通タイトル用
 ***************************/
@@ -412,33 +357,4 @@ c-heading01 英語と日本語 2色(黒・白)の線の装飾
 //     top: myrem(-60);
 //   }
 // }
-
-/***************************
-  c-heading02 背景黒グラデーション
-  ***************************/
-.c-heading02 {
-  width: fit-content;
-  height: myrem(35);
-  font-weight: 900;
-  font-size: myrem(18);
-  line-height: 1;
-  letter-spacing: 0.1em;
-  color: $white;
-  padding: 0 myrem(6);
-  background: linear-gradient(to right, #000 0%, #929292 100%);
-  display: flex;
-  align-items: center;
-  margin-top: myrem(5);
-
-  @include mq(md) {
-    height: myrem(52);
-    font-weight: 800;
-    font-size: myrem(34);
-    line-height: calc(54 / 34);
-    padding: 0 myrem(18) 0 myrem(8);
-    margin-top: myrem(0);
-    margin-left: myrem(-8);
-
-  }
-}
 

@@ -464,6 +464,7 @@
   }
 }
 
+
 .p-front-content-wrapper-block1--paragraph__text {
   font-weight: 900;
   font-size: myrem(18);
@@ -488,10 +489,9 @@
 }
 
 .p-front-content-wrapper-block1__image {
-  margin-top: myrem(60);
   width: 100vw;
   height: myrem(222);
-  margin: 0 calc(50% - 50vw);
+  margin: myrem(60) calc(50% - 50vw) 0;
   aspect-ratio: 375 / 222;
   box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
 

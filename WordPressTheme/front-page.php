@@ -101,15 +101,15 @@
     <div class="p-front-content__wrapper p-front-content-wrapper">
       <div class="p-front-content-wrapper__block1 p-front-content-wrapper-block1">
         <article class="p-front-content-wrapper-block1__paragraph p-front-content-wrapper-block1--paragraph">
-          <p class="p-front-content-wrapper-block1--paragraph__text">丁寧な作業とコミュニケーションで
-            <span class="c-heading02">ハイクオリティなコードを納品。</span>
+          <p class="c-doubleHeadline">丁寧な作業とコミュニケーションで
+            <span class="c-doubleHeadline--line2">ハイクオリティなコードを納品。</span>
           </p>
-          <p class="p-front-content-wrapper-block1--paragraph__text">ここにテキストここにテキストここにテキスト<br>ここにテキストここにテキスト
-            <span class="c-heading02">ここにテキストここにテキスト</span>
+          <p class="c-doubleHeadline">ここにテキストここにテキストここにテキスト<br>ここにテキストここにテキスト
+            <span class="c-doubleHeadline--line2">ここにテキストここにテキスト</span>
           </p>
-          <p class="p-front-content-wrapper-block1--paragraph__text">ここにテキストここにテキストここにテキスト<br>ここにテキストここにテキスト</p>
-          <p class="p-front-content-wrapper-block1--paragraph__text">ここにテキストここにテキスト
-            <span class="c-heading02">ここにテキスト</span>
+          <p class="c-doubleHeadline">ここにテキストここにテキストここにテキスト<br>ここにテキストここにテキスト</p>
+          <p class="c-doubleHeadline">ここにテキストここにテキスト
+            <span class="c-doubleHeadline--line2">ここにテキスト</span>
           </p>
         </article>
         <div class="p-front-content-wrapper-block1__image">
@@ -124,8 +124,8 @@
           </div>
           <!-- sp 非表示 -->
           <div class="p-front-content-wrapper-block1-message__text p-front-content-wrapper-block1-message-text u-desktop">
-            <p class="p-front-content-wrapper-block1-message-text__text">丁寧な作業とコミュニケーションで
-              <span class="c-heading02">ハイクオリティなコードを納品。</span>
+            <p class="c-doubleHeadline">丁寧な作業とコミュニケーションで
+              <span class="c-doubleHeadline--line2">ハイクオリティなコードを納品。</span>
             </p>
             <div class="p-front-content-wrapper-block1-message-text__readMore">
               <a href="/message/" class="c-readMore">Read more<span class="c-arrow01_right"></span></a>
