@@ -101,7 +101,7 @@
     justify-content: flex-end;
     align-items: center;
     flex-wrap: wrap;
-    column-gap: myrem(45);
+    column-gap: myrem(40);
     padding: 0;
   }
 }
@@ -115,6 +115,12 @@
   @include mq(md) {
     width: fit-content;
     border-bottom: none;
+  }
+}
+
+.p-header-inner-nav__item + .p-header-inner-nav__item {
+  @include mq(md) {
+    
   }
 }
 
