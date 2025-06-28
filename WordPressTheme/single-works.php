@@ -1,111 +1,158 @@
 <?php get_header(); ?>
 
+
+
 <main class="p-single-works">
-    <!-- fv -->
-    <section class="p-single-works__fv c-sub-fv">
-        <!-- フロントページ以外のfv -->
-        <?php get_template_part('template-parts/sections/section-sub-fv'); ?>
-    </section>
-    <!-- 記事タイトル -->
-    <h3 class="p-single-works-content-body__title">
-        <?php echo nl2br(get_field('works_heading')); ?>
-    </h3>
+    <div class="p-single-works__inner p-single-works-inner l-inner">
+        <h2 class="p-single-works-inner__title">
+            <?php echo nl2br(get_field('works_heading')); ?>
+        </h2>
+        <div class="p-single-works-inner__eye-catch">
+            <?php
+            if (has_post_thumbnail()) {
+                the_post_thumbnail('full', [
+                    'alt' => get_the_title(),
+                    'loading' => 'lazy',
+                    'width' => 1440,
+                    'height' => 480,
+                ]);
+            } else {
+                // 代替画像を指定する場合
+                echo '<img src="' . esc_url(get_template_directory_uri()) . '/assets/images/default-eye-catch.jpg" alt="イメージ画像" width="1440" height="480" loading="lazy">';
+            }
+            ?>
+        </div>
+    </div>
 
     <!-- pc時　2カラム -->
-    <section class="p-single-works__wrapper">
-        <div class="p-single-works__content p-single-works-content">
-            <!-- 本文 -->
-            <article class="p-single-works-content__body p-single-works-content-body">
-    <!-- 投稿画面ACFのループ -->
-    <?php for ($i = 1; $i <= 10; $i++) :
-        $heading_top = get_field("section_heading_{$i}_top");
-        $heading_bottom = get_field("section_heading_{$i}_bottom");
-        $content = get_field("section_content_{$i}");
-        $image = get_field("section_image_{$i}");
+    <section class="p-single-works__wrapper p-single-works-wrapper l-inner">
+        <div class="p-single-works-wrapper__content p-single-works-wrapper-content">
+            <!-- 投稿画面ACFのループ -->
+            <?php
+            $heading_top = get_field("section_heading_1_top");
+            $heading_bottom = get_field("section_heading_1_bottom");
+            $content = get_field("section_content_1");
 
-        if (empty($heading_top) && empty($heading_bottom) && empty($content) && empty($image)) {
-            continue;
-        }
-    ?>
-        <section class="c-single-content">
-            <div class="c-single-content__wrapper">
-                <h3 class="c-subtitle">
-                    <?php if ($heading_top) : ?>
-                        <span class="c-subtitle--line1"><?php echo esc_html($heading_top); ?></span>
-                    <?php endif; ?>
-                    <?php if ($heading_bottom) : ?>
-                        <span class="c-subtitle--line2 c-heading02"><?php echo esc_html($heading_bottom); ?></span>
-                    <?php endif; ?>
-                </h3>
+            if (!empty($heading_top) || !empty($heading_bottom) || !empty($content)) :
+            ?>
+                <div class="p-single-works-wrapper-content__body p-single-works-wrapper-content-body">
+                    <h3 class="c-subtitle">
+                        <?php if ($heading_top) : ?>
+                            <span class="c-subtitle--line1"><?php echo esc_html($heading_top); ?></span>
+                        <?php endif; ?>
+                        <?php if ($heading_bottom) : ?>
+                            <span class="c-subtitle--line2"><?php echo esc_html($heading_bottom); ?></span>
+                        <?php endif; ?>
+                    </h3>
 
-                <?php if ($content) : ?>
-                    <div class="c-single-content__post">
-                        <?php echo wp_kses_post($content); ?>
+                    <?php if ($content) : ?>
+                        <dl class="p-single-works-wrapper-content-body__list">
+                            <dt class="p-single-works-wrapper-content-body__term">ジャンル</dt>
+                            <dd class="p-single-works-wrapper-content-body__desc"><?php echo esc_html(get_field('genre')); ?></dd>
+
+                            <dt class="p-single-works-wrapper-content-body__term">担当と作業範囲</dt>
+                            <dd class="p-single-works-wrapper-content-body__desc"><?php echo esc_html(get_field('role_scope')); ?></dd>
+
+                            <dt class="p-single-works-wrapper-content-body__term">制作環境と使用言語</dt>
+                            <dd class="p-single-works-wrapper-content-body__desc"><?php echo esc_html(get_field('environment')); ?></dd>
+
+                            <dt class="p-single-works-wrapper-content-body__term">制作期間</dt>
+                            <dd class="p-single-works-wrapper-content-body__desc"><?php echo esc_html(get_field('period')); ?></dd>
+
+                            <dt class="p-single-works-wrapper-content-body__term">URL</dt>
+                            <dd class="p-single-works-wrapper-content-body__desc">
+                                <?php if (get_field('url')): ?>
+                                    <a href="<?php echo esc_url(get_field('url')); ?>" target="_blank" rel="noopener">
+                                        <?php echo esc_html(get_field('url')); ?>
+                                    </a>
+                                <?php endif; ?>
+                            </dd>
+
+                            <dt class="p-single-works-wrapper-content-body__term">クライアント情報</dt>
+                            <dd class="p-single-works-wrapper-content-body__desc"><?php echo esc_html(get_field('client')); ?></dd>
+
+                            <dt class="p-single-works-wrapper-content-body__term">クライアントの意向と課題、制作経緯</dt>
+                            <dd class="p-single-works-wrapper-content-body__desc"><?php echo esc_html(get_field('client_notes')); ?></dd>
+                        </dl>
+                    <?php endif; ?>
+                </div>
+            <?php endif; ?>
+
+            <?php
+            $heading_top = get_field("section_heading_2_top");
+            $heading_bottom = get_field("section_heading_2_bottom");
+            $content = get_field("section_content_2");
+
+            if (!empty($heading_top) || !empty($heading_bottom) || !empty($content)) :
+            ?>
+                <div class="p-single-works-wrapper-content__body p-single-works-wrapper-content-body p-single-works-wrapper-content__body--second">
+                    <h3 class="c-subtitle">
+                        <?php if ($heading_top) : ?>
+                            <span class="c-subtitle--line1"><?php echo esc_html($heading_top); ?></span>
+                        <?php endif; ?>
+                        <?php if ($heading_bottom) : ?>
+                            <span class="c-subtitle--line2"><?php echo esc_html($heading_bottom); ?></span>
+                        <?php endif; ?>
+                    </h3>
+                    <div class="p-single-works-wrapper-content-body__text">
+                        <?php if ($content) : ?>
+                            <?php echo nl2br(esc_html($content)); ?>
+                        <?php endif; ?>
                     </div>
-                <?php endif; ?>
+                </div>
+            <?php endif; ?>
+
+            <!-- singleページ用ページネーション -->
+            <div class="p-single-works-content-body__page-nation">
+                <nav class="c-single-page-nation">
+                    <?php
+                    $prev_post = get_previous_post(false);
+                    if ($prev_post) :
+                    ?>
+                        <div class="c-single-page-nation__prev">
+                            <a href="<?php echo get_permalink($prev_post->ID); ?>" class="c-single-page-nation__link">
+                                <div class="c-arrow02_right"></div>
+                                <span>前の記事へ</span>
+                            </a>
+                        </div>
+                    <?php endif; ?>
+
+                    <?php
+                    $next_post = get_next_post(false);
+                    if ($next_post) :
+                    ?>
+                        <div class="c-single-page-nation__next">
+                            <a href="<?php echo get_permalink($next_post->ID); ?>" class="c-single-page-nation__link">
+                                <span>次の記事へ</span>
+                                <div class="c-arrow02_left"></div>
+                            </a>
+                        </div>
+                    <?php endif; ?>
+                </nav>
             </div>
-
-            <?php if ($image) : ?>
-                <div class="c-single-content__image">
-                    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>">
-                </div>
-            <?php endif; ?>
-        </section>
-    <?php endfor; ?>
-
-    <!-- singleページ用ページネーション -->
-    <div class="p-single-works-content-body__page-nation">
-        <nav class="c-single-page-nation">
-            <?php
-            $prev_post = get_previous_post(false);
-            if ($prev_post) :
-            ?>
-                <div class="c-single-page-nation__prev">
-                    <a href="<?php echo get_permalink($prev_post->ID); ?>" class="c-single-page-nation__link">
-                        <div class="c-arrow02_right"></div>
-                        <span>前の記事へ</span>
-                    </a>
-                </div>
-            <?php endif; ?>
-
-            <?php
-            $next_post = get_next_post(false);
-            if ($next_post) :
-            ?>
-                <div class="c-single-page-nation__next">
-                    <a href="<?php echo get_permalink($next_post->ID); ?>" class="c-single-page-nation__link">
-                        <span>次の記事へ</span>
-                        <div class="c-arrow02_left"></div>
-                    </a>
-                </div>
-            <?php endif; ?>
-        </nav>
-    </div>
-</article>
-
         </div>
         <!-- プロフィール -->
-        <aside class="p-single-works__profile p-single-works-profile">
+        <aside class="p-single-works-wrapper__profile p-single-works-wrapper-profile">
             <!-- 社長プロフィールのカード -->
-            <div class="p-single-works-profile__body">
-                <div class="p-single-works-profile__image">
+            <div class="p-single-works-wrapper-profile__card p-single-works-wrapper-profile-card">
+                <div class="p-single-works-wrapper-profile-card__image">
                     <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/president01.png" alt="代表 田中 太郎の写真">
                 </div>
-                <div class="p-single-works-profile__text">
-                    <p class="p-single-works-profile__text--company">株式会社 XXXXXX</p>
-                    <p class="p-single-works-profile__text--ja">代表 田中 太郎</p>
-                    <p class="p-single-works-profile__text--en">Tanaka Taro</p>
+                <div class="p-single-works-wrapper-profile-card__text">
+                    <p class="p-single-works-wrapper-profile-card__text--company">株式会社 XXXXXX</p>
                 </div>
             </div>
+            <div class="p-single-works-wrapper-profile__return">
+                <a href="#" class="c-return c-return--single-works">
+                    一覧に戻る<span class="c-arrow01_right c-arrow01_right--large"></span>
+                </a>
 
-            <a href="#" class="c-return c-return--single-works">
-                一覧に戻る<span class="c-arrow01_right c-arrow01_right--large"></span>
-            </a>
+            </div>
         </aside>
     </section>
 
     <!-- 関連記事 Swiper -->
-    <div class="p-single-works__slider">
+    <div class="p-single-works__swiper">
         <?php
         // シングルページのみ処理（安全対策として明示的に）
         if (is_singular(['works', 'voice'])) {
@@ -153,7 +200,7 @@
 
             if ($related_query->have_posts()) :
         ?>
-                <div class="swiper c-swiper-related">
+                <div class="swiper c-related-swiper">
                     <div class="swiper-wrapper">
                         <?php while ($related_query->have_posts()) : $related_query->the_post(); ?>
                             <div class="swiper-slide">
@@ -184,15 +231,15 @@
                 </div>
 
                 <!-- Swiperナビゲーション -->
-                <nav class="c-swiper-related__nav c-swiper-related-nav">
-                    <div class="c-swiper-related-nav__prev">
+                <nav class="c-related-swiper__nav c-related-swiper-nav">
+                    <div class="c-related-swiper-nav__prev">
                         <div class="c-arrow-svg">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <polyline points="16 4 8 12 16 20" />
                             </svg>
                         </div>
                     </div>
-                    <div class="c-swiper-related-nav__next">
+                    <div class="c-related-swiper-nav__next">
                         <div class="c-arrow-svg c-arrow-svg--left">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <polyline points="8 4 16 12 8 20" />
@@ -212,3 +259,4 @@
 
 <?php get_template_part('template-parts/sections/section-cta'); ?>
 <?php get_footer(); ?>
+<?php exit; ?>

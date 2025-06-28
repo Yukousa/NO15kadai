@@ -153,28 +153,68 @@ if (document.querySelector(".js-front-fv-swiper")) {
   });
 }
 
-// 関連記事の Swiper（フロントページ以外）
-if (
-  document.querySelector(".c-swiper-related") &&
-  !document.querySelector(".c-swiper-related--front")
-) {
-  new Swiper(".c-swiper-related", {
+// フロントページ works の Swiper
+if (document.querySelector(".p-front-works-swiper")) {
+  new Swiper(".p-front-works-swiper", {
     loop: true,
-    navigation: {
-      nextEl: ".c-swiper-related-nav__next",
-      prevEl: ".c-swiper-related-nav__prev",
+    speed: 8000,
+    allowTouchMove: false,
+    spaceBetween: 20,
+
+    autoplay: {
+      delay: 0,
+      disableOnInteraction: false,
     },
+
     breakpoints: {
       0: {
         spaceBetween: 20,
-        slidesPerView: 1.42,
         centeredSlides: false,
+        slidesPerView: 1.1,
       },
       768: {
         slidesPerView: 3.85,
         centeredSlides: false,
-        spaceBetween: 50,
+        spaceBetween: 0,
       },
+    },
+
+    navigation: {
+      nextEl: ".p-front-works-swiper-nav__next",
+      prevEl: ".p-front-works-swiper-nav__prev",
+    },
+  });
+}
+
+// 関連記事の Swiper（フロントページ以外）
+if (document.querySelector(".c-related-swiper")) {
+  new Swiper(".c-related-swiper", {
+    loop: true,
+    speed: 8000,
+    allowTouchMove: false,
+    spaceBetween: 20,
+
+    autoplay: {
+      delay: 0,
+      disableOnInteraction: false,
+    },
+
+    breakpoints: {
+      0: {
+        spaceBetween: 20,
+        centeredSlides: false,
+        slidesPerView: 1.1,
+      },
+      768: {
+        slidesPerView: 3.85,
+        centeredSlides: false,
+        spaceBetween: 0,
+      },
+    },
+
+    navigation: {
+      nextEl: ".c-swiper-related-nav__next",
+      prevEl: ".c-swiper-related-nav__prev",
     },
   });
 }

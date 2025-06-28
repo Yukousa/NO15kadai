@@ -6,17 +6,12 @@
 
   @include mq(md) {
     overflow: clip;
-
   }
-
 }
 
 .p-service__mv {
   width: 100%;
   background-color: $white;
-
-  @include mq(md) {
-  }
 }
 
 .p-service-mv_inner {

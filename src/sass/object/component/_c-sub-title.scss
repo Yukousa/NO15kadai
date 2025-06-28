@@ -28,14 +28,17 @@
 }
 
 .c-subtitle--line2 {
-  padding: myrem(5) myrem(7) myrem(6);
+  width: fit-content;
+  height: myrem(33);
   color: $white;
   font-size: myrem(18);
   line-height: calc(30 / 18);
   font-weight: 900;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.17em;
   background: linear-gradient(to right, #000 0%, #929292 100%);
-  display: block;
+  display: flex;
+  align-items: center;
+  padding: 0 myrem(10);
 
   @include mq(md) {
     // margin-top: myrem(5);
