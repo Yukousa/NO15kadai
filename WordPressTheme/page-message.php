@@ -3,10 +3,10 @@
 <main class="p-message">
   <section class="p-message__mv p-message-mv">
     <div class="p-message-mv__title">
-      <h2 class="c-heading01 c-heading01--mv" data-en="message">メッセージ</h2>
+      <h2 class="c-heading01 c-heading01--large01" data-en="message">メッセージ</h2>
     </div>
     <div class="p-message-mv__image">
-      <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/image05.png" alt="" class="" width="" height="" loading="lazy">
+      <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/image05.png" alt="イメージ画像" width="1440" height="480" loading="lazy">
     </div>
     <div class="p-message-mv__breadcrumbs">
       <?php get_template_part('template-parts/sections/section-breadcrumbs'); ?>

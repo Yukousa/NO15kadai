@@ -67,9 +67,7 @@ c-heading01 英語と日本語 2色(黒・白)の線の装飾
   left: myrem(0);
 }
 
-/***************************
-背景色$black_base用の　装飾線
-***************************/
+//背景色$black_base用の　装飾線の色違い
 .c-heading01--lineWhite {
   font-size: myrem(13);
   letter-spacing: 0.06em;
@@ -104,9 +102,7 @@ c-heading01 英語と日本語 2色(黒・白)の線の装飾
   }
 }
 
-/***************************
-フロントページ service　用
-***************************/
+//フロントページ service　用 テキストの色違い
 .c-heading01--white {
   width: fit-content;
   font-size: myrem(13);
@@ -142,10 +138,8 @@ c-heading01 英語と日本語 2色(黒・白)の線の装飾
   }
 }
 
-/***************************
-// 下層ページタイトル用
-***************************/
-.c-heading01--mv {
+//fontサイズ違い 装飾線（$blacｋ #f5f5f5)　
+.c-heading01--large01 {
   font-size: myrem(14);
   letter-spacing: 0.02em;
   padding-left: myrem(30);
@@ -157,11 +151,13 @@ c-heading01 英語と日本語 2色(黒・白)の線の装飾
   }
 }
 
-.c-heading01--mv::before {
+.c-heading01--large01::before {
   top: 50%;
   left: myrem(4);
   width: myrem(16);
   height: myrem(2);
+  background: linear-gradient(to right, $black 50%, #f5f5f5 50%);
+
 
   @include mq(md) {
     width: myrem(32);
@@ -170,7 +166,7 @@ c-heading01 英語と日本語 2色(黒・白)の線の装飾
   }
 }
 
-.c-heading01--mv::after {
+.c-heading01--large01::after {
   font-size: myrem(36);
   top: myrem(-37);
   left: 0;
@@ -181,6 +177,47 @@ c-heading01 英語と日本語 2色(黒・白)の線の装飾
     left: myrem(70);
   }
 }
+
+//fontサイズ違い 装飾線（$blacｋ #white)　
+.c-heading01--large02 {
+  font-size: myrem(14);
+  letter-spacing: 0.02em;
+  padding-left: myrem(30);
+  top: 0;
+
+  @include mq(md) {
+    font-size: myrem(16);
+    padding-left: myrem(117);
+  }
+}
+
+.c-heading01--large02::before {
+  top: 50%;
+  left: myrem(4);
+  width: myrem(16);
+  height: myrem(2);
+  background: linear-gradient(to right, $black 50%, $white 50%);
+
+
+  @include mq(md) {
+    width: myrem(32);
+    height: myrem(4);
+    left: myrem(70);
+  }
+}
+
+.c-heading01--large02::after {
+  font-size: myrem(36);
+  top: myrem(-37);
+  left: 0;
+
+  @include mq(md) {
+    font-size: myrem(60);
+    top: myrem(-58);
+    left: myrem(70);
+  }
+}
+
 
 /***************************
 // その他　共通タイトル用

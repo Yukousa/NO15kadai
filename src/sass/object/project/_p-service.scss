@@ -1,75 +1,60 @@
 @use "global" as *;
 
-.p-service {
-  margin-top: myrem(40);
-
-  @include mq(md) {
-    margin-top: myrem(110);
-  }
-}
-
-.p-service__fv {
-
-    @include mq(md) {
-      padding-top: myrem(140);
-    }
-}
-
-
-.p-service__title {
+.p-service__mv {
   width: 100%;
+  padding-top: myrem(170);
+  background-color: $white;
 
   @include mq(md) {
     max-width: 1440px;
-    padding: 0 myrem(70);
     margin: 0 auto;
+    padding-top: myrem(240);
   }
 }
 
-.p-service-title__inner {
-  padding-left: myrem(22);
-  top: 50%;
+.p-service-mv__title {
+  padding: myrem(0) myrem(20);
 
   @include mq(md) {
-    padding-left: myrem(22);
-    width: 100%;
-    max-width: 1300px;
-    margin: 0 auto;
+    padding: 0;
   }
 }
 
-.p-service-title__inner::before {
-  margin-left: 0;
-  top: 50%;
-
-  @include mq(md) {
-    margin-left: 0;
-    left: 0;
-  }
-}
-
-.p-service-title__inner::after {
-  margin-left: 0;
-  font-size: myrem(36);
-  top: myrem(-40);
-
-  @include mq(md) {
-    margin-left: 0;
-    font-size: myrem(60);
-    top: myrem(-60);
-    left: 0;
-  }
-}
-
-.p-service-price {
+.p-service-mv__image {
   width: 100%;
-  padding: myrem(90) 0 0;
+  aspect-ratio: 375 / 230;
+  margin-top: myrem(25);
+
+  @include mq(md) {
+    margin-top: myrem(30);
+    aspect-ratio: 1440 / 480;
+  }
+}
+
+.p-service-mv__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: myrem(-165) center;
+
+  @include mq(md) {
+    object-position: center;
+  }
+}
+
+.p-service-mv__breadcrumbs {
+  background-color: $black_base;
+}
+
+.p-service__price {
+  width: 100%;
+  padding-top: myrem(60);
   background-color: $black_base;
   font-size: myrem(36);
 
   @include mq(md) {
     font-size: myrem(60);
-    padding: 0;
+    padding-top: 0;
     
   }
 }
@@ -85,17 +70,6 @@
   }
 }
 
-.p-service-price__title {
-  padding-left: myrem(22);
-  font-size: myrem(14);
-
-  @include mq(md) {
-    padding-left: myrem(42);
-    width: 100%;
-    max-width: 1300px;
-    margin: 0 auto;
-  }
-}
 
 .p-service-price__title::before {
   margin-left: 0;
@@ -115,22 +89,387 @@
   }
 }
 
-.p-service__breadcrumbs {
-  padding: myrem(10) myrem(20);
-  text-align: right;
+
+
+//PRICE グリッド部分
+.p-card-price-grid {
+  width: 100%;
   background-color: $black_base;
 
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: myrem(172) myrem(297) myrem(172) myrem(172);
+  column-gap: myrem(10);
+  row-gap: myrem(12);
+  padding-top: myrem(30);
+
   @include mq(md) {
-    padding: 0;
-    padding-top: myrem(20);
+    grid-template-columns: myrem(353) 1fr myrem(770);
+    grid-template-rows: myrem(417) myrem(406) myrem(330);
+    column-gap: 0;
+    row-gap: myrem(10);
+    padding-top: myrem(65);
+    margin-inline: auto;
+  }
+}
+
+.p-card-price {
+  background-color: $white;
+  color: $black;
+  padding: myrem(20) myrem(6) myrem(10) myrem(10);
+  border-radius: myrem(4);
+
+  @include mq(md) {
+    padding: myrem(50) myrem(65);
+  }
+}
+
+.p-card-price__title {
+  font-family: $font-main;
+  font-weight: 700;
+  font-size: myrem(18);
+  letter-spacing: 0.04em;
+  color: $black;
+
+  @include mq(md) {
+    font-size: myrem(32);
+  }
+}
+
+.p-card-price__body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.p-card-price-body--estimate {
+  margin-top: myrem(15);
+  
+    @include mq(md) {
+        margin-top: myrem(90);
+    }
+}
+
+.p-card-price-body--basicFee {
+  flex-direction: column;
+  gap: myrem(15);
+
+  @include mq(md) {
+    flex-direction: row;
+    gap: myrem(50);
+    margin-top: myrem(35);
+    transform: translateX(myrem(-5));
+
+  }
+}
+
+.p-card-price-body--animation {
+  margin-top: myrem(100);
+
+    @include mq(md) {
+        margin-top: myrem(80);
+        letter-spacing: 0.02em;
+    }
+}
+
+.p-card-price-body--responsive {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: myrem(40);
+  margin-top: myrem(5);
+  transform: translateX(myrem(11));
+
+    @include mq(md) {
+        margin-top: myrem(45);
+        gap: myrem(10);
+        transform: translateX(myrem(0));
+
+    }
+}
+
+.p-card-price-body--deadline {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: myrem(30);
+  margin-top: myrem(10);
+
+    @include mq(md) {
+        justify-content:space-between;
+        margin-top: 0;
+        transform: translateY(myrem(-30));
+
+    }
+}
+
+.p-card-price-body__text-block {
+
+      @include mq(md) {
+        letter-spacing: 0.02em;
+      }
+}
+
+.p-card-price-body__text-block--basicFee {
+      @include mq(md) {
+        text-align: right;
+        transform: translateY(myrem(-10));
+      }
+}
+
+.p-card-price-body__text {
+  font-family: $font-sub;
+  font-weight: 500;
+  font-size: myrem(34);
+  color: $black;
+  line-height: 1;
+  position: relative;
+
+  @include mq(md) {
+    font-size: myrem(100);
+  }
+}
+
+.p-card-price-body__text::before {
+  content: attr(data-before);
+  font-family: $font-main;
+  font-weight: 700;
+  font-size: myrem(14);
+  letter-spacing: 0.04em;
+  color: $black;
+
+  @include mq(md) {
+    font-size: myrem(32);
+    margin-right: myrem(25);
+  }
+}
+
+.p-card-price-body__text::after {
+  content: attr(data-after);
+  font-family: $font-main;
+  font-size: myrem(14);
+  font-weight: bold;
+  vertical-align: baseline;
+
+  @include mq(md) {
+    font-size: myrem(32);
+  }
+}
+
+.p-card-price-body__text--top {
+
+      @include mq(md) {
+        letter-spacing: 0.02em;
+      }
+}
+
+.p-card-price-body__text--top:not(:first-child) {
+    @include mq(md) {
+      margin-top: myrem(20);
+    }
+  }
+
+.p-card-price-body__text--top::before {
+  display: block;
+  font-size: myrem(13);
+  position: static; // 通常のフローで表示
+
+    @include mq(md) {
+        display: inline-block;
+        vertical-align: middle;
+        line-height: 1;
+        font-size: myrem(32);
+        margin-right: myrem(20);
+    
+    }
+}
+
+.p-card-price-body__text--bottom {
+  margin-top: myrem(12);
+  padding-top: myrem(14);
+
+  @include mq(md) {
+    letter-spacing: 0.02em;
+  }
+
+}
+
+.p-card-price-body__text--bottom::before {
+  position: absolute;
+  top: 0;
+
+    @include mq(md) {
+
+        position: static;
+        display: inline-block;
+        vertical-align: middle;
+        line-height: 1;
+        font-size: myrem(32);
+        margin-right: myrem(40);
+        letter-spacing: 0;
+    }
+}
+
+.p-card-price-body__text--responsive {
+  transform: translateY(myrem(-10));
+}
+
+.p-card-price-body__text span {
+  font-family: $font-main;
+  font-weight: 700;
+  font-size: myrem(14);
+  letter-spacing: 0.04em;
+  // width: myrem(150);
+  margin-left: myrem(5);
+
+
+
+  @include mq(md) {
+    font-size: myrem(32);
+  }
+}
+
+// お見積り金額用のスタイル
+.p-card-price-body__text .js-count-num {
+  font-size: myrem(70);
+  font-family: $font-sub;
+  display: inline-block;
+  // min-width: 3ch; 
+  // 数字3桁分のスペースを保持
+  text-align: center;
+  transform: translateX(myrem(5));
+
+
+  @include mq(md) {
+    font-size: myrem(100);
   }
 }
 
 
+.p-card-price-body__image--basicFee {
+  margin-top: myrem(15);
+  width: myrem(77);
+  height: myrem(69);
+  transform: translateX(myrem(8));
+
+  @include mq(md) {
+    width: myrem(216);
+    height: myrem(194);
+
+    margin-top: myrem(0);
+
+  }
+}
+
+.p-card-price-body__image--responsive {
+  width: myrem(78);
+  height: myrem(102);
+
+    @include mq(md) {
+        width: myrem(145);
+        height: myrem(199);
+          }
+
+}
+
+.p-card-price-body__image--deadline {
+  width: myrem(157);
+  height: myrem(72);
+  transform: translateY(myrem(-5));
+
+    @include mq(md) {
+        width: myrem(480);
+        height: myrem(230);
+        transform: translateY(myrem(-10));
+    }
+}
+
+.p-card-price-body__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.p-card-price--estimate {
+  grid-column: 1 / 3;
+  grid-row: 1 / 2;
+
+  @include mq(md) {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+  }
+}
+
+.p-card-price--basicFee {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+
+
+  @include mq(md) {
+    grid-column: 2 / 4;
+    grid-row: 1 / 2;
+
+    margin-left: myrem(10);
+  }
+}
+
+.p-card-price--animation {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+
+
+  @include mq(md) {
+    grid-column: 1 / 3;
+    grid-row: 2 / 3;
+  }
+}
+
+.p-card-price--responsive {
+  grid-column: 1 / 3;
+  grid-row: 3 / 4;
+
+  @include mq(md) {
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
+
+    margin-left: myrem(10);
+  }
+}
+
+.p-card-price--deadline {
+  grid-column: 1 / 3;
+  grid-row: 4 / 5;
+
+  @include mq(md) {
+    grid-column: 1 / 4;
+    grid-row: 3 / 4;
+
+    padding: myrem(60) myrem(250) myrem(10) myrem(235);
+  }
+}
+
+.p-card-price__note {
+  font-family: $font-main;
+  font-weight: 500;
+  font-size: myrem(12);
+  line-height: calc(14 / 12);
+  letter-spacing: 0.06em;
+  color: #888888;
+  text-align: center;
+  margin-top: myrem(8);
+  transform:translateX(myrem(5)) ;
+
+  @include mq(md) {
+    text-align: left;
+    font-size: myrem(16);
+    margin-top: myrem(-80);
+  }
+}
 
 // FAQ
 .p-service__faq {
-  padding: myrem(106) 0 myrem(60);
+  padding-top: myrem(100);
+  padding-bottom:  myrem(60);
   background-color: $black_base;
 
   @include mq(md) {
@@ -139,12 +478,6 @@
 }
 
 .p-service-faq__title {
-  width: 100%;
-
-  @include mq(md) {
-    max-width: 1440;
-    padding: 0 myrem(70);
-  }
 }
 
 .p-service-faq-title__inner {
@@ -166,8 +499,7 @@
 }
 
 .p-service-faq__list {
-  margin-top: myrem(65);
-  padding: 0 myrem(20);
+  margin-top: myrem(40);
 
   @include mq(md) {
     width: 100%;
