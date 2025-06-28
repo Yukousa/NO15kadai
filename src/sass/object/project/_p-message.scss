@@ -1,5 +1,13 @@
 @use "global" as *;
 
+.p-message {
+
+  @include mq(md) {
+    overflow: clip;
+
+  }
+}
+
 .p-message__mv {
   width: 100%;
   padding-top: myrem(170);
@@ -27,6 +35,9 @@
   @include mq(md) {
     margin-top: myrem(30);
     aspect-ratio: 1440 / 480;
+    width: 100vw;
+    margin: myrem(30) calc(50% - 50vw) 0;
+
   }
 }
 
@@ -51,10 +62,10 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    max-width: $innerWidth;
-    margin: 0 auto;
+    max-width: 1440px;
     padding-top: myrem(35);
     padding-bottom: 0;
+    margin: 0 auto;
   }
 }
 

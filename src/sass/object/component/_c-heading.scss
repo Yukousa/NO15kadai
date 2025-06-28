@@ -187,7 +187,7 @@ c-heading01 英語と日本語 2色(黒・白)の線の装飾
 
   @include mq(md) {
     font-size: myrem(16);
-    padding-left: myrem(117);
+    padding-left: myrem(42);
   }
 }
 
@@ -202,7 +202,7 @@ c-heading01 英語と日本語 2色(黒・白)の線の装飾
   @include mq(md) {
     width: myrem(32);
     height: myrem(4);
-    left: myrem(70);
+    left: myrem(0);
   }
 }
 
@@ -214,7 +214,7 @@ c-heading01 英語と日本語 2色(黒・白)の線の装飾
   @include mq(md) {
     font-size: myrem(60);
     top: myrem(-58);
-    left: myrem(70);
+    left: myrem(0);
   }
 }
 

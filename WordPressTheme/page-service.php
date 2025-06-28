@@ -2,16 +2,19 @@
 
 <main class="p-service">
     <section class="p-service__mv p-service-mv">
-        <div class="p-service-mv__title">
-            <h2 class="c-heading01 c-heading01--large01" data-en="service">サービス</h2>
-        </div>
-        <div class="p-service-mv__image">
-            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/image13.png" alt="イメージ画像" width="1440" height="480" loading="lazy">
-        </div>
-        <div class="p-service-mv__breadcrumbs">
-            <?php get_template_part('template-parts/sections/section-breadcrumbs'); ?>
+        <div class="p-service-mv_inner p-service-mv-inner">
+            <div class="p-service-mv-inner__title">
+                <h2 class="c-heading01 c-heading01--large01" data-en="service">サービス</h2>
+            </div>
+            <div class="p-service-mv-inner__image">
+                <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/image13.png" alt="イメージ画像" width="1440" height="480" loading="lazy">
+            </div>
         </div>
     </section>
+
+    <div class="p-service__breadcrumbs">
+        <?php get_template_part('template-parts/sections/section-breadcrumbs'); ?>
+    </div>
 
     <section class="p-service__price p-service-price l-inner">
         <div class="p-service-price__inner">
@@ -48,7 +51,7 @@
                 <div class="p-card-price p-card-price--animation">
                     <div class="p-card-price__title">アニメーション</div>
                     <div class="p-card-price__body p-card-price-body p-card-price-body--animation">
-                        <p class="p-card-price-body__text" data-after="円～">00,000</p>
+                        <p class="p-card-price-body__text p-card-price-body__text--animation" data-after="円～">00,000</p>
                     </div>
                 </div>
 

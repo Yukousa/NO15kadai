@@ -153,32 +153,6 @@ if (document.querySelector(".js-front-fv-swiper")) {
   });
 }
 
-// フロントページ works の Swiper
-// if (document.querySelector(".p-front-works-swiper")) {
-//   new Swiper(".p-front-works-swiper", {
-//     loop: true,
-//     speed: 8000,
-//     allowTouchMove: false,
-//     spaceBetween: 20,
-//     autoplay: {
-//       delay: 0,
-//       disableOnInteraction: false,
-//     },
-//     breakpoints: {
-//       0: {
-//         slidesPerView: 1.1,
-//       },
-//       768: {
-//         slidesPerView: 3.85,
-//       },
-//     },
-//     navigation: {
-//       nextEl: ".p-front-works-swiper-nav__next",
-//       prevEl: ".p-front-works-swiper-nav__prev",
-//     },
-//   });
-// }
-
 // 関連記事の Swiper（フロントページ以外）
 if (
   document.querySelector(".c-swiper-related") &&
@@ -210,8 +184,35 @@ service faq アコーディオンの開閉
 *****************************/
 $(".js-faq-toggle").on("click", function () {
   const $item = $(this).closest(".p-service-faq-list__item");
-  $item.toggleClass("is-open");
+  const $answer = $item.find(".p-service-faq-list__item-answer");
+
+  if ($item.hasClass("is-open")) {
+    // 閉じる
+    const currentHeight = $answer[0].scrollHeight;
+    $answer.css("max-height", currentHeight + "px"); // 現在の高さにセット
+
+    // 次のtickで0にすることでスムーズにアニメする
+    setTimeout(() => {
+      $answer.css("max-height", 0);
+    }, 20);
+
+    // アニメ完了後にis-openクラスを外す
+    const transitionDuration = 500; // CSSのtransitionと同じ時間(0.5s)
+    setTimeout(() => {
+      $item.removeClass("is-open");
+    }, transitionDuration + 20); // 少し余裕を持たせる
+  } else {
+    // 開く
+    $item.addClass("is-open");
+
+    // 少し遅延してからscrollHeightを計測してmax-heightをセット
+    setTimeout(() => {
+      const scrollHeight = $answer[0].scrollHeight;
+      $answer.css("max-height", scrollHeight + "px");
+    }, 20);
+  }
 });
+
 // 「もっと見る」ボタンの処理
 $(".js-faq-more").on("click", function () {
   $(".p-service-faq-list__item.is-hidden").each(function () {
