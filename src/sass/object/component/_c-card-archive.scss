@@ -6,6 +6,7 @@
   margin-bottom: myrem(40); // 各カード間の余白
   padding-bottom: myrem(60); // summary食い込み分を確保
   z-index: 0;
+  background-color: $white;
 }
 
 .c-archive-card--works {
@@ -25,6 +26,18 @@
   letter-spacing: 0.1em;
   z-index: 2;
 }
+
+.c-archive-card__label--works {
+
+  @include mq(md) {
+    width: fit-content;
+    height: myrem(32);
+    display: flex;
+    align-items: center;
+    padding: 0 myrem(10);
+  }
+}
+
 
 .c-archive-card__image {
   width: 100%;
@@ -46,6 +59,8 @@
   width: calc(301 / 335 * 100%);
   padding: myrem(10);
   z-index: 3;
+  background-color: $white;
+
 }
 
 .c-archive-card__summary--works {
@@ -56,4 +71,5 @@
   font-size: myrem(16);
   line-height: calc(24 / 16);
   letter-spacing: 0.06em;
+  background-color: $white;
 }

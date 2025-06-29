@@ -26,7 +26,7 @@
           <div class="c-archive-card c-archive-card--works">
             <a href="<?php the_permalink(); ?>">
               <?php if ($terms && !is_wp_error($terms)) : ?>
-                <span class="c-archive-card__label"><?php echo esc_html($terms[0]->name); ?></span>
+                <span class="c-archive-card__label c-archive-card__label--works"><?php echo esc_html($terms[0]->name); ?></span>
               <?php endif; ?>
 
               <div class="c-archive-card__image">

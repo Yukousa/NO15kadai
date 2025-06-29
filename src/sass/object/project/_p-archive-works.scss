@@ -5,13 +5,17 @@
   padding-top: myrem(175);
 
   @include mq(md) {
-    overflow: clip;
+    padding-top: myrem(0);
   }
 }
 
 .p-archive-works__mv {
   width: 100%;
   background-color: $white;
+
+  @include mq(md) {
+    max-width: 1440px;
+  }
 }
 
 .p-archive-works-mv_inner {
@@ -32,6 +36,11 @@
 
 .p-archive-works-mv__breadcrumbs {
   margin-top: myrem(50);
+
+  @include mq(md) {
+    margin-top: myrem(10);
+    margin-right: myrem(-10);
+  }
 }
 
 .p-archive-works__container {
@@ -40,9 +49,19 @@
   padding-bottom: myrem(100);
 
   @include mq(md) {
-    max-width: $innerWidth;
-    padding: myrem(50) 0 myrem(100);
+    max-width: 1440px;
+    padding-top: myrem(78);
+    margin-bottom: myrem(100); 
     margin: 0 auto;
+  }
+}
+
+.p-archive-works-container__post {
+  @include mq(md) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: myrem(34);
   }
 }
 
@@ -50,6 +69,6 @@
   margin-top: myrem(65);
 
   @include mq(md) {
-    margin-top: myrem(30);
+    margin-top: myrem(35);
   }
 }
