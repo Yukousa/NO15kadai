@@ -17,6 +17,14 @@
   }
 }
 
+.c-single-content--voice:not(:first-child) {
+  margin-top: myrem(55);
+
+  @include mq(md) {
+    margin-top: myrem(60);
+  }
+}
+
 .c-single-content__wrapper {
   padding: 0 myrem(20);
 
@@ -27,10 +35,6 @@
 
 .c-single-content__post {
   margin-top: myrem(20);
-}
-
-.c-single-content__post > p {
-  margin-bottom: myrem(30);
   line-height: calc(28 / 16);
   letter-spacing: 0.1em;
 
@@ -38,7 +42,9 @@
     letter-spacing: 0.14em;
     line-height: 1.8;
   }
+
 }
+
 
 .c-single-content__image {
   width: 100%;
@@ -53,6 +59,7 @@
 
   }
 }
+
 
 .c-single-content__image img {
   width: 100%;

@@ -1,7 +1,5 @@
 <?php get_header(); ?>
 
-
-
 <main class="p-single-works">
     <div class="p-single-works__inner p-single-works-inner l-inner">
         <h2 class="p-single-works-inner__title">
@@ -160,110 +158,15 @@
 
     <!-- 関連記事 Swiper -->
     <div class="p-single-works__swiper">
-        <?php
-        // シングルページのみ処理（安全対策として明示的に）
-        if (is_singular(['works', 'voice'])) {
-
-            $post_type = get_post_type(); // 現在の投稿タイプ
-
-            // 投稿タイプに応じた設定
-            if ($post_type === 'voice') {
-                $taxonomy = 'voice_category';
-                $summary_field = 'voice_summary';
-            } else {
-                $taxonomy = 'works_category';
-                $summary_field = 'works_summary';
-            }
-
-            // 現在の投稿のターム取得
-            $term_ids = [];
-            $terms = get_the_terms(get_the_ID(), $taxonomy);
-            if ($terms && !is_wp_error($terms)) {
-                $term_ids = wp_list_pluck($terms, 'term_id');
-            }
-
-            // クエリの引数設定
-            $related_args = [
-                'post_type'      => $post_type,
-                'posts_per_page' => 10,
-                'post__not_in'   => [get_the_ID()],
-                'orderby'        => 'date',
-                'order'          => 'DESC',
-            ];
-
-            // 同じタクソノミーに属する投稿だけに絞る
-            if (!empty($term_ids)) {
-                $related_args['tax_query'] = [
-                    [
-                        'taxonomy' => $taxonomy,
-                        'field'    => 'term_id',
-                        'terms'    => $term_ids,
-                    ],
-                ];
-            }
-
-            // クエリ実行
-            $related_query = new WP_Query($related_args);
-
-            if ($related_query->have_posts()) :
-        ?>
-                <div class="swiper c-related-swiper">
-                    <div class="swiper-wrapper">
-                        <?php while ($related_query->have_posts()) : $related_query->the_post(); ?>
-                            <div class="swiper-slide">
-                                <!-- 投稿記事カード -->
-                                <?php
-                                $terms = get_the_terms(get_the_ID(), 'works_category');
-                                $summary = get_field('works_summary');
-                                ?>
-
-                                <a href="<?php the_permalink(); ?>" class="c-related-swiper-card">
-                                    <?php if ($terms && !is_wp_error($terms)) : ?>
-                                        <span class="c-related-swiper-card__label"><?php echo esc_html($terms[0]->name); ?></span>
-                                    <?php endif; ?>
-
-                                    <div class="c-related-swiper-card__image">
-                                        <?php the_post_thumbnail('large'); ?>
-                                    </div>
-
-                                    <div class="c-related-swiper-card__summary">
-                                        <?php if ($summary) : ?>
-                                            <p class="c-related-swiper-card__summary-text"><?php echo esc_html($summary); ?></p>
-                                        <?php endif; ?>
-                                    </div>
-                                </a>
-                            </div>
-                        <?php endwhile; ?>
-                    </div>
-                </div>
-
-                <!-- Swiperナビゲーション -->
-                <nav class="c-related-swiper__nav c-related-swiper-nav">
-                    <div class="c-related-swiper-nav__prev">
-                        <div class="c-arrow-svg">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="16 4 8 12 16 20" />
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="c-related-swiper-nav__next">
-                        <div class="c-arrow-svg c-arrow-svg--left">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="8 4 16 12 8 20" />
-                            </svg>
-                        </div>
-                    </div>
-                </nav>
-                <?php wp_reset_postdata(); ?>
-        <?php
-            endif;
-        }
-        ?>
+    <?php get_template_part('template-parts/sections/section-related-swiper'); ?>
     </div>
+
+
+
+
 
 
 </main>
 
 <?php get_template_part('template-parts/sections/section-cta'); ?>
 <?php get_footer(); ?>
-<?php exit; ?>

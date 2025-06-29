@@ -1,45 +1,129 @@
 @use "global" as *;
 
+.p-archive-voice {
+  width: 100%;
+  overflow: clip;
+}
+
+.p-single-voice__inner {
+  width: 100%;
+  padding-top: myrem(135);
+
+  @include mq(md) {
+    padding-top: myrem(180);
+    padding-left: myrem(80);
+  }
+}
+
+.p-single-voice-inner__title {
+  font-weight: 800;
+  font-size: myrem(20);
+  line-height: calc(34 / 20);
+  letter-spacing: 0.1em;
+
+  @include mq(md) {
+    font-size: myrem(34);
+    line-height: calc(54 / 34);
+  }
+}
+
+.p-single-voice-inner__eye-catch {
+  width: 100vw;
+  margin: myrem(0) calc(50% - 50vw) 0;
+  aspect-ratio: 375 / 230;
+
+  @include mq(md) {
+    width: 100vw;
+
+    margin-top: myrem(40);
+    aspect-ratio: 1440 / 480;
+  }
+}
+
+.p-single-voice-inner__eye-catch img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .p-single-voice__wrapper {
   width: 100%;
 
-    @include mq(md) {
-      max-width: $innerWidth;
-      padding: myrem(100) 0 myrem(110);
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: myrem(30);
-      }
+  @include mq(md) {
+    max-width: $innerWidth;
+    padding: myrem(100) 0 myrem(110);
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: myrem(30);
+  }
 }
 
-
 .p-single-voice__content {
+  padding-top: myrem(5);
   @include mq(md) {
     width: calc(950 / 1300 * 100%);
   }
 }
 
-
 .p-single-voice-content-body__slider {
-  margin-top: myrem(10);
+  margin-top: myrem(38);
 }
 
 .p-single-voice__profile {
-  margin-top: myrem(50);
-  padding: 0 myrem(20) myrem(60);
+  margin-top: myrem(62);
+  padding-bottom: myrem(60);
 
-    @include mq(md) {
-      margin-top: 0;
-      padding: 0 0 myrem(60);
-    }
+  @include mq(md) {
+    margin-top: 0;
+    padding: 0 0 myrem(60);
+  }
 }
 
+.p-single-voice-profile__image {
+  width: 100%;
+  aspect-ratio: 335 / 216;
+}
 
-.p-single-voice__slider {
+.p-single-voice-profile__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.p-single-voice-profile__text {
+  text-align: right;
+  margin-top: myrem(10);
+}
+
+.p-single-voice-profile__text--company {
+  display: none;
+}
+
+.p-single-voice-profile__text--ja {
+  font-weight: 700;
+  font-size: myrem(16);
+  line-height: 170%;
+  letter-spacing: 0.06em;
+  color: $black;
+}
+
+.p-single-voice-profile__text--ja2 {
+  display: none;
+}
+
+.p-single-voice-profile__text--en {
+  font-weight: 700;
+  font-size: myrem(12);
+  line-height:1.5;
+  letter-spacing: 0.06em;
+  color: #929292;
+}
+
+.p-single-voice__swiper {
   background-color: $black_base;
-  padding: myrem(100) 0 myrem(60);
+  padding: myrem(58) 0 myrem(58);
 
     @include mq(md) {
       padding: myrem(80) 0 myrem(60);

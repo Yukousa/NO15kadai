@@ -20,7 +20,14 @@
   margin-top: myrem(85);
 }
 
-.c-return--single-voice,
+.c-return--single-voice {
+  display: none;
+
+  @include mq(md) {
+    display: block;
+  }
+}
+
 .c-return--single-works {
   width: fit-content;
   font-size: myrem(18);
