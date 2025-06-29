@@ -23,7 +23,7 @@
 .p-front-fv-swiper .swiper-slide {
   width: 100%;
   height: 100%;
-  overflow: hidden;
+  // overflow: clip;
 
   @include mq(md) {
     aspect-ratio: 1440 / 750;
@@ -431,7 +431,7 @@
 ***********************************/
 .p-front-content {
   padding: myrem(60) 0 0;
-  overflow-x: clip;
+  // overflow-x: clip;
 
   @include mq(md) {
     padding: myrem(110) myrem(70) myrem(115);
@@ -442,17 +442,17 @@
   @include mq(md) {
     max-width: $innerWidth;
     margin: 0 auto;
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: myrem(30);
+    display: grid;
+    grid-template-columns: myrem(950) myrem(320);
+    grid-template-rows: 1fr;
+    column-gap: myrem(30);
   }
 }
 
 //block1
 .p-front-content-wrapper__block1 {
   @include mq(md) {
-    width: myrem(950);
+    // width: myrem(950);
   }
 }
 
@@ -463,7 +463,6 @@
     padding: 0 0 0 myrem(10);
   }
 }
-
 
 .p-front-content-wrapper-block1--paragraph__text {
   font-weight: 900;
@@ -578,7 +577,7 @@
 .p-front-content-wrapper-block1-message__inner {
   position: relative;
   margin-top: myrem(30);
-  overflow: hidden;
+  // overflow: clip;
 
   @include mq(md) {
     margin-top: myrem(25);
@@ -613,7 +612,7 @@
   gap: myrem(37);
   margin-left: 0;
   position: relative;
-  overflow: hidden;
+  // overflow: clip;
 }
 
 .p-front-content-wrapper-block1-message-inner-image__image01 {
@@ -705,7 +704,7 @@
   padding-left: myrem(50);
   animation: floating-y 1.8s ease-in-out infinite alternate-reverse;
   z-index: 1;
-  overflow: hidden;
+  // overflow: clip;
   white-space: nowrap;
   position: static;
 
@@ -722,7 +721,7 @@
   max-width: 100%;
   margin-left: 0;
   margin-top: myrem(30);
-  overflow: hidden;
+  // overflow: clip;
 
   @include mq(md) {
     max-width: myrem(620);
@@ -762,8 +761,15 @@
 
   @include mq(md) {
     padding: myrem(0) 0 myrem(50) 0;
-    max-width: myrem(320);
+    // max-width: myrem(320);
     margin-top: myrem(-7);
+  }
+}
+
+.p-front-content-wrapper-block2__voice {
+  @include mq(md) {
+    position: sticky;
+    top: myrem(20);
   }
 }
 
@@ -929,7 +935,7 @@
 }
 
 .p-front-service__bgTextWrapper {
-  overflow: hidden;
+  // overflow: clip;
   padding: myrem(15) 0 myrem(20);
 }
 
@@ -1160,7 +1166,7 @@
   width: 100%;
   aspect-ratio: 375 / 268;
   position: relative;
-  overflow: hidden;
+  // overflow: clip;
 
   @include mq(md) {
     max-width: 1240px;

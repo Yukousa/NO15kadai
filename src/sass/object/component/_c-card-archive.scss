@@ -8,6 +8,10 @@
   z-index: 0;
 }
 
+.c-archive-card--works {
+  margin-bottom: myrem(26); // 各カード間の余白
+}
+
 .c-archive-card__label {
   position: absolute;
   top: 0;
@@ -37,12 +41,15 @@
 
 .c-archive-card__summary {
   position: absolute;
-  bottom: myrem(10); // 少しだけ画像からはみ出すように
+  bottom: myrem(10); 
   left: 0;
   width: calc(301 / 335 * 100%);
   padding: myrem(10);
-  background-color: pink;
   z-index: 3;
+}
+
+.c-archive-card__summary--works {
+  bottom: myrem(0); 
 }
 
 .c-archive-card__summary-text {

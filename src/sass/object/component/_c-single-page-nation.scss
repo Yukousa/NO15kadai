@@ -9,7 +9,7 @@
   margin: 0 auto;
 
   @include mq(md) {
-    max-width: myrem(370);
+    max-width: myrem(360);
     margin: 0 auto;
   }
 }

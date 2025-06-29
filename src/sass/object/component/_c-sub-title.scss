@@ -22,7 +22,7 @@
   display: block;
 
   @include mq(md) {
-    letter-spacing: 0.2em;
+    letter-spacing: 0.16em;
     padding: myrem(5) myrem(10) myrem(3);
   }
 }
@@ -41,9 +41,10 @@
   padding: 0 myrem(10);
 
   @include mq(md) {
-    // margin-top: myrem(5);
+    margin-top: myrem(5);
+    height: myrem(46);
     font-size: myrem(34);
-    letter-spacing: 0.2em;
+    letter-spacing: 0.17em;
     padding: myrem(0) myrem(15);
   }
 }

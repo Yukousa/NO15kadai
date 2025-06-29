@@ -29,8 +29,8 @@
         <div class="p-single-works-wrapper__content p-single-works-wrapper-content">
             <!-- 投稿画面ACFのループ -->
             <?php
-            $heading_top = get_field("section_heading_1_top");
-            $heading_bottom = get_field("section_heading_1_bottom");
+            $heading_top = get_field("section_post__heading_1_top");
+            $heading_bottom = get_field("section_post__heading_1_bottom");
             $content = get_field("section_content_1");
 
             if (!empty($heading_top) || !empty($heading_bottom) || !empty($content)) :
@@ -46,57 +46,65 @@
                     </h3>
 
                     <?php if ($content) : ?>
-                        <dl class="p-single-works-wrapper-content-body__list">
-                            <dt class="p-single-works-wrapper-content-body__term">ジャンル</dt>
-                            <dd class="p-single-works-wrapper-content-body__desc"><?php echo esc_html(get_field('genre')); ?></dd>
-
-                            <dt class="p-single-works-wrapper-content-body__term">担当と作業範囲</dt>
-                            <dd class="p-single-works-wrapper-content-body__desc"><?php echo esc_html(get_field('role_scope')); ?></dd>
-
-                            <dt class="p-single-works-wrapper-content-body__term">制作環境と使用言語</dt>
-                            <dd class="p-single-works-wrapper-content-body__desc"><?php echo esc_html(get_field('environment')); ?></dd>
-
-                            <dt class="p-single-works-wrapper-content-body__term">制作期間</dt>
-                            <dd class="p-single-works-wrapper-content-body__desc"><?php echo esc_html(get_field('period')); ?></dd>
-
-                            <dt class="p-single-works-wrapper-content-body__term">URL</dt>
-                            <dd class="p-single-works-wrapper-content-body__desc">
-                                <?php if (get_field('url')): ?>
-                                    <a href="<?php echo esc_url(get_field('url')); ?>" target="_blank" rel="noopener">
-                                        <?php echo esc_html(get_field('url')); ?>
-                                    </a>
-                                <?php endif; ?>
-                            </dd>
-
-                            <dt class="p-single-works-wrapper-content-body__term">クライアント情報</dt>
-                            <dd class="p-single-works-wrapper-content-body__desc"><?php echo esc_html(get_field('client')); ?></dd>
-
-                            <dt class="p-single-works-wrapper-content-body__term">クライアントの意向と課題、制作経緯</dt>
-                            <dd class="p-single-works-wrapper-content-body__desc"><?php echo esc_html(get_field('client_notes')); ?></dd>
+                        <dl class="p-single-works-wrapper-content-body__list p-single-works-wrapper-content-body-list">
+                            <div class="p-single-works-wrapper-content-body-list__item p-single-works-wrapper-content-body-list-item">
+                                <dt class="p-single-works-wrapper-content-body-list-item__term">ジャンル</dt>
+                                <dd class="p-single-works-wrapper-content-body-list-item__desc"><?php echo esc_html(get_field('genre')); ?></dd>
+                            </div>
+                            <div class="p-single-works-wrapper-content-body-list__item p-single-works-wrapper-content-body-list-item">
+                                <dt class="p-single-works-wrapper-content-body-list-item__term">担当と作業範囲</dt>
+                                <dd class="p-single-works-wrapper-content-body-list-item__desc"><?php echo esc_html(get_field('role_scope')); ?></dd>
+                            </div>
+                            <div class="p-single-works-wrapper-content-body-list__item p-single-works-wrapper-content-body-list-item">
+                                <dt class="p-single-works-wrapper-content-body-list-item__term">制作環境と使用言語</dt>
+                                <dd class="p-single-works-wrapper-content-body-list-item__desc"><?php echo esc_html(get_field('environment')); ?></dd>
+                            </div>
+                            <div class="p-single-works-wrapper-content-body-list__item p-single-works-wrapper-content-body-list-item">
+                                <dt class="p-single-works-wrapper-content-body-list-item__term">制作期間</dt>
+                                <dd class="p-single-works-wrapper-content-body-list-item__desc"><?php echo esc_html(get_field('period')); ?></dd>
+                            </div>
+                            <div class="p-single-works-wrapper-content-body-list__item p-single-works-wrapper-content-body-list-item">
+                                <dt class="p-single-works-wrapper-content-body-list-item__term">URL</dt>
+                                <dd class="p-single-works-wrapper-content-body-list-item__desc">
+                                    <?php if (get_field('url')): ?>
+                                        <a href="<?php echo esc_url(get_field('url')); ?>" target="_blank" rel="noopener">
+                                            <?php echo esc_html(get_field('url')); ?>
+                                        </a>
+                                    <?php endif; ?>
+                                </dd>
+                            </div>
+                            <div class="p-single-works-wrapper-content-body-list__item p-single-works-wrapper-content-body-list-item">
+                                <dt class="p-single-works-wrapper-content-body-list-item__term">クライアント情報</dt>
+                                <dd class="p-single-works-wrapper-content-body-list-item__desc"><?php echo esc_html(get_field('client')); ?></dd>
+                            </div>
+                            <div class="p-single-works-wrapper-content-body-list__item p-single-works-wrapper-content-body-list-item">
+                                <dt class="p-single-works-wrapper-content-body-list-item__term">クライアントの意向と課題、制作経緯</dt>
+                                <dd class="p-single-works-wrapper-content-body-list-item__desc"><?php echo esc_html(get_field('client_notes')); ?></dd>
+                            </div>
                         </dl>
                     <?php endif; ?>
                 </div>
             <?php endif; ?>
 
             <?php
-            $heading_top = get_field("section_heading_2_top");
-            $heading_bottom = get_field("section_heading_2_bottom");
-            $content = get_field("section_content_2");
+            $heading_top2 = get_field("section_post_heading_2_top");
+            $heading_bottom2 = get_field("section_post_heading_2_bottom");
+            $content2 = get_field("section_post_content_2");
 
-            if (!empty($heading_top) || !empty($heading_bottom) || !empty($content)) :
+            if (!empty($heading_top2) || !empty($heading_bottom2) || !empty($content2)) :
             ?>
                 <div class="p-single-works-wrapper-content__body p-single-works-wrapper-content-body p-single-works-wrapper-content__body--second">
                     <h3 class="c-subtitle">
-                        <?php if ($heading_top) : ?>
-                            <span class="c-subtitle--line1"><?php echo esc_html($heading_top); ?></span>
+                        <?php if ($heading_top2) : ?>
+                            <span class="c-subtitle--line1"><?php echo esc_html($heading_top2); ?></span>
                         <?php endif; ?>
-                        <?php if ($heading_bottom) : ?>
-                            <span class="c-subtitle--line2"><?php echo esc_html($heading_bottom); ?></span>
+                        <?php if ($heading_bottom2) : ?>
+                            <span class="c-subtitle--line2"><?php echo esc_html($heading_bottom2); ?></span>
                         <?php endif; ?>
                     </h3>
                     <div class="p-single-works-wrapper-content-body__text">
-                        <?php if ($content) : ?>
-                            <?php echo nl2br(esc_html($content)); ?>
+                        <?php if ($content2) : ?>
+                            <?php echo nl2br(esc_html($content2)); ?>
                         <?php endif; ?>
                     </div>
                 </div>
@@ -146,7 +154,6 @@
                 <a href="#" class="c-return c-return--single-works">
                     一覧に戻る<span class="c-arrow01_right c-arrow01_right--large"></span>
                 </a>
-
             </div>
         </aside>
     </section>

@@ -1,12 +1,12 @@
 <?php get_header(); ?>
 
 <main class="p-archive-works">
-  <section class="p-archive-works__mv p-archive-works-mv l-inner">
+  <section class="p-archive-works__mv p-archive-works-mv">
     <div class="p-archive-works-mv_inner p-archive-works-mv-inner">
       <div class="p-archive-works-mv-inner__title">
-        <h2 class="c-heading01 c-heading01--large01" data-en="works">実績</h2>
+        <h2 class="c-heading01 c-heading01--large03" data-en="works">実績</h2>
       </div>
-      <div class="p-archive-works-mv-inner__breadcrumbs">
+      <div class="p-archive-works-mv__breadcrumbs">
         <?php get_template_part('template-parts/sections/section-breadcrumbs'); ?>
       </div>
     </div>
@@ -23,7 +23,7 @@
           $summary = get_field('works_summary');
           ?>
 
-          <div class="c-archive-card">
+          <div class="c-archive-card c-archive-card--works">
             <a href="<?php the_permalink(); ?>">
               <?php if ($terms && !is_wp_error($terms)) : ?>
                 <span class="c-archive-card__label"><?php echo esc_html($terms[0]->name); ?></span>
@@ -33,7 +33,7 @@
                 <?php the_post_thumbnail('large'); ?>
               </div>
 
-              <div class="c-archive-card__summary">
+              <div class="c-archive-card__summary c-archive-card__summary--works">
                 <?php if ($summary) : ?>
                   <p class="c-archive-card__summary-text"><?php echo esc_html($summary); ?></p>
                 <?php endif; ?>

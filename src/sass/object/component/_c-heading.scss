@@ -218,6 +218,45 @@ c-heading01 英語と日本語 2色(黒・白)の線の装飾
   }
 }
 
+//日本語　fontサイズ違い 　
+.c-heading01--large03 {
+  font-size: myrem(16);
+  letter-spacing: 0.02em;
+  padding-left: myrem(30);
+  top: 0;
+
+  @include mq(md) {
+    font-size: myrem(16);
+    padding-left: myrem(117);
+  }
+}
+
+.c-heading01--large03::before {
+  top: 50%;
+  left: myrem(4);
+  width: myrem(16);
+  height: myrem(2);
+  background: linear-gradient(to right, $black 50%, #f5f5f5 50%);
+
+
+  @include mq(md) {
+    width: myrem(32);
+    height: myrem(4);
+    left: myrem(70);
+  }
+}
+
+.c-heading01--large03::after {
+  font-size: myrem(36);
+  top: myrem(-37);
+  left: 0;
+
+  @include mq(md) {
+    font-size: myrem(60);
+    top: myrem(-58);
+    left: myrem(70);
+  }
+}
 
 /***************************
 // その他　共通タイトル用
