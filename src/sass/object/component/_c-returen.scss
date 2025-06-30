@@ -1,6 +1,7 @@
 @use "global" as *;
 
 .c-return {
+  width: fit-content;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -9,6 +10,8 @@
 
   @include mq(md) {
     gap: myrem(12);
+    font-size: myrem(18);
+    letter-spacing: 0.1em;
   }
 }
 .c-return--single-news {
@@ -24,7 +27,7 @@
   display: none;
 
   @include mq(md) {
-    display: block;
+    display: flex;
   }
 }
 

@@ -49,7 +49,7 @@
                                 <?php endif; ?>
                             </h3>
                             <?php if ($content) : ?>
-                                <div class="c-single-content__post">
+                                <div class="c-single-content__post c-single-content__post--voice">
                                     <?php echo nl2br(esc_html($content)); ?> </div>
                             <?php endif; ?>
                         </div>
@@ -110,7 +110,7 @@
             </article>
         </div>
         <!-- プロフィール -->
-        <aside class="p-single-voice__profile p-single-voice-profile l-inner">
+        <aside class="p-single-voice__profile p-single-voice-profile">
             <!-- 社長プロフィールのカード -->
             <div class="p-single-voice-profile__body">
                 <div class="p-single-voice-profile__image">
@@ -123,10 +123,11 @@
                     <p class="p-single-voice-profile__text--en">Tanaka Tarou</p>
                 </div>
             </div>
-
-            <a href="#" class="c-return c-return--single-voice">
-                一覧に戻る<span class="c-arrow01_right"></span>
-            </a>
+            <div class="p-single-voice-profile__btn">
+                <a href="#" class="c-return c-return--single-voice">
+                    一覧に戻る<span class="c-arrow01_right"></span>
+                </a>
+            </div>
         </aside>
     </section>
 

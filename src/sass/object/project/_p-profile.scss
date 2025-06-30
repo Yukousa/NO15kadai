@@ -1,26 +1,89 @@
 @use "global" as *;
+.p-profile {
+  @include mq(md) {
+    overflow: clip;
+  }
+}
+
+.p-profile__mv {
+  width: 100%;
+  padding-top: myrem(170);
+
+  @include mq(md) {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding-top: myrem(240);
+  }
+}
+
+.p-profile-mv__title {
+  padding: myrem(0) myrem(20);
+
+  @include mq(md) {
+    padding: 0;
+  }
+}
+
+.p-profile-mv__image {
+  width: 100%;
+  aspect-ratio: 375 / 230;
+  margin-top: myrem(25);
+
+  @include mq(md) {
+    aspect-ratio: 1440 / 480;
+    width: 100vw;
+    margin: myrem(32) calc(50% - 50vw) 0;
+  }
+}
+
+.p-profile-mv__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: myrem(-165) center;
+
+  @include mq(md) {
+    object-position: center;
+  }
+}
+
+.p-profile__breadcrumbs {
+  width: 100%;
+  background-color: $black_base;
+
+}
+
+.p-profile-breadcrumbs__inner {
+  @include mq(md) {
+    max-width: 1440px;
+    margin-left: myrem(10);
+
+  }
+
+}
 
 /******************************
 アイコン群
 ******************************/
 .p-profile-skill {
+  width: 100%;
   background-color: $black_base;
   position: relative;
-  padding: myrem(100) 0 myrem(60);
+  padding-top: myrem(85);
+  padding-bottom: myrem(55);
 
   @include mq(md) {
-    padding-bottom: myrem(120);
+    padding-top: myrem(30);
+    padding-bottom: myrem(60);
   }
 }
 
 .p-profile-skill__inner {
-  padding: 0 myrem(20);
-  margin-top: myrem(85);
   position: relative;
 
   @include mq(md) {
-    max-width: $innerWidth;
-    padding: myrem(80) 0 0;
+    max-width: 1440px;
+    padding-top: myrem(80);
     margin-top: myrem(-10);
     margin-inline: auto;
   }
@@ -34,8 +97,8 @@
 
   @include mq(md) {
     max-width: 1300px;
-    height: myrem(310);
-    padding: myrem(30) myrem(20) myrem(30) myrem(60);
+    height: myrem(300);
+    padding: myrem(30) myrem(20);
   }
 }
 
@@ -47,6 +110,13 @@
   }
 }
 
+.p-profile-skill-inner__box--design,
+.p-profile-skill-inner__box--communication {
+  @include mq(md) {
+    padding-top: myrem(40);
+  }
+}
+
 .p-profile-skill-inner-box__title {
   font-weight: 800;
   font-size: myrem(20);
@@ -54,6 +124,7 @@
 
   @include mq(md) {
     font-size: myrem(28);
+    padding-left: myrem(30);
   }
 }
 
@@ -75,9 +146,12 @@
   row-gap: myrem(30);
 
   @include mq(md) {
+    width: myrem(825);
+    margin-top: myrem(30);
+    margin-left: myrem(35);
     padding: 0;
     grid-template-columns: repeat(5, auto);
-    grid-template-rows: repeat(1, 1fr);
+    grid-template-rows: repeat(1, auto);
   }
 }
 
@@ -89,7 +163,7 @@
   margin-top: myrem(27);
 
   @include mq(md) {
-    margin-top: myrem(20);
+    margin-top: myrem(15);
   }
 }
 
@@ -99,12 +173,13 @@
   grid-template-rows: repeat(2, 1fr);
   column-gap: myrem(15);
   row-gap: myrem(25);
-  margin-top: myrem(25);
+  margin-top: myrem(20);
 
   @include mq(md) {
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(1, 1fr);
-    margin-top: myrem(43);
+    width: myrem(540);
+    grid-template-columns: repeat(4, auto);
+    grid-template-rows: repeat(1, auto);
+    margin-top: myrem(30);
   }
 }
 
@@ -116,8 +191,14 @@
   row-gap: myrem(20);
 
   @include mq(md) {
-    grid-template-columns: repeat(4, 1fr);
+    width: myrem(563);
+    grid-template-columns: repeat(4, auto);
     grid-template-rows: repeat(1, 1fr);
+
+    margin-top: myrem(20);
+    margin-left: myrem(25);
+    row-gap: myrem(0);
+
   }
 }
 
@@ -129,32 +210,40 @@
   text-align: center;
 
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  flex-direction: column;
-  align-self: end;
-  justify-self: center;
+  flex-direction: column; // 縦並び
+  align-items: center; // 横方向中央寄せ
+  justify-content: center; // 縦方向中央寄せ
   gap: myrem(8);
 
   @include mq(md) {
     width: fit-content;
     font-size: myrem(18);
-    gap: myrem(20);
+    gap: myrem(12);
   }
 }
 
-.p-profile-skill-inner-box-icons__item:first-child {
+.p-profile-skill-inner-box-icons__item--chatwork,
+.p-profile-skill-inner-box-icons__item--mail,
+.p-profile-skill-inner-box-icons__item--slack,
+.p-profile-skill-inner-box-icons__item--line {
+
   @include mq(md) {
-    justify-self: flex-start;
+    gap: myrem(5);
   }
 }
+
 
 .p-profile-skill-inner-box-icons__item img {
   width: 100%;
   height: 100%;
   object-fit: contain;
   display: block;
+
+  @include mq(md) {
+    height: myrem(115);
+  }
 }
+
 
 // 画像ごとのサイズ指定
 .p-profile-skill-inner-box-icons__item--html img,
@@ -164,8 +253,20 @@
 
   @include mq(md) {
     width: myrem(90);
+    transform: translateY(myrem(8));
+    height: myrem(115);
+
   }
 }
+
+.p-profile-skill-inner-box-icons__item--css img {
+  @include mq(md) {
+    margin-left: myrem(23);
+    height: myrem(115);
+
+  }
+}
+
 
 .p-profile-skill-inner-box-icons__item--sass img {
   width: myrem(108);
@@ -173,6 +274,9 @@
 
   @include mq(md) {
     width: myrem(129);
+    margin-left: myrem(17);
+    height: myrem(115);
+
   }
 }
 
@@ -182,6 +286,8 @@
 
   @include mq(md) {
     width: myrem(115);
+    height: myrem(115);
+    margin-right: myrem(35);
   }
 }
 
@@ -191,6 +297,8 @@
 
   @include mq(md) {
     width: myrem(158);
+    height: myrem(115);
+    transform: translateX(myrem(-20));
   }
 }
 
@@ -200,8 +308,8 @@
 
   @include mq(md) {
     width: myrem(133);
-    aspect-ratio: 134 / 130;
-    margin-right: myrem(30);
+    height: myrem(130);
+    aspect-ratio: 133 / 130;
   }
 }
 
@@ -213,6 +321,7 @@
 
   @include mq(md) {
     width: myrem(97);
+    height: myrem(95);
   }
 }
 
@@ -223,6 +332,7 @@
 
   @include mq(md) {
     width: myrem(67);
+    height: myrem(100);
     margin-right: myrem(0);
   }
 }
@@ -230,11 +340,19 @@
 .p-profile-skill-inner-box-icons__item--chatwork img {
   width: myrem(94);
   aspect-ratio: 1 / 1;
+
+  @include mq(md) {
+    height: myrem(109);
+  }
 }
 
 .p-profile-skill-inner-box-icons__item--mail img {
   width: myrem(100);
   aspect-ratio: 1 / 1;
+
+  @include mq(md) {
+    height: myrem(109);
+  }
 }
 
 .p-profile-skill-inner-box-icons__item--slack img {
@@ -243,7 +361,9 @@
 
   @include mq(md) {
     width: myrem(93);
+    height: myrem(109);
     margin-right: myrem(0);
+
   }
 }
 
@@ -253,19 +373,23 @@
 
   @include mq(md) {
     width: myrem(109);
+    height: myrem(109);
     margin-right: myrem(0);
+
   }
 }
 
 // pcサイズ　gridレイアウト
 // 1段目
 .p-profile-skill-inner-box__wrapper-top {
+  margin-top: myrem(60);
   @include mq(md) {
     display: grid;
     grid-template-columns: calc(865 / 1300 * 100%) auto;
     grid-template-rows: repeat(1, 1fr);
     column-gap: myrem(20);
-    height: myrem(310);
+    height: myrem(300);
+    margin-top: myrem(38);
   }
 }
 // 2段目
@@ -285,7 +409,7 @@
 メイン部分
 ******************************/
 .p-profile__wrapper {
-  padding-top: myrem(50);
+  padding-top: myrem(25);
 
   @include mq(md) {
     max-width: 1440px;
@@ -313,8 +437,6 @@
 }
 
 .p-profile-container-body__wrapper {
-  padding: 0 myrem(20);
-
   @include mq(md) {
     padding: 0;
   }
@@ -350,7 +472,7 @@
     margin-top: myrem(80);
     overflow: hidden;
     position: relative;
-}
+  }
 }
 
 .p-profile-container-body__image img {
@@ -375,8 +497,8 @@
 プロフィール
 ******************************/
 .p-profile__profile {
-  margin-top: myrem(50);
-  padding: 0 myrem(20) myrem(80);
+  margin-top: myrem(65);
+  padding-bottom: myrem(60);
 
   @include mq(md) {
     width: calc(320 / 1300 * 100%);
@@ -386,15 +508,62 @@
   }
 }
 
+.p-profile-profile__image {
+  width: 100%;
+  aspect-ratio: 335 / 216;
+}
+
+.p-profile-profile__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.p-profile-profile__text {
+  text-align: right;
+  margin-top: myrem(15);
+}
+
+.p-single-profile-profile__text--company {
+  display: none;
+}
+
+.p-single-profile-profile__text--ja {
+  font-weight: 700;
+  font-size: myrem(16);
+  line-height: 1;
+  letter-spacing: 0.06em;
+}
+
+.p-single-profile-profile__text--ja2 {
+  display: none;
+}
+
+.p-single-profile-profile__text--en {
+  font-weight: 700;
+  font-size: myrem(12);
+  line-height: 1;
+  letter-spacing: 0.06em;
+  color: #929292;
+  margin-top: myrem(5);
+}
+
 .p-profile-profile__content {
-  margin-top: myrem(27);
   @include mq(md) {
     padding: 0;
     margin-top: myrem(50);
   }
 }
 
-.p-profile-profile__title {
+.p-profile-profile-content__inner {
+  margin-top: myrem(30);
+}
+
+.p-profile-profile-content__inner:not(:first-child) {
+  margin-top: myrem(45);
+}
+
+.p-profile-profile-content-inner__title {
   font-family: "Open Sans";
   font-style: normal;
   font-weight: 800;
@@ -408,7 +577,7 @@
   }
 }
 
-.p-profile-profile__title::after {
+.p-profile-profile-content-inner__title::after {
   content: "";
   display: block;
   width: myrem(16);
@@ -425,30 +594,9 @@
   }
 }
 
-.p-profile__profile .c-profile-card__image {
-  width: 100%;
-  aspect-ratio: 335 / 216;
-}
-
-.p-profile__profile .c-profile-card__image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.p-profile-profile__text {
-  font-weight: 400;
+.p-profile-profile-content-inner__text {
+  margin-top: myrem(20);
   font-size: myrem(14);
   line-height: calc(24 / 14);
   letter-spacing: 0.1em;
-  margin-top: myrem(10);
-
-  @include mq(md) {
-    margin-top: myrem(25);
-    line-height: calc(24 / 14);
-    line-height: 1.8;
-    letter-spacing: 0.14em;
-    padding-bottom: myrem(0);
-    margin-top: myrem(20);
-  }
 }

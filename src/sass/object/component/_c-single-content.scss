@@ -18,13 +18,20 @@
 }
 
 .c-single-content--voice:not(:first-child) {
-  margin-top: myrem(55);
+  margin-top: myrem(40);
 
   @include mq(md) {
-    margin-top: myrem(60);
+    margin-top: myrem(80);
   }
 }
 
+.c-single-content--profile:not(:first-child) {
+  margin-top: myrem(55);
+
+  @include mq(md) {
+    margin-top: myrem(80);
+  }
+}
 .c-single-content__wrapper {
   padding: 0 myrem(20);
 
@@ -45,6 +52,15 @@
 
 }
 
+
+.c-single-content__post--voice {
+
+  @include mq(md) {
+    letter-spacing: 0.1em;
+    line-height: 1.75;
+  }
+
+}
 
 .c-single-content__image {
   width: 100%;
