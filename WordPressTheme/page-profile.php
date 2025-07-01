@@ -10,7 +10,7 @@
         </div>
     </section>
     <div class="p-profile__breadcrumbs p-profile-breadcrumbs">
-        <div class="p-profile-breadcrumbs__inner l-inner">
+        <div class="p-profile-breadcrumbs__inner">
             <?php get_template_part('template-parts/sections/section-breadcrumbs'); ?>
         </div>
     </div>
@@ -108,10 +108,11 @@
             </div>
         </div>
     </section>
+
     <!-- pc時　2カラム -->
     <section class="p-profile__container p-profile-container">
-        <div class="p-profile-container__wrapper p-profile-container-wrapper">
-            <article class="p-profile-container-wrapper__body p-profile-container-wrapper__body">
+        <div class="p-profile-container__content p-profile-container-content">
+            <article class="p-profile-container-content__body p-profile-container-content-body">
                 <!-- 投稿画面ACF -->
                 <?php for ($i = 1; $i <= 2; $i++) : // セクション数に合わせてループ範囲を変更 
                 ?>
@@ -142,7 +143,7 @@
                         </div>
 
                         <?php if ($image) : ?>
-                            <div class="c-single-content__image">
+                            <div class="c-single-content__image c-single-content__image--profile">
                                 <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>">
                             </div>
                         <?php endif; ?>
@@ -150,7 +151,7 @@
                 <?php endfor; ?>
             </article>
             <!-- スライダー -->
-            <div class="p-profile-container-wrapper__body__slider">
+            <div class="p-profile-container-content-body__slider">
                 <section class="c-slide">
                     <div class="c-slide-track">
                         <div class="c-slide-item">
@@ -214,8 +215,7 @@
                     <h4 class="p-profile-container-profile-content-inner__title">経歴</h4>
                     <p class="p-profile-container-profile-content-inner__text">ここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入る</p>
                 </div>
-                <div class="p-profile-profile-content__inner p-profile-profile-content-inner">
-                    <div class="p-profile-profile__content p-profile-profile-content">
+                <div class="p-profile-container-profile-content__inner p-profile-container-profile-content-inner">
                         <h4 class="p-profile-container-profile-content-inner__title">職歴</h4>
                         <p class="p-profile-container-profile-content-inner__text">ここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入る</p>
                     </div>

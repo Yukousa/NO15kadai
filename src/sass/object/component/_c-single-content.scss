@@ -29,7 +29,7 @@
   margin-top: myrem(55);
 
   @include mq(md) {
-    margin-top: myrem(80);
+    margin-top: myrem(83);
   }
 }
 .c-single-content__wrapper {
@@ -54,6 +54,15 @@
 
 
 .c-single-content__post--voice {
+
+  @include mq(md) {
+    letter-spacing: 0.1em;
+    line-height: 1.75;
+  }
+
+}
+
+.c-single-content__post--profile {
 
   @include mq(md) {
     letter-spacing: 0.1em;
@@ -89,4 +98,34 @@
 
     }
 }
+
+.c-single-content__image--profile {
+  width: 100%;
+  aspect-ratio: 375 / 270;
+  margin-top: myrem(55);
+
+
+  @include mq(md) {
+    aspect-ratio: 950 / 327;
+    margin-top: myrem(80);
+    overflow: hidden;
+
+  }
+
+}
+
+.c-single-content__image--profile img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+    @include mq(md) {
+      width: 172%;
+      height: 172%;
+      transform: none;
+      object-position: bottom myrem(210) right myrem(5);
+    }
+}
+
+
 
