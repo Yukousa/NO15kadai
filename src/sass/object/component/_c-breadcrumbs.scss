@@ -26,9 +26,11 @@
   display: inline-block;
 }
 
-.c-breadcrumbs__top {
+.c-breadcrumbs__top,
+.c-breadcrumbs__parent {
   font-weight: bold;
   padding: myrem(10) myrem(4);
+  text-transform: uppercase;
 
   @include mq(md) {
     padding: myrem(20) myrem(10);

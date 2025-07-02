@@ -3,7 +3,7 @@
 
     <?php
     // contact / confirm / thanks ページは CONTACT に統一
-    if (is_page('contact') || is_page('contact-confirm') || is_page('contact-thanks')) {
+    if (is_page('contact') || is_page('confirm') || is_page('thanks')) {
         echo '<span class="c-breadcrumbs__separator"> / </span>';
         echo '<span class="c-breadcrumbs__current">CONTACT</span>';
     } elseif (is_page()) {

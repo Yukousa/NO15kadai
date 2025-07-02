@@ -1,4 +1,8 @@
-<?php get_header(); ?>
+<?php
+/*
+Template Name: Contact Confirm
+*/
+get_header(); ?>
 
 <main class="p-contact">
     <section class="p-contact__mv p-contact-mv">
@@ -11,10 +15,11 @@
             </div>
         </div>
     </section>
-
+    
     <div class="p-contact__inner">
         <?php the_content(); ?>
     </div>
+
 
 </main>
 <?php get_template_part('template-parts/sections/section-cta'); ?>

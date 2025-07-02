@@ -163,3 +163,24 @@ function custom_archive_posts_per_page($query) {
   }
   add_action('pre_get_posts', 'custom_archive_posts_per_page');
   
+
+  //Breadcrumb NavXTで「子ページタイトルを消して親ページで止める」
+  function custom_breadcrumb_navxt_hide_current_for_contact_children($trail) {
+    if (is_page()) {
+        $current_id = get_queried_object_id();
+        // 確認ページ・ThanksページのIDを指定
+        $stop_ids = [365, 366]; // ←実際の固定ページIDに置き換えてください
+
+        if (in_array($current_id, $stop_ids)) {
+            // 末尾の現在ページ要素を削除
+            $num = count($trail->breadcrumbs);
+            if ($num > 0) {
+                unset($trail->breadcrumbs[$num - 1]);
+                // 添字を詰め直す（Breadcrumb NavXTは連番でないと出力崩れるケースあり）
+                $trail->breadcrumbs = array_values($trail->breadcrumbs);
+            }
+        }
+    }
+    return $trail;
+}
+add_filter('bcn_after_fill', 'custom_breadcrumb_navxt_hide_current_for_contact_children');
