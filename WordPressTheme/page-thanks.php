@@ -18,7 +18,7 @@
             <p class="p-contact-thanks-inner__text--2">お問い合わせいただきありがとうございます。<br>お問い合わせ頂いた内容については、<br class="u-mobile">確認の上ご返信させていただきます。</p>
         </div>
         <div class="p-contact-thanks__back">
-            <a href="<?php echo esc_url(home_url('/')); ?>" class="c-readMore">TOPへ戻る<span class="c-arrow01_right c-arrow01_right--white"></span></a>
+            <a href="<?php echo esc_url(home_url('/')); ?>" class="c-readMore c-readMore--thanks">TOPへ戻る<span class="c-arrow01_right c-arrow01_right--white"></span></a>
         </div>
     </section>
 

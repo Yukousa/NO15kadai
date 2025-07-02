@@ -16,3 +16,19 @@
 .c-readMore--white {
   color: $white;
 }
+
+.c-readMore--thanks {
+  font-family: "Open Sans";
+  font-weight: 800;
+  font-size: myrem(20);
+  line-height: calc(20 / 18);
+  padding: myrem(20) myrem(50) myrem(20) myrem(70);
+  border: 2px solid $black;
+  border-radius: myrem(40);
+
+  @include mq(md) {
+    letter-spacing: 0.1em;
+    gap: myrem(3);
+  }
+
+}
