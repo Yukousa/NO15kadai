@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <main class="p-contact">
-    <section class="p-contact__mv p-contact-mv">
+    <section class="p-contact__mv p-contact-mv l-inner">
         <div class="p-contact-mv_inner p-contact-mv-inner">
             <div class="p-contact-mv-inner__title">
                 <h2 class="c-heading01 c-heading01--large03" data-en="contact">お問い合わせ</h2>

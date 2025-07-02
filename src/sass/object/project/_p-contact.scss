@@ -7,18 +7,11 @@
   @include mq(md) {
     max-width: 1440px;
     margin: 0 auto;
-    padding: myrem(163) myrem(70) myrem(110);
+    padding-top: myrem(245);
+    padding-bottom:  myrem(110);
   }
 }
 
-.p-contact__inner {
-  width: 100%;
-
-  @include mq(md) {
-    max-width: 1440px;
-    padding: 0 myrem(70);
-  }
-}
 
 .p-contact__mv {
   width: 100%;
@@ -30,13 +23,10 @@
 
 .p-contact-mv_inner {
   @include mq(md) {
-    max-width: 1440px;
-    margin: 0 auto;
   }
 }
 
 .p-contact-mv-inner__title {
-  padding: myrem(0) myrem(20);
 
   @include mq(md) {
     padding: 0;
@@ -45,6 +35,15 @@
 
 .p-contact-mv-inner__breadcrumbs {
   margin-top: myrem(50);
+
+  @include mq(md) {
+    margin-top: myrem(10);
+    margin-right: myrem(-10);
+  }
+}
+
+.p-contact__inner {
+
 }
 
 //form
@@ -55,7 +54,7 @@
     width: 100%;
     max-width: 980px;
     margin-inline: auto;
-    margin-top: myrem(98);
+    margin-top: myrem(45);
   }
 }
 
@@ -248,6 +247,14 @@
   width: myrem(20);
   height: myrem(20);
   stroke: $black;
+
+  @include mq(md) {
+    width: myrem(25);
+    height: myrem(25);
+    top: 43%;
+    right: myrem(15);
+  
+    }
 }
 
 //optionの色を変更
@@ -446,6 +453,10 @@
   overflow-y: scroll;
   margin: myrem(25) myrem(10) myrem(15) myrem(20);
   max-height: myrem(240);
+
+  @include mq(md) {
+    margin-left: myrem(16);
+  }
 }
 
 .p-formPrivacy-container-inner__text p {
@@ -453,6 +464,10 @@
   line-height: calc(24 / 14);
   font-size: myrem(14);
   padding-right: myrem(10);
+
+  @include mq(md) {
+    padding-right: myrem(30);
+  }
 }
 
 .p-formPrivacy-container-inner__text p:not(:first-child) {
@@ -481,6 +496,10 @@
   margin-top: myrem(60);
   margin-inline: auto;
   text-align: center;
+
+  @include mq(md) {
+    margin-top: myrem(55);
+  }
 }
 
 .p-formBtn input {
@@ -512,6 +531,14 @@
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+
+  @include mq(md) {
+letter-spacing: 0.1em;
+
+color: #FFFFFF;
+
+
+  }
 }
 
 .p-form__submit-wrap.p-formBtn {
@@ -533,6 +560,10 @@
   right: calc(65 / 335 *100%);
   top: 50%;
   transform: translateY(-50%);
+
+  @include mq(md) {
+    right: calc(388 / 980 * 100%);
+  }
 }
 
 // 入力が不備で送信ボタンが押せないとき
