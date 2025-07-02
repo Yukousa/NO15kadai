@@ -1,14 +1,30 @@
 @use "global" as *;
 .p-contact {
+  width: 100%;
+  padding-top: myrem(175);
+  padding-bottom: myrem(60);
+
+  @include mq(md) {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: myrem(163) myrem(70) myrem(110);
+  }
+}
+
+.p-contact__inner {
+  width: 100%;
+
+  @include mq(md) {
+    max-width: 1440px;
+    padding: 0 myrem(70);
+  }
 }
 
 .p-contact__mv {
   width: 100%;
-  padding-top: myrem(175);
 
   @include mq(md) {
     margin: 0 auto;
-    padding-top: myrem(245);
   }
 }
 
@@ -32,41 +48,9 @@
 }
 
 //form
-.p-contact {
-  width: 100%;
-  padding: myrem(163) myrem(20) myrem(60);
-
-  @include mq(md) {
-    max-width: 1440px;
-    margin: 0 auto;
-    padding: myrem(163) myrem(70) myrem(110);
-  }
-}
-
-.p-contact__title {
-  font-size: myrem(16);
-
-  @include mq(md) {
-    padding-left: myrem(42);
-  }
-}
-
-.p-contact__title::after {
-  font-size: myrem(36);
-}
-
-.p-contact__inner {
-  width: 100%;
-
-  @include mq(md) {
-    max-width: 1440px;
-    padding: 0 myrem(70);
-  }
-}
-
-//p-form
-
 .p-form {
+  margin-top: myrem(15);
+
   @include mq(md) {
     width: 100%;
     max-width: 980px;
@@ -74,8 +58,9 @@
     margin-top: myrem(98);
   }
 }
+
 .p-form-list__item {
-  padding: myrem(20) 0;
+  padding-top: myrem(35);
 
   @include mq(md) {
     flex-direction: column;
@@ -85,9 +70,14 @@
   }
 }
 
+.p-form-list__item:not(:first-child) {
+  padding-top: myrem(30);
+}
 .p-form-list-item__title p {
+  height: myrem(38);
   display: flex;
-  gap: myrem(20);
+  justify-content: flex-start;
+  gap: myrem(10);
   font-weight: 700;
   font-size: myrem(16);
   line-height: calc(16 / 16);
@@ -99,14 +89,17 @@
 }
 
 .p-form-list-item__title span {
-  display: inline-block;
+  width: myrem(45);
+  height: myrem(20);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: $white;
   font-size: myrem(14);
   background-color: #c52238;
   font-weight: 500;
   line-height: 100%;
   letter-spacing: 0.04em;
-  padding: myrem(3) myrem(8);
 }
 
 .p-form-list-item__title--type02 {
@@ -120,7 +113,6 @@
 
 .p-form__input {
   flex: 1;
-  margin-top: myrem(16);
 
   @include mq(md) {
     width: 100%;
@@ -137,10 +129,15 @@
 .p-formInput input {
   width: 100%;
   height: myrem(50);
+  padding-top: myrem(5);
+  padding-bottom: myrem(8);
   padding-left: myrem(16);
+  padding-right: myrem(5);
+  letter-spacing: 0.06em;
   border: none;
   cursor: pointer;
   background-color: $black_base;
+
   @include mq(md) {
   }
 }
@@ -219,8 +216,8 @@
 
 .p-formSelect-wrap {
   display: inline-block;
+  align-items: center;
   position: relative;
-  margin-top: myrem(16);
   width: calc(283 / 335 * 100%);
 
   @include mq(md) {
@@ -230,8 +227,10 @@
 
 .p-formSelect-wrap select {
   width: 100%;
-  padding: myrem(10) myrem(40) myrem(10) myrem(12); // 矢印分右に余白
+  height: myrem(50);
+  padding: myrem(5) myrem(35) myrem(13) myrem(15); // 矢印分右に余白
   font-size: myrem(16);
+  letter-spacing: 0.06em;
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -244,10 +243,10 @@
   position: absolute;
   pointer-events: none;
   top: 50%;
-  right: myrem(12);
+  right: myrem(8);
   transform: translateY(-50%);
-  width: myrem(16);
-  height: myrem(16);
+  width: myrem(20);
+  height: myrem(20);
   stroke: $black;
 }
 
@@ -333,9 +332,11 @@
   position: relative;
   display: inline-block;
   width: auto;
-  padding: 0 0 0 myrem(30);
-  font-size: 16px;
+  padding: 0 0 0 myrem(40);
+  font-size: myrem(16);
   cursor: pointer;
+  font-weight: 700;
+  letter-spacing: 0.1em;
 }
 
 .p-formCheckbox input + span::before {
@@ -344,8 +345,8 @@
   top: 50%;
   left: 0;
   display: block;
-  width: myrem(20);
-  height: myrem(20);
+  width: myrem(24);
+  height: myrem(24);
   transform: translateY(-50%);
   border: 1px solid #000;
   border-radius: myrem(4);
@@ -390,6 +391,9 @@
 //プライバシーポリシー
 
 .p-formPrivacy {
+  padding-top: myrem(25);
+  padding-left: myrem(25);
+  padding-right: myrem(25);
   @include mq("md") {
     display: flex;
     justify-content: center;
@@ -402,80 +406,96 @@
   }
 }
 
+.p-formPrivacy__container {
+  width: 100%;
+  border: 1px solid #d8d8d8;
+  border-radius: 4px;
+  margin-top: myrem(10);
+}
+
+.p-formPrivacy-container_inner {
+  margin-top: myrem(20);
+  width: 100%;
+  max-height: myrem(280);
+  margin-inline: auto;
+}
+
+.p-formPrivacy-container-inner__text::-webkit-scrollbar-button {
+  display: none; /* スクロールバーのボタンを非表示 */
+}
+
+/* スクロールバー全体 */
+.p-formPrivacy-container-inner__text::-webkit-scrollbar {
+  width: myrem(10); /* スクロールバーの幅 */
+  border-radius: 100px; /* スクロールバーの角を丸く */
+  padding-top: myrem(10);
+
+  @include mq(md) {
+    // width: myrem(15);
+  }
+}
+
+/* スクロールバーのつまみ（サム） */
+.p-formPrivacy-container-inner__text::-webkit-scrollbar-thumb {
+  background: $black; /* スクロールバーの色 */
+  padding-right: calc(2 / 375 * 100vw);
+  border-radius: 100px; /* スクロールバーの角を丸く */
+}
+
+.p-formPrivacy-container-inner__text {
+  overflow-y: scroll;
+  margin: myrem(25) myrem(10) myrem(15) myrem(20);
+  max-height: myrem(240);
+}
+
+.p-formPrivacy-container-inner__text p {
+  letter-spacing: 0.1em;
+  line-height: calc(24 / 14);
+  font-size: myrem(14);
+  padding-right: myrem(10);
+}
+
+.p-formPrivacy-container-inner__text p:not(:first-child) {
+  margin-top: myrem(24);
+}
+
+/* スクロールバーの背景（トラック） */
+.p-formPrivacy-container-inner__text::-webkit-scrollbar-track {
+  background: #f5f5f5;
+  border-radius: 100px; /* スクロールバーの角を丸く */
+  margin-top: myrem(5);
+  margin-bottom: myrem(5);
+}
+
 .p-form__acceptance {
-  margin-top: myrem(30);
+  margin-top: myrem(33);
   text-align: center;
 
   @include mq("md") {
   }
 }
 
-.p-formPrivacy__text {
-  width: 100%;
-  height: myrem(280);
-  overflow-y: scroll;
-  padding: myrem(20);
-  background-color: $white;
-  border: 1px solid #d8d8d8;
-  margin-top: myrem(30);
-}
-
-.p-formPrivacy__text p:not(:first-child) {
-  margin-top: myrem(24);
-}
-
-/* スクロールバー全体 */
-.p-formPrivacy__text::-webkit-scrollbar {
-  width: myrem(8);
-}
-
-/* スクロールバーの背景（トラック） */
-.p-formPrivacy__text::-webkit-scrollbar-track {
-  background: $black_base;
-  border-radius: myrem(10);
-}
-
-/* スクロールバーのつまみ（サム） */
-.p-formPrivacy__text::-webkit-scrollbar-thumb {
-  background: $black;
-  border-radius: myrem(10);
-}
-
-/* ホバー時のサム */
-.p-formPrivacy__text::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
-
-.p-form__acceptance {
-  margin-top: myrem(30);
-  text-align: center;
-
-  @include mq(md) {
-    text-align: center;
-  }
-}
-
 //送信ボタン
-.p-form__submit {
-  margin-top: myrem(30);
+.p-form__submit-wrap {
+  width: 100%;
+  margin-top: myrem(60);
+  margin-inline: auto;
   text-align: center;
-
-  @include mq(md) {
-    margin-top: myrem(30);
-  }
 }
 
 .p-formBtn input {
+  width: myrem(300);
+  height: myrem(60);
   margin-inline: auto;
-  width: myrem(260);
-  height: myrem(64);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: myrem(8);
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 800;
+  font-size: myrem(20);
+  line-height: 1;
+  text-align: center;
+  letter-spacing: 0.1em;
+  color: #ffffff;
   padding: 0 myrem(20);
-  font-family: $font-main;
-  font-size: myrem(18);
   color: $white;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
     linear-gradient(180deg, #000000 0%, #929292 100%);
@@ -484,29 +504,42 @@
   cursor: pointer;
   transition: opacity 0.3s ease;
   position: relative;
+
+  display: flex;
+  align-items: center;
+
   //iphoneでボタンが崩れるのを防ぐ
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+}
 
-  &:disabled {
-    color: $white;
-    background-color: #eee;
-    border-color: #eee;
+.p-form__submit-wrap.p-formBtn {
+  position: relative;
+  display: inline-block;
+}
 
-    @media screen and (min-width: 768px) {
-      &:hover {
-        cursor: not-allowed;
-      }
-    }
-  }
+.p-form__submit-wrap.p-formBtn::after {
+  content: "";
+  display: inline-block;
+  margin-left: 10px;
+  vertical-align: middle;
+  width: 0;
+  height: 0;
+  border-top: myrem(6) solid transparent;
+  border-bottom: myrem(6) solid transparent;
+  border-left: myrem(12) solid white;
+  position: absolute;
+  right: calc(65 / 335 *100%);
+  top: 50%;
+  transform: translateY(-50%);
+}
 
-  @media screen and (min-width: 768px) {
-    &:hover {
-      opacity: 0.7;
-      transition: opacity 0.5s;
-    }
-  }
+// 入力が不備で送信ボタンが押せないとき
+.p-formBtn input:disabled {
+  color: $white;
+  background-color: #eee;
+  border-color: #eee;
 }
 
 .p-formBtn--prev input {
@@ -532,25 +565,13 @@
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+}
 
-  &:disabled {
-    color: $white;
-    background-color: #eee;
-    border-color: #eee;
-
-    @media screen and (min-width: 768px) {
-      &:hover {
-        cursor: not-allowed;
-      }
-    }
-  }
-
-  @media screen and (min-width: 768px) {
-    &:hover {
-      opacity: 0.7;
-      transition: opacity 0.5s;
-    }
-  }
+// 確認画面で入力が不備で送信ボタンが押せないとき
+.p-formBtn--prev input:disabled {
+  color: $white;
+  background-color: #eee;
+  border-color: #eee;
 }
 
 //送信後のメッセージ
@@ -623,7 +644,6 @@
   text-align: center;
   font-weight: 700;
   letter-spacing: 0.06em;
-
 }
 
 .p-contact-thanks-inner__text--1 {
@@ -637,7 +657,6 @@
     font-size: myrem(32);
     line-height: 100%;
     letter-spacing: 0.06em;
-
   }
 }
 
@@ -649,7 +668,6 @@
   @include mq(md) {
     font-size: myrem(16);
     margin-top: myrem(60);
-
   }
 }
 
@@ -661,6 +679,5 @@
 
   @include mq(md) {
     margin-top: myrem(60);
-
   }
 }

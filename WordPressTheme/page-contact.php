@@ -6,13 +6,13 @@
             <div class="p-contact-mv-inner__title">
                 <h2 class="c-heading01 c-heading01--large03" data-en="contact">お問い合わせ</h2>
             </div>
-            <div class="p-contact-mv__breadcrumbs">
+            <div class="p-contact-mv-inner__breadcrumbs">
                 <?php get_template_part('template-parts/sections/section-breadcrumbs'); ?>
             </div>
         </div>
     </section>
 
-    <div class="p-contact__inner">
+    <div class="p-contact__inner l-inner">
         <?php the_content(); ?>
     </div>
 
