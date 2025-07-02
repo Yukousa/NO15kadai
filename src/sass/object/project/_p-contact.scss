@@ -1,0 +1,646 @@
+@use "global" as *;
+.p-contact {
+}
+
+.p-contact__mv {
+  width: 100%;
+  padding-top: myrem(175);
+
+  @include mq(md) {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding-top: myrem(240);
+  }
+}
+
+.p-contact-mv_inner {
+}
+
+.p-contact-mv-inner__title {
+  padding: myrem(0) myrem(20);
+
+  @include mq(md) {
+    padding: 0;
+  }
+}
+
+.p-contact-mv-inner__breadcrumbs {
+  margin-top: myrem(50);
+}
+
+//form
+.p-contact {
+  width: 100%;
+  padding: myrem(163) myrem(20) myrem(60);
+
+  @include mq(md) {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: myrem(163) myrem(70) myrem(110);
+  }
+}
+
+.p-contact__title {
+  font-size: myrem(16);
+
+  @include mq(md) {
+    padding-left: myrem(42);
+  }
+}
+
+.p-contact__title::after {
+  font-size: myrem(36);
+}
+
+.p-contact__inner {
+  width: 100%;
+
+  @include mq(md) {
+    max-width: 1440px;
+    padding: 0 myrem(70);
+  }
+}
+
+//p-form
+
+.p-form {
+  @include mq(md) {
+    width: 100%;
+    max-width: 980px;
+    margin-inline: auto;
+    margin-top: myrem(98);
+  }
+}
+.p-form-list__item {
+  padding: myrem(20) 0;
+
+  @include mq(md) {
+    flex-direction: column;
+    margin-right: auto;
+    margin-left: auto;
+    align-items: flex-start;
+  }
+}
+
+.p-form-list-item__title p {
+  display: flex;
+  gap: myrem(20);
+  font-weight: 700;
+  font-size: myrem(16);
+  line-height: calc(16 / 16);
+  letter-spacing: 0.06em;
+
+  @include mq(md) {
+    width: 100%;
+  }
+}
+
+.p-form-list-item__title span {
+  display: inline-block;
+  color: $white;
+  font-size: myrem(14);
+  background-color: #c52238;
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: 0.04em;
+  padding: myrem(3) myrem(8);
+}
+
+.p-form-list-item__title--type02 {
+  justify-content: space-between;
+
+  @include mq(md) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.p-form__input {
+  flex: 1;
+  margin-top: myrem(16);
+
+  @include mq(md) {
+    width: 100%;
+  }
+}
+
+//プレースホルダー
+.p-formInput input::placeholder,
+.p-formTextarea textarea::placeholder {
+  color: $black_sub;
+}
+
+//インプット
+.p-formInput input {
+  width: 100%;
+  height: myrem(50);
+  padding-left: myrem(16);
+  border: none;
+  cursor: pointer;
+  background-color: $black_base;
+  @include mq(md) {
+  }
+}
+
+.p-formInput input:focus,
+.p-formTextarea textarea:focus {
+}
+
+//インプット_郵便番号
+.p-formInput__post {
+  display: flex;
+  gap: myrem(10);
+  align-items: center;
+}
+
+.p-formInput__post input {
+  width: myrem(320);
+  margin-right: auto;
+  margin-left: auto;
+
+  @include mq(md) {
+    width: 100%;
+  }
+}
+
+//インプット_住所
+.p-formInput__address {
+  margin-top: myrem(10);
+}
+
+.p-formInput__address input {
+  width: 70%;
+
+  @include mq(md) {
+    width: 100%;
+  }
+}
+
+//インプット_電話番号
+.p-formInput--tel {
+  display: flex;
+  gap: myrem(5);
+  align-items: center;
+}
+
+.p-formInput--tel > * {
+  min-width: 0;
+}
+
+.p-formInput--tel input {
+  width: myrem(150);
+  max-width: 100%;
+}
+
+//セレクト
+.p-formSelect select {
+  max-width: 100%;
+  height: myrem(50);
+  padding-left: myrem(20);
+  border-radius: 0;
+  color: $black;
+  background-color: $black_base;
+  appearance: none;
+  border: none;
+  display: inline-block;
+  position: relative;
+  @include mq(md) {
+    width: 100%;
+    height: myrem(50);
+  }
+}
+
+.p-formSelect select:focus {
+  outline: 2px solid #b5b5b5;
+}
+
+.p-formSelect-wrap {
+  display: inline-block;
+  position: relative;
+  margin-top: myrem(16);
+  width: calc(283 / 335 * 100%);
+
+  @include mq(md) {
+    width: calc(283 / 980 * 100%);
+  }
+}
+
+.p-formSelect-wrap select {
+  width: 100%;
+  padding: myrem(10) myrem(40) myrem(10) myrem(12); // 矢印分右に余白
+  font-size: myrem(16);
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border-radius: myrem(4);
+  border: none;
+  background-color: $black_base;
+}
+
+.p-formSelect-wrap .select-arrow {
+  position: absolute;
+  pointer-events: none;
+  top: 50%;
+  right: myrem(12);
+  transform: translateY(-50%);
+  width: myrem(16);
+  height: myrem(16);
+  stroke: $black;
+}
+
+//optionの色を変更
+.p-formSelect--selected select {
+  color: #333;
+}
+
+.p-form__dataBlockSelect {
+  @include mq(md) {
+    width: 100%;
+  }
+}
+
+.p-formNumber__flex {
+  display: flex;
+  margin-top: myrem(20);
+  gap: myrem(30);
+  align-items: center;
+
+  @include mq(md) {
+    flex-direction: column;
+    gap: myrem(10);
+    align-items: flex-start;
+  }
+}
+
+.p-formNumber__block {
+  display: flex;
+  align-items: center;
+}
+
+.p-formNumber__blockLabel01 {
+  margin-right: myrem(30);
+
+  @include mq(md) {
+    width: myrem(55);
+  }
+}
+
+.p-formNumber__blockLabel01 {
+}
+
+.p-formNumber__blockInput {
+  width: myrem(150);
+  margin-right: myrem(10);
+
+  @include mq(md) {
+    flex: 1;
+    margin-right: myrem(20);
+  }
+}
+
+//チェックボックス
+.p-formCheckbox input {
+  display: none;
+}
+
+.p-formCheckbox .wpcf7-checkbox {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.p-formCheckbox .wpcf7-list-item {
+  margin-left: 0;
+}
+
+.p-formCheckbox--vertical .wpcf7-checkbox {
+  display: block;
+}
+
+.p-formCheckbox--vertical .wpcf7-list-item {
+  display: block;
+  margin: 0;
+}
+
+.p-formCheckbox--vertical .wpcf7-list-item + .wpcf7-list-item {
+  margin-top: myrem(20);
+}
+
+.p-formCheckbox input + span {
+  position: relative;
+  display: inline-block;
+  width: auto;
+  padding: 0 0 0 myrem(30);
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.p-formCheckbox input + span::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  display: block;
+  width: myrem(20);
+  height: myrem(20);
+  transform: translateY(-50%);
+  border: 1px solid #000;
+  border-radius: myrem(4);
+}
+
+.p-formCheckbox input + span::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: myrem(6);
+  display: block;
+  width: myrem(8);
+  height: myrem(13);
+  margin-top: myrem(-8);
+  border-right: 3px solid blue;
+  border-bottom: 3px solid blue;
+  opacity: 0;
+  transform: rotate(45deg);
+}
+
+.p-formCheckbox input:checked + span::after {
+  opacity: 1;
+}
+
+//テキストエリア
+.p-formTextarea textarea {
+  width: 100%;
+  height: myrem(250);
+  padding-top: myrem(10);
+  padding-left: myrem(20);
+  background-color: $black_base;
+  border-radius: 0;
+  border: none;
+  resize: none;
+
+  @include mq(md) {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+//プライバシーポリシー
+
+.p-formPrivacy {
+  @include mq("md") {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.p-formPrivacy p {
+  @include mq(md) {
+    width: fit-content;
+  }
+}
+
+.p-form__acceptance {
+  margin-top: myrem(30);
+  text-align: center;
+
+  @include mq("md") {
+  }
+}
+
+.p-formPrivacy__text {
+  width: 100%;
+  height: myrem(280);
+  overflow-y: scroll;
+  padding: myrem(20);
+  background-color: $white;
+  border: 1px solid #d8d8d8;
+  margin-top: myrem(30);
+}
+
+.p-formPrivacy__text p:not(:first-child) {
+  margin-top: myrem(24);
+}
+
+/* スクロールバー全体 */
+.p-formPrivacy__text::-webkit-scrollbar {
+  width: myrem(8);
+}
+
+/* スクロールバーの背景（トラック） */
+.p-formPrivacy__text::-webkit-scrollbar-track {
+  background: $black_base;
+  border-radius: myrem(10);
+}
+
+/* スクロールバーのつまみ（サム） */
+.p-formPrivacy__text::-webkit-scrollbar-thumb {
+  background: $black;
+  border-radius: myrem(10);
+}
+
+/* ホバー時のサム */
+.p-formPrivacy__text::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.p-form__acceptance {
+  margin-top: myrem(30);
+  text-align: center;
+
+  @include mq(md) {
+    text-align: center;
+  }
+}
+
+//送信ボタン
+.p-form__submit {
+  margin-top: myrem(30);
+  text-align: center;
+
+  @include mq(md) {
+    margin-top: myrem(30);
+  }
+}
+
+.p-formBtn input {
+  margin-inline: auto;
+  width: myrem(260);
+  height: myrem(64);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: myrem(8);
+  padding: 0 myrem(20);
+  font-family: $font-main;
+  font-size: myrem(18);
+  color: $white;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    linear-gradient(180deg, #000000 0%, #929292 100%);
+  border: none;
+  border-radius: myrem(40);
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  position: relative;
+  //iphoneでボタンが崩れるのを防ぐ
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  &:disabled {
+    color: $white;
+    background-color: #eee;
+    border-color: #eee;
+
+    @media screen and (min-width: 768px) {
+      &:hover {
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    &:hover {
+      opacity: 0.7;
+      transition: opacity 0.5s;
+    }
+  }
+}
+
+.p-formBtn--prev input {
+  margin-inline: auto;
+  margin-top: myrem(30);
+  width: myrem(260);
+  height: myrem(64);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: myrem(8);
+  padding: 0 myrem(20);
+  font-family: $font-main;
+  font-size: myrem(18);
+  color: $black;
+  background: $white;
+  border: 1px solid $black;
+  border-radius: myrem(40);
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  position: relative;
+  //iphoneでボタンが崩れるのを防ぐ
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  &:disabled {
+    color: $white;
+    background-color: #eee;
+    border-color: #eee;
+
+    @media screen and (min-width: 768px) {
+      &:hover {
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    &:hover {
+      opacity: 0.7;
+      transition: opacity 0.5s;
+    }
+  }
+}
+
+//送信後のメッセージ
+.wpcf7 form.sent .wpcf7-response-output {
+  padding: myrem(15) myrem(10);
+  border-color: #2c94de;
+  font-size: myrem(24);
+
+  @include mq(md) {
+  }
+}
+
+.wpcf7 form.invalid .wpcf7-response-output,
+.wpcf7 form.unaccepted .wpcf7-response-output,
+.wpcf7 form.payment-required .wpcf7-response-output {
+  padding: myrem(15) myrem(20);
+  border-color: red;
+  font-size: myrem(24);
+
+  @include mq(md) {
+  }
+}
+
+.wpcf7-spinner {
+  display: none;
+}
+
+//バリデーション
+.wpcf7-not-valid-tip {
+  display: block;
+  color: red;
+  font-weight: normal;
+}
+
+.p-formValidation__error {
+  display: none;
+  margin-top: myrem(10);
+  color: red;
+  font-weight: normal;
+}
+
+.wpcf7-form:not(.hide_error_message) {
+  .p-formValidation:has(.wpcf7-not-valid-tip) .p-formValidation__error {
+    display: block;
+  }
+}
+
+//thanksページ
+
+.p-contact-thanks {
+  padding: myrem(136) myrem(20) myrem(60);
+
+  @include mq(md) {
+    max-width: 1440px;
+    padding: myrem(180) myrem(70) myrem(110);
+    margin: 0 auto;
+  }
+}
+
+.p-contact-thanks__inner {
+  width: 100%;
+  padding-bottom: myrem(60);
+}
+
+.p-contact-thanks-inner__text {
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.p-contact-thanks-inner__text--1 {
+  font-size: myrem(22);
+  line-height: 100%;
+  margin-top: myrem(50);
+}
+
+.p-contact-thanks-inner__text--2 {
+  font-size: myrem(14);
+  line-height: 200%;
+  margin-top: myrem(24);
+}
+
+.p-contact-thanks__back .c-readMore {
+  width: myrem(300);
+  height: myrem(60);
+  font-family: "Open Sans";
+  font-weight: 800;
+  font-size: myrem(20);
+  line-height: calc(20 / 18);
+  letter-spacing: 0.1em;
+  padding: myrem(20) myrem(60);
+  border: 2px solid $black;
+  border-radius: myrem(40);
+  margin-top: myrem(40);
+  margin-inline: auto;
+}
