@@ -321,11 +321,11 @@
                           <span class="p-front-news-inner-content-list-link-meta__category-name"><?php echo esc_html($term->name); ?></span>
                         <?php endforeach; ?>
                       </span>
+                    <?php endif; ?>
                   </div>
-                <?php endif; ?>
-                <h3 class="p-front-news-inner-content-list-link-post__title">
-                  <?php echo esc_html(get_the_title()); ?>
-                </h3>
+                  <h3 class="p-front-news-inner-content-list-link-post__title">
+                    <?php echo esc_html(get_the_title()); ?>
+                  </h3>
                 </a>
               </div>
             <?php

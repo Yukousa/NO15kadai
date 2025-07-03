@@ -32,8 +32,13 @@
     margin-top: myrem(83);
   }
 }
+
+.c-single-content--news {
+margin-top: myrem(20);
+}
+
+
 .c-single-content__wrapper {
-  padding: 0 myrem(20);
 
   @include mq(md) {
     padding: 0;
@@ -63,6 +68,16 @@
 }
 
 .c-single-content__post--profile {
+
+  @include mq(md) {
+    letter-spacing: 0.1em;
+    line-height: 1.75;
+  }
+
+}
+
+.c-single-content__post--news {
+  margin-top: 0;
 
   @include mq(md) {
     letter-spacing: 0.1em;

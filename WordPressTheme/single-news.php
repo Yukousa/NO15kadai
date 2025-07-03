@@ -1,110 +1,97 @@
 <?php get_header(); ?>
-
 <main class="p-single-news">
-    <!-- fv -->
-    <section class="p-single-voice__fv c-sub-fv">
-        <!-- フロントページ以外のfv -->
-        <?php get_template_part('template-parts/sections/section-sub-fv'); ?>
-    </section>
-    <!-- メイン部分 -->
-    <section class="p-single-news__content p-single-news-content">
-        <!-- newsの投稿記事 -->
-        <div class="p-single-news-content__post p-single-news-content-post">
-            <!-- 記事タイトル -->
-            <h2 class="p-single-news-content-post__title"><?php echo esc_html(get_the_title()); ?></h2>
-            <!-- 投稿日時とカテゴリー -->
-            <div class="p-single-news-content-post__meta">
-                <?php get_template_part('template-parts/section', 'meta'); ?>
+    <section class="p-single-news__mv p-single-news-mv">
+        <div class="p-single-news-mv__inner p-single-news-mv-inner l-inner">
+            <div class="p-single-news-mv-inner__title">
+                <h2 class="c-heading01 c-heading01--large03" data-en="news">お知らせ</h2>
             </div>
-            <!-- アイキャッチ画像 -->
-            <?php if (has_post_thumbnail()) : ?>
-                <div class="p-single-news-content-post__image">
-                    <?php the_post_thumbnail('large');
-                    ?>
+            <div class="p-single-news-mv-inner__breadcrumbs">
+                <?php get_template_part('template-parts/sections/section-breadcrumbs'); ?>
+            </div>
+        </div>
+    </section>
+
+    <section class="p-single-news__inner p-single-news-inner l-inner">
+        <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+                <h2 class="p-single-news-inner__postTitle ">
+                    <?php echo wp_kses(custom_br_title(get_the_title()), ['br' => []]); ?> </h2>
+        <?php endwhile;
+        endif; ?>
+
+        <div class="p-single-news-inner__meta p-single-news-inner-meta">
+            <div class="p-single-news-inner-meta__date"><?php echo get_the_date('Y.m.d'); ?></div>
+
+            <?php
+            $terms = get_the_terms(get_the_ID(), 'news_category');
+            if (!empty($terms) && !is_wp_error($terms)) :
+            ?>
+                <div class="p-single-news-inner-meta__category">
+                    <?php foreach ($terms as $term) : ?>
+                        <span class="p-single-news-inner-meta__category-name"><?php echo esc_html($term->name); ?></span>
+                    <?php endforeach; ?>
                 </div>
             <?php endif; ?>
-            <!-- 記事本文 -->
-            <div class="p-single-news-content-post__text">
-                <?php the_content(); ?>
-            </div>
-            <!-- 一覧に戻る -->
-            <a href="#" class="c-return c-return--single-news">
-                一覧に戻る<span class="c-arrow01_right"></span>
-            </a>
         </div>
-
-        <!-- サイドバー -->
-        <div class="p-single-news-content__sidebar">
-        <aside class="c-news-sidebar">
-    <!-- カテゴリー -->
-    <div class="c-news-sidebar__category c-news-sidebar-category">
-        <h3 class="c-heading01 c-heading01--sidebar" data-en="category">カテゴリー</h3>
-        <?php
-        $terms = get_terms([
-            'taxonomy' => 'news_category',
-            'hide_empty' => false, // 投稿が0件のカテゴリも表示するなら false
-        ]);
-
-        if (!empty($terms) && !is_wp_error($terms)) :
-        ?>
-            <ul class="c-news-sidebar__list c-news-sidebar-list">
-                <?php foreach ($terms as $term) : ?>
-                    <li class="c-news-sidebar-list__item c-news-sidebar-list-item">
-                        <a href="<?php echo esc_url(get_term_link($term)); ?>" class="c-news-sidebar-list-item__link">
-                            <?php echo esc_html($term->name); ?>
-                            <span class="c-news-sidebar-list-item__link--arrow"></span>
-                        </a>
-                    </li>
-                <?php endforeach; ?>
-            </ul>
-        <?php endif; ?>
-    </div>
-    <!-- アーカイブ -->
-    <div class="c-news-sidebar__archive c-news-sidebar-archive">
-        <h3 class="c-heading01 c-heading01--sidebar" data-en="archive">アーカイブ</h3>
-        <ul class="c-news-sidebar__list c-news-sidebar-list">
+        <div class="p-single-news-inner__eye-catch">
             <?php
-            global $wpdb;
-
-            $results = $wpdb->get_results("
-                            SELECT DISTINCT
-                            YEAR(post_date) AS year,
-                            MONTH(post_date) AS month
-                            FROM {$wpdb->posts}
-                            WHERE post_type = 'news'
-                                AND post_status = 'publish'
-                                AND post_date != '0000-00-00 00:00:00'
-                            ORDER BY post_date DESC
-                        ");
-
-            if ($results) {
-                foreach ($results as $result) {
-                    $year  = $result->year;
-                    $month = zeroise($result->month, 2);
-                    $label = sprintf('%d年%d月', $year, $result->month);
-                    $url   = home_url("/news/{$year}/{$month}/");
-
-                    echo '
-                                    <li class="c-news-sidebar-list__item c-news-sidebar-list-item">
-                                        <a href="' . esc_url($url) . '" class="c-news-sidebar-list-item__link">
-                                            <span class="c-news-sidebar-list-item__link--text">' . esc_html($label) . '</span>
-                                            <span class="c-news-sidebar-list-item__link--arrow"></span>
-                                        </a>
-                                    </li>
-                                ';
-                }
+            if (has_post_thumbnail()) {
+                the_post_thumbnail('full', [
+                    'alt' => get_the_title(),
+                    'loading' => 'lazy',
+                    'width' => 1440,
+                    'height' => 480,
+                ]);
+            } else {
+                // 代替画像を指定する場合
+                echo '<img src="' . esc_url(get_template_directory_uri()) . '/assets/images/default-eye-catch.jpg" alt="イメージ画像" width="1440" height="480" loading="lazy">';
             }
             ?>
-        </ul>
-    </div>
-</aside>        </div>
+        </div>
+
+
+        <article class="p-single-news__content p-single-news-content">
+            <div class="p-single-voice-content__body p-single-voice-content-body">
+                <!-- 投稿画面ACF -->
+                <?php for ($i = 1; $i <= 2; $i++) : // セクション数に合わせてループ範囲を変更 
+                ?>
+                    <?php
+                    $heading_top = get_field("section_post_heading_{$i}_top");
+                    $heading_bottom = get_field("section_post_heading_{$i}_bottom");
+                    $content = get_field("section_post_content_{$i}");
+                    $image = get_field("section_post_image_{$i}");
+
+                    if (empty($heading_top) && empty($heading_bottom) && empty($content) && empty($image)) {
+                        continue;
+                    }
+                    ?>
+                    <div class="c-single-content c-single-content--news">
+                        <div class="c-single-content__wrapper">
+                            <h3 class="c-subtitle">
+                                <?php if ($heading_top) : ?>
+                                    <span class="c-subtitle--line1"><?php echo esc_html($heading_top); ?></span>
+                                <?php endif; ?>
+                                <?php if ($heading_bottom) : ?>
+                                    <span class="c-subtitle--line2 c-heading02"><?php echo esc_html($heading_bottom); ?></span>
+                                <?php endif; ?>
+                            </h3>
+                            <?php if ($content) : ?>
+                                <div class="c-single-content__post c-single-content__post--news">
+                                    <?php echo nl2br(esc_html($content)); ?> </div>
+                            <?php endif; ?>
+                        </div>
+
+                        <?php if ($image) : ?>
+                            <div class="c-single-content__image">
+                                <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>">
+                            </div>
+                        <?php endif; ?>
+                    </div>
+                <?php endfor; ?>
+            </div>
+        </article>
 
     </section>
-    <!-- リンクバナー contact / faq -->
-    <section class="p-section-wrapper">
-        <?php get_template_part('template-parts/sections/section-contact'); ?>
-        <?php get_template_part('template-parts/sections/section-faq'); ?>
-    </section>
+
 
 </main>
 

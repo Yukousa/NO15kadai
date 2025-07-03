@@ -1,84 +1,164 @@
 @use "global" as *;
 
-.p-single-news__content {
-  width: 100%;
+.p-single-news__mv {
+  padding-top: myrem(175);
+}
+
+.p-single-news-mv__inner {
+}
+
+.p-single-news-mv-inner__title {
+}
+
+.p-single-news-mv-inner__breadcrumbs {
+  margin-right: myrem(-20);
   margin-top: myrem(50);
-  padding: 0 myrem(20) 0;
-
-  @include mq(md) {
-    max-width: $innerWidth;
-    padding: 0 0 myrem(45);
-    margin-top: myrem(80);
-    margin-inline: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-  }
 }
 
-.p-single-news-content__post {
-  padding-bottom: myrem(70);
+.p-single-news__inner {
+  margin-top: myrem(50);
 
-  @include mq(md) {
-    width: calc(950 / 1300 * 100%);
-  }
 }
 
-.p-single-news-content-post__title {
-  font-size: myrem(22);
-  line-height: calc(32 / 22);
-  font-weight: 700;
 
-  @include mq(md) {
-    font-size: myrem(28);
-  }
+.p-single-news-inner__postTitle {
+font-weight: 700;
+font-size: myrem(22);
+line-height: calc(32 / 22);
+
 }
 
-.p-single-news-content-post__meta {
-  width: 100%;
-  margin-top: myrem(35);
-}
-
-.p-single-news-content-post__image {
-  width: 100%;
-  aspect-ratio: 335 / 176;
+.p-single-news-inner__meta {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap:myrem(20);
   margin-top: myrem(40);
 
-  @include mq(md) {
-    aspect-ratio: 950 / 500;
-    margin-top: myrem(50);
-  }
 }
 
-.p-single-news-content-post__image img {
+
+.p-single-news-inner-meta__date {
+font-weight: 700;
+font-size: myrem(16);
+
+}
+
+.p-single-news-inner-meta__category {
+
+}
+
+.p-single-news-inner-meta__category-name {
+width: myrem(80);
+height: myrem(25);
+font-weight: 700;
+font-size: myrem(14);
+color: $white;
+background-color: $black;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+
+.p-single-news-inner__eye-catch {
+  width: 100%;
+  aspect-ratio: 335 / 176 ;
+margin-top: myrem(40);
+
+  
+}
+
+.p-single-news-inner__eye-catch img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.p-single-news-content-post__text {
-  margin-top: myrem(20);
-  font-size: myrem(16);
-  line-height: calc(28 / 16);
-  letter-spacing: 0.1em;
-  color: $black;
-
-  @include mq(md) {
-    letter-spacing: 0.14em;
-    line-height: 1.8;
-  }
+.p-single-news__content {
 }
 
-.p-single-news-content-post__text p:not(:first-child) {
-  margin-top: myrem(30);
 
-}
 
-.p-single-news-content__sidebar {
-  padding-bottom: myrem(65);
 
-  @include mq(md) {
-    width: calc(320 / 1300 * 100%);
-    margin-top: 0;
-  }
-}
+
+// .p-single-news__content {
+//   width: 100%;
+//   margin-top: myrem(50);
+
+//   @include mq(md) {
+//     max-width: $innerWidth;
+//     padding-bottom:myrem(45);
+//     margin-top: myrem(80);
+//     margin-inline: auto;
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: flex-start;
+//   }
+// }
+
+// .p-single-news-content__post {
+//   padding-bottom: myrem(70);
+
+//   @include mq(md) {
+//     width: calc(950 / 1300 * 100%);
+//   }
+// }
+
+// .p-single-news-content-post__title {
+//   font-size: myrem(22);
+//   line-height: calc(32 / 22);
+//   font-weight: 700;
+
+//   @include mq(md) {
+//     font-size: myrem(28);
+//   }
+// }
+
+// .p-single-news-content-post__meta {
+//   width: 100%;
+//   margin-top: myrem(35);
+// }
+
+// .p-single-news-content-post__image {
+//   width: 100%;
+//   aspect-ratio: 335 / 176;
+//   margin-top: myrem(40);
+
+//   @include mq(md) {
+//     aspect-ratio: 950 / 500;
+//     margin-top: myrem(50);
+//   }
+// }
+
+// .p-single-news-content-post__image img {
+//   width: 100%;
+//   height: 100%;
+//   object-fit: cover;
+// }
+
+// .p-single-news-content-post__text {
+//   margin-top: myrem(20);
+//   font-size: myrem(16);
+//   line-height: calc(28 / 16);
+//   letter-spacing: 0.1em;
+//   color: $black;
+
+//   @include mq(md) {
+//     letter-spacing: 0.14em;
+//     line-height: 1.8;
+//   }
+// }
+
+// .p-single-news-content-post__text p:not(:first-child) {
+//   margin-top: myrem(30);
+// }
+
+// .p-single-news-content__sidebar {
+//   padding-bottom: myrem(65);
+
+//   @include mq(md) {
+//     width: calc(320 / 1300 * 100%);
+//     margin-top: 0;
+//   }
+// }
