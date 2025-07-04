@@ -301,179 +301,28 @@ c-heading01 英語と日本語 2色(黒・白)の線の装飾
   }
 }
 
-/***************************
-// その他　共通タイトル用
-***************************/
-// .c-heading01--message,
-// .c-heading01--works,
-// .c-heading01--service,
-// .c-heading01--profile,
-// .c-heading01--news,
-// .c-heading01--voice,
-// .c-news-sidebar__title {
-//   font-size: myrem(14);
-//   letter-spacing: 0.02em;
-//   padding-left: myrem(30);
-//   top: 0;
+//news サイドバー用
+.c-heading01--news {
+  font-size: myrem(14);
 
-//   @include mq(md) {
-//     font-size: myrem(16);
-//     padding-left: myrem(117);
-//   }
-// }
+  @include mq(md) {
+    font-size: myrem(16);
+    letter-spacing: 0.06em;
+  }
+}
 
-// .c-heading01--message::before,
-// .c-heading01--works::before,
-// .c-heading01--service::before,
-// .c-heading01--profile::before,
-// .c-heading01--profile02::before,
-// .c-heading01--news::before,
-// .c-heading01--voice::before,
-// .c-news-sidebar__title::before {
-//   top: 50%;
-//   left: myrem(4);
-//   width: myrem(16);
-//   height: myrem(2);
+.c-heading01--news::before {
+left: myrem(2);
+}
 
-//   @include mq(md) {
-//     width: myrem(32);
-//     height: myrem(4);
-//     left: myrem(70);
-//   }
-// }
+.c-heading01--news::after {
+  font-size: myrem(36);
+  top:myrem(-34);
+  left: myrem(2);
 
-// .c-heading01--message::after,
-// .c-heading01--works::after,
-// .c-heading01--service::after,
-// .c-heading01--profile::after,
-// .c-heading01--news:after,
-// .c-heading01--voice::after,
-// .c-news-sidebar__title::after {
-//   font-size: myrem(36);
-//   top: myrem(-37);
-//   left: 0;
+  @include mq(md) {
+    font-size: myrem(50);
+    top:myrem(-60);
 
-//   @include mq(md) {
-//     font-size: myrem(60);
-//     top: myrem(-58);
-//     left: myrem(70);
-//   }
-// }
-
-// .c-heading01--serviceH3 {
-//   font-size: myrem(14);
-//   letter-spacing: 0.02em;
-//   padding-left: myrem(30);
-//   top: 0;
-
-//   @include mq(md) {
-//     font-size: myrem(16);
-//     padding-left: myrem(42);
-//   }
-// }
-
-// .c-heading01--serviceH3::before {
-//   top: 50%;
-//   left: myrem(4);
-//   width: myrem(16);
-//   height: myrem(2);
-
-//   @include mq(md) {
-//     width: myrem(32);
-//     height: myrem(4);
-//     left: 0;
-//   }
-// }
-
-// .c-heading01--serviceH3::after {
-//   font-size: myrem(36);
-//   top: myrem(-37);
-//   left: 0;
-
-//   @include mq(md) {
-//     font-size: myrem(60);
-//     top: myrem(-58);
-//     left: 0;
-//   }
-// }
-
-// .c-heading01--profile02 {
-//   font-size: myrem(14);
-//   letter-spacing: 0.06em;
-//   top: myrem(-95);
-//   left: myrem(28);
-//   padding-left: myrem(22);
-
-//   @include mq(md) {
-//     font-size: myrem(16);
-//     padding-left: myrem(117);
-//     top: myrem(10);
-//     left: myrem(0);
-//     margin: 0 auto;
-//   }
-// }
-
-// .c-heading01--profile02::before {
-//   top: myrem(10);
-//   left: myrem(-4);
-//   width: myrem(16);
-//   height: myrem(2);
-//   background: linear-gradient(to right, $black 50%, $white 50%);
-
-//   @include mq(md) {
-//     width: myrem(32);
-//     height: myrem(4);
-//     left: myrem(70);
-//   }
-// }
-
-// .c-heading01--profile02::after {
-//   font-size: myrem(36);
-//   top: myrem(-36);
-//   left: myrem(-10);
-
-//   @include mq(md) {
-//     font-size: myrem(50);
-//     top: myrem(-60);
-//     left: myrem(70);
-//     letter-spacing: 0.02em;
-//   }
-// }
-
-/***************************
-サイドバー用
-***************************/
-// .c-heading01--sidebar {
-//   margin-top: myrem(30);
-//   padding-left: myrem(27);
-//   font-size: myrem(14);
-
-//   @include mq(md) {
-//     font-size: myrem(16);
-//     top: myrem(20);
-//     padding-left: myrem(41);
-//   }
-// }
-
-// .c-heading01--sidebar::before {
-//   height: myrem(4);
-//   left: myrem(2);
-//   top: 50%;
-//   transform: translateY(-50%);
-
-//   @include mq(md) {
-//   }
-// }
-
-// .c-heading01--sidebar::after {
-//   font-size: myrem(36);
-//   top: myrem(-34);
-//   left: 0;
-//   letter-spacing: 0;
-
-//   @include mq(md) {
-//     font-size: myrem(50);
-//     top: myrem(-60);
-//   }
-// }
-
+  }
+}

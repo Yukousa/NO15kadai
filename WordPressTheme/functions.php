@@ -165,10 +165,3 @@ function custom_archive_posts_per_page($query) {
   
 
 
-// 記事タイトルを改行「｜」「<br>」に変換
-//出力するときは custom_br_title(get_the_title()); などとする
-function custom_br_title($title) {
-	$title = str_replace('|', '<br>', $title); // 半角記号を<br>にする
-	$title = str_replace('｜', '<br>', $title); //念のため全角も
-	return $title;
-}

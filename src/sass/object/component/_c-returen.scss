@@ -15,12 +15,22 @@
   }
 }
 .c-return--single-news {
-  margin-top: myrem(30);
-  font-size: myrem(18);
+  font-size: myrem(16);
   font-weight: 700;
   letter-spacing: 0.1em;
   color: #000000;
-  margin-top: myrem(85);
+  margin-top: myrem(22);
+  margin-inline:auto;
+  padding: myrem(10);
+  gap: myrem(5);
+
+  @include mq(md) {
+    margin-top: myrem(70);
+    gap: myrem(10);
+    font-size: myrem(18);
+
+
+  }
 }
 
 .c-return--single-voice {
