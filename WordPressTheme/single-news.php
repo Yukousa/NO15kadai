@@ -15,11 +15,11 @@
         <article class="p-single-news-wrapper__inner p-single-news-wrapper-inner l-inner">
             <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
                     <h2 class="p-single-news-wrapper-inner__postTitle ">
-                    <?php
-    $title = get_the_title(); // $ID は不要。現在の投稿タイトルを取得
-    $title = str_replace(" ", "<br>", $title);
-    echo $title;
-  ?></h2>
+                        <?php
+                        $title = get_the_title(); // $ID は不要。現在の投稿タイトルを取得
+                        $title = str_replace(" ", "<br>", $title);
+                        echo $title;
+                        ?></h2>
             <?php endwhile;
             endif; ?>
 
@@ -102,9 +102,9 @@
             </div>
         </article>
         <!-- pc時　サイドバー -->
-         <aside class="p-single-news-wrapper__sidebar">
-             <?php get_template_part('template-parts/sections/section-news-sidebar'); ?>
-         </aside>
+        <aside class="p-single-news-wrapper__sidebar">
+            <?php get_template_part('template-parts/sections/section-news-sidebar'); ?>
+        </aside>
     </section>
 
 </main>

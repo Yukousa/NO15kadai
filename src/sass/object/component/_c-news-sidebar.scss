@@ -19,7 +19,7 @@
   margin-top: myrem(95);
 
   @include mq(md) {
-    margin-top: myrem(125);
+    margin-top: myrem(240);
   }
 }
 
@@ -28,6 +28,7 @@
 
   @include mq(md) {
     margin-top: myrem(20);
+    height: myrem(78)
   }
 }
 
