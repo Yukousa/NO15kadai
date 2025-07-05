@@ -142,7 +142,7 @@
             <!-- 社長プロフィールのカード -->
             <div class="p-single-works-wrapper-profile__card p-single-works-wrapper-profile-card">
                 <div class="p-single-works-wrapper-profile-card__image">
-                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/president01.png" alt="代表 田中 太郎の写真">
+                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/president01.png" alt="代表 田中 太郎の写真 "width="320" height="210" loading="lazy" >
                 </div>
                 <div class="p-single-works-wrapper-profile-card__text">
                     <p class="p-single-works-wrapper-profile-card__text--company">株式会社 XXXXXX</p>

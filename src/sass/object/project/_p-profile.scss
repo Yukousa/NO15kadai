@@ -563,9 +563,6 @@
   }
 }
 
-/******************************
-メイン部分
-******************************/
 .p-profile__container {
   padding-top: myrem(25);
 
@@ -586,78 +583,61 @@
   }
 }
 
-// .p-profile-container-content__body + .p-profile-container-content__body {
-//   margin-top: myrem(55);
-
-//   @include mq(md) {
-//     padding-bottom: myrem(0);
-//   }
-// }
-
-// .p-profile-container-body__wrapper {
-//   @include mq(md) {
-//     padding: 0;
-//   }
-// }
-
-// .p-profile-container-body-wrapper__text {
-//   margin-top: myrem(20);
-//   font-family: $font-main;
-//   font-size: myrem(16);
-//   line-height: calc(28 / 16);
-//   font-weight: 400;
-//   letter-spacing: 0.1em;
-//   color: $black;
-
-//   @include mq(md) {
-//     letter-spacing: 0.14em;
-//     line-height: 1.8;
-//   }
-// }
-
-// .p-profile-container-body-wrapper__text p:not(:first-child) {
-//   margin-top: myrem(28);
-// }
-
-// .p-profile-container-body__image {
-//   width: 100%;
-//   aspect-ratio: 375 / 270;
-//   margin-top: myrem(55);
-
-//   @include mq(md) {
-//     max-width: 950px;
-//     aspect-ratio: 950 / 327;
-//     margin-top: myrem(80);
-//     overflow: hidden;
-//     position: relative;
-//   }
-// }
-
-// .p-profile-container-body__image img {
-//   width: 100%;
-//   height: 100%;
-//   object-fit: cover;
-//   @include mq(md) {
-//     position: absolute;
-//     object-fit: cover;
-//     object-position: bottom;
-//   }
-// }
-
-/******************************
-スライダー
-******************************/
-.p-profile-container-content-body__slider {
-  margin-top: myrem(35);
+.p-profile-container-content__body {
 
   @include mq(md) {
-    margin-top: myrem(0);
+padding: 0;
   }
 }
 
-/******************************
-プロフィール
-******************************/
+.p-profile-container-content__image {
+  margin-top: myrem(40);
+
+  @include mq(md) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: myrem(32);
+
+}
+}
+
+.p-profile-container-content__image--01 {
+  width: calc(282 / 375 * 100%);
+  aspect-ratio: 282 / 182;
+
+  @include mq(md) {
+    width: myrem(462);
+    aspect-ratio: 462 / 298;
+  }
+}
+.p-profile-container-content__image--01 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.p-profile-container-content__image--02 {
+  width: calc(282 / 375 * 100%);
+  aspect-ratio: 282 / 182;
+  margin-top: myrem(20);
+  margin-left: auto;
+  margin-right: 0;
+
+  @include mq(md) {
+    width: myrem(462);
+    aspect-ratio: 462 / 298;
+    margin-top: myrem(95);
+  }
+
+}
+
+.p-profile-container-content__image--02 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .p-profile-container__profile {
   margin-top: myrem(65);
   padding-bottom: myrem(60);
@@ -669,8 +649,7 @@
     margin-top: myrem(5);
 
     position: sticky;
-    top:myrem(20);
-
+    top: myrem(20);
   }
 }
 
@@ -697,7 +676,6 @@
   @include mq(md) {
     text-align: left;
     margin-top: myrem(20);
-
   }
 }
 
@@ -733,7 +711,6 @@
   @include mq(md) {
     font-size: myrem(14);
     margin-top: myrem(8);
-
   }
 }
 

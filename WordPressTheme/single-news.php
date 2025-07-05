@@ -84,17 +84,12 @@
                                 <?php endif; ?>
                             </div>
 
-                            <?php if ($image) : ?>
-                                <div class="c-single-content__image">
-                                    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>">
-                                </div>
-                            <?php endif; ?>
                         </div>
                     <?php endfor; ?>
                 </div>
 
                 <div class="p-single-news-wrapper-inner-content__btn">
-                    <a href="#" class="c-return c-return--single-news">
+                    <a href="/news/" class="c-return c-return--single-news">
                         一覧に戻る<span class="c-arrow01_right"></span>
                     </a>
                 </div>

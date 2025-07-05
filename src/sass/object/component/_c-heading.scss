@@ -129,12 +129,14 @@ c-heading01 英語と日本語 2色(黒・白)の線の装飾
 .c-heading01--white::after {
   color: $white;
   font-size: myrem(28);
-  bottom: myrem(20);
+  top: myrem(-45);
   left: 0;
   letter-spacing: 0;
 
   @include mq(md) {
     font-size: myrem(60);
+    top: myrem(-65);
+
   }
 }
 

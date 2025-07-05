@@ -37,7 +37,7 @@
                     <div class="p-card-price__title">基本料金</div>
                     <div class="p-card-price__body p-card-price-body p-card-price-body--basicFee">
                         <div class="p-card-price-body__image p-card-price-body__image--basicFee">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/image14.png" alt="priceイメージイラスト">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/image14.png" alt="priceイメージイラスト" width="231" height="187" loading="lazy">
                         </div>
                         <div class="p-card-price-body__text-block p-card-price-body__text-block--basicFee">
                             <p class="p-card-price-body__text p-card-price-body__text--top" data-before="トップ" data-after="円～">00,000</p>
@@ -59,7 +59,7 @@
                     <div class="p-card-price__title">レスポンシブ</div>
                     <div class="p-card-price__body p-card-price-body p-card-price-body--responsive">
                         <div class="p-card-price-body__image p-card-price-body__image--responsive">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/image15.png" alt="priceイメージイラスト">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/image15.png" alt="priceイメージイラスト" width="141" height="194" loading="lazy">
                         </div>
                         <div class="p-card-price-body__text-block">
                             <p class="p-card-price-body__text p-card-price-body__text--responsive" data-after="円～">00,000</p>
@@ -75,7 +75,7 @@
                             <p class="p-card-price-body__text" data-before="平均" data-after="週間">00</p>
                         </div>
                         <div class="p-card-price-body__image p-card-price-body__image--deadline">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/image16.png" alt="priceイメージイラスト">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/image16.png" alt="priceイメージイラスト" width="466" height="215" loading="lazy">
                         </div>
                     </div>
                     <p class="p-card-price__note">※コーポレートサイト00ページあたり</p>

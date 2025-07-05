@@ -24,7 +24,7 @@
     <!-- pc時　2カラム -->
     <section class="p-single-voice__wrapper">
         <div class="p-single-voice__content p-single-voice-content">
-            <article class="p-single-voice-content__body p-single-voice-content-body">
+            <article class="p-single-voice-content__body p-single-voice-content-body l-inner">
                 <!-- 投稿画面ACF -->
                 <?php for ($i = 1; $i <= 2; $i++) : // セクション数に合わせてループ範囲を変更 
                 ?>
@@ -56,58 +56,20 @@
 
                         <?php if ($image) : ?>
                             <div class="c-single-content__image">
-                                <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>">
+                                <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" width="950" height="327" loading="lazy">
                             </div>
                         <?php endif; ?>
                     </section>
                 <?php endfor; ?>
             </article>
-            <!-- cssのスライダー -->
-            <article class="p-single-voice-content-body__slider">
-                <!-- template-parts/section-slide.php -->
-                <section class="c-slide">
-                    <div class="c-slide-track">
-                        <div class="c-slide-item">
-                            <div class="c-slide-row1">
-                                <div class="c-slide-image1">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/image11.png" alt="WORKイメージ">
-                                </div>
-                                <div class="c-slide-image2">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/image19.png" alt="WORKイメージ">
-                                </div>
-                            </div>
-                            <div class="c-slide-row2">
-                                <div class="c-slide-image3">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/image04.png" alt="WORKイメージ">
-                                </div>
-                                <div class="c-slide-image4">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/image12.png" alt="WORKイメージ">
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- クローンをつなげて無限ループ感を出す -->
-                        <div class="c-slide-item">
-                            <div class="c-slide-row1">
-                                <div class="c-slide-image1">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/image11.png" alt="WORKイメージ">
-                                </div>
-                                <div class="c-slide-image2">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/image19.png" alt="WORKイメージ">
-                                </div>
-                            </div>
-                            <div class="c-slide-row2">
-                                <div class="c-slide-image3">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/image04.png" alt="WORKイメージ">
-                                </div>
-                                <div class="c-slide-image4">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/image12.png" alt="WORKイメージ">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </article>
+            <div class="p-single-voice-content__image">
+                <div class="p-single-voice-content__image--01">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/image28.png" alt="仕事のイメージ画像" width="462" height="286" loading="lazy">
+                </div>
+                <div class="p-single-voice-content__image--02">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/image29.png" alt="仕事のイメージ画像" width="462" height="286" loading="lazy">
+                </div>
+            </div>
         </div>
         <!-- プロフィール -->
         <aside class="p-single-voice__profile p-single-voice-profile">
@@ -124,7 +86,7 @@
                 </div>
             </div>
             <div class="p-single-voice-profile__btn">
-                <a href="#" class="c-return c-return--single-voice">
+                <a href="/voice/" class="c-return c-return--single-voice">
                     一覧に戻る<span class="c-arrow01_right"></span>
                 </a>
             </div>
