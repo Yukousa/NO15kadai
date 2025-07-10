@@ -1,10 +1,15 @@
 <?php get_header(); ?>
 
 <main class="p-archive-voice">
-  <!-- fv -->
-  <section class="p-archive-voice__fv c-sub-fv">
-    <!-- フロントページ以外のfv -->
-    <?php get_template_part('template-parts/sections/section-sub-fv'); ?>
+  <section class="p-archive-voice__mv p-archive-voice-mv">
+    <div class="p-archive-voice-mv_inner p-archive-voice-mv-inner">
+      <div class="p-archive-voice-mv-inner__title">
+        <h2 class="c-heading01 c-heading01--large03" data-en="voice">実績</h2>
+      </div>
+      <div class="p-archive-voice-mv__breadcrumbs">
+        <?php get_template_part('template-parts/sections/section-breadcrumbs'); ?>
+      </div>
+    </div>
   </section>
 
   <!-- メイン部分 -->
@@ -18,7 +23,7 @@
           $summary = get_field('voice_summary');
           ?>
 
-          <div class="c-archive-card">
+          <div class="c-archive-card c-archive-card--voice ">
             <a href="<?php the_permalink(); ?>">
               <?php if ($terms && !is_wp_error($terms)) : ?>
                 <span class="c-archive-card__label"><?php echo esc_html($terms[0]->name); ?></span>
@@ -40,20 +45,12 @@
     <?php endif; ?>
     <!-- ページネーション -->
     <div class="p-archive-voice__pagenavi">
-    <?php if (function_exists('wp_pagenavi')) : ?>
-  <?php wp_pagenavi(); ?>
-<?php endif; ?>
+      <?php if (function_exists('wp_pagenavi')) : ?>
+        <?php wp_pagenavi(); ?>
+      <?php endif; ?>
     </div>
-  </section>
-  </section>
-
-
-  <!-- リンクバナー contact / faq -->
-  <section class="p-section-wrapper">
-    <?php get_template_part('template-parts/sections/section-contact'); ?>
-    <?php get_template_part('template-parts/sections/section-faq'); ?>
   </section>
 
 </main>
-
+<?php get_template_part('template-parts/sections/section-cta'); ?>
 <?php get_footer(); ?>

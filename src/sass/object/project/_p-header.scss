@@ -17,7 +17,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-left: myrem(20);
+  gap: 0;
 
   @include mq(md) {
     padding-left: myrem(70);
@@ -28,6 +28,7 @@
 
 // ロゴ
 .p-header-inner__siteTitle {
+  width: fit-content;
   height: 100%;
   display: block;
   z-index: 10000;
@@ -47,6 +48,7 @@
   font-size: myrem(28);
   letter-spacing: 0.1em;
   text-transform: uppercase;
+  padding-left: myrem(20);
 
   @include mq(md) {
     width: fit-content;
@@ -120,7 +122,6 @@
 
 .p-header-inner-nav__item + .p-header-inner-nav__item {
   @include mq(md) {
-    
   }
 }
 

@@ -56,6 +56,7 @@
   @include mq(md) {
     max-width: 1440px;
     margin-left: myrem(10);
+    margin-inline: auto;
   }
 }
 
@@ -175,7 +176,7 @@
 .p-profile-skill-inner-wrapper-cording-icons__item--html img {
   width: myrem(87);
   aspect-ratio: 87 / 99;
-  object-fit: cover;
+  object-fit: contain;
 
   @include mq(md) {
     width: myrem(90);
@@ -191,7 +192,7 @@
 .p-profile-skill-inner-wrapper-cording-icons__item--css img {
   width: myrem(87);
   aspect-ratio: 87 / 99;
-  object-fit: cover;
+  object-fit: contain;
 
   @include mq(md) {
     width: myrem(90);
@@ -208,7 +209,7 @@
 .p-profile-skill-inner-wrapper-cording-icons__item--sass img {
   width: myrem(108);
   aspect-ratio: 108 / 79;
-  object-fit: cover;
+  object-fit: contain;
 
   margin-top: myrem(10);
 
@@ -228,7 +229,7 @@
 .p-profile-skill-inner-wrapper-cording-icons__item--js img {
   width: myrem(91);
   aspect-ratio: 1 / 1;
-  object-fit: cover;
+  object-fit: contain;
 
   @include mq(md) {
     width: myrem(115);
@@ -246,7 +247,7 @@
 .p-profile-skill-inner-wrapper-cording-icons__item--php img {
   width: myrem(132);
   aspect-ratio: 132 / 69;
-  object-fit: cover;
+  object-fit: contain;
 
   margin-top: myrem(8);
 
@@ -306,7 +307,7 @@
 .p-profile-skill-inner-wrapper-cms-icons__item img {
   width: myrem(109);
   aspect-ratio: 109 / 106;
-  object-fit: cover;
+  object-fit: contain;
 
   margin-top: myrem(20);
 
@@ -379,13 +380,10 @@
   }
 }
 
-.p-profile-skill-inner-wrapper-design-icons__item--ai {
-}
-
 .p-profile-skill-inner-wrapper-design-icons__item--ai img {
   width: myrem(82);
   aspect-ratio: 1 / 1;
-  object-fit: cover;
+  object-fit: contain;
 
   @include mq(md) {
     width: myrem(97);
@@ -401,21 +399,18 @@
 .p-profile-skill-inner-wrapper-design-icons__item--ps img {
   width: myrem(82);
   aspect-ratio: 1 / 1;
-  object-fit: cover;
+  object-fit: contain;
 
   @include mq(md) {
     width: myrem(97);
   }
 }
 
-.p-profile-skill-inner-wrapper-design-icons__item--xd {
-  margin-right: myrem(20);
-}
 
 .p-profile-skill-inner-wrapper-design-icons__item--xd img {
   width: myrem(82);
   aspect-ratio: 1 / 1;
-  object-fit: cover;
+  object-fit: contain;
 
   @include mq(md) {
     width: myrem(97);
@@ -432,7 +427,7 @@
 .p-profile-skill-inner-wrapper-design-icons__item--figma img {
   width: myrem(56);
   aspect-ratio: 56 / 84;
-  object-fit: cover;
+  object-fit: contain;
 
   @include mq(md) {
     width: myrem(67);
@@ -501,13 +496,11 @@
   }
 }
 
-.p-profile-skill-inner-wrapper-communication-icons__item--chatwork {
-}
 
 .p-profile-skill-inner-wrapper-communication-icons__item--chatwork img {
   width: myrem(94);
   aspect-ratio: 1 / 1;
-  object-fit: cover;
+  object-fit: contain;
 
   margin-right: myrem(10);
 
@@ -516,13 +509,10 @@
   }
 }
 
-.p-profile-skill-inner-wrapper-communication-icons__item--mail {
-}
-
 .p-profile-skill-inner-wrapper-communication-icons__item--mail img {
   width: myrem(100);
   aspect-ratio: 1 / 1;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .p-profile-skill-inner-wrapper-communication-icons__item--slack {
@@ -535,7 +525,7 @@
 .p-profile-skill-inner-wrapper-communication-icons__item--slack img {
   width: myrem(76);
   aspect-ratio: 1 / 1;
-  object-fit: cover;
+  object-fit: contain;
 
   margin-top: myrem(10);
 
@@ -555,7 +545,7 @@
 .p-profile-skill-inner-wrapper-communication-icons__item--line img {
   width: myrem(89);
   aspect-ratio: 1 / 1;
-  object-fit: cover;
+  object-fit: contain;
 
   @include mq(md) {
     width: myrem(109);
@@ -584,9 +574,8 @@
 }
 
 .p-profile-container-content__body {
-
   @include mq(md) {
-padding: 0;
+    padding: 0;
   }
 }
 
@@ -598,8 +587,7 @@ padding: 0;
     align-items: center;
     justify-content: space-between;
     margin-top: myrem(32);
-
-}
+  }
 }
 
 .p-profile-container-content__image--01 {
@@ -629,7 +617,6 @@ padding: 0;
     aspect-ratio: 462 / 298;
     margin-top: myrem(95);
   }
-
 }
 
 .p-profile-container-content__image--02 img {

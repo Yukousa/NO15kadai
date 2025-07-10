@@ -2,9 +2,6 @@
 
 <main class="p-single-voice">
     <div class="p-single-voice__inner p-single-voice-inner l-inner">
-        <!-- <h2 class="p-single-voice-inner__title">
-            <?php echo nl2br(get_field('voice_heading')); ?>
-        </h2> -->
         <div class="p-single-voice-inner__eye-catch">
             <?php
             if (has_post_thumbnail()) {
@@ -40,14 +37,14 @@
                     ?>
                     <section class="c-single-content c-single-content--voice">
                         <div class="c-single-content__wrapper">
-                            <h3 class="c-subtitle">
+                            <h2 class="c-subtitle">
                                 <?php if ($heading_top) : ?>
                                     <span class="c-subtitle--line1"><?php echo esc_html($heading_top); ?></span>
                                 <?php endif; ?>
                                 <?php if ($heading_bottom) : ?>
                                     <span class="c-subtitle--line2 c-heading02"><?php echo esc_html($heading_bottom); ?></span>
                                 <?php endif; ?>
-                            </h3>
+                            </h2>
                             <?php if ($content) : ?>
                                 <div class="c-single-content__post c-single-content__post--voice">
                                     <?php echo nl2br(esc_html($content)); ?> </div>
@@ -82,7 +79,7 @@
                     <p class="p-single-voice-profile__text--company">株式会社 XXXXXX</p>
                     <p class="p-single-voice-profile__text--ja">田中 太郎</p>
                     <p class="p-single-voice-profile__text--ja2">代表 田中 太郎</p>
-                    <p class="p-single-voice-profile__text--en">Tanaka Tarou</p>
+                    <p class="p-single-voice-profile__text--en">Tanaka Taro</p>
                 </div>
             </div>
             <div class="p-single-voice-profile__btn">

@@ -23,7 +23,6 @@
 .p-front-fv-swiper .swiper-slide {
   width: 100%;
   height: 100%;
-  // overflow: clip;
 
   @include mq(md) {
     aspect-ratio: 1440 / 750;
@@ -286,7 +285,7 @@
 
 .p-front-works__title a {
   width: fit-content;
-  padding: myrem(40) myrem(50) myrem(10) myrem(20);
+  padding: myrem(40) myrem(50) myrem(10) myrem(25);
   display: block;
 
   @include mq(md) {
@@ -305,10 +304,6 @@
   @include mq(md) {
     margin-top: myrem(25);
   }
-}
-
-.p-front-works-swiper .swiper-wrapper {
-  transition-timing-function: linear;
 }
 
 .p-front-works-swiper .swiper-slide {
@@ -386,32 +381,99 @@
   letter-spacing: 0.06em;
 }
 
+//ナビゲーション
 .p-front-works-swiper__nav {
   width: 100%;
   height: 100%;
-  pointer-events: none; // スライダーに干渉させない
 }
 
 .p-front-works-swiper-nav__prev,
 .p-front-works-swiper-nav__next {
   position: absolute;
-  top: 27%;
-  z-index: 10;
+  top: 50%;
+  z-index: 50;
   pointer-events: auto; // ボタンはクリックできるように
   cursor: pointer;
+
+  width: myrem(30);
+  height: myrem(30);
+  background: linear-gradient(to bottom, #000000 0%, #929292 100%);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 1 / 1;
+
+  @include mq(md) {
+    width: myrem(50);
+    height: myrem(50);
+    background: $black;
+    border-radius: 0;
+    top: 32%;
+  }
 }
 
 .p-front-works-swiper-nav__prev {
   left: myrem(18);
+
+  @include mq(md) {
+    left: myrem(170);
+  }
+}
+
+.p-front-works-swiper-nav__prev::before {
+  content: "";
+  width: 40%;
+  height: 40%;
+  background-color: white;
+  clip-path: polygon(100% 0, 100% 100%, 20% 50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-70%, -50%);
+
+  @include mq(md) {
+    width: myrem(15);
+    height: myrem(15);
+    background: none;
+    clip-path: none;
+    color: $white;
+    border-top: 1px solid white;
+    border-right: 1px solid white;
+    transform: translate(-30%, -50%) rotate(-135deg);
+  }
 }
 
 .p-front-works-swiper-nav__next {
   right: myrem(22);
+
+  @include mq(md) {
+    right: myrem(210);
+  }
 }
 
-.c-arrow01_left,
-.c-arrow01_right {
-  display: block;
+.p-front-works-swiper-nav__next::before {
+  content: "";
+  width: 40%;
+  height: 40%;
+  background-color: white;
+  clip-path: polygon(0 0, 0 100%, 80% 50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-30%, -50%);
+
+  @include mq(md) {
+    content: ""; // ここで文字に
+    width: myrem(15);
+    height: myrem(15);
+    background: none;
+    clip-path: none;
+    color: $white;
+    border-top: 1px solid white;
+    border-right: 1px solid white;
+    transform: translate(-70%, -50%) rotate(45deg);
+  }
 }
 
 .p-front-works__readMore {
@@ -431,7 +493,6 @@
 ***********************************/
 .p-front-content {
   padding: myrem(60) 0 0;
-  // overflow-x: clip;
 
   @include mq(md) {
     padding: myrem(110) myrem(70) myrem(115);
@@ -442,17 +503,17 @@
   @include mq(md) {
     max-width: $innerWidth;
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: myrem(950) myrem(320);
-    grid-template-rows: 1fr;
-    column-gap: myrem(30);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: myrem(30);
   }
 }
 
 //block1
 .p-front-content-wrapper__block1 {
   @include mq(md) {
-    // width: myrem(950);
+    width: myrem(950);
   }
 }
 
@@ -492,6 +553,7 @@
   height: myrem(222);
   aspect-ratio: 375 / 222;
   box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
+  margin-top: myrem(57);
 
   @include mq(md) {
     width: 100%;
@@ -532,7 +594,7 @@
 
 .p-front-content-wrapper-block1-message__title a {
   width: fit-content;
-  padding: myrem(30) myrem(40) myrem(10) myrem(20);
+  padding: myrem(30) myrem(40) myrem(10) myrem(25);
   display: block;
 
   @include mq(md) {
@@ -576,7 +638,6 @@
 .p-front-content-wrapper-block1-message__inner {
   position: relative;
   margin-top: myrem(30);
-  // overflow: clip;
 
   @include mq(md) {
     margin-top: myrem(25);
@@ -611,15 +672,14 @@
   gap: myrem(37);
   margin-left: 0;
   position: relative;
-  // overflow: clip;
 }
 
 .p-front-content-wrapper-block1-message-inner-image__image01 {
   width: myrem(352);
   aspect-ratio: 352 / 189;
   justify-content: flex-end;
-  margin-left: auto;
-  margin-right: 0;
+  margin-right: auto;
+  margin-left: 0;
 
   @include mq(md) {
     width: myrem(690);
@@ -706,7 +766,6 @@
   padding-left: myrem(50);
   animation: floating-y 1.8s ease-in-out infinite alternate-reverse;
   z-index: 1;
-  // overflow: clip;
   white-space: nowrap;
   position: static;
 
@@ -723,7 +782,6 @@
   max-width: 100%;
   margin-left: 0;
   margin-top: myrem(30);
-  // overflow: clip;
 
   @include mq(md) {
     max-width: myrem(620);
@@ -763,8 +821,11 @@
 
   @include mq(md) {
     padding: myrem(0) 0 myrem(50) 0;
-    // max-width: myrem(320);
     margin-top: myrem(-7);
+    position: sticky;
+    top: myrem(20);
+    width: myrem(320);
+    flex-shrink: 0;
   }
 }
 
@@ -782,7 +843,7 @@
 .p-front-content-wrapper-block2-voice__title a {
   width: fit-content;
   display: block;
-  padding: myrem(30) myrem(20) myrem(10) myrem(0);
+  padding: myrem(30) myrem(20) myrem(10) myrem(5);
 
   @include mq(md) {
     padding: myrem(70) myrem(20) myrem(10) myrem(0);
@@ -825,7 +886,10 @@
 
 .p-front-content-wrapper-block2-voice-list-item__card {
   width: 100%;
+  min-width: myrem(285);
   position: relative;
+  // ↓これを指定しないとFirefoxでくずれます
+  display: block;
 }
 
 .p-front-content-wrapper-block2-voice-list-item-card__label {
@@ -864,6 +928,7 @@
 }
 
 .p-front-content-wrapper-block2-voice-list-item-card__text {
+  width: calc(303 / 335 * 100%);
   font-family: $font-main;
   font-weight: 500;
   font-size: myrem(14);
@@ -904,16 +969,16 @@
 .p-front-service__header {
   width: 100%;
   margin-left: auto;
-  padding-right:myrem(20) ;
+  padding-right: myrem(20);
   padding-left: myrem(20);
 
   @include mq(md) {
     width: 100%;
     max-width: 1440px;
     margin: 0 auto;
-    padding-right:myrem(70) ;
+    padding-right: myrem(70);
     padding-left: myrem(70);
-    }
+  }
 }
 
 .p-front-service-header__title {
@@ -924,7 +989,6 @@
   @include mq(md) {
     top: 56%;
     left: myrem(70);
-
   }
 }
 
@@ -947,7 +1011,6 @@
   @include mq(md) {
     margin-right: myrem(350);
     margin-top: myrem(-70);
-    
   }
 }
 
@@ -1172,7 +1235,6 @@
   width: 100%;
   aspect-ratio: 375 / 268;
   position: relative;
-  // overflow: clip;
 
   @include mq(md) {
     max-width: 1240px;
@@ -1253,7 +1315,7 @@
   display: block;
   margin-left: 0;
   margin-right: auto;
-  padding: myrem(30) myrem(20) myrem(10) myrem(0);
+  padding: myrem(30) myrem(20) myrem(10) myrem(5);
 
   @include mq(md) {
     padding: myrem(60) myrem(60) myrem(10) myrem(0);
@@ -1322,12 +1384,12 @@
   line-height: calc(28 / 14);
   color: $white;
   background-color: $black;
-  width: fit-content;
+  width: myrem(110);
   height: myrem(30);
   border-radius: myrem(15);
-  padding: 0 myrem(24) 0 myrem(14);
   display: flex;
   align-items: center;
+  justify-content: center;
 
   @include mq(md) {
     padding-right: myrem(20);

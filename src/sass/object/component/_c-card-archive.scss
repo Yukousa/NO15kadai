@@ -3,14 +3,18 @@
 .c-archive-card {
   position: relative;
   width: 100%;
-  margin-bottom: myrem(40); // 各カード間の余白
-  padding-bottom: myrem(60); // summary食い込み分を確保
+  margin-bottom: myrem(40); 
+  padding-bottom: myrem(60); 
   z-index: 0;
   background-color: $white;
 }
 
+.c-archive-card--voice {
+  padding-bottom: myrem(45);
+}
+
 .c-archive-card--works {
-  margin-bottom: myrem(26); // 各カード間の余白
+  margin-bottom: myrem(26); 
 }
 
 .c-archive-card__label {
@@ -28,7 +32,6 @@
 }
 
 .c-archive-card__label--works {
-
   @include mq(md) {
     width: fit-content;
     height: myrem(32);
@@ -37,7 +40,6 @@
     padding: 0 myrem(10);
   }
 }
-
 
 .c-archive-card__image {
   width: 100%;
@@ -54,17 +56,16 @@
 
 .c-archive-card__summary {
   position: absolute;
-  bottom: myrem(10); 
+  bottom: myrem(10);
   left: 0;
   width: calc(301 / 335 * 100%);
   padding: myrem(10);
   z-index: 3;
   background-color: $white;
-
 }
 
 .c-archive-card__summary--works {
-  bottom: myrem(0); 
+  bottom: myrem(0);
 }
 
 .c-archive-card__summary-text {

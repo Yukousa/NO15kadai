@@ -16,11 +16,11 @@
   <header class="p-header">
     <div class="p-header__inner p-header-inner">
       <!-- ロゴ -->
-      <div class="p-header-inner__siteTitle">
+      <h1 class="p-header-inner__siteTitle">
         <a href="<?php echo esc_url(home_url('/')); ?>">
           <?php bloginfo('name'); ?>
         </a>
-      </div>
+      </h1>
 
       <!-- 共通ナビゲーション（PC常時表示 / SPはドロワー展開） -->
       <nav class="p-header-inner__nav p-header-inner-nav js-drawer">

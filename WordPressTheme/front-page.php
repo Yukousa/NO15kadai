@@ -83,8 +83,8 @@
           </div>
           <!-- Swiperナビゲーション -->
           <div class="p-front-works-swiper__nav">
-            <button class="p-front-works-swiper-nav__prev c-arrow01_left" aria-label="前へ"></button>
-            <button class="p-front-works-swiper-nav__next c-arrow01_right" aria-label="次へ"></button>
+            <button class="p-front-works-swiper-nav__prev" aria-label="前へ"></button>
+            <button class="p-front-works-swiper-nav__next" aria-label="次へ"></button>
           </div>
 
         </div>
@@ -158,7 +158,7 @@
         </article>
       </div>
       <!-- voice pc時　サイドバー　 -->
-      <aside class="p-front-content-wrapper__block2 p-front-content-wrapper-block2 l-inner">
+      <aside class="p-front-content-wrapper__block2 p-front-content-wrapper-block2">
         <div class="p-front-content-wrapper-block2__voice p-front-content-wrapper-block2-voice">
           <div class="p-front-content-wrapper-block2-voice__title">
             <a href="/voice/">
@@ -256,15 +256,12 @@
       </div>
     </div>
   </section>
-
-
-
   <!-- profile -->
   <section class="p-front-profile">
     <a href="/profile/">
       <div class="p-front-profile__image">
         <picture>
-          <source srcset="<?php echo get_template_directory_uri(); ?>/assets/images/image11.png" alt="イメージ画像" media="(max-width: 768px)">
+          <source srcset="<?php echo get_template_directory_uri(); ?>/assets/images/image11.png" media="(max-width: 768px)">
           <img src="<?php echo get_template_directory_uri(); ?>/assets/images/image26.png" alt="イメージ画像" width="1240" height="343" loading="lazy">
         </picture>
         <div class="p-front-profile__overlay"></div>
@@ -275,8 +272,6 @@
       </div>
     </a>
   </section>
-
-
   <!-- フロント　news -->
   <section class="p-front-news">
     <div class="p-front-news__inner p-front-news-inner">
@@ -337,7 +332,6 @@
             ?>
             <p class="p-front-news-inner-content-list__none">まだ投稿がありません。</p>
           <?php endif; ?>
-
           <div class="p-front-news-inner-content-list__pagenavi--sp u-mobile">
             <?php if (function_exists('wp_pagenavi')) : ?>
               <?php wp_pagenavi(); ?>
@@ -350,9 +344,6 @@
       <a href="/news/" class="c-readMore">Read more<span class="c-arrow01_right"></span></a>
     </div>
   </section>
-
-
 </main>
-
 <?php get_template_part('template-parts/sections/section-cta'); ?>
 <?php get_footer(); ?>

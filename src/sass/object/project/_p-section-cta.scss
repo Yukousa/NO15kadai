@@ -30,7 +30,6 @@
   pointer-events: none;
 }
 
-
 .p-cta__item--contact {
   background-image: url("../../assets/images/image10.png");
   display: block;
@@ -47,9 +46,9 @@
   position: absolute;
   top: 45%;
 
-    @include mq(md) {
-      top: 55%;
-    }
+  @include mq(md) {
+    top: 55%;
+  }
 }
 
 .p-cta-item-title__text {
@@ -85,7 +84,6 @@
     width: myrem(32);
     height: myrem(4);
   }
-
 }
 
 .p-cta-item-title__text::after {

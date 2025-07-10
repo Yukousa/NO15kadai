@@ -15,6 +15,9 @@
 
   @include mq(md) {
     max-width: 1440px;
+    padding-left: myrem(70);
+    padding-right: myrem(70);
+    margin: 0 auto;
   }
 }
 
@@ -51,7 +54,7 @@
   @include mq(md) {
     max-width: 1440px;
     padding-top: myrem(78);
-    margin-bottom: myrem(100); 
+    margin-bottom: myrem(100);
     margin: 0 auto;
   }
 }

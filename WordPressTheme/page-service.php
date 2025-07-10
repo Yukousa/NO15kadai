@@ -81,7 +81,7 @@
                     <p class="p-card-price__note">※コーポレートサイト00ページあたり</p>
                 </div>
             </div>
-    </section>
+        </div></section>
 
     <section class="p-service__faq p-service-faq l-inner">
         <div class="p-service-faq__title">
@@ -94,7 +94,7 @@
             $index = 1;
             foreach ($faq_group as $faq) :
                 $is_open = ($index === 1) ? 'is-open' : '';
-                $is_hidden = ($index > 15) ? 'is-hidden' : '';
+                $is_hidden = ($index > 7) ? 'is-hidden' : '';
             ?>
                 <div class="p-service-faq-list__item <?php echo $is_open . ' ' . $is_hidden; ?>">
                     <div class="p-service-faq-list__item-question js-faq-toggle">
@@ -111,11 +111,9 @@
             ?>
         </div>
 
-        <?php if ($index > 15): ?>
-            <div class="p-service-faq__more p-service-faq-more">
-                <button class="p-service-faq-more__btn js-faq-more">もっと見る<span class="p-service-faq-more__arrow"></span></button>
-            </div>
-        <?php endif; ?>
+        <div class="p-service-faq__more p-service-faq-more">
+            <button class="p-service-faq-more__btn js-faq-more">もっと見る</button>
+        </div>
     </section>
 
 </main>

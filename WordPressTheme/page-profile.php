@@ -170,7 +170,7 @@
                     <p class="p-profile-container-profile-body--company">株式会社 XXXXXX</p>
                     <p class="p-profile-container-profile-body--ja">田中 太郎</p>
                     <p class="p-profile-container-profile-body--ja2">代表 田中 太郎</p>
-                    <p class="p-profile-container-profile-body--en">Tanaka Tarou</p>
+                    <p class="p-profile-container-profile-body--en">Tanaka Taro</p>
                 </div>
             </div>
 
@@ -184,8 +184,6 @@
                     <p class="p-profile-container-profile-content-inner__text">ここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入る</p>
                 </div>
             </div>
-            </div>
-
         </aside>
     </section>
 

@@ -1,10 +1,8 @@
 @use "global" as *;
 
 .p-message {
-
   @include mq(md) {
     overflow: clip;
-
   }
 }
 
@@ -37,7 +35,6 @@
     aspect-ratio: 1440 / 480;
     width: 100vw;
     margin: myrem(30) calc(50% - 50vw) 0;
-
   }
 }
 
@@ -110,7 +107,6 @@
 }
 
 .p-message-container02-body__text {
-  
 }
 
 .p-message-container02-body__text + .p-message-container02-body__text {
@@ -153,7 +149,6 @@
     color: #000000;
     text-align: left;
     margin-top: myrem(15);
-
   }
 }
 

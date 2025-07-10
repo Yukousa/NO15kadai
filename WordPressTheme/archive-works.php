@@ -50,9 +50,6 @@
       <?php endif; ?>
     </div>
   </section>
-  </section>
-
-
 </main>
 <?php get_template_part('template-parts/sections/section-cta'); ?>
 <?php get_footer(); ?>

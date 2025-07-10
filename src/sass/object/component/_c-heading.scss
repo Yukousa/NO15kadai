@@ -62,9 +62,13 @@ c-heading01 英語と日本語 2色(黒・白)の線の装飾
 
 //pc サイドバー用　英語のサイズ違い
 .c-heading01--sidebar::after {
-  font-size: myrem(50);
-  top: myrem(-65);
-  left: myrem(0);
+
+  @include mq(md) {
+    
+    font-size: myrem(50);
+    top: myrem(-65);
+    left: myrem(0);
+  }
 }
 
 //背景色$black_base用の　装飾線の色違い
@@ -136,11 +140,10 @@ c-heading01 英語と日本語 2色(黒・白)の線の装飾
   @include mq(md) {
     font-size: myrem(60);
     top: myrem(-65);
-
   }
 }
 
-//fontサイズ違い 装飾線（$blacｋ #f5f5f5)　
+//fontサイズ違い 装飾線（$blacｋ #f5f5f5)
 .c-heading01--large01 {
   font-size: myrem(14);
   letter-spacing: 0.02em;
@@ -159,7 +162,6 @@ c-heading01 英語と日本語 2色(黒・白)の線の装飾
   width: myrem(16);
   height: myrem(2);
   background: linear-gradient(to right, $black 50%, #f5f5f5 50%);
-
 
   @include mq(md) {
     width: myrem(32);
@@ -180,7 +182,7 @@ c-heading01 英語と日本語 2色(黒・白)の線の装飾
   }
 }
 
-//fontサイズ違い 装飾線（$blacｋ #white)　
+//fontサイズ違い 装飾線（$blacｋ #white)
 .c-heading01--large02 {
   font-size: myrem(14);
   letter-spacing: 0.02em;
@@ -199,7 +201,6 @@ c-heading01 英語と日本語 2色(黒・白)の線の装飾
   width: myrem(16);
   height: myrem(2);
   background: linear-gradient(to right, $black 50%, $white 50%);
-
 
   @include mq(md) {
     width: myrem(32);
@@ -220,7 +221,7 @@ c-heading01 英語と日本語 2色(黒・白)の線の装飾
   }
 }
 
-//fontサイズ違い 装飾線（$blacｋ #white 英語フォントサイズ違い)　
+//fontサイズ違い 装飾線（$blacｋ #white 英語フォントサイズ違い)
 .c-heading01--large02small {
   font-size: myrem(14);
   letter-spacing: 0.06em;
@@ -240,7 +241,6 @@ c-heading01 英語と日本語 2色(黒・白)の線の装飾
   width: myrem(16);
   height: myrem(2);
   background: linear-gradient(to right, $black 50%, $white 50%);
-
 
   @include mq(md) {
     width: myrem(32);
@@ -262,8 +262,7 @@ c-heading01 英語と日本語 2色(黒・白)の線の装飾
   }
 }
 
-
-//日本語　fontサイズ違い 　
+//日本語　fontサイズ違い
 .c-heading01--large03 {
   font-size: myrem(16);
   letter-spacing: 0.02em;
@@ -282,7 +281,6 @@ c-heading01 英語と日本語 2色(黒・白)の線の装飾
   width: myrem(16);
   height: myrem(2);
   background: linear-gradient(to right, $black 50%, #f5f5f5 50%);
-
 
   @include mq(md) {
     width: myrem(32);
@@ -314,17 +312,16 @@ c-heading01 英語と日本語 2色(黒・白)の線の装飾
 }
 
 .c-heading01--news::before {
-left: myrem(2);
+  left: myrem(2);
 }
 
 .c-heading01--news::after {
   font-size: myrem(36);
-  top:myrem(-34);
+  top: myrem(-34);
   left: myrem(2);
 
   @include mq(md) {
     font-size: myrem(50);
-    top:myrem(-60);
-
+    top: myrem(-60);
   }
 }

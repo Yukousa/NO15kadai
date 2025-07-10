@@ -6,10 +6,10 @@
   padding-bottom: myrem(60);
   color: $black;
 
-    @include mq(md) {
-      padding-top: myrem(277);
-      padding-bottom: myrem(110);
-    }
+  @include mq(md) {
+    padding-top: myrem(277);
+    padding-bottom: myrem(110);
+  }
 }
 
 .p-404__main {
@@ -22,7 +22,6 @@
   @include mq(md) {
     font-size: myrem(60);
   }
-
 }
 
 .p-404__sub {
@@ -33,10 +32,10 @@
   line-height: calc(24 / 14);
   letter-spacing: 0.04em;
 
-    @include mq(md) {
-      margin-top: myrem(37);
-      font-size: myrem(24);
-    }
+  @include mq(md) {
+    margin-top: myrem(37);
+    font-size: myrem(24);
+  }
 }
 
 .p-404__return {
@@ -58,10 +57,9 @@
   margin-top: myrem(60);
   margin-inline: auto;
 
-    @include mq(md) {
-      margin-top: myrem(50);
-
-    }
+  @include mq(md) {
+    margin-top: myrem(50);
+  }
 }
 
 .p-404__return::after {

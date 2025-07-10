@@ -9,11 +9,6 @@
   }
 }
 
-.c-news-list__post {
-}
-
-.c-news-list-post {
-}
 
 .c-news-list__meta {
   display: flex;
@@ -24,7 +19,6 @@
 
   @include mq(md) {
     margin-top: myrem(5);
-
   }
 }
 
@@ -33,8 +27,6 @@
   font-size: myrem(16);
 }
 
-.c-news-list__meta--category {
-}
 
 .c-news-list__meta--category-name {
   width: myrem(80);
@@ -64,6 +56,8 @@
   @include mq(md) {
     padding-bottom: myrem(0);
     margin-bottom: myrem(0);
+    height: myrem(41);
+
   }
 }
 

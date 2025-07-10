@@ -81,8 +81,7 @@
     align-items: center;
     justify-content: space-between;
     margin-top: myrem(32);
-
-}
+  }
 }
 
 .p-single-voice-content__image--01 {
@@ -112,7 +111,6 @@
     aspect-ratio: 462 / 298;
     margin-top: myrem(95);
   }
-
 }
 
 .p-single-voice-content__image--02 img {
@@ -136,7 +134,6 @@
   }
 }
 
-
 .p-single-voice__profile {
   margin-top: myrem(62);
   padding: 0 myrem(20) myrem(60);
@@ -148,8 +145,7 @@
     padding-right: 0;
     padding-bottom: myrem(60);
     position: sticky;
-    top:myrem(20);
-
+    top: myrem(20);
   }
 }
 
@@ -175,7 +171,6 @@
   @include mq(md) {
     text-align: left;
     margin-top: myrem(20);
-
   }
 }
 
@@ -198,7 +193,7 @@
   letter-spacing: 0.06em;
   color: $black;
 
-  @include mq(md) {    
+  @include mq(md) {
     display: none;
   }
 }
@@ -229,7 +224,6 @@
 }
 
 .p-single-voice-profile__btn {
-
   @include mq(md) {
     width: fit-content;
     margin-left: auto;
@@ -237,7 +231,6 @@
     margin-top: myrem(30);
   }
 }
-
 
 .p-single-voice__swiper {
   background-color: $black_base;

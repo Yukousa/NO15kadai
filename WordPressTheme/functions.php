@@ -117,7 +117,11 @@ class BEM_Walker_Nav_Menu extends Walker_Nav_Menu
 			$output .= '<span class="' . esc_attr($base_class . '__en') . '">' . esc_html($item->description) . '</span>';
 		}
 
-		$output .= '</a></li>';
+		$output .= '</a>';
+	}
+	function end_el(&$output, $item, $depth = 0, $args = array())
+	{
+		$output .= '</li>';
 	}
 }
 
@@ -147,21 +151,67 @@ register_activation_hook(__FILE__, 'flush_rewrite_on_activation');
 /**
  *投稿タイプごとにアーカイブページの表示件数を変更する(voice,works)
  */
-function custom_archive_posts_per_page($query) {
+function custom_archive_posts_per_page($query)
+{
 	if (!is_admin() && $query->is_main_query()) {
-  
-	  // voice アーカイブでは 6件表示
-	  if (is_post_type_archive('voice')) {
-		$query->set('posts_per_page', 6);
-	  }
-  
-	  // works アーカイブでは 3件表示
-	  if (is_post_type_archive('works')) {
-		$query->set('posts_per_page', 3);
-	  }
+
+		// voice アーカイブでは 6件表示
+		if (is_post_type_archive('voice')) {
+			$query->set('posts_per_page', 6);
+		}
+
+		// works アーカイブでは 3件表示
+		if (is_post_type_archive('works')) {
+			$query->set('posts_per_page', 3);
+		}
 	}
-  }
-  add_action('pre_get_posts', 'custom_archive_posts_per_page');
-  
+}
+add_action('pre_get_posts', 'custom_archive_posts_per_page');
 
+/**
+ * テーマ内のリソースに更新日時パラメータを付けてキャッシュを破棄する関数
+ * CSS、JS、画像などで共通利用可能
+ * 使用例: echo wp_optimize_uri('css/style.css');
+ */
+function wp_optimize_uri($relative_path)
+{
+	// テーマディレクトリのパスとURLを取得
+	$theme_dir_path = get_template_directory();
+	$theme_dir_uri  = get_template_directory_uri();
 
+	// 子テーマを使っている場合は子テーマを優先
+	if (is_child_theme()) {
+		$theme_dir_path = get_stylesheet_directory();
+		$theme_dir_uri  = get_stylesheet_directory_uri();
+	}
+
+	// 絶対パスとURLを組み立て
+	$absolute_path = $theme_dir_path . '/' . ltrim($relative_path, '/');
+	$resource_url  = $theme_dir_uri . '/' . ltrim($relative_path, '/');
+
+	// ファイルが存在すれば更新日時をクエリとして付与
+	if (file_exists($absolute_path)) {
+		$resource_url .= '?v=' . filemtime($absolute_path);
+	}
+
+	return esc_url($resource_url);
+}
+
+/**
+ * カスタム投稿タイプ 'news' 用のカスタムタクソノミー 'news_category' を登録する
+ * URL構造を /news/カテゴリー名/ 形式にするため、rewriteのslugを 'news' に設定
+ */
+function register_news_category_taxonomy() {
+	register_taxonomy('news_category', 'news', [
+		'label' => 'newsカテゴリー',
+		'hierarchical' => true,
+		'public' => true,
+		'show_ui' => true,
+		'show_admin_column' => true,
+		'rewrite' => [
+			'slug' => 'news/category', // ← 投稿タイプnewsと競合しない形に
+			'with_front' => false,
+		],
+	]);
+	}
+add_action('init', 'register_news_category_taxonomy');

@@ -1,12 +1,11 @@
 @use "global" as *;
 
 .wp-pagenavi {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: myrem(15); // 全要素間の余白
-    margin-inline: auto;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: myrem(15); // 全要素間の余白
+  margin-inline: auto;
 }
 
 .wp-pagenavi .page {
@@ -41,9 +40,7 @@
   line-height: myrem(40);
   font-weight: bold;
   border: solid 2px $black;
-
   transition: 0.3s ease-out;
-
 }
 
 .wp-pagenavi .disabled {

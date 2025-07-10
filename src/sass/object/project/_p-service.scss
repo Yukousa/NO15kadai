@@ -15,6 +15,8 @@
 }
 
 .p-service-mv_inner {
+  padding-top: myrem(170);
+
   @include mq(md) {
     max-width: 1440px;
     margin: 0 auto;
@@ -39,8 +41,7 @@
     margin-top: myrem(30);
     aspect-ratio: 1440 / 480;
     width: 100vw;
-    margin:myrem(30) calc(50% - 50vw);
-
+    margin: myrem(30) calc(50% - 50vw);
   }
 }
 
@@ -67,21 +68,18 @@
   @include mq(md) {
     font-size: myrem(60);
     padding-top: 0;
-    
   }
 }
 
 .p-service-price__inner {
   width: 100%;
-  
+
   @include mq(md) {
     max-width: $innerWidth;
     margin: 0 auto;
     padding-top: myrem(10);
-    
   }
 }
-
 
 .p-service-price__title::before {
   margin-left: 0;
@@ -100,8 +98,6 @@
     font-size: myrem(60);
   }
 }
-
-
 
 //PRICE グリッド部分
 .p-card-price-grid {
@@ -156,10 +152,10 @@
 
 .p-card-price-body--estimate {
   margin-top: myrem(15);
-  
-    @include mq(md) {
-        margin-top: myrem(90);
-    }
+
+  @include mq(md) {
+    margin-top: myrem(90);
+  }
 }
 
 .p-card-price-body--basicFee {
@@ -171,17 +167,16 @@
     gap: myrem(50);
     margin-top: myrem(35);
     transform: translateX(myrem(-5));
-
   }
 }
 
 .p-card-price-body--animation {
   margin-top: myrem(100);
 
-    @include mq(md) {
-        margin-top: myrem(80);
-        letter-spacing: 0.02em;
-    }
+  @include mq(md) {
+    margin-top: myrem(80);
+    letter-spacing: 0.02em;
+  }
 }
 
 .p-card-price-body--responsive {
@@ -192,12 +187,11 @@
   margin-top: myrem(5);
   transform: translateX(myrem(11));
 
-    @include mq(md) {
-        margin-top: myrem(40);
-        gap: myrem(10);
-        transform: translateX(myrem(0));
-
-    }
+  @include mq(md) {
+    margin-top: myrem(40);
+    gap: myrem(10);
+    transform: translateX(myrem(0));
+  }
 }
 
 .p-card-price-body--deadline {
@@ -207,28 +201,25 @@
   gap: myrem(30);
   margin-top: myrem(10);
 
-    @include mq(md) {
-        justify-content:space-between;
-        margin-top: myrem(-35);
-        gap: myrem(40);
-
-
-    }
+  @include mq(md) {
+    justify-content: space-between;
+    margin-top: myrem(-35);
+    gap: myrem(40);
+  }
 }
 
 .p-card-price-body__text-block {
-
-      @include mq(md) {
-        letter-spacing: 0.02em;
-      }
+  @include mq(md) {
+    letter-spacing: 0.02em;
+  }
 }
 
 .p-card-price-body__text-block--basicFee {
-      @include mq(md) {
-        text-align: right;
-        transform: translateX(myrem(-7));
-        margin-top: myrem(-7);
-      }
+  @include mq(md) {
+    text-align: right;
+    transform: translateX(myrem(-7));
+    margin-top: myrem(-7);
+  }
 }
 
 .p-card-price-body__text--animation {
@@ -262,7 +253,8 @@
   @include mq(md) {
     font-size: myrem(32);
     margin-right: myrem(25);
-margin-top: myrem(-10);  }
+    margin-top: myrem(-10);
+  }
 }
 
 .p-card-price-body__text::after {
@@ -278,31 +270,29 @@ margin-top: myrem(-10);  }
 }
 
 .p-card-price-body__text--top {
-
-      @include mq(md) {
-        letter-spacing: 0em;
-      }
+  @include mq(md) {
+    letter-spacing: 0em;
+  }
 }
 
 .p-card-price-body__text--top:not(:first-child) {
-    @include mq(md) {
-      margin-top: myrem(20);
-    }
+  @include mq(md) {
+    margin-top: myrem(20);
   }
+}
 
 .p-card-price-body__text--top::before {
   display: block;
   font-size: myrem(13);
   position: static; // 通常のフローで表示
 
-    @include mq(md) {
-        display: inline-block;
-        vertical-align: middle;
-        line-height: 1;
-        font-size: myrem(32);
-        margin-right: myrem(12);
-    
-    }
+  @include mq(md) {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1;
+    font-size: myrem(32);
+    margin-right: myrem(12);
+  }
 }
 
 .p-card-price-body__text--bottom {
@@ -312,25 +302,22 @@ margin-top: myrem(-10);  }
   @include mq(md) {
     letter-spacing: 0;
     padding-top: myrem(10);
-
   }
-
 }
 
 .p-card-price-body__text--bottom::before {
   position: absolute;
   top: 0;
 
-    @include mq(md) {
-
-        position: static;
-        display: inline-block;
-        vertical-align: middle;
-        line-height: 1;
-        font-size: myrem(32);
-        margin-right: myrem(40);
-        letter-spacing: 0;
-    }
+  @include mq(md) {
+    position: static;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1;
+    font-size: myrem(32);
+    margin-right: myrem(40);
+    letter-spacing: 0;
+  }
 }
 
 .p-card-price-body__text--responsive {
@@ -344,8 +331,6 @@ margin-top: myrem(-10);  }
   letter-spacing: 0.04em;
   margin-left: myrem(5);
 
-
-
   @include mq(md) {
     font-size: myrem(32);
   }
@@ -356,17 +341,15 @@ margin-top: myrem(-10);  }
   font-size: myrem(70);
   font-family: $font-sub;
   display: inline-block;
-  // min-width: 3ch; 
+  // min-width: 3ch;
   // 数字3桁分のスペースを保持
   text-align: center;
   transform: translateX(myrem(5));
-
 
   @include mq(md) {
     font-size: myrem(100);
   }
 }
-
 
 .p-card-price-body__image--basicFee {
   margin-top: myrem(15);
@@ -379,7 +362,6 @@ margin-top: myrem(-10);  }
     height: myrem(194);
 
     margin-top: myrem(0);
-
   }
 }
 
@@ -387,11 +369,10 @@ margin-top: myrem(-10);  }
   width: myrem(78);
   height: myrem(102);
 
-    @include mq(md) {
-        width: myrem(145);
-        height: myrem(199);
-          }
-
+  @include mq(md) {
+    width: myrem(145);
+    height: myrem(199);
+  }
 }
 
 .p-card-price-body__image--deadline {
@@ -399,12 +380,11 @@ margin-top: myrem(-10);  }
   height: myrem(72);
   transform: translateY(myrem(-5));
 
-    @include mq(md) {
-        width: myrem(480);
-        height: myrem(230);
-        transform: translateY(myrem(-10));
-
-    }
+  @include mq(md) {
+    width: myrem(480);
+    height: myrem(230);
+    transform: translateY(myrem(-10));
+  }
 }
 
 .p-card-price-body__image img {
@@ -427,7 +407,6 @@ margin-top: myrem(-10);  }
   grid-column: 1 / 2;
   grid-row: 2 / 3;
 
-
   @include mq(md) {
     grid-column: 2 / 4;
     grid-row: 1 / 2;
@@ -439,7 +418,6 @@ margin-top: myrem(-10);  }
 .p-card-price--animation {
   grid-column: 2 / 3;
   grid-row: 2 / 3;
-
 
   @include mq(md) {
     grid-column: 1 / 3;
@@ -480,13 +458,13 @@ margin-top: myrem(-10);  }
   color: #888888;
   text-align: center;
   margin-top: myrem(8);
-  transform:translateX(myrem(5)) ;
+  transform: translateX(myrem(5));
 
   @include mq(md) {
     text-align: left;
     font-size: myrem(16);
     margin-top: myrem(-45);
-    transform:translateX(myrem(0)) ;
+    transform: translateX(myrem(0));
     letter-spacing: 0.04em;
   }
 }
@@ -494,7 +472,7 @@ margin-top: myrem(-10);  }
 // FAQ
 .p-service__faq {
   padding-top: myrem(100);
-  padding-bottom:  myrem(60);
+  padding-bottom: myrem(60);
   background-color: $black_base;
 
   @include mq(md) {
@@ -542,7 +520,6 @@ margin-top: myrem(-10);  }
   @include mq(md) {
     padding: myrem(19) myrem(30) myrem(15);
     border-radius: 0;
-
   }
 }
 
@@ -612,9 +589,9 @@ margin-top: myrem(-10);  }
   transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out,
     padding 0.5s ease-in-out;
 
-      @include mq(md) {
-        padding:0 0 0 myrem(62);
-      }
+  @include mq(md) {
+    padding: 0 0 0 myrem(62);
+  }
 }
 
 .p-service-faq-list__item.is-open .p-service-faq-list__item-answer {
@@ -678,7 +655,7 @@ margin-top: myrem(-10);  }
   margin-top: myrem(40);
 
   @include mq(md) {
-    margin-top: myrem(50);
+    margin-top: myrem(45);
   }
 }
 
@@ -689,7 +666,6 @@ margin-top: myrem(-10);  }
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: myrem(8);
   padding: 0 myrem(20);
   font-family: $font-main;
   font-size: myrem(18);
@@ -704,39 +680,26 @@ margin-top: myrem(-10);  }
   position: relative;
 
   @include mq(md) {
+    font-size: myrem(20);
+    letter-spacing: 0.1em;
     width: myrem(300);
     height: myrem(60);
     margin: 0 auto;
   }
 }
 
-.p-service-faq-more__arrow {
-  position: absolute;
-  display: inline-block;
-  width: myrem(12);
-  height: myrem(12);
-  top: 30%;
-  right: calc(32 / 260 * 100%);
-}
-
-.p-service-faq-more__arrow::before,
-.p-service-faq-more__arrow::after {
+.p-service-faq-more__btn::after {
   content: "";
   position: absolute;
-  width: myrem(1);
-  height: myrem(10);
-  background-color: $white;
-  border-radius: 9999px;
   top: 50%;
-  left: calc(50% + 1px);
-  transform-origin: 50% calc(100% - 1px);
-}
+  right: calc(35 / 260 * 100%);
+  transform: translateY(-50%);
+  width: myrem(14);
+  height: myrem(12);
+  background-color: #fff;
+  clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
 
-.p-service-faq-more__arrow::before {
-  transform: rotate(45deg);
-}
-
-.p-service-faq-more__arrow::after {
-  left: myrem(6);
-  transform: rotate(-45deg);
+  @include mq(md) {
+    right: calc(55 / 260 * 100%);
+  }
 }

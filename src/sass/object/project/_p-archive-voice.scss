@@ -1,38 +1,76 @@
 @use "global" as *;
 
-.p-archive-voice__fv {
-      @include mq(md) {
+.p-archive-voice {
+  width: 100%;
+  padding-top: myrem(175);
 
-      }
+  @include mq(md) {
+    padding-top: myrem(0);
+  }
+}
+
+.p-archive-voice__mv {
+  width: 100%;
+  background-color: $white;
+
+  @include mq(md) {
+    max-width: 1440px;
+    padding-left: myrem(70);
+    padding-right: myrem(70);
+    margin: 0 auto;
+  }
+}
+
+.p-archive-voice-mv_inner {
+  @include mq(md) {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding-top: myrem(245);
+  }
+}
+
+.p-archive-voice-mv-inner__title {
+  padding: myrem(0) myrem(20);
+
+  @include mq(md) {
+    padding: 0;
+  }
+}
+
+.p-archive-voice-mv__breadcrumbs {
+  margin-top: myrem(50);
+
+  @include mq(md) {
+    margin-top: myrem(10);
+    margin-right: myrem(-10);
+  }
 }
 
 .p-archive-voice__container {
-    width: 100%;
-    padding: myrem(25) myrem(20) myrem(100);
+  width: 100%;
+  padding: myrem(45) myrem(20) myrem(100);
 
-      @include mq(md) {
-        max-width: $innerWidth;
-        margin:0 auto;
-        padding: myrem(50) 0 myrem(110);
-    }
-
+  @include mq(md) {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: myrem(80) myrem(70) myrem(110);
+  }
 }
 
 .p-archive-voice-container__post {
-    @include mq(md) {
-        display: grid;
-        grid-template-rows: repeat(2, 1fr);
-        grid-template-columns: repeat(3, 1fr);
-        row-gap: myrem(0);
-        column-gap: myrem(34);
-        
-      }
-    }
+  @include mq(md) {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: myrem(20);
+    column-gap: myrem(34);
+  }
+}
 
 .p-archive-voice__pagenavi {
-    margin-top: myrem(95);
+  margin-top: myrem(110);
 
-      @include mq(md) {
-        margin-top: myrem(35);
-    }
+  @include mq(md) {
+    margin-top: myrem(35);
+  }
 }

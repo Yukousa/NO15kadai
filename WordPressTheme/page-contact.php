@@ -15,7 +15,6 @@
     <div class="p-contact__inner l-inner">
         <?php the_content(); ?>
     </div>
-
 </main>
 <?php get_template_part('template-parts/sections/section-cta'); ?>
 <?php get_footer(); ?>

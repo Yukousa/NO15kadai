@@ -2,7 +2,9 @@
     <!-- カテゴリー -->
     <div class="c-news-sidebar__category c-news-sidebar-category">
         <h3 class="c-heading01 c-heading01--news" data-en="category">カテゴリー</h3>
-        <?php
+
+
+        <?php       
         $terms = get_terms([
             'taxonomy' => 'news_category',
             'hide_empty' => false, // 投稿が0件のカテゴリも表示するなら false
@@ -10,8 +12,16 @@
 
         if (!empty($terms) && !is_wp_error($terms)) :
         ?>
+
+
+
+
+
             <ul class="c-news-sidebar__list c-news-sidebar-list">
                 <?php foreach ($terms as $term) : ?>
+
+
+
                     <li class="c-news-sidebar-list__item c-news-sidebar-list-item">
                         <a href="<?php echo esc_url(get_term_link($term)); ?>" class="c-news-sidebar-list-item__link">
                             <?php echo esc_html($term->name); ?>

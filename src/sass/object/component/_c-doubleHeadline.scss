@@ -1,45 +1,53 @@
 @use "global" as *;
 
 .c-doubleHeadline {
-    font-weight: 900;
-    font-size: myrem(18);
-    line-height: myrem(30);
-    letter-spacing: 0.09em;
-  
-    @include mq(md) {
-      font-weight: 800;
-      font-size: myrem(34);
-      line-height: calc(54 / 34);
-      letter-spacing: 0.1em;
-      color: $black;
-    }
+  font-weight: 900;
+  font-size: myrem(18);
+  line-height: myrem(30);
+  letter-spacing: 0.09em;
+
+  @include mq(md) {
+    font-weight: 800;
+    font-size: myrem(34);
+    line-height: calc(54 / 34);
+    letter-spacing: 0.1em;
+    color: $black;
   }
-  
-  /***************************
+}
+
+.c-doubleHeadline + .c-doubleHeadline {
+  margin-top: myrem(20);
+
+  @include mq(md) {
+    margin-top: myrem(48);
+  }
+}
+
+
+/***************************
   背景黒グラデーション
   ***************************/
-  .c-doubleHeadline--line2 {
-    width: fit-content;
-    height: myrem(35);
-    font-weight: 900;
-    font-size: myrem(18);
-    line-height: 1;
-    letter-spacing: 0.1em;
-    color: $white;
-    padding: 0 myrem(6);
-    background: linear-gradient(to right, #000 0%, #929292 100%);
-    display: flex;
-    align-items: center;
-    margin-top: myrem(5);
-  
-    @include mq(md) {
-      height: myrem(52);
-      font-weight: 800;
-      font-size: myrem(34);
-      line-height: calc(54 / 34);
-      padding: 0 myrem(18) 0 myrem(8);
-      margin-top: myrem(0);
-      margin-left: myrem(-8);
-    }
+.c-doubleHeadline--line2 {
+  width: fit-content;
+  height: myrem(35);
+  font-weight: 900;
+  font-size: myrem(18);
+  line-height: 1;
+  letter-spacing: 0.1em;
+  color: $white;
+  padding: 0 myrem(6);
+  background: linear-gradient(to right, #000 0%, #929292 100%);
+  display: flex;
+  align-items: center;
+  margin-top: myrem(5);
+
+  @include mq(md) {
+    height: myrem(52);
+    font-weight: 800;
+    font-size: myrem(34);
+    line-height: calc(54 / 34);
+    padding: 0 myrem(18) 0 myrem(8);
+    margin-top: myrem(0);
+    margin-left: myrem(-8);
   }
-  
+}

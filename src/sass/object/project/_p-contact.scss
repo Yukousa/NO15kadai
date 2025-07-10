@@ -8,10 +8,9 @@
     max-width: 1440px;
     margin: 0 auto;
     padding-top: myrem(245);
-    padding-bottom:  myrem(110);
+    padding-bottom: myrem(110);
   }
 }
-
 
 .p-contact__mv {
   width: 100%;
@@ -27,7 +26,6 @@
 }
 
 .p-contact-mv-inner__title {
-
   @include mq(md) {
     padding: 0;
   }
@@ -43,7 +41,6 @@
 }
 
 .p-contact__inner {
-
 }
 
 //form
@@ -210,7 +207,14 @@
 }
 
 .p-formSelect select:focus {
-  outline: 2px solid #b5b5b5;
+  outline: 2px solid $black;
+}
+
+.p-form__input input:focus,
+.p-formSelect-wrap select:focus,
+.p-formTextarea textarea:focus {
+  outline: none; /* デフォルトの黄色い枠を消す */
+  outline: 2px solid $black;
 }
 
 .p-formSelect-wrap {
@@ -253,8 +257,7 @@
     height: myrem(25);
     top: 43%;
     right: myrem(15);
-  
-    }
+  }
 }
 
 //optionの色を変更
@@ -491,7 +494,7 @@
 }
 
 //送信ボタン
-.p-form__submit-wrap {
+.p-formBtn {
   width: 100%;
   margin-top: myrem(60);
   margin-inline: auto;
@@ -533,20 +536,19 @@
   appearance: none;
 
   @include mq(md) {
-letter-spacing: 0.1em;
+    letter-spacing: 0.1em;
 
-color: #FFFFFF;
-
-
+    color: #ffffff;
   }
 }
 
-.p-form__submit-wrap.p-formBtn {
+.p-formBtn {
+  width: fit-content;
   position: relative;
-  display: inline-block;
+  margin-inline: auto;
 }
 
-.p-form__submit-wrap.p-formBtn::after {
+.p-formBtn::after {
   content: "";
   display: inline-block;
   margin-left: 10px;
@@ -557,13 +559,9 @@ color: #FFFFFF;
   border-bottom: myrem(6) solid transparent;
   border-left: myrem(12) solid white;
   position: absolute;
-  right: calc(65 / 335 *100%);
+  right: calc(47 / 300 * 100%);
   top: 50%;
   transform: translateY(-50%);
-
-  @include mq(md) {
-    right: calc(388 / 980 * 100%);
-  }
 }
 
 // 入力が不備で送信ボタンが押せないとき
@@ -576,8 +574,8 @@ color: #FFFFFF;
 .p-formBtn--prev input {
   margin-inline: auto;
   margin-top: myrem(30);
-  width: myrem(260);
-  height: myrem(64);
+  width: myrem(300);
+  height: myrem(60);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -711,4 +709,11 @@ color: #FFFFFF;
   @include mq(md) {
     margin-top: myrem(60);
   }
+}
+
+.p-contact__inner--text {
+  margin-top: myrem(30);
+  font-weight: bold;
+  font-size: myrem(20);
+  white-space: nowrap;
 }

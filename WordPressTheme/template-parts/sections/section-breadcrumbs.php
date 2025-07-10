@@ -25,6 +25,24 @@
             echo '<span class="c-breadcrumbs__separator"> / </span>';
             echo '<a href="' . esc_url(get_post_type_archive_link($post_type)) . '" class="c-breadcrumbs__current">' . esc_html($post_type_obj->labels->name) . '</a>';
         }
+    } elseif (is_tax()) {
+        $term = get_queried_object();
+        $taxonomy = $term->taxonomy;
+
+        // カスタム投稿タイプのアーカイブへのリンクを取得
+        $post_type = '';
+        if ($taxonomy === 'news_category') {
+            $post_type = 'news';
+        }
+
+        if ($post_type) {
+            $post_type_obj = get_post_type_object($post_type);
+            echo '<span class="c-breadcrumbs__separator"> / </span>';
+            echo '<a href="' . esc_url(get_post_type_archive_link($post_type)) . '" class="c-breadcrumbs__parent">' . esc_html($post_type_obj->labels->name) . '</a>';
+        }
+
+        echo '<span class="c-breadcrumbs__separator"> / </span>';
+        echo '<span class="c-breadcrumbs__current">' . esc_html(single_term_title('', false)) . '</span>';
     } elseif (is_post_type_archive()) {
         $post_type = get_post_type();
         $post_type_obj = get_post_type_object($post_type);

@@ -135,6 +135,31 @@
                         </div>
                     <?php endif; ?>
                 </nav>
+                
+
+
+                <?php
+if (is_single()) {
+    global $post;
+    echo '<pre>現在の投稿ID: ' . $post->ID . '</pre>';
+    echo '<pre>投稿タイプ: ' . get_post_type($post) . '</pre>';
+
+    $prev_post = get_adjacent_post(false, '', true);
+    $next_post = get_adjacent_post(false, '', false);
+
+    echo '<pre>前の記事: ';
+    var_dump($prev_post);
+    echo '</pre>';
+
+    echo '<pre>次の記事: ';
+    var_dump($next_post);
+    echo '</pre>';
+} else {
+    echo '<pre>このページはシングル投稿ではありません</pre>';
+}
+?>
+
+                
             </div>
         </div>
         <!-- プロフィール -->
@@ -142,14 +167,14 @@
             <!-- 社長プロフィールのカード -->
             <div class="p-single-works-wrapper-profile__card p-single-works-wrapper-profile-card">
                 <div class="p-single-works-wrapper-profile-card__image">
-                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/president01.png" alt="代表 田中 太郎の写真 "width="320" height="210" loading="lazy" >
+                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/president01.png" alt="代表 田中 太郎の写真 " width="320" height="210" loading="lazy">
                 </div>
                 <div class="p-single-works-wrapper-profile-card__text">
                     <p class="p-single-works-wrapper-profile-card__text--company">株式会社 XXXXXX</p>
                 </div>
             </div>
             <div class="p-single-works-wrapper-profile__return">
-                <a href="#" class="c-return c-return--single-works">
+                <a href="/works/" class="c-return c-return--single-works">
                     一覧に戻る<span class="c-arrow01_right c-arrow01_right--large"></span>
                 </a>
             </div>
@@ -158,7 +183,7 @@
 
     <!-- 関連記事 Swiper -->
     <div class="p-single-works__swiper">
-    <?php get_template_part('template-parts/sections/section-related-swiper'); ?>
+        <?php get_template_part('template-parts/sections/section-related-swiper'); ?>
     </div>
 
 
