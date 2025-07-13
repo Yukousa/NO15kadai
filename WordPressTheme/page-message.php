@@ -16,21 +16,19 @@
   <!-- 本文１　pc２カラム -->
   <section class="p-message__container01 p-message-container01 l-inner">
     <article class="p-message-container01__body p-message-container01-body">
-      <h3 class="c-doubleHeadline">
-        丁寧な作業とコミュニケーションで
-        <span class="c-doubleHeadline--line2">ハイクオリティなコードを納品。</span>
-      </h3>
+      <h3 class="c-heading02--up">丁寧な作業とコミュニケーションで</h3>
+      <h3 class="c-heading02--left"><span>ハイクオリティなコードを納品。</span></h3>
       <p class="p-message-container01-body__text">ここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入る
       </p>
       <p class="p-message-container01-body__text">ここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入る</p>
     </article>
-    <div class="p-message-container01__profile p-message-container01-profile">
+    <aside class="p-message-container01__profile p-message-container01-profile">
       <div class="p-message-container01-profile__image">
         <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/president01.png" alt="会社代表画像" width="320" height="210" loading="lazy">
       </div>
       <p class="p-message-container01-profile__name--ja">田中 太郎</p>
       <p class="p-message-container01-profile__name--en">Tanaka Taro</p>
-    </div>
+    </aside>
   </section>
 
   <!-- スライダー -->
@@ -81,10 +79,8 @@
 
   <section class="p-message__container02 p-message-container02 l-inner">
     <article class="p-message-container02__body p-message-container02-body">
-      <h3 class="c-doubleHeadline">
-        丁寧な作業とコミュニケーションで
-        <span class="c-doubleHeadline--line2">ハイクオリティなコードを納品。</span>
-      </h3>
+      <h3 class="c-heading02--up">丁寧な作業とコミュニケーションで</h3>
+      <h3 class="c-heading02--left"><span>ハイクオリティなコードを納品。</span></h3>
       <p class="p-message-container02-body__text">ここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入る
       </p>
       <p class="p-message-container02-body__text">ここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入るここにテキスト入る</p>

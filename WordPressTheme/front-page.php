@@ -103,16 +103,21 @@
     <div class="p-front-content__wrapper p-front-content-wrapper">
       <div class="p-front-content-wrapper__block1 p-front-content-wrapper-block1">
         <article class="p-front-content-wrapper-block1__paragraph p-front-content-wrapper-block1--paragraph">
-          <p class="c-doubleHeadline">丁寧な作業とコミュニケーションで
-            <span class="c-doubleHeadline--line2">ハイクオリティなコードを納品。</span>
-          </p>
-          <p class="c-doubleHeadline">ここにテキストここにテキストここにテキスト<br>ここにテキストここにテキスト
-            <span class="c-doubleHeadline--line2">ここにテキストここにテキスト</span>
-          </p>
-          <p class="c-doubleHeadline">ここにテキストここにテキストここにテキスト<br>ここにテキストここにテキスト</p>
-          <p class="c-doubleHeadline">ここにテキストここにテキスト
-            <span class="c-doubleHeadline--line2">ここにテキスト</span>
-          </p>
+          <div class="p-front-content-wrapper-block1--paragraph__text">
+            <p class="c-heading02--up">丁寧な作業とコミュニケーションで</p>
+            <p class="c-heading02--left"><span>ハイクオリティなコードを納品。</span></p>
+          </div>
+          <div class="p-front-content-wrapper-block1--paragraph__text">
+            <p class="c-heading02--up">ここにテキストここにテキストここにテキスト<br>ここにテキストここにテキスト</p>
+            <p class="c-heading02--left"><span>ここにテキストここにテキスト</span></p>
+          </div>
+          <div class="p-front-content-wrapper-block1--paragraph__text">
+            <p class="c-heading02--up">ここにテキストここにテキストここにテキスト<br>ここにテキストここにテキスト</p>
+          </div>
+          <div class="p-front-content-wrapper-block1--paragraph__text">
+            <p class="c-heading02--up">ここにテキストここにテキスト</p>
+            <p class="c-heading02--left"><span>ここにテキスト</span></p>
+          </div>
         </article>
         <div class="p-front-content-wrapper-block1__image">
           <img src="<?php echo get_template_directory_uri(); ?>/assets/images/image20.png" alt="画像の説明" width="950" height="440" loading="lazy">
@@ -126,8 +131,8 @@
           </div>
           <!-- sp 非表示 -->
           <div class="p-front-content-wrapper-block1-message__text p-front-content-wrapper-block1-message-text u-desktop">
-            <p class="c-doubleHeadline">丁寧な作業とコミュニケーションで
-              <span class="c-doubleHeadline--line2">ハイクオリティなコードを納品。</span>
+            <p class="c-heading02--up">丁寧な作業とコミュニケーションで
+            <p class="c-heading02--left"><span>ハイクオリティなコードを納品。</span></p>
             </p>
             <div class="p-front-content-wrapper-block1-message-text__readMore">
               <a href="/message/" class="c-readMore">Read more<span class="c-arrow01_right"></span></a>
@@ -142,6 +147,10 @@
               </div>
               <!-- 背景の動く文字レイヤー -->
               <div class="p-front-content-wrapper-block1-message-inner__text">
+                <p>CODO</p>
+                <span class="p-front-content-wrapper-block1-message-inner__text-second">
+                  <img src="<?php echo get_template_directory_uri(); ?>/assets/images/assist.png" alt="assist" width="620" height="111" loading="lazy">
+                </span>
                 <p>CODO</p>
                 <span class="p-front-content-wrapper-block1-message-inner__text-second">
                   <img src="<?php echo get_template_directory_uri(); ?>/assets/images/assist.png" alt="assist" width="620" height="111" loading="lazy">
@@ -287,7 +296,7 @@
       </div>
       <!-- newsのリスト -->
       <div class="p-front-news-inner__content p-front-news-inner-content">
-        <div class="p-front-news-inner-content__list p-front-news-inner-content-list<?php echo $modifier; ?>">
+        <div class="p-front-news-inner-content__list p-front-news-inner-content-list">
           <?php
           $is_front = is_front_page();
 
@@ -320,9 +329,15 @@
                       </span>
                     <?php endif; ?>
                   </div>
-                  <h3 class="p-front-news-inner-content-list-link-post__title">
-                    <?php echo esc_html(get_the_title()); ?>
+
+
+                  <h3 class="p-front-news-inner-content-list-link-post__title p-front-news-inner-content-list-link-post-title">
+                    <p class="p-front-news-inner-content-list-link-post-title__text">
+                      <?php echo esc_html(get_the_title()); ?>
+                    </p>
                   </h3>
+
+
                 </a>
               </div>
             <?php

@@ -4,7 +4,7 @@
   <section class="p-archive-voice__mv p-archive-voice-mv">
     <div class="p-archive-voice-mv_inner p-archive-voice-mv-inner">
       <div class="p-archive-voice-mv-inner__title">
-        <h2 class="c-heading01 c-heading01--large03" data-en="voice">実績</h2>
+        <h2 class="c-heading01 c-heading01--large03" data-en="voice">お客様の声</h2>
       </div>
       <div class="p-archive-voice-mv__breadcrumbs">
         <?php get_template_part('template-parts/sections/section-breadcrumbs'); ?>
@@ -26,14 +26,14 @@
           <div class="c-archive-card c-archive-card--voice ">
             <a href="<?php the_permalink(); ?>">
               <?php if ($terms && !is_wp_error($terms)) : ?>
-                <span class="c-archive-card__label"><?php echo esc_html($terms[0]->name); ?></span>
+                <span class="c-archive-card__label c-archive-card__label--voice"><?php echo esc_html($terms[0]->name); ?></span>
               <?php endif; ?>
 
               <div class="c-archive-card__image">
                 <?php the_post_thumbnail('large'); ?>
               </div>
 
-              <div class="c-archive-card__summary">
+              <div class="c-archive-card__summary c-archive-card__summary--voice">
                 <?php if ($summary) : ?>
                   <p class="c-archive-card__summary-text"><?php echo esc_html($summary); ?></p>
                 <?php endif; ?>

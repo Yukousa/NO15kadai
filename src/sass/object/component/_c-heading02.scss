@@ -1,0 +1,111 @@
+@use "global" as *;
+
+/***************************************
+c-heading02 ２種類のアニメーションの見出し
+****************************************/
+
+.c-heading02--up {
+  font-weight: 900;
+  font-size: myrem(18);
+  line-height: myrem(30);
+  letter-spacing: 0.09em;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.3s, transform 0.3s;
+
+  @include mq(md) {
+    font-weight: 800;
+    font-size: myrem(34);
+    line-height: calc(54 / 34);
+    letter-spacing: 0.1em;
+    color: $black;
+  }
+}
+
+.c-heading02--up.is-inview {
+  animation: slideUp 0.8s ease-out forwards;
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+// .c-heading02--up + .c-heading02--up {
+//   margin-top: myrem(20);
+
+//   @include mq(md) {
+//     margin-top: myrem(48);
+//   }
+// }
+
+.c-heading02--left {
+  position: relative;
+  width: fit-content;
+  height: myrem(35);
+  font-weight: 900;
+  font-size: myrem(18);
+  line-height: 1;
+  letter-spacing: 0.1em;
+  color: $white;
+  padding: 0 myrem(6);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  opacity: 0;
+  margin-top: myrem(5);
+
+  @include mq(md) {
+    height: myrem(52);
+    font-weight: 800;
+    font-size: myrem(34);
+    line-height: calc(54 / 34);
+    padding: 0 myrem(18) 0 myrem(8);
+    margin-left: myrem(-8);
+  }
+}
+
+.c-heading02--left::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(to right, #000 0%, #929292 100%);
+  z-index: 0;
+  transition: width 0.8s ease-out;
+}
+
+.c-heading02--left span {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+}
+
+.c-heading02--left.is-inview {
+  opacity: 1;
+}
+
+.c-heading02--left.is-inview::before {
+  width: 100%;
+}
+
+@keyframes expandFromLeft {
+  0% {
+    transform: scaleX(0);
+    opacity: 0;
+    transform-origin: left;
+  }
+  100% {
+    transform: scaleX(1);
+    opacity: 1;
+    transform-origin: left;
+  }
+}

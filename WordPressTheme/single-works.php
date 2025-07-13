@@ -34,12 +34,14 @@
             if (!empty($heading_top) || !empty($heading_bottom) || !empty($content)) :
             ?>
                 <div class="p-single-works-wrapper-content__body p-single-works-wrapper-content-body">
-                    <h3 class="c-subtitle">
+                    <h3 class="c-heading02--up">
                         <?php if ($heading_top) : ?>
-                            <span class="c-subtitle--line1"><?php echo esc_html($heading_top); ?></span>
+                            <?php echo esc_html($heading_top); ?>
                         <?php endif; ?>
+                    </h3>
+                    <h3 class="c-heading02--left">
                         <?php if ($heading_bottom) : ?>
-                            <span class="c-subtitle--line2"><?php echo esc_html($heading_bottom); ?></span>
+                            <span><?php echo esc_html($heading_bottom); ?></span>
                         <?php endif; ?>
                     </h3>
 
@@ -63,7 +65,7 @@
                             </div>
                             <div class="p-single-works-wrapper-content-body-list__item p-single-works-wrapper-content-body-list-item">
                                 <dt class="p-single-works-wrapper-content-body-list-item__term">URL</dt>
-                                <dd class="p-single-works-wrapper-content-body-list-item__desc">
+                                <dd class="p-single-works-wrapper-content-body-list-item__desc c-url-link">
                                     <?php if (get_field('url')): ?>
                                         <a href="<?php echo esc_url(get_field('url')); ?>" target="_blank" rel="noopener">
                                             <?php echo esc_html(get_field('url')); ?>
@@ -92,12 +94,14 @@
             if (!empty($heading_top2) || !empty($heading_bottom2) || !empty($content2)) :
             ?>
                 <div class="p-single-works-wrapper-content__body p-single-works-wrapper-content-body p-single-works-wrapper-content__body--second">
-                    <h3 class="c-subtitle">
-                        <?php if ($heading_top2) : ?>
-                            <span class="c-subtitle--line1"><?php echo esc_html($heading_top2); ?></span>
+                    <h3 class="c-heading02--up">
+                        <?php if ($heading_top) : ?>
+                            <?php echo esc_html($heading_top); ?>
                         <?php endif; ?>
-                        <?php if ($heading_bottom2) : ?>
-                            <span class="c-subtitle--line2"><?php echo esc_html($heading_bottom2); ?></span>
+                    </h3>
+                    <h3 class="c-heading02--left">
+                        <?php if ($heading_bottom) : ?>
+                            <span><?php echo esc_html($heading_bottom); ?></span>
                         <?php endif; ?>
                     </h3>
                     <div class="p-single-works-wrapper-content-body__text">
@@ -135,31 +139,6 @@
                         </div>
                     <?php endif; ?>
                 </nav>
-                
-
-
-                <?php
-if (is_single()) {
-    global $post;
-    echo '<pre>現在の投稿ID: ' . $post->ID . '</pre>';
-    echo '<pre>投稿タイプ: ' . get_post_type($post) . '</pre>';
-
-    $prev_post = get_adjacent_post(false, '', true);
-    $next_post = get_adjacent_post(false, '', false);
-
-    echo '<pre>前の記事: ';
-    var_dump($prev_post);
-    echo '</pre>';
-
-    echo '<pre>次の記事: ';
-    var_dump($next_post);
-    echo '</pre>';
-} else {
-    echo '<pre>このページはシングル投稿ではありません</pre>';
-}
-?>
-
-                
             </div>
         </div>
         <!-- プロフィール -->

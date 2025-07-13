@@ -14,10 +14,16 @@
 }
 
 .p-header__inner {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 0;
+
+  // 初期状態：透明＆影なし（必要なら）
+  background-color: transparent;
+  opacity: 1;
+  box-shadow: none;
 
   @include mq(md) {
     padding-left: myrem(70);
@@ -26,15 +32,22 @@
   }
 }
 
+.p-header__inner.is-scrolled {
+  background-color: $white;
+  opacity: 1;
+  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
 // ロゴ
 .p-header-inner__siteTitle {
-  width: fit-content;
+  width: myrem(230);
   height: 100%;
   display: block;
   z-index: 10000;
   line-height: myrem(56);
 
   @include mq(md) {
+    width: myrem(255);
     line-height: myrem(80);
   }
 }
@@ -56,6 +69,7 @@
     text-align: left;
     font-size: myrem(32);
     letter-spacing: 0.1em;
+    padding-left: 0;
   }
 }
 
@@ -64,8 +78,6 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100vh;
   background-color: $white;
   opacity: 0;
   visibility: hidden;
@@ -88,7 +100,12 @@
 .p-header-inner__nav.is-active {
   visibility: visible;
   opacity: 1;
+  width: 100%;
+  height: 100vh;
+
 }
+
+
 
 .p-header-inner-nav-list {
   width: 100%;
@@ -142,6 +159,11 @@
   }
 }
 
+.p-header-inner-nav__link:hover {
+  color: darkred;
+  opacity: 1;
+}
+
 .p-header-inner-nav__ja {
   font-size: myrem(12);
   position: relative;
@@ -191,30 +213,121 @@
   align-items: center;
   padding: myrem(10);
   z-index: 10000;
+  border: 2px solid transparent;
+  border: none;
+  transition: all 0.3s ease;
+  transition: all 0.3 ease;
 
   @include mq(md) {
     width: myrem(170);
     height: myrem(80);
-    gap: myrem(4);
+    gap: myrem(10);
   }
 }
 
-.p-header-inner-btn__mail-image img {
+.p-header-inner-btn__mail-image {
   width: myrem(20);
   height: myrem(15);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   @include mq(md) {
-    width: myrem(27);
-    height: myrem(20);
-    margin-right: myrem(4);
+    width: myrem(26);
   }
+}
+
+.p-header-inner-btn__mail-image--white,
+.p-header-inner-btn__mail-image--black {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.3s ease; 
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  aspect-ratio: 20 / 15;
+  object-fit: cover;
+
+
+  @include mq(md) {
+    position: static;
+    top: auto;
+    left: auto;
+    transform: none;
+    display: block;
+    height: auto;
+    aspect-ratio: 27 / 20;
+  }
+}
+
+
+.p-header-inner-btn__mail-image--white {
+  opacity: 1;
+
+  @include mq(md) {
+    margin-left: myrem(25);
+  }
+  
+}
+
+.p-header-inner-btn__mail-image--black {
+  opacity: 0;
+
+}
+
+.p-header-inner-btn__mail:hover {
+  background: rgba($white, 0.8);
+    border: 2px solid $black;
+
+  @include mq(md) {
+    opacity: 1;
+
+  }
+}
+
+.p-header-inner-btn__mail:hover .p-header-inner-btn__mail-image--white {
+  opacity: 0;
+  transition: all 0.3 ease;
+}
+
+.p-header-inner-btn__mail:hover .p-header-inner-btn__mail-image--black {
+  opacity:1;
+  transition: all 0.3 ease;
+  background: rgba(255, 255, 255, 0.8);
+  z-index: 10;
+
+  @include mq(md) {
+    margin-left: myrem(-50);
+  }
+
+
 }
 
 .p-header-inner-btn__mailText {
   display: none;
+
   @include mq(md) {
     display: block;
     color: $white;
+    font-family: $font-sub;
+    font-size: myrem(16);
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+}
+
+.p-header-inner-btn__mail:hover .p-header-inner-btn__mailText {
+  display: none;
+
+  @include mq(md) {
+    display: block;
+    color: $black;
     font-family: $font-sub;
     font-size: myrem(16);
     font-weight: 600;

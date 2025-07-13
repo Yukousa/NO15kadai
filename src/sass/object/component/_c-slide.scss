@@ -8,8 +8,8 @@
   .c-slide-track {
     display: flex;
     width: max-content;
-    animation: slideX 60s linear infinite;
   }
+}
 
   .c-slide-item {
     width: auto !important;
@@ -28,6 +28,7 @@
 
   .c-slide-row1 {
     grid-template-columns: myrem(290) myrem(904);
+    animation: slideX 60s linear infinite;
 
     @include mq(md) {
       grid-template-columns: myrem(310) myrem(972);
@@ -37,6 +38,7 @@
   .c-slide-row2 {
     grid-template-columns: myrem(614) myrem(580);
     margin-top: myrem(18);
+    animation: slideX 25s linear infinite;
 
     @include mq(md) {
       grid-template-columns: myrem(622) myrem(620);
@@ -63,47 +65,63 @@
 
   .c-slide-image1,
   .c-slide-image3 {
-    aspect-ratio: 290 / 187;
+    // aspect-ratio: 290 / 187;
 
     @include mq(md) {
-      aspect-ratio: 310 / 200;
+      // aspect-ratio: 310 / 200;
     }
   }
 
   .c-slide-image2,
   .c-slide-image4 {
-    aspect-ratio: 580 / 187;
+    // aspect-ratio: 580 / 187;
 
     @include mq(md) {
-      aspect-ratio: 972 / 200;
+      // aspect-ratio: 972 / 200;
     }
   }
 
   .c-slide-image1 img {
     justify-self: end;
+    aspect-ratio: 290 / 187;
+
+    @include mq(md) {
+      aspect-ratio: 310 / 200;
+
+    }
+
   }
 
   .c-slide-image2 img {
     width: calc(580 / 904 * 100%);
+    aspect-ratio: 580 / 187;
+
 
     @include mq(md) {
       width: calc(620 / 972 * 100%);
+      aspect-ratio: 972 / 200;
       justify-self: start;
     }
   }
 
   .c-slide-image3 img {
     width: calc(290 / 614 * 100%);
+    aspect-ratio: 290 / 187;
     justify-self: end;
 
     @include mq(md) {
       width: calc(310 / 622 * 100%);
+      aspect-ratio: 310 / 200;
+
     }
   }
 
   .c-slide-image4 img {
-    // width: 100%; ← 継承されてるので不要でもOK
-  }
+    aspect-ratio: 580 / 187;
+    @include mq(md) {
+      aspect-ratio: 972 / 200;
+
+    }
 }
 
 @keyframes slideX {

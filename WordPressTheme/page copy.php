@@ -185,10 +185,10 @@
     <div class="p-front-content__wrapper p-front-content-wrapper">
         <div class="p-front-content-wrapper__block1 p-front-content-wrapper-block1">
             <article class="p-front-content-wrapper-block1__paragraph p-front-content-wrapper-block1--paragraph">
-                <p class="c-doubleHeadline">丁寧な作業とコミュニケーションで <span class="c-doubleHeadline--line2">ハイクオリティなコードを納品。</span></p>
-                <p class="c-doubleHeadline">ここにテキストここにテキストここにテキスト<br>ここにテキストここにテキスト <span class="c-doubleHeadline--line2">ここにテキストここにテキスト</span></p>
-                <p class="c-doubleHeadline">ここにテキストここにテキストここにテキスト<br>ここにテキストここにテキスト</p>
-                <p class="c-doubleHeadline">ここにテキストここにテキスト <span class="c-doubleHeadline--line2">ここにテキスト</span></p>
+                <p class="c-heading02--up">丁寧な作業とコミュニケーションで <span class="c-heading02--left">ハイクオリティなコードを納品。</span></p>
+                <p class="c-heading02--up">ここにテキストここにテキストここにテキスト<br>ここにテキストここにテキスト <span class="c-heading02--left">ここにテキストここにテキスト</span></p>
+                <p class="c-heading02--up">ここにテキストここにテキストここにテキスト<br>ここにテキストここにテキスト</p>
+                <p class="c-heading02--up">ここにテキストここにテキスト <span class="c-heading02--left">ここにテキスト</span></p>
             </article>
             <div class="p-front-content-wrapper-block1__image"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAB24AAALkAQAAAADvryhCAAAAAnRSTlMAAHaTzTgAAADCSURBVHja7cExAQAAAMKg9U9tDB+gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAeBuy+gABVzkImQAAAABJRU5ErkJggg==" alt="画像の説明" width="950" height="440" loading="lazy" data-src="http://15kadai.local/wp-content/themes/WordPressTheme/assets/images/image20.png" decoding="async" class="lazyload" data-eio-rwidth="1902" data-eio-rheight="740"><noscript><img src="http://15kadai.local/wp-content/themes/WordPressTheme/assets/images/image20.png" alt="画像の説明" width="950" height="440" loading="lazy" data-eio="l"></noscript></div>
             <article class="p-front-content-wrapper-block1__message p-front-content-wrapper-block1-message">
@@ -196,7 +196,7 @@
                         <h2 class="c-heading01" data-en="message">メッセージ</h2>
                     </a></div>
                 <div class="p-front-content-wrapper-block1-message__text p-front-content-wrapper-block1-message-text u-desktop">
-                    <p class="c-doubleHeadline">丁寧な作業とコミュニケーションで <span class="c-doubleHeadline--line2">ハイクオリティなコードを納品。</span></p>
+                    <p class="c-heading02--up">丁寧な作業とコミュニケーションで <span class="c-heading02--left">ハイクオリティなコードを納品。</span></p>
                     <div class="p-front-content-wrapper-block1-message-text__readMore"> <a href="/message/" class="c-readMore">Read more<span class="c-arrow01_right"></span></a></div>
                 </div>
                 <div class="p-front-content-wrapper-block1-message__inner p-front-content-wrapper-block1-message-inner">

@@ -34,12 +34,10 @@
 
 .p-service-mv-inner__image {
   width: 100%;
-  aspect-ratio: 375 / 230;
   margin-top: myrem(25);
 
   @include mq(md) {
     margin-top: myrem(30);
-    aspect-ratio: 1440 / 480;
     width: 100vw;
     margin: myrem(30) calc(50% - 50vw);
   }
@@ -48,10 +46,12 @@
 .p-service-mv-inner__image img {
   width: 100%;
   height: 100%;
+  aspect-ratio: 375 / 230;
   object-fit: cover;
   object-position: myrem(-165) center;
 
   @include mq(md) {
+    aspect-ratio: 1440 / 480;
     object-position: center;
   }
 }
@@ -544,11 +544,17 @@
 
 .p-service-faq-list__item-text {
   letter-spacing: 0.04em;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+
   @include mq(md) {
     font-size: myrem(20);
     letter-spacing: 0.1em;
   }
 }
+
 
 .p-service-faq-list__item-question {
   font-family: "Open Sans";
@@ -592,6 +598,13 @@
   @include mq(md) {
     padding: 0 0 0 myrem(62);
   }
+}
+
+.p-service-faq-list__item-answer p {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
 }
 
 .p-service-faq-list__item.is-open .p-service-faq-list__item-answer {

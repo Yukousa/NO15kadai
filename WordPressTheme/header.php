@@ -37,9 +37,10 @@
 
       <!-- メールボタン＋ハンバーガー -->
       <div class="p-header-inner__btn p-header-inner-btn">
-        <a href="#contact" class="p-header-inner-btn__mail">
+        <a href="/contact/" id="js-mail-link" class="p-header-inner-btn__mail">
           <div class="p-header-inner-btn__mail-image">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/contact.png" alt="お問合せメールのアイコン" width="27" height="20" loading="lazy">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/contact.png" alt="お問合せメールのアイコン" width="27" height="20" class="p-header-inner-btn__mail-image--white">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/contact-black.png" alt="お問合せメールのアイコン" width="27" height="20" loading="eager" class="p-header-inner-btn__mail-image--black">
           </div>
           <span class="p-header-inner-btn__mailText u-desktop">contact</span>
         </a>

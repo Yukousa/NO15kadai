@@ -43,7 +43,7 @@
 
   @include mq(md) {
     padding: 0;
-    margin-top: myrem(73);
+    margin-top: myrem(70);
     width: calc(950 / 1300 * 100%);
   }
 }
@@ -68,7 +68,7 @@
     width: myrem(320);
     margin-top: myrem(70);
     position: sticky;
-    top: myrem(20);
+    top: myrem(100);
     align-self: flex-start;
   }
 }

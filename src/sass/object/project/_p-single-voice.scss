@@ -30,19 +30,22 @@
 .p-single-voice-inner__eye-catch {
   width: 100vw;
   margin: myrem(0) calc(50% - 50vw) 0;
-  aspect-ratio: 375 / 230;
 
   @include mq(md) {
     width: 100vw;
     margin-top: myrem(0);
-    aspect-ratio: 1440 / 480;
   }
 }
 
 .p-single-voice-inner__eye-catch img {
   width: 100%;
   height: 100%;
+  aspect-ratio: 375 / 230;
   object-fit: cover;
+
+  @include mq(md) {
+    aspect-ratio: 1440 / 480;
+  }
 }
 
 .p-single-voice__wrapper {
@@ -86,29 +89,30 @@
 
 .p-single-voice-content__image--01 {
   width: calc(282 / 375 * 100%);
-  aspect-ratio: 282 / 182;
 
   @include mq(md) {
     width: myrem(462);
-    aspect-ratio: 462 / 298;
   }
 }
 .p-single-voice-content__image--01 img {
   width: 100%;
   height: 100%;
+  aspect-ratio: 282 / 182;
   object-fit: cover;
+
+  @include mq(md) {
+    aspect-ratio: 462 / 298;
+  }
 }
 
 .p-single-voice-content__image--02 {
   width: calc(282 / 375 * 100%);
-  aspect-ratio: 282 / 182;
   margin-top: myrem(20);
   margin-left: auto;
   margin-right: 0;
 
   @include mq(md) {
     width: myrem(462);
-    aspect-ratio: 462 / 298;
     margin-top: myrem(95);
   }
 }
@@ -116,22 +120,12 @@
 .p-single-voice-content__image--02 img {
   width: 100%;
   height: 100%;
+  aspect-ratio: 282 / 182;
   object-fit: cover;
+
+@include mq(md) {
+  aspect-ratio: 462 / 298;
 }
-
-.p-profile-container__profile {
-  margin-top: myrem(65);
-  padding-bottom: myrem(60);
-
-  @include mq(md) {
-    width: calc(320 / 1300 * 100%);
-    padding: 0;
-    padding-bottom: myrem(20);
-    margin-top: myrem(5);
-
-    position: sticky;
-    top: myrem(20);
-  }
 }
 
 .p-single-voice__profile {
@@ -145,23 +139,26 @@
     padding-right: 0;
     padding-bottom: myrem(60);
     position: sticky;
-    top: myrem(20);
+    top: myrem(100);
   }
 }
 
 .p-single-voice-profile__image {
   width: 100%;
-  aspect-ratio: 335 / 216;
 
   @include mq(md) {
-    aspect-ratio: 320 / 210;
   }
 }
 
 .p-single-voice-profile__image img {
   width: 100%;
   height: 100%;
+  aspect-ratio: 335 / 216;
   object-fit: cover;
+
+  @include mq(md) {
+    aspect-ratio: 320 / 210;
+  }
 }
 
 .p-single-voice-profile__text {

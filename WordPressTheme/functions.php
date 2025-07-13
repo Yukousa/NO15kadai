@@ -215,3 +215,116 @@ function register_news_category_taxonomy() {
 	]);
 	}
 add_action('init', 'register_news_category_taxonomy');
+
+/**
+ * カスタム投稿タイプの登録
+ */
+function register_custom_post_types() {
+	// news投稿タイプ
+	register_post_type('news', [
+		'labels' => [
+			'name' => 'お知らせ',
+			'singular_name' => 'お知らせ',
+			'add_new' => '新規追加',
+			'add_new_item' => '新しいお知らせを追加',
+			'edit_item' => 'お知らせを編集',
+			'new_item' => '新しいお知らせ',
+			'view_item' => 'お知らせを表示',
+			'search_items' => 'お知らせを検索',
+			'not_found' => 'お知らせが見つかりませんでした',
+			'not_found_in_trash' => 'ゴミ箱にお知らせが見つかりませんでした',
+		],
+		'public' => true,
+		'has_archive' => true,
+		'menu_position' => 5,
+		'menu_icon' => 'dashicons-megaphone',
+		'supports' => ['title', 'editor', 'thumbnail', 'excerpt'],
+		'rewrite' => [
+			'slug' => 'news',
+			'with_front' => false,
+		],
+	]);
+
+	// voice投稿タイプ
+	register_post_type('voice', [
+		'labels' => [
+			'name' => 'お客様の声',
+			'singular_name' => 'お客様の声',
+			'add_new' => '新規追加',
+			'add_new_item' => '新しいお客様の声を追加',
+			'edit_item' => 'お客様の声を編集',
+			'new_item' => '新しいお客様の声',
+			'view_item' => 'お客様の声を表示',
+			'search_items' => 'お客様の声を検索',
+			'not_found' => 'お客様の声が見つかりませんでした',
+			'not_found_in_trash' => 'ゴミ箱にお客様の声が見つかりませんでした',
+		],
+		'public' => true,
+		'has_archive' => true,
+		'menu_position' => 6,
+		'menu_icon' => 'dashicons-format-quote',
+		'supports' => ['title', 'editor', 'thumbnail', 'excerpt'],
+		'rewrite' => [
+			'slug' => 'voice',
+			'with_front' => false,
+		],
+	]);
+
+	// works投稿タイプ
+	register_post_type('works', [
+		'labels' => [
+			'name' => '実績',
+			'singular_name' => '実績',
+			'add_new' => '新規追加',
+			'add_new_item' => '新しい実績を追加',
+			'edit_item' => '実績を編集',
+			'new_item' => '新しい実績',
+			'view_item' => '実績を表示',
+			'search_items' => '実績を検索',
+			'not_found' => '実績が見つかりませんでした',
+			'not_found_in_trash' => 'ゴミ箱に実績が見つかりませんでした',
+		],
+		'public' => true,
+		'has_archive' => true,
+		'menu_position' => 7,
+		'menu_icon' => 'dashicons-portfolio',
+		'supports' => ['title', 'editor', 'thumbnail', 'excerpt'],
+		'rewrite' => [
+			'slug' => 'works',
+			'with_front' => false,
+		],
+	]);
+}
+add_action('init', 'register_custom_post_types');
+
+/**
+ * カスタムタクソノミーの登録
+ */
+function register_custom_taxonomies() {
+	// voiceカテゴリー
+	register_taxonomy('voice_category', 'voice', [
+		'label' => 'voiceカテゴリー',
+		'hierarchical' => true,
+		'public' => true,
+		'show_ui' => true,
+		'show_admin_column' => true,
+		'rewrite' => [
+			'slug' => 'voice/category',
+			'with_front' => false,
+		],
+	]);
+
+	// worksカテゴリー
+	register_taxonomy('works_category', 'works', [
+		'label' => 'worksカテゴリー',
+		'hierarchical' => true,
+		'public' => true,
+		'show_ui' => true,
+		'show_admin_column' => true,
+		'rewrite' => [
+			'slug' => 'works/category',
+			'with_front' => false,
+		],
+	]);
+}
+add_action('init', 'register_custom_taxonomies');

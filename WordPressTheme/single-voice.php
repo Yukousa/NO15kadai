@@ -37,12 +37,14 @@
                     ?>
                     <section class="c-single-content c-single-content--voice">
                         <div class="c-single-content__wrapper">
-                            <h2 class="c-subtitle">
+                            <h2 class="c-heading02--up">
                                 <?php if ($heading_top) : ?>
-                                    <span class="c-subtitle--line1"><?php echo esc_html($heading_top); ?></span>
+                                    <?php echo esc_html($heading_top); ?>
                                 <?php endif; ?>
+                            </h2>
+                            <h2 class="c-heading02--left">
                                 <?php if ($heading_bottom) : ?>
-                                    <span class="c-subtitle--line2 c-heading02"><?php echo esc_html($heading_bottom); ?></span>
+                                    <span><?php echo esc_html($heading_bottom); ?></span>
                                 <?php endif; ?>
                             </h2>
                             <?php if ($content) : ?>

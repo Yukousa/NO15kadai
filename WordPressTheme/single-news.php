@@ -66,14 +66,6 @@
                         ?>
                         <div class="c-single-content c-single-content--news">
                             <div class="c-single-content__wrapper">
-                                <h2 class="c-subtitle">
-                                    <?php if ($heading_top) : ?>
-                                        <span class="c-subtitle--line1"><?php echo esc_html($heading_top); ?></span>
-                                    <?php endif; ?>
-                                    <?php if ($heading_bottom) : ?>
-                                        <span class="c-subtitle--line2 c-heading02"><?php echo esc_html($heading_bottom); ?></span>
-                                    <?php endif; ?>
-                                </h2>
                                 <?php if ($content) : ?>
                                     <div class="c-single-content__post c-single-content__post--news">
                                         <?php echo nl2br(esc_html($content)); ?> </div>

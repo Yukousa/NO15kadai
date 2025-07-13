@@ -96,20 +96,25 @@ jQuery(function ($) {
   }
 
   /*****************************
-   Swiper 初期化 ← DOMReady内に統合
+   Swiper 初期化
   *****************************/
-  if (document.querySelector(".swiper")) {
-    new Swiper(".swiper", {
-      loop: true,
-    });
-  }
 
   if (document.querySelector(".js-front-fv-swiper")) {
     new Swiper(".p-front-fv-swiper", {
       loop: true,
-      autoplay: { delay: 3000, disableOnInteraction: false },
-      effect: "slide",
-      speed: 1000,
+      effect: "fade", // フェード切り替え
+      centeredSlides: true,
+      slidesPerView: "auto",
+      autoplay: {
+        delay: 4000, // 4秒後に次のスライドへ
+        disableOnInteraction: false, // ユーザーが操作しても自動再生を継続
+      },
+      speed: 2000, // 2秒かけてフェード
+      // ページネーション
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
     });
   }
 
@@ -145,15 +150,15 @@ jQuery(function ($) {
       speed: 500,
       allowTouchMove: false,
       spaceBetween: 20,
-      autoplay: { delay: 3000, disableOnInteraction: true },
+      // autoplay: { delay: 3000, disableOnInteraction: true },
       breakpoints: {
         0: {
-          spaceBetween: 20,
+          spaceBetween: 0,
           centeredSlides: false,
-          slidesPerView: 1.1,
+          slidesPerView: "auto",
         },
         768: {
-          slidesPerView: 3.85,
+          slidesPerView: "auto",
           centeredSlides: false,
           spaceBetween: 0,
         },
@@ -203,4 +208,128 @@ jQuery(function ($) {
   var $lines = $(".p-frontService-bgText");
   var shuffled = $lines.toArray().sort(() => Math.random() - 0.5);
   $(shuffled.slice(0, 2)).addClass("is-reverse");
+
+  /*****************************
+ 固定ヘッダーを超えたら背景色追加 
+*****************************/
+  const header = $(".p-header__inner");
+  const headerHeight = header.outerHeight();
+
+  $(window)
+    .on("scroll", function () {
+      if ($(this).scrollTop() > headerHeight) {
+        header.addClass("is-scrolled");
+      } else {
+        header.removeClass("is-scrolled");
+      }
+    })
+    .trigger("scroll"); // 初期状態でも判定
+
+  /*****************************
+見出しのアニメーション
+*****************************/
+  const $targets = $(".c-heading02--up, .c-heading02--left");
+
+  const observer = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          $(entry.target).addClass("is-inview");
+        }
+      });
+    },
+    {
+      threshold: 0.1,
+    }
+  );
+
+  $targets.each(function () {
+    observer.observe(this);
+  });
+
+  /*****************************
+serviceのカウントアニメーション
+*****************************/
+
+  // カウントダウン（お見積もり）
+  const $estimateNum = $(".p-card-price--estimate .js-count-num");
+  let count = 100;
+  const countdown = setInterval(() => {
+    $estimateNum.text(count);
+    count--;
+    if (count < 0) {
+      clearInterval(countdown);
+      $estimateNum.text("0");
+    }
+  }, 30);
+
+  // カウントアップ（基本料金、アニメーション、レスポンシブ、実装工期）
+  const countUpTargets = [
+    {
+      selector: ".p-card-price--basicFee .p-card-price-body__text--top",
+      to: 80000,
+    },
+    {
+      selector: ".p-card-price--basicFee .p-card-price-body__text--bottom",
+      to: 20000,
+    },
+    {
+      selector: ".p-card-price--animation .p-card-price-body__text--animation",
+      to: 30000,
+    },
+    {
+      selector:
+        ".p-card-price--responsive .p-card-price-body__text--responsive",
+      to: 25000,
+    },
+    {
+      selector: ".p-card-price--deadline .p-card-price-body__text",
+      to: 3,
+    },
+  ];
+
+  function animateCountUp($el, toValue, duration = 800, delay = 0) {
+    setTimeout(() => {
+      const isNumber = Number.isInteger(toValue);
+      $({ countNum: 0 }).animate(
+        { countNum: toValue },
+        {
+          duration: duration,
+          easing: "swing",
+          step: function () {
+            const val = isNumber
+              ? Math.floor(this.countNum).toLocaleString()
+              : this.countNum.toFixed(0);
+            $el.text(val);
+          },
+          complete: function () {
+            const val = isNumber
+              ? Math.floor(toValue).toLocaleString()
+              : toValue.toFixed(0);
+            $el.text(val);
+          },
+        }
+      );
+    }, delay);
+  }
+
+  // 実行
+  countUpTargets.forEach((item, index) => {
+    const $target = $(item.selector);
+    animateCountUp($target, item.to, 800, index * 300);
+  });
+
+/*****************************
+ヘッダーメニュー　contactの遷移先のpc spの出し分け
+*****************************/
+
+const $link = $('#js-mail-link');
+  const isPC = $(window).width() >= 768;
+  const isTopPage = location.pathname === '/' || location.pathname === '/index.html';
+
+  if (isPC && isTopPage) {
+    $link.attr('href', '#contact');
+  } else {
+    $link.attr('href', '/contact/');
+  }
 });

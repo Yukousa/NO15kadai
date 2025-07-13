@@ -165,11 +165,17 @@
   align-items: center;
   flex-direction: row-reverse;
 
+
   @include mq(md) {
     flex-direction: column-reverse;
     align-items: flex-start;
   }
 }
+
+.p-footer-nav__link:hover {
+  color: darkred;
+}
+
 
 .p-footer-nav__en {
   width: myrem(112);

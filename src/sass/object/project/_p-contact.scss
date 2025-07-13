@@ -215,6 +215,7 @@
 .p-formTextarea textarea:focus {
   outline: none; /* デフォルトの黄色い枠を消す */
   outline: 2px solid $black;
+  cursor: pointer;
 }
 
 .p-formSelect-wrap {
@@ -240,6 +241,7 @@
   border-radius: myrem(4);
   border: none;
   background-color: $black_base;
+  cursor: pointer;
 }
 
 .p-formSelect-wrap .select-arrow {
@@ -371,8 +373,8 @@
   width: myrem(8);
   height: myrem(13);
   margin-top: myrem(-8);
-  border-right: 3px solid blue;
-  border-bottom: 3px solid blue;
+  border-right: 3px solid $black;
+  border-bottom: 3px solid $black;
   opacity: 0;
   transform: rotate(45deg);
 }
@@ -391,6 +393,7 @@
   border-radius: 0;
   border: none;
   resize: none;
+  cursor: pointer;
 
   @include mq(md) {
     width: 100%;
@@ -411,22 +414,27 @@
 }
 
 .p-formPrivacy p {
+
   @include mq(md) {
     width: fit-content;
   }
 }
 
+.p-formPrivacy p:first-child {
+}
+
 .p-formPrivacy__container {
   width: 100%;
+  height: myrem(280);
   border: 1px solid #d8d8d8;
   border-radius: 4px;
   margin-top: myrem(10);
 }
 
 .p-formPrivacy-container_inner {
-  margin-top: myrem(20);
+  margin-top: myrem(0);
   width: 100%;
-  max-height: myrem(280);
+  height: myrem(280);
   margin-inline: auto;
 }
 
@@ -454,8 +462,8 @@
 
 .p-formPrivacy-container-inner__text {
   overflow-y: scroll;
-  margin: myrem(25) myrem(10) myrem(15) myrem(20);
-  max-height: myrem(240);
+  margin: myrem(0) myrem(10) myrem(15) myrem(20);
+  max-height: myrem(270);
 
   @include mq(md) {
     margin-left: myrem(16);
@@ -471,6 +479,10 @@
   @include mq(md) {
     padding-right: myrem(30);
   }
+}
+
+.p-formPrivacy-container-inner__text p:first-child {
+  margin-top: myrem(25);
 }
 
 .p-formPrivacy-container-inner__text p:not(:first-child) {

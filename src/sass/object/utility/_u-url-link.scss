@@ -1,0 +1,7 @@
+@use "global" as *;
+
+.c-url-link {
+    text-decoration: underline darkred;
+    text-underline-offset: myrem(5);
+  }
+  

@@ -78,12 +78,13 @@
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/image16.png" alt="priceイメージイラスト" width="466" height="215" loading="lazy">
                         </div>
                     </div>
-                    <p class="p-card-price__note">※コーポレートサイト00ページあたり</p>
+                    <p class="p-card-price__note">※コーポレートサイト12ページあたり</p>
                 </div>
             </div>
-        </div></section>
+        </div>
+    </section>
 
-    <section class="p-service__faq p-service-faq l-inner">
+    <section id="faq" class="p-service__faq p-service-faq l-inner">
         <div class="p-service-faq__title">
             <h3 class="c-heading01 c-heading01--large02" data-en="faq">よくあるご質問</h3>
         </div>
@@ -99,7 +100,8 @@
                 <div class="p-service-faq-list__item <?php echo $is_open . ' ' . $is_hidden; ?>">
                     <div class="p-service-faq-list__item-question js-faq-toggle">
                         <span class="p-service-faq-list__item-label">Q<?php echo $index; ?></span>
-                        <span class="p-service-faq-list__item-text"><?php echo esc_html($faq['question']); ?></span> <span class="p-service-faq-list__item-icon"></span>
+                        <span class="p-service-faq-list__item-text"><?php echo esc_html($faq['question']); ?></span>
+                        <span class="p-service-faq-list__item-icon"></span>
                     </div>
                     <div class="p-service-faq-list__item-answer">
                         <p><?php echo nl2br(esc_html($faq['answer'])); ?></p>

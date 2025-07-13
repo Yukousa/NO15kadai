@@ -9,42 +9,80 @@
 }
 
 .wp-pagenavi .page {
-  display: inline-block;
-  text-align: center;
   width: myrem(40);
   height: myrem(40);
-  line-height: myrem(40);
   border: solid 1px $black;
   transition: 0.3s ease-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .wp-pagenavi .current {
-  display: inline-block;
-  text-align: center;
   width: myrem(40);
   height: myrem(40);
-  line-height: myrem(40);
   color: $white;
   background: $black;
   border: solid 1px $black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
 }
 .wp-pagenavi .previouspostslink,
 .wp-pagenavi .nextpostslink,
 .wp-pagenavi .extend,
 .wp-pagenavi .first,
 .wp-pagenavi .last {
-  display: inline-block;
-  text-align: center;
   width: myrem(40);
   height: myrem(40);
-  line-height: myrem(40);
   font-weight: bold;
   border: solid 2px $black;
   transition: 0.3s ease-out;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
 }
 
 .wp-pagenavi .disabled {
   color: #ccc;
   border-color: #ccc;
   pointer-events: none;
+}
+
+.wp-pagenavi .page:hover,
+.wp-pagenavi .previouspostslink:hover,
+.wp-pagenavi .nextpostslink:hover,
+.wp-pagenavi .first:hover,
+.wp-pagenavi .last:hover {
+  transform: scale(1.1);
+}
+
+.wp-pagenavi .page,
+.wp-pagenavi .previouspostslink,
+.wp-pagenavi .nextpostslink,
+.wp-pagenavi .first,
+.wp-pagenavi .last {
+  width: myrem(40);
+  height: myrem(40);
+  font-weight: bold;
+  border: solid 1px $black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease; // ← 追加：背景・文字色・拡大の変化を滑らかに
+}
+
+.wp-pagenavi .page:hover,
+.wp-pagenavi .previouspostslink:hover,
+.wp-pagenavi .nextpostslink:hover,
+.wp-pagenavi .first:hover,
+.wp-pagenavi .last:hover {
+  transform: scale(1.1);
+  background-color: $black;
+  color: $white;
+  opacity: 1;
 }
