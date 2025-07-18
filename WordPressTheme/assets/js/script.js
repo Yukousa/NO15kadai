@@ -18,9 +18,9 @@ jQuery(function ($) {
     return false;
   });
 
-  /*****************************
+/*****************************
    スムーススクロール
-  *****************************/
+*****************************/
   $(document).on("click", 'a[href*="#"]', function () {
     let time = 400;
     let header = $("header").innerHeight();
@@ -31,9 +31,9 @@ jQuery(function ($) {
     return false;
   });
 
-  /*****************************
+/*****************************
    ハンバーガーボタン
-  *****************************/
+*****************************/
   $(".js-hamburger").on("click", function () {
     $(this).toggleClass("is-active");
     $(".js-drawer").toggleClass("is-active");
@@ -46,9 +46,9 @@ jQuery(function ($) {
     $("body").removeClass("is-drawer-open");
   });
 
-  /*****************************
+/*****************************
    FVアニメーション
-  *****************************/
+*****************************/
   const $typingParts = $(".typing-part");
   let partIndex = 0;
   let charIndex = 0;
@@ -95,9 +95,9 @@ jQuery(function ($) {
     typeNextChar();
   }
 
-  /*****************************
+/*****************************
    Swiper 初期化
-  *****************************/
+*****************************/
 
   if (document.querySelector(".js-front-fv-swiper")) {
     new Swiper(".p-front-fv-swiper", {
@@ -124,7 +124,6 @@ jQuery(function ($) {
       speed: 500,
       allowTouchMove: false,
       spaceBetween: 20,
-      autoplay: { delay: 3000, disableOnInteraction: true },
       breakpoints: {
         0: {
           spaceBetween: 20,
@@ -170,9 +169,9 @@ jQuery(function ($) {
     });
   }
 
-  /*****************************
+/*****************************
    service faq アコーディオン
-  *****************************/
+*****************************/
   $(".js-faq-toggle").on("click", function () {
     const $item = $(this).closest(".p-service-faq-list__item");
     const $answer = $item.find(".p-service-faq-list__item-answer");
@@ -202,30 +201,34 @@ jQuery(function ($) {
     $(this).fadeOut();
   });
 
-  /*****************************
+/*****************************
    フロントページの流れるテキスト
-  *****************************/
+*****************************/
   var $lines = $(".p-frontService-bgText");
   var shuffled = $lines.toArray().sort(() => Math.random() - 0.5);
   $(shuffled.slice(0, 2)).addClass("is-reverse");
 
-  /*****************************
- 固定ヘッダーを超えたら背景色追加 
+/*****************************
+ FVを超えたら背景色追加 
 *****************************/
-  const header = $(".p-header__inner");
-  const headerHeight = header.outerHeight();
+// ファーストビュー要素の取得
+const fv = $(".p-front-fv"); // fv部分のクラス名を適宜変更
+const header = $(".p-header__inner");
 
-  $(window)
-    .on("scroll", function () {
-      if ($(this).scrollTop() > headerHeight) {
-        header.addClass("is-scrolled");
-      } else {
-        header.removeClass("is-scrolled");
-      }
-    })
-    .trigger("scroll"); // 初期状態でも判定
+$(window)
+  .on("scroll", function () {
+    const fvHeight = fv.outerHeight(); // fvの高さを取得
+    const scrollTop = $(this).scrollTop();
 
-  /*****************************
+    if (scrollTop > fvHeight) {
+      header.addClass("is-scrolled");
+    } else {
+      header.removeClass("is-scrolled");
+    }
+  })
+  .trigger("scroll"); // 初期状態でも判定
+
+/*****************************
 見出しのアニメーション
 *****************************/
   const $targets = $(".c-heading02--up, .c-heading02--left");
@@ -247,7 +250,7 @@ jQuery(function ($) {
     observer.observe(this);
   });
 
-  /*****************************
+/*****************************
 serviceのカウントアニメーション
 *****************************/
 
@@ -263,7 +266,7 @@ serviceのカウントアニメーション
     }
   }, 30);
 
-  // カウントアップ（基本料金、アニメーション、レスポンシブ、実装工期）
+// カウントアップ（基本料金、アニメーション、レスポンシブ、実装工期）
   const countUpTargets = [
     {
       selector: ".p-card-price--basicFee .p-card-price-body__text--top",
@@ -313,23 +316,23 @@ serviceのカウントアニメーション
     }, delay);
   }
 
-  // 実行
+// 実行
   countUpTargets.forEach((item, index) => {
     const $target = $(item.selector);
     animateCountUp($target, item.to, 800, index * 300);
   });
 
 /*****************************
-ヘッダーメニュー　contactの遷移先のpc spの出し分け
+ ヘッダーメールリンクの遷移先をデバイス幅によって切り替え
+ PC：#contact（ページ内遷移） / SP：/contact/（ページ遷移）
 *****************************/
 
-const $link = $('#js-mail-link');
+  const $link = $("#js-mail-link");
   const isPC = $(window).width() >= 768;
-  const isTopPage = location.pathname === '/' || location.pathname === '/index.html';
 
-  if (isPC && isTopPage) {
-    $link.attr('href', '#contact');
+  if (isPC) {
+    $link.attr("href", "#contact");
   } else {
-    $link.attr('href', '/contact/');
+    $link.attr("href", "/contact/");
   }
 });

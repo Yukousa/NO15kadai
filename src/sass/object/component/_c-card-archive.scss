@@ -13,9 +13,19 @@
   padding-bottom: myrem(45);
 }
 
+
+.c-archive-card--voice a {
+opacity: 1;
+}
+
 .c-archive-card--works {
   margin-bottom: myrem(26); 
 }
+
+.c-archive-card--works a {
+  opacity: 1;
+}
+
 
 .c-archive-card__label {
   position: absolute;
@@ -28,10 +38,16 @@
   font-size: myrem(14);
   line-height: calc(28 / 14);
   letter-spacing: 0.1em;
-  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200000;
+
 }
 
 .c-archive-card__label--works {
+  z-index: 20000;
+
   @include mq(md) {
     width: myrem(115);
     height: myrem(32);
@@ -54,6 +70,7 @@
 .c-archive-card__image {
   width: 100%;
   z-index: 1;
+  overflow: hidden;
 }
 
 .c-archive-card__image img {
@@ -62,7 +79,16 @@
   aspect-ratio: 334 / 226;
   object-fit: cover;
   display: block;
+  transition: transform 0.4s ease;
 }
+
+.c-archive-card__image:hover img {
+  transform: scale(1.1);
+  transition: 1s all;
+  opacity: .6;
+
+}
+
 
 .c-archive-card__summary {
   position: absolute;

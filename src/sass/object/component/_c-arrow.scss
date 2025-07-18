@@ -11,6 +11,7 @@
   align-items: center;
   position: relative;
   aspect-ratio: 1 / 1;
+  transition: transform 0.4s ease;
 
   @include mq(md) {
     width: myrem(42);
@@ -99,6 +100,7 @@
   justify-content: center;
   align-items: center;
   aspect-ratio: 1 / 1;
+  transition: transform 0.4s ease;
 
   @include mq(md) {
     width: myrem(60);
@@ -116,6 +118,18 @@
     }
   }
 }
+
+.c-arrow-svg:hover {
+  background-color: $black;
+  svg {
+    stroke: $white;
+  }
+  transform: scale(1.1);
+
+}
+
+
+
 
 .c-arrow02_left,
 .c-arrow02_right {
@@ -145,8 +159,20 @@
 
 .c-arrow02_left:hover {
   transform: scale(1.1);
+  background: $black;
+
 }
 
 .c-arrow02_right:hover {
   transform: scale(1.1);
+  background: $black;
+
+}
+
+.c-arrow02_left:hover,
+.c-arrow02_right:hover {
+  background: $black;  // ← 背景黒
+  color: $white;       // ← テキスト白（反転）
+  transform: scale(1.1);
+  // border-color は変えない → 黒のまま
 }

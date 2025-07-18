@@ -4,7 +4,7 @@
 
 .c-related-swiper {
   position: relative;
-  
+
   @include mq(md) {
     margin-left: myrem(-34);
   }
@@ -27,6 +27,11 @@
     margin-right: myrem(50);
   }
 }
+
+.c-related-swiper .swiper-slide a {
+opacity: 1;
+}
+ 
 
 .c-related-swiper__card {
   width: 100%;
@@ -51,6 +56,7 @@
   position: absolute;
   top: 0;
   right: 0;
+  z-index: 200000;
 
   @include mq(md) {
     height: myrem(30);
@@ -62,9 +68,6 @@
   width: 100%;
   overflow: hidden;
 
-  @include mq(md) {
-    // padding-left: myrem(21);
-  }
 }
 
 .c-related-swiper-card__image img {
@@ -72,6 +75,7 @@
   height: 100%;
   aspect-ratio: 257 / 173;
   object-fit: cover;
+  transition: transform 0.4s ease;
 
   @include mq(md) {
     aspect-ratio: 340 / 230;
@@ -81,6 +85,7 @@
 .c-related-swiper-card__image:hover img {
   transform: scale(1.1);
   transition: 1s all;
+  opacity: .6;
 }
 
 .c-related-swiper-card__summary {
@@ -112,7 +117,7 @@
   @include mq(md) {
     max-height: 100px;
     padding-top: myrem(15);
-    line-height: calc( 24 / 14 ); 
+    line-height: calc(24 / 14);
   }
 }
 
@@ -154,10 +159,3 @@
   right: myrem(22);
 }
 
-.c-related-swiper-nav__prev:hover {
-  transform: scale(1.1);
-}
-
-.c-related-swiper-nav__next:hover {
-  transform: scale(1.1);
-}

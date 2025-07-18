@@ -37,15 +37,15 @@
 
       <!-- メールボタン＋ハンバーガー -->
       <div class="p-header-inner__btn p-header-inner-btn">
-        <a href="/contact/" id="js-mail-link" class="p-header-inner-btn__mail">
-          <div class="p-header-inner-btn__mail-image">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/contact.png" alt="お問合せメールのアイコン" width="27" height="20" class="p-header-inner-btn__mail-image--white">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/contact-black.png" alt="お問合せメールのアイコン" width="27" height="20" loading="eager" class="p-header-inner-btn__mail-image--black">
-          </div>
-          <span class="p-header-inner-btn__mailText u-desktop">contact</span>
+        <a href="#contact" id="js-mail-link" class="p-header-inner-btn__mail">
+          <span class="p-header-inner-btn__mail-image">
+            <svg width="22" height="17" viewBox="0 0 22 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="2" y="1" width="18.5568" height="13.2273" stroke="currentColor" stroke-width="2" />
+              <path d="M1.38062 1.38086L11.2783 8.61381L21.1761 1.38086" stroke="currentColor" stroke-width="2" vector-effect="non-scaling-stroke" />
+            </svg>
+          </span>
+          contact
         </a>
-
-        <!-- ハンバーガー（SPのみ） -->
         <button class="p-header-inner-btn__hamburger js-hamburger u-mobile" aria-label="グローバルメニューを開く">
           <span></span>
           <span></span>

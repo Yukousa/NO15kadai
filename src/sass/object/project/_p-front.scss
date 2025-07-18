@@ -329,6 +329,11 @@
   }
 }
 
+.p-front-works-swiper .swiper-slide a {
+opacity: 1;
+}
+
+
 .p-front-works-swiper__card {
   width: 100%;
   max-height: 300px;
@@ -356,6 +361,7 @@
   padding: 0 myrem(6);
   top: 0;
   right: 0;
+  z-index: 200000;
 
   @include mq(md) {
     height: myrem(30);
@@ -381,6 +387,7 @@
   height: 100%;
   aspect-ratio: 297 / 200;
   object-fit: cover;
+  transition: transform 0.4s ease;
 
   @include mq(md) {
     aspect-ratio: 348 / 236;
@@ -390,6 +397,7 @@
 .p-front-works-swiper-card__image:hover img {
   transform: scale(1.1);
   transition: 1s all;
+  opacity: .6;
 }
 
 .p-front-works-swiper-card__summary {
@@ -915,6 +923,11 @@
   transition: transform 0.4s ease;
 }
 
+.p-front-content-wrapper-block2-voice-list__item a {
+opacity: 1;
+}
+
+
 .p-front-content-wrapper-block2-voice-list__item:nth-child(n + 4) {
   display: none;
 
@@ -943,27 +956,35 @@
   position: relative;
   // ↓これを指定しないとFirefoxでくずれます
   display: block;
+  opacity: 1;
 }
 
 .p-front-content-wrapper-block2-voice-list-item-card__label {
-  width: fit-content;
-  height: myrem(31);
+  width: myrem(105);
+  height: myrem(32);
   font-family: "Open Sans";
   font-weight: 800;
   font-size: myrem(14);
-  line-height: calc(28 / 14);
   letter-spacing: 0.1em;
   color: $white;
   background-color: $black;
-  padding: myrem(6) myrem(13);
+  padding: 0 myrem(13);
   position: absolute;
   top: 0;
   right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100000;
+  pointer-events: none;
+ 
 }
+
 
 .p-front-content-wrapper-block2-voice-list-item-card__image {
   width: 100%;
   overflow: hidden;
+  position: relative;
 }
 
 .p-front-content-wrapper-block2-voice-list-item-card__image img {
@@ -972,11 +993,15 @@
   aspect-ratio: 335 / 227;
   transition: transform 1s ease;
   object-fit: cover;
+  z-index: 0;
+
 }
 
 .p-front-content-wrapper-block2-voice-list-item-card__image:hover img {
   transform: scale(1.1);
   transition: 1s all;
+  opacity: .6;
+
 }
 
 .p-front-content-wrapper-block2-voice-list-item-card__summary {
@@ -1280,20 +1305,21 @@
 
 .p-front-profile__content {
   width: 100%;
-  height: 100%;
+  height: auto;
   position: absolute;
   top: 38%;
   left: 0;
 
   @include mq(md) {
-    left: 0;
+    width: fit-content;
+    left: myrem(136);
     top: 46%;
-    padding-left: calc(134 / 1240 * 100%);
   }
 }
 
 .p-front-profile__image {
   width: 100%;
+  height: 100%;
   position: relative;
   overflow: hidden;
 
@@ -1341,10 +1367,10 @@
 
   @include mq(md) {
     font-size: myrem(16);
-    width: myrem(515);
+    width: fit-content;
     line-height: 170%;
     letter-spacing: 0.06em;
-    margin-top: myrem(15);
+    margin-top: myrem(20);
     margin-left: 0;
     padding-left: myrem(5);
   }
