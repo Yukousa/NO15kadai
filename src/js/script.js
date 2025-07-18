@@ -326,13 +326,32 @@ serviceのカウントアニメーション
  ヘッダーメールリンクの遷移先をデバイス幅によって切り替え
  PC：#contact（ページ内遷移） / SP：/contact/（ページ遷移）
 *****************************/
+$(document).on("click", "#js-mail-link", function (e) {
+  const isDrawerOpen = $(".js-drawer").hasClass("is-active");
+  const scrollTarget = $("#contact");
 
-  const $link = $("#js-mail-link");
-  const isPC = $(window).width() >= 768;
+  e.preventDefault();
 
-  if (isPC) {
-    $link.attr("href", "#contact");
+  if (isDrawerOpen) {
+    // ✅ ドロワーが開いているとき → 閉じて、フェードアウトしてから遷移
+    $(".js-drawer").removeClass("is-active");
+    $(".p-header__nav").removeClass("is-active");
+    $("body").removeClass("is-fixed");
+
+    // 少し待ってからフェードアウト
+    setTimeout(() => {
+      $("body").addClass("fade-out");
+
+      setTimeout(() => {
+        window.location.href = "/contact/";
+      }, 600); // CSSのtransition時間と一致
+    }, 200); // ドロワー閉じるまで少し待つ
   } else {
-    $link.attr("href", "/contact/");
+    // ✅ ドロワーが開いていないとき → スムーススクロール
+    if (scrollTarget.length) {
+      const position = scrollTarget.offset().top;
+      $("html, body").animate({ scrollTop: position }, 600);
+    }
   }
+});
 });

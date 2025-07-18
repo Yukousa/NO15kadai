@@ -100,7 +100,7 @@
   justify-content: center;
   align-items: center;
   aspect-ratio: 1 / 1;
-  transition: transform 0.4s ease;
+  transition: all 0.4s ease;
 
   @include mq(md) {
     width: myrem(60);
@@ -111,6 +111,7 @@
     width: myrem(14);
     height: myrem(14);
     stroke: $black;
+    transition: transform 0.4s ease;
 
     @include mq(md) {
       width: myrem(18);

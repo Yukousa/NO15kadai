@@ -336,3 +336,8 @@ body.is-drawer-open {
   overflow: hidden;
   touch-action: none;
 }
+
+body.fade-out {
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
