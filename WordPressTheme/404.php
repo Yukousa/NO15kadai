@@ -1,12 +1,12 @@
 <?php get_header(); ?>
 
 <main>
-    <section class="p-404">
-        <p class="p-404__main">404 NOT FOUND</p>
-        <p class="p-404__sub">お探しのページが見つかりませんでした。<br>削除された可能性があります。</p>
-
-        <a href="<?php echo esc_url(home_url('/')); ?>" class="p-404__return">TOPへ戻る</a>
-    </section>
+    <?php
+    $custom_404 = get_page_by_path('404-page'); 
+    if ($custom_404) {
+        echo apply_filters('the_content', $custom_404->post_content);
+    }
+    ?>
 
 </main>
 

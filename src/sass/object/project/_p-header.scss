@@ -45,7 +45,7 @@
   z-index: 10000;
   line-height: myrem(56);
   z-index: 200000;
-
+  white-space: nowrap;
   @include mq(md) {
     width: myrem(255);
     line-height: myrem(80);

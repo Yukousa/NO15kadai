@@ -99,24 +99,24 @@ jQuery(function ($) {
    Swiper 初期化
 *****************************/
 
-  if (document.querySelector(".js-front-fv-swiper")) {
-    new Swiper(".p-front-fv-swiper", {
-      loop: true,
-      effect: "fade", // フェード切り替え
-      centeredSlides: true,
-      slidesPerView: "auto",
-      autoplay: {
-        delay: 4000, // 4秒後に次のスライドへ
-        disableOnInteraction: false, // ユーザーが操作しても自動再生を継続
-      },
-      speed: 2000, // 2秒かけてフェード
-      // ページネーション
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-    });
-  }
+  // if (document.querySelector(".js-front-fv-swiper")) {
+  //   new Swiper(".p-front-fv-swiper", {
+  //     loop: true,
+  //     effect: "fade", // フェード切り替え
+  //     centeredSlides: true,
+  //     slidesPerView: "auto",
+  //     autoplay: {
+  //       delay: 4000, // 4秒後に次のスライドへ
+  //       disableOnInteraction: false, // ユーザーが操作しても自動再生を継続
+  //     },
+  //     speed: 2000, // 2秒かけてフェード
+  //     // ページネーション
+  //     pagination: {
+  //       el: ".swiper-pagination",
+  //       clickable: true,
+  //     },
+  //   });
+  // }
 
   if (document.querySelector(".p-front-works-swiper")) {
     new Swiper(".p-front-works-swiper", {
@@ -253,96 +253,94 @@ jQuery(function ($) {
     observer.observe(this);
   });
 
-  /*****************************
+/*****************************
 serviceのカウントアニメーション
 *****************************/
 
-  // フラグ（1回だけ実行するため）
-  let countStarted = false;
+// フラグ（1回だけ実行するため）
+let countStarted = false;
 
-  // 監視対象の要素（カウントがあるブロック）
-  const $countArea = $(".p-card-price");
+// 監視対象の要素（カウントがあるブロック）
+const $countArea = $(".p-card-price");
 
-  // スクロールイベント
-  $(window).on("scroll", function () {
-    if (countStarted) return; // 既に開始していたら何もしない
+// スクロールイベント
+$(window).on("scroll", function () {
+  if (countStarted || $countArea.length === 0) return; // ← 要素がなければreturn
 
-    const windowBottom = $(this).scrollTop() + $(this).height();
-    const targetTop = $countArea.offset().top;
+  const windowBottom = $(this).scrollTop() + $(this).height();
+  const targetTop = $countArea.offset().top;
 
-    if (windowBottom > targetTop) {
-      countStarted = true;
+  if (windowBottom > targetTop) {
+    countStarted = true;
 
-      // カウントダウン（お見積もり）
-      const $estimateNum = $(".p-card-price--estimate .js-count-num");
-      let count = 100;
-      const countdown = setInterval(() => {
-        $estimateNum.text(count);
-        count--;
-        if (count < 0) {
-          clearInterval(countdown);
-          $estimateNum.text("0");
-        }
-      }, 30);
-
-      // カウントアップ（基本料金など）
-      const countUpTargets = [
-        {
-          selector: ".p-card-price--basicFee .p-card-price-body__text--top",
-          to: 80000,
-        },
-        {
-          selector: ".p-card-price--basicFee .p-card-price-body__text--bottom",
-          to: 20000,
-        },
-        {
-          selector:
-            ".p-card-price--animation .p-card-price-body__text--animation",
-          to: 30000,
-        },
-        {
-          selector:
-            ".p-card-price--responsive .p-card-price-body__text--responsive",
-          to: 25000,
-        },
-        {
-          selector: ".p-card-price--deadline .p-card-price-body__text",
-          to: 3,
-        },
-      ];
-
-      function animateCountUp($el, toValue, duration = 800, delay = 0) {
-        setTimeout(() => {
-          const isNumber = Number.isInteger(toValue);
-          $({ countNum: 0 }).animate(
-            { countNum: toValue },
-            {
-              duration: duration,
-              easing: "swing",
-              step: function () {
-                const val = isNumber
-                  ? Math.floor(this.countNum).toLocaleString()
-                  : this.countNum.toFixed(0);
-                $el.text(val);
-              },
-              complete: function () {
-                const val = isNumber
-                  ? Math.floor(toValue).toLocaleString()
-                  : toValue.toFixed(0);
-                $el.text(val);
-              },
-            }
-          );
-        }, delay);
+    // カウントダウン（お見積もり）
+    const $estimateNum = $(".p-card-price--estimate .js-count-num");
+    let count = 100;
+    const countdown = setInterval(() => {
+      $estimateNum.text(count);
+      count--;
+      if (count < 0) {
+        clearInterval(countdown);
+        $estimateNum.text("0");
       }
+    }, 30);
 
-      // 実行
-      countUpTargets.forEach((item, index) => {
-        const $target = $(item.selector);
-        animateCountUp($target, item.to, 800, index * 300);
-      });
+    // カウントアップ（基本料金など）
+    const countUpTargets = [
+      {
+        selector: ".p-card-price--basicFee .p-card-price-body__text--top",
+        to: 80000,
+      },
+      {
+        selector: ".p-card-price--basicFee .p-card-price-body__text--bottom",
+        to: 20000,
+      },
+      {
+        selector: ".p-card-price--animation .p-card-price-body__text--animation",
+        to: 30000,
+      },
+      {
+        selector: ".p-card-price--responsive .p-card-price-body__text--responsive",
+        to: 25000,
+      },
+      {
+        selector: ".p-card-price--deadline .p-card-price-body__text",
+        to: 3,
+      },
+    ];
+
+    function animateCountUp($el, toValue, duration = 800, delay = 0) {
+      setTimeout(() => {
+        const isNumber = Number.isInteger(toValue);
+        $({ countNum: 0 }).animate(
+          { countNum: toValue },
+          {
+            duration: duration,
+            easing: "swing",
+            step: function () {
+              const val = isNumber
+                ? Math.floor(this.countNum).toLocaleString()
+                : this.countNum.toFixed(0);
+              $el.text(val);
+            },
+            complete: function () {
+              const val = isNumber
+                ? Math.floor(toValue).toLocaleString()
+                : toValue.toFixed(0);
+              $el.text(val);
+            },
+          }
+        );
+      }, delay);
     }
-  });
+
+    // 実行
+    countUpTargets.forEach((item, index) => {
+      const $target = $(item.selector);
+      animateCountUp($target, item.to, 800, index * 300);
+    });
+  }
+});
 
 /*****************************
  ヘッダーメールリンクの遷移先をデバイス幅によって切り替え

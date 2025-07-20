@@ -15,6 +15,7 @@
 
 // swiper
 .p-front-fv-swiper .swiper-wrapper {
+  overflow: hidden;
   @include mq(md) {
     height: myrem(750);
   }
@@ -23,6 +24,7 @@
 .p-front-fv-swiper .swiper-slide {
   width: 100%;
   height: 100%;
+  overflow: hidden;
 
   @include mq(md) {
   }
@@ -742,8 +744,11 @@ opacity: 1;
 .p-front-content-wrapper-block1-message-inner-image__image01 {
   width: myrem(352);
   justify-content: flex-end;
-  margin-right: auto;
-  margin-left: 0;
+  margin-left: auto;
+  margin-right: 0;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+
 
   @include mq(md) {
     width: myrem(690);
@@ -769,6 +774,8 @@ opacity: 1;
   margin-top: myrem(-80);
   margin-left: auto;
   z-index: 0;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
 
   @include mq(md) {
     width: myrem(533);
@@ -794,6 +801,8 @@ opacity: 1;
 .p-front-content-wrapper-block1-message-inner__image03 {
   width: myrem(304);
   margin-left: myrem(40);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
 
   @include mq(md) {
     width: myrem(460);
@@ -815,6 +824,13 @@ opacity: 1;
   }
 }
 
+.p-front-content-wrapper-block1-message-inner__text-content {
+  display: inline-flex;
+  gap: myrem(10);
+  animation: floating-y 20s linear infinite;
+  align-items: center;
+}
+
 .p-front-content-wrapper-block1-message-inner__text {
   width: 100%;
   font-size: myrem(80);
@@ -829,7 +845,6 @@ opacity: 1;
   gap: myrem(10);
   margin-top: myrem(-50);
   padding-left: myrem(50);
-  animation: floating-y 15s linear infinite;
   z-index: 1;
   white-space: nowrap;
   position: static;
@@ -842,13 +857,14 @@ opacity: 1;
 
 .p-front-content-wrapper-block1-message-inner__text-second {
   display: inline-block;
-  width: 100%;
+  width: myrem(248);
   height: myrem(64);
   max-width: 100%;
   margin-left: 0;
   margin-top: myrem(30);
 
   @include mq(md) {
+    width: myrem(620);
     max-width: myrem(620);
     height: myrem(111);
     flex-shrink: 0;
