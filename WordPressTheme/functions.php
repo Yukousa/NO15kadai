@@ -282,12 +282,12 @@ add_shortcode('image_front_profile', function () {
 });
 
 /**
- * front-page 固定ページだけ wpautop を無効化（<p><br>自動挿入防止）
+ * 固定ページ（全ページ）で wpautop（<p><br>）を無効化
  */
-function disable_wpautop_for_specific_page($content) {
-	if (is_page('front-page')) {
+function disable_wpautop_on_all_pages() {
+	if (is_page()) {
 		remove_filter('the_content', 'wpautop');
+		remove_filter('the_content', 'shortcode_unautop');
 	}
-	return $content;
 }
-add_filter('the_content', 'disable_wpautop_for_specific_page', 9);
+add_action('template_redirect', 'disable_wpautop_on_all_pages');

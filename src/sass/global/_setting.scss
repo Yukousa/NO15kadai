@@ -96,3 +96,7 @@ $z-index-values: (
 // .my-modal {
 //   @include set-z-index("modal");
 // }
+
+p:empty {
+  display: none;
+}

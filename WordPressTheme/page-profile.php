@@ -1,6 +1,7 @@
 <?php get_header(); ?>
 
 <main class="p-profile">
+  
 <?php
     echo apply_filters('the_content', get_the_content());
   ?>

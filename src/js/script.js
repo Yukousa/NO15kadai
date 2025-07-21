@@ -99,24 +99,24 @@ jQuery(function ($) {
    Swiper 初期化
 *****************************/
 
-  // if (document.querySelector(".js-front-fv-swiper")) {
-  //   new Swiper(".p-front-fv-swiper", {
-  //     loop: true,
-  //     effect: "fade", // フェード切り替え
-  //     centeredSlides: true,
-  //     slidesPerView: "auto",
-  //     autoplay: {
-  //       delay: 4000, // 4秒後に次のスライドへ
-  //       disableOnInteraction: false, // ユーザーが操作しても自動再生を継続
-  //     },
-  //     speed: 2000, // 2秒かけてフェード
-  //     // ページネーション
-  //     pagination: {
-  //       el: ".swiper-pagination",
-  //       clickable: true,
-  //     },
-  //   });
-  // }
+  if (document.querySelector(".js-front-fv-swiper")) {
+    new Swiper(".p-front-fv-swiper", {
+      loop: true,
+      effect: "fade", // フェード切り替え
+      centeredSlides: true,
+      slidesPerView: "auto",
+      autoplay: {
+        delay: 4000, // 4秒後に次のスライドへ
+        disableOnInteraction: false, // ユーザーが操作しても自動再生を継続
+      },
+      speed: 2000, // 2秒かけてフェード
+      // ページネーション
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });
+  }
 
   if (document.querySelector(".p-front-works-swiper")) {
     new Swiper(".p-front-works-swiper", {
@@ -124,6 +124,7 @@ jQuery(function ($) {
       speed: 500,
       allowTouchMove: false,
       spaceBetween: 20,
+      autoplay: { delay: 3000, disableOnInteraction: true },
       breakpoints: {
         0: {
           spaceBetween: 20,
@@ -149,7 +150,7 @@ jQuery(function ($) {
       speed: 500,
       allowTouchMove: false,
       spaceBetween: 20,
-      // autoplay: { delay: 3000, disableOnInteraction: true },
+      autoplay: { delay: 3000, disableOnInteraction: true },
       breakpoints: {
         0: {
           spaceBetween: 0,
