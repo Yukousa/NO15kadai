@@ -54,7 +54,7 @@ jQuery(function ($) {
   let charIndex = 0;
 
   function startUnderlineAndFade() {
-    const subText = document.querySelector(".p-front-fv-text__catch3");
+    const subText = document.querySelector(".p-fv-text__catch3");
     if (subText) subText.classList.add("is-animated");
   }
 
@@ -99,8 +99,8 @@ jQuery(function ($) {
    Swiper 初期化
 *****************************/
 
-  if (document.querySelector(".js-front-fv-swiper")) {
-    new Swiper(".p-front-fv-swiper", {
+  if (document.querySelector(".js-fv-swiper")) {
+    new Swiper(".p-fv-swiper", {
       loop: true,
       effect: "fade", // フェード切り替え
       centeredSlides: true,
@@ -118,8 +118,8 @@ jQuery(function ($) {
     });
   }
 
-  if (document.querySelector(".p-front-works-swiper")) {
-    new Swiper(".p-front-works-swiper", {
+  if (document.querySelector(".p-top-works-swiper")) {
+    new Swiper(".p-top-works-swiper", {
       loop: true,
       speed: 500,
       allowTouchMove: false,
@@ -138,8 +138,8 @@ jQuery(function ($) {
         },
       },
       navigation: {
-        nextEl: ".p-front-works-swiper-nav__prev",
-        prevEl: ".p-front-works-swiper-nav__next",
+        nextEl: ".p-top-works-swiper-nav__prev",
+        prevEl: ".p-top-works-swiper-nav__next",
       },
     });
   }
@@ -213,7 +213,7 @@ jQuery(function ($) {
  フロントページはFVを超えたら、下層ページはヘッダーを超えたら背景色追加 
 *****************************/
   const header = $(".p-header__inner");
-  const fv = $(".p-front-fv"); // フロントページだけ存在
+  const fv = $(".p-fv"); // フロントページだけ存在
 
   $(window)
     .on("scroll", function () {

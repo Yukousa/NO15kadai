@@ -1,7 +1,7 @@
 @use "global" as *;
 
-.c-arrow01_right,
-.c-arrow01_left {
+.c-arrow01__right,
+.c-arrow01__left {
   width: myrem(30);
   height: myrem(30);
   background: linear-gradient(to bottom, #000000 0%, #929292 100%);
@@ -19,7 +19,7 @@
   }
 }
 
-.c-arrow01_right::before {
+.c-arrow01__right::before {
   content: "";
   width: 40%;
   height: 40%;
@@ -32,20 +32,25 @@
   transition: transform 0.3s ease;
 }
 
-.c-readMore:hover .c-arrow01_right {
-  transform: scale(1.1);
+.c-readMore:hover .c-arrow01__right {
+  @include mq(md) {
+    transform: scale(1.1);
+  }
 }
 
-.c-return--single-voice:hover .c-arrow01_right {
-  transform: scale(1.1);
+.c-return--single-voice:hover .c-arrow01__right {
+  @include mq(md) {
+    transform: scale(1.1);
+  }
 }
 
-.c-return--single-news:hover .c-arrow01_right {
-  transform: scale(1.1);
+.c-return--single-news:hover .c-arrow01__right {
+  @include mq(md) {
+    transform: scale(1.1);
+  }
 }
 
-
-.c-arrow01_left::before {
+.c-arrow01__left::before {
   content: "";
   width: 40%;
   height: 40%;
@@ -56,38 +61,41 @@
   left: 50%;
   transform: translate(-70%, -50%);
   transition: transform 0.3s ease;
-
 }
 
-.c-readMore:hover .c-arrow01_left {
-  transform: scale(1.1);
+.c-readMore:hover .c-arrow01__left {
+  @include mq(md) {
+    transform: scale(1.1);
+  }
 }
 
 /*********************************
 サイズ違い single-voice,single-works
 *********************************/
-.c-arrow01_right--large,
-.c-arrow01_left--large {
+.c-arrow01__right--large,
+.c-arrow01__left--large {
   width: myrem(42);
   height: myrem(42);
   transition: transform 0.3s ease;
 }
 
-.c-return:hover .c-arrow01_right--large {
-  transform: scale(1.1);
+.c-return:hover .c-arrow01__right--large {
+  @include mq(md) {
+    transform: scale(1.1);
+  }
 }
 
 /*********************************
 白
 *********************************/
 
-.c-arrow01_right--white,
-.c-arrow01_left--white {
+.c-arrow01__right--white,
+.c-arrow01__left--white {
   background: $white;
 }
 
-.c-arrow01_right--white::before,
-.c-arrow01_left--white::before {
+.c-arrow01__right--white::before,
+.c-arrow01__left--white::before {
   background-color: $black;
 }
 
@@ -121,19 +129,16 @@
 }
 
 .c-arrow-svg:hover {
-  background-color: $black;
-  svg {
-    stroke: $white;
+  @include mq(md) {
+    background-color: $black;
+    svg {
+      stroke: $white;
+    }
   }
-  transform: scale(1.1);
-
 }
 
-
-
-
-.c-arrow02_left,
-.c-arrow02_right {
+.c-arrow02__left,
+.c-arrow02__right {
   width: myrem(40);
   height: myrem(40);
   border: 2px solid $black;
@@ -143,37 +148,37 @@
   transition: transform 0.3s ease;
 }
 
-.c-arrow02_left::after,
-.c-arrow02_right::after {
+.c-arrow02__left::after,
+.c-arrow02__right::after {
   font-weight: bold;
   font-size: myrem(20);
   font-family: $font-main;
 }
 
-.c-arrow02_left::after {
+.c-arrow02__left::after {
   content: ">";
 }
 
-.c-arrow02_right::after {
+.c-arrow02__right::after {
   content: "<";
 }
 
-.c-arrow02_left:hover {
-  transform: scale(1.1);
-  background: $black;
-
+.c-arrow02__left:hover {
+  @include mq(md) {
+    background: $black;
+  }
 }
 
-.c-arrow02_right:hover {
-  transform: scale(1.1);
-  background: $black;
-
+.c-arrow02__right:hover {
+  @include mq(md) {
+    background: $black;
+  }
 }
 
-.c-arrow02_left:hover,
-.c-arrow02_right:hover {
-  background: $black;  // ← 背景黒
-  color: $white;       // ← テキスト白（反転）
-  transform: scale(1.1);
-  // border-color は変えない → 黒のまま
+.c-arrow02__left:hover,
+.c-arrow02__right:hover {
+  @include mq(md) {
+    background: $black;
+    color: $white;
+  }
 }

@@ -58,7 +58,11 @@
 .wp-pagenavi .nextpostslink:hover,
 .wp-pagenavi .first:hover,
 .wp-pagenavi .last:hover {
-  transform: scale(1.1);
+
+  @include mq(md) {
+    
+    transform: scale(1.1);
+  }
 }
 
 .wp-pagenavi .page,
@@ -81,8 +85,12 @@
 .wp-pagenavi .nextpostslink:hover,
 .wp-pagenavi .first:hover,
 .wp-pagenavi .last:hover {
-  transform: scale(1.1);
-  background-color: $black;
-  color: $white;
-  opacity: 1;
+
+  @include mq(md) {
+    
+    transform: scale(1.1);
+    background-color: $black;
+    color: $white;
+    opacity: 1;
+  }
 }

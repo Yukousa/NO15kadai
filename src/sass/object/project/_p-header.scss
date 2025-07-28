@@ -161,8 +161,12 @@
 }
 
 .p-header-inner-nav__link:hover {
-  color: darkred;
-  opacity: 1;
+  
+  @include mq(md) {
+    
+    color: darkred;
+    opacity: 1;
+  }
 }
 
 .p-header-inner-nav__ja {
@@ -245,9 +249,9 @@
 }
 
 .p-header-inner-btn__mail:hover {
-  opacity: 0.8;
-
+  
   @include mq(md) {
+    opacity: 0.8;
     background: $white;
     color: $black;
     opacity: 1;

@@ -6,51 +6,49 @@
     if (is_page('contact') || is_page('confirm') || is_page('thanks')) {
         echo '<span class="c-breadcrumbs__separator"> / </span>';
         echo '<span class="c-breadcrumbs__current">CONTACT</span>';
+
+        // 固定ページ
     } elseif (is_page()) {
         $ancestors = get_post_ancestors(get_the_ID());
-
         if (!empty($ancestors)) {
             $parent_id = end($ancestors);
             echo '<span class="c-breadcrumbs__separator"> / </span>';
             echo '<a href="' . esc_url(get_permalink($parent_id)) . '" class="c-breadcrumbs__parent">' . esc_html(get_the_title($parent_id)) . '</a>';
         }
-
         echo '<span class="c-breadcrumbs__separator"> / </span>';
         echo '<span class="c-breadcrumbs__current">' . esc_html(get_the_title()) . '</span>';
-    } elseif (is_singular()) {
-        $post_type = get_post_type();
-        $post_type_obj = get_post_type_object($post_type);
 
-        if ($post_type_obj && $post_type_obj->has_archive) {
-            echo '<span class="c-breadcrumbs__separator"> / </span>';
-            echo '<a href="' . esc_url(get_post_type_archive_link($post_type)) . '" class="c-breadcrumbs__current">' . esc_html($post_type_obj->labels->name) . '</a>';
-        }
-    } elseif (is_tax()) {
-        $term = get_queried_object();
-        $taxonomy = $term->taxonomy;
+        // 投稿（シングル）
+    } elseif (is_single()) {
+        echo '<span class="c-breadcrumbs__separator"> / </span>';
+        echo '<span class="c-breadcrumbs__current">NEWS</span>';
 
-        // カスタム投稿タイプのアーカイブへのリンクを取得
-        $post_type = '';
-        if ($taxonomy === 'news_category') {
-            $post_type = 'news';
-        }
-
-        if ($post_type) {
-            $post_type_obj = get_post_type_object($post_type);
-            echo '<span class="c-breadcrumbs__separator"> / </span>';
-            echo '<a href="' . esc_url(get_post_type_archive_link($post_type)) . '" class="c-breadcrumbs__parent">' . esc_html($post_type_obj->labels->name) . '</a>';
-        }
+        // カテゴリーアーカイブ
+    } elseif (is_category()) {
+        echo '<span class="c-breadcrumbs__separator"> / </span>';
+        echo '<a href="' . esc_url(home_url('/news/')) . '" class="c-breadcrumbs__parent">NEWS</a>';
 
         echo '<span class="c-breadcrumbs__separator"> / </span>';
-        echo '<span class="c-breadcrumbs__current">' . esc_html(single_term_title('', false)) . '</span>';
-    } elseif (is_post_type_archive()) {
-        $post_type = get_post_type();
-        $post_type_obj = get_post_type_object($post_type);
+        echo '<span class="c-breadcrumbs__current">' . single_cat_title('', false) . '</span>';
 
-        if ($post_type_obj) {
-            echo '<span class="c-breadcrumbs__separator"> / </span>';
-            echo '<span class="c-breadcrumbs__current">' . esc_html($post_type_obj->labels->name) . '</span>';
+        // 月別アーカイブ
+    } elseif (is_date()) {
+        echo '<span class="c-breadcrumbs__separator"> / </span>';
+        echo '<a href="' . esc_url(home_url('/news/')) . '" class="c-breadcrumbs__parent">NEWS</a>';
+
+        echo '<span class="c-breadcrumbs__separator"> / </span>';
+        if (is_year()) {
+            echo '<span class="c-breadcrumbs__current">' . get_the_time('Y年') . '</span>';
+        } elseif (is_month()) {
+            echo '<span class="c-breadcrumbs__current">' . get_the_time('Y年n月') . '</span>';
+        } elseif (is_day()) {
+            echo '<span class="c-breadcrumbs__current">' . get_the_time('Y年n月j日') . '</span>';
         }
+
+        // 投稿一覧（home）
+    } elseif (is_home()) {
+        echo '<span class="c-breadcrumbs__separator"> / </span>';
+        echo '<span class="c-breadcrumbs__current">NEWS</span>';
     }
     ?>
 </nav>

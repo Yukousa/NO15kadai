@@ -22,15 +22,47 @@ add_action('after_setup_theme', 'my_setup');
  * CSSとJavaScriptファイルの読み込み
  */
 function my_script_init() {
-	wp_deregister_script('jquery'); // デフォルトのjQueryを解除
-	wp_enqueue_script('jquery', '//cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js', "", "1.0.1");
-	wp_enqueue_style('swiper', get_template_directory_uri() . '/assets/css/swiper-bundle.min.css');
-	wp_enqueue_style('my', get_template_directory_uri() . '/assets/css/styles.min.css');
-	wp_enqueue_script('swiper', get_template_directory_uri() . '/assets/js/swiper-bundle.min.js', ['jquery'], '1.0.1', true);
-	wp_enqueue_script('my', get_template_directory_uri() . '/assets/js/script.min.js', ['jquery'], '1.0.1', true);
-}
-add_action('wp_enqueue_scripts', 'my_script_init');
-
+	$theme_dir = get_template_directory();
+	$theme_uri = get_template_directory_uri();
+  
+	// jQuery CDN
+	wp_deregister_script('jquery');
+	wp_enqueue_script('jquery', '//cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js', [], null);
+  
+	// CSS（filemtime で更新日時をバージョンに）
+	wp_enqueue_style(
+	  'swiper',
+	  $theme_uri . '/assets/css/swiper-bundle.min.css',
+	  [],
+	  filemtime($theme_dir . '/assets/css/swiper-bundle.min.css')
+	);
+  
+	wp_enqueue_style(
+	  'my-style',
+	  $theme_uri . '/assets/css/styles.min.css',
+	  [],
+	  filemtime($theme_dir . '/assets/css/styles.min.css')
+	);
+  
+	// JS（filemtime）
+	wp_enqueue_script(
+	  'swiper',
+	  $theme_uri . '/assets/js/swiper-bundle.min.js',
+	  ['jquery'],
+	  filemtime($theme_dir . '/assets/js/swiper-bundle.min.js'),
+	  true
+	);
+  
+	wp_enqueue_script(
+	  'my-script',
+	  $theme_uri . '/assets/js/script.min.js',
+	  ['jquery'],
+	  filemtime($theme_dir . '/assets/js/script.min.js'),
+	  true
+	);
+  }
+  add_action('wp_enqueue_scripts', 'my_script_init');
+  
 /**
  * Google Fonts の読み込み（管理画面とフロント両方）
  */
@@ -39,6 +71,45 @@ function my_enqueue_google_fonts() {
 }
 add_action('wp_enqueue_scripts', 'my_enqueue_google_fonts');
 add_action('admin_enqueue_scripts', 'my_enqueue_google_fonts');
+
+/**
+ * 管理メニューの「投稿」に関する表示を「NEWS（任意）」に変更
+ *
+ * 参考：https://wordpress-web.and-ha.com/change-management-screen-post/
+ */
+// function change_post_menu_label()
+// {
+// 	global $menu;
+// 	global $submenu;
+// 	$menu[5][0] = 'NEWS';
+// 	$submenu['edit.php'][5][0] = 'NEWS一覧';
+// 	$submenu['edit.php'][10][0] = '新しいNEWS';
+// 	$submenu['edit.php'][16][0] = 'タグ';
+// }
+
+
+/**
+ * 管理画面上の「投稿」に関する表示を「NEWS」に変更
+ *
+ * 参考：https://wordpress-web.and-ha.com/change-management-screen-post/
+ */
+// function change_post_object_label()
+// {
+// 	global $wp_post_types;
+// 	$labels = &$wp_post_types['post']->labels;
+// 	$labels->name = 'NEWS';
+// 	$labels->singular_name = 'NEWS';
+// 	$labels->add_new = _x('追加', 'NEWS');
+// 	$labels->add_new_item = 'NEWSの新規追加';
+// 	$labels->edit_item = 'NEWSの編集';
+// 	$labels->new_item = '新規NEWS';
+// 	$labels->view_item = 'NEWSを表示';
+// 	$labels->search_items = 'NEWSを検索';
+// 	$labels->not_found = '記事が見つかりませんでした';
+// 	$labels->not_found_in_trash = 'ゴミ箱に記事は見つかりませんでした';
+// }
+// add_action('init', 'change_post_object_label');
+// add_action('admin_menu', 'change_post_menu_label');
 
 /**
  * アーカイブタイトルのカスタマイズ
@@ -152,6 +223,7 @@ function wp_optimize_uri($relative_path) {
  * news投稿用 カテゴリータクソノミーを作成
  * /news/category/構造のため、slug を 'news/category' に設定
  */
+
 function register_news_category_taxonomy() {
 	register_taxonomy('news_category', 'news', [
 		'label' => 'newsカテゴリー',
@@ -168,7 +240,7 @@ function register_news_category_taxonomy() {
 add_action('init', 'register_news_category_taxonomy');
 
 /**
- * カスタム投稿タイプの登録（news, voice, works）
+ * カスタム投稿タイプの登録（voice, works）
  */
 function register_custom_post_types() {
 	// 各 register_post_type() 呼び出し（省略なしで含まれているのでここでは略）
@@ -246,19 +318,19 @@ add_shortcode('theme_url', function () {
 /**
  * 各種フロントセクションのショートコード化
  */
-add_shortcode('include_front-news-list', function () {
+add_shortcode('include_top-news-list', function () {
 	ob_start();
-	get_template_part('template-parts/sections/front-news-list');
+	get_template_part('template-parts/sections/top-news-list');
 	return ob_get_clean();
 });
-add_shortcode('include_front-voice-list', function () {
+add_shortcode('include_top-voice-list', function () {
 	ob_start();
-	get_template_part('template-parts/sections/front-voice-list');
+	get_template_part('template-parts/sections/top-voice-list');
 	return ob_get_clean();
 });
-add_shortcode('include_front-works-swiper', function () {
+add_shortcode('include_top-works-swiper', function () {
 	ob_start();
-	get_template_part('template-parts/sections/front-works-swiper');
+	get_template_part('template-parts/sections/top-works-swiper');
 	return ob_get_clean();
 });
 add_shortcode('include_front-message', function () {

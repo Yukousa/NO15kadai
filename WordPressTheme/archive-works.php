@@ -1,21 +1,21 @@
 <?php get_header(); ?>
 
-<main class="p-archive-works">
-  <section class="p-archive-works__mv p-archive-works-mv">
-    <div class="p-archive-works-mv_inner p-archive-works-mv-inner">
-      <div class="p-archive-works-mv-inner__title">
+<main class="p-works">
+  <section class="p-works__mv p-works-mv">
+    <div class="p-works-mv_inner p-works-mv-inner">
+      <div class="p-works-mv-inner__title">
         <h2 class="c-heading01 c-heading01--large03" data-en="works">実績</h2>
       </div>
-      <div class="p-archive-works-mv__breadcrumbs">
+      <div class="p-works-mv__breadcrumbs">
         <?php get_template_part('template-parts/sections/section-breadcrumbs'); ?>
       </div>
     </div>
   </section>
 
   <!-- メイン部分 -->
-  <section class="p-archive-works__container p-archive-works-container l-inner">
+  <section class="p-works__container p-works-container l-inner">
     <?php if (have_posts()) : ?>
-      <div class="p-archive-works-container__post">
+      <div class="p-works-container__post">
         <?php while (have_posts()) : the_post(); ?>
           <!-- 投稿記事 -->
           <?php
@@ -44,7 +44,7 @@
       </div>
     <?php endif; ?>
     <!-- ページネーション -->
-    <div class="p-archive-works__pagenavi">
+    <div class="p-works__pagenavi">
       <?php if (function_exists('wp_pagenavi')) : ?>
         <?php wp_pagenavi(); ?>
       <?php endif; ?>

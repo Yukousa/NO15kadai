@@ -17,7 +17,7 @@
 
 
 
-.c-return--single-news {
+.c-return--newsDetail {
   font-size: myrem(16);
   font-weight: 700;
   letter-spacing: 0.1em;
@@ -34,7 +34,7 @@
   }
 }
 
-.c-return--single-voice {
+.c-return--voiceDetail {
   display: none;
 
   @include mq(md) {
@@ -42,7 +42,7 @@
   }
 }
 
-.c-return--single-works {
+.c-return--worksDetail {
   width: fit-content;
   font-size: myrem(18);
   margin-left: auto;

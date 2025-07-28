@@ -1,6 +1,6 @@
 @use "global" as *;
 
-.p-archive-voice {
+.p-voice {
   width: 100%;
   padding-top: myrem(175);
 
@@ -9,7 +9,7 @@
   }
 }
 
-.p-archive-voice__mv {
+.p-voice__mv {
   width: 100%;
   background-color: $white;
 
@@ -21,7 +21,7 @@
   }
 }
 
-.p-archive-voice-mv_inner {
+.p-voice-mv_inner {
   @include mq(md) {
     max-width: 1440px;
     margin: 0 auto;
@@ -29,7 +29,7 @@
   }
 }
 
-.p-archive-voice-mv-inner__title {
+.p-voice-mv-inner__title {
   padding: myrem(0) myrem(20);
 
   @include mq(md) {
@@ -37,7 +37,7 @@
   }
 }
 
-.p-archive-voice-mv__breadcrumbs {
+.p-voice-mv__breadcrumbs {
   margin-top: myrem(50);
 
   @include mq(md) {
@@ -46,7 +46,7 @@
   }
 }
 
-.p-archive-voice__container {
+.p-voice__container {
   width: 100%;
   padding: myrem(45) myrem(20) myrem(100);
 
@@ -57,7 +57,7 @@
   }
 }
 
-.p-archive-voice-container__post {
+.p-voice-container__post {
   @include mq(md) {
     display: grid;
     grid-template-rows: repeat(2, 1fr);
@@ -67,7 +67,7 @@
   }
 }
 
-.p-archive-voice__pagenavi {
+.p-voice__pagenavi {
   margin-top: myrem(110);
 
   @include mq(md) {

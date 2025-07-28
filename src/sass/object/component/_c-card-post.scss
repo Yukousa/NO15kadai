@@ -11,7 +11,11 @@
 }
 
 .c-card-post:hover {
-  transform: scale(1.1);
+
+  @include mq(md) {
+    
+    transform: scale(1.1);
+  }
 }
 
 .c-card-post-inner__label {

@@ -1,11 +1,11 @@
 @use "global" as *;
 
-.p-archive-works {
+.p-worksDetail {
   width: 100%;
   overflow: clip;
 }
 
-.p-single-works__inner {
+.p-worksDetail__inner {
   width: 100%;
   padding-top: myrem(140);
 
@@ -15,7 +15,7 @@
   }
 }
 
-.p-single-works-inner__title {
+.p-worksDetail-inner__title {
   font-weight: 800;
   font-size: myrem(20);
   line-height: calc(34 / 20);
@@ -27,7 +27,7 @@
   }
 }
 
-.p-single-works-inner__eye-catch {
+.p-worksDetail-inner__eye-catch {
   width: 100vw;
   margin: myrem(15) calc(50% - 50vw) 0;
 
@@ -36,7 +36,7 @@
   }
 }
 
-.p-single-works-inner__eye-catch img {
+.p-worksDetail-inner__eye-catch img {
   width: 100%;
   height: 100%;
   aspect-ratio: 375 / 230;
@@ -47,7 +47,7 @@
   }
 }
 
-.p-single-works__wrapper {
+.p-worksDetail__wrapper {
   width: 100%;
   padding-top: myrem(55);
 
@@ -63,13 +63,13 @@
   }
 }
 
-.p-single-works-wrapper__content {
+.p-worksDetail-wrapper__content {
   @include mq(md) {
     width: calc(950 / 1300 * 100%);
   }
 }
 
-.p-single-works-wrapper-content__body--second {
+.p-worksDetail-wrapper-content__body--second {
   margin-top: myrem(55);
 
   @include mq(md) {
@@ -78,7 +78,7 @@
 }
 
 //テーブル
-.p-single-works-wrapper-content-body__list {
+.p-worksDetail-wrapper-content-body__list {
   border: 1px solid $black_sub;
   line-height: calc(24 / 16);
   letter-spacing: 0.1em;
@@ -93,7 +93,7 @@
   }
 }
 
-.p-single-works-wrapper-content-body-list-item {
+.p-worksDetail-wrapper-content-body-list-item {
   display: block; // SPは縦積み
 
   @include mq(md) {
@@ -102,8 +102,8 @@
   }
 }
 
-.p-single-works-wrapper-content-body-list-item__term,
-.p-single-works-wrapper-content-body-list-item__desc {
+.p-worksDetail-wrapper-content-body-list-item__term,
+.p-worksDetail-wrapper-content-body-list-item__desc {
   display: block; // SPは縦
   width: 100%;
 
@@ -111,7 +111,7 @@
   }
 }
 
-.p-single-works-wrapper-content-body-list-item__term {
+.p-worksDetail-wrapper-content-body-list-item__term {
   font-weight: bold;
   background-color: #f5f5f5;
   padding: myrem(10) myrem(15) myrem(11);
@@ -125,7 +125,7 @@
   }
 }
 
-.p-single-works-wrapper-content-body-list-item__desc {
+.p-worksDetail-wrapper-content-body-list-item__desc {
   padding: myrem(5) myrem(15) myrem(10);
 
   @include mq(md) {
@@ -139,7 +139,7 @@
   }
 }
 
-.p-single-works-wrapper-content-body__text {
+.p-worksDetail-wrapper-content-body__text {
   margin-top: myrem(20);
   font-weight: 400;
   line-height: calc(28 / 16);
@@ -150,7 +150,7 @@
   }
 }
 
-.p-single-works-content-body__page-nation {
+.p-worksDetail-content-body__page-nation {
   margin-top: myrem(35);
 
   @include mq(md) {
@@ -158,7 +158,7 @@
   }
 }
 
-.p-single-works-wrapper__profile {
+.p-worksDetail-wrapper__profile {
   margin-top: myrem(40);
   padding-bottom: myrem(50);
 
@@ -171,18 +171,18 @@
   }
 }
 
-.p-single-works-wrapper-profile__card {
+.p-worksDetail-wrapper-profile__card {
   width: 100%;
 }
 
-.p-single-works-wrapper-profile-card__image {
+.p-worksDetail-wrapper-profile-card__image {
   width: 100%;
 
   @include mq(md) {
   }
 }
 
-.p-single-works-wrapper-profile-card__image img {
+.p-worksDetail-wrapper-profile-card__image img {
   width: 100%;
   height: 100%;
   aspect-ratio: 335 / 216;
@@ -193,7 +193,7 @@
   }
 }
 
-.p-single-works-wrapper-profile-card__text--company {
+.p-worksDetail-wrapper-profile-card__text--company {
   font-weight: 800;
   font-size: myrem(24);
   line-height: calc(60 / 24);
@@ -202,14 +202,14 @@
   margin-top: myrem(5);
 }
 
-.p-single-works-wrapper-profile__return {
+.p-worksDetail-wrapper-profile__return {
   margin-top: myrem(10);
 }
 
 /*************
 関連記事　swiper
 *************/
-.p-single-works__swiper {
+.p-worksDetail__swiper {
   background-color: $black_base;
   padding: myrem(60) 0 myrem(60);
   overflow: hidden;

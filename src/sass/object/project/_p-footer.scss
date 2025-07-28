@@ -173,7 +173,11 @@
 }
 
 .p-footer-nav__link:hover {
-  color: darkred;
+
+  @include mq(md) {
+    
+    color: darkred;
+  }
 }
 
 

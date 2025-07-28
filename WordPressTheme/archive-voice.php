@@ -1,21 +1,21 @@
 <?php get_header(); ?>
 
-<main class="p-archive-voice">
-  <section class="p-archive-voice__mv p-archive-voice-mv">
-    <div class="p-archive-voice-mv_inner p-archive-voice-mv-inner">
-      <div class="p-archive-voice-mv-inner__title">
+<main class="p-voice">
+  <section class="p-voice__mv p-voice-mv">
+    <div class="p-voice-mv_inner p-voice-mv-inner">
+      <div class="p-voice-mv-inner__title">
         <h2 class="c-heading01 c-heading01--large03" data-en="voice">お客様の声</h2>
       </div>
-      <div class="p-archive-voice-mv__breadcrumbs">
+      <div class="p-voice-mv__breadcrumbs">
         <?php get_template_part('template-parts/sections/section-breadcrumbs'); ?>
       </div>
     </div>
   </section>
 
   <!-- メイン部分 -->
-  <section class="p-archive-voice__container p-archive-voice-container">
+  <section class="p-voice__container p-voice-container">
     <?php if (have_posts()) : ?>
-      <div class="p-archive-voice-container__post">
+      <div class="p-voice-container__post">
         <?php while (have_posts()) : the_post(); ?>
           <!-- 投稿記事 -->
           <?php
@@ -44,7 +44,7 @@
       </div>
     <?php endif; ?>
     <!-- ページネーション -->
-    <div class="p-archive-voice__pagenavi">
+    <div class="p-voice__pagenavi">
       <?php if (function_exists('wp_pagenavi')) : ?>
         <?php wp_pagenavi(); ?>
       <?php endif; ?>
