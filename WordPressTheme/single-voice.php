@@ -2,14 +2,17 @@
 
 <main>
     <div class="p-voice">
-        <div class="p-voice__inner l-inner">
-            <article class="p-voice__post p-voice-post">
+    <div class="p-voice__mv">
                 <?php if (has_post_thumbnail()) : ?>
-                    <div class="p-voice-post__thumbnail">
+                    <div class="p-voice-mv__thumbnail">
                         <?php the_post_thumbnail('large'); ?>
                     </div>
                 <?php endif; ?>
 
+            </div>
+
+        <div class="p-voice__inner l-inner">
+            <article class="p-voice__post p-voice-post">
                 <div class="p-voice-post__title">
                     <?php if (get_field('voice_heading_top') || get_field('voice_heading_bottom')) : ?>
                         <?php if (get_field('voice_heading_top')) : ?>
@@ -125,25 +128,25 @@
                     </div>
                 </div>
             </div>
+            <aside class="p-voice__president p-voice-president">
+                <div class="p-voice-president__body p-voice-president-body">
+                    <div class="p-voice-president-body__image">
+                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/president01.png" alt="代表 田中 太郎の写真">
+                    </div>
+                    <div class="p-voice-president-body__text">
+                        <p class="p-voice-president-body__text--company u-desktop">株式会社 XXXXXX</p>
+                        <p class="p-voice-president-body__text--ja">田中 太郎</p>
+                        <p class="p-voice-president-body__text--en u-mobile">Tanaka Taro</p>
+                    </div>
+                </div>
+                <div class="p-voice-president__btn u-desktop">
+                    <a href="/voice/" class="c-return c-return--voice">
+                        一覧に戻る<span class="c-arrow01__right"></span>
+                    </a>
+                </div>
+    
+            </aside>
         </div>
-        <aside class="p-voice__president p-voice-president l-inner">
-            <div class="p-voice-president__body p-voice-president-body">
-                <div class="p-voice-president-body__image">
-                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/president01.png" alt="代表 田中 太郎の写真">
-                </div>
-                <div class="p-voice-president-body__text">
-                    <p class="p-voice-president-body__text--company u-desktop">株式会社 XXXXXX</p>
-                    <p class="p-voice-president-body__text--ja">田中 太郎</p>
-                    <p class="p-voice-president-body__text--en">Tanaka Taro</p>
-                </div>
-            </div>
-            <div class="p-voice-president__btn u-desktop">
-                <a href="/voice/" class="c-return c-return--voice">
-                    一覧に戻る<span class="c-arrow01__right"></span>
-                </a>
-            </div>
-
-        </aside>
         <div class="p-voice__swiper">
             <?php get_template_part('template-parts/sections/section-related-swiper'); ?>
         </div>

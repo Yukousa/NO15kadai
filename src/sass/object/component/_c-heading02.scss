@@ -37,13 +37,6 @@ c-heading02 ２種類のアニメーションの見出し
   }
 }
 
-// .c-heading02--up + .c-heading02--up {
-//   margin-top: myrem(20);
-
-//   @include mq(md) {
-//     margin-top: myrem(48);
-//   }
-// }
 
 .c-heading02--left {
   position: relative;
@@ -66,8 +59,7 @@ c-heading02 ２種類のアニメーションの見出し
     font-weight: 800;
     font-size: myrem(34);
     line-height: calc(54 / 34);
-    padding: 0 myrem(18) 0 myrem(8);
-    margin-left: myrem(-8);
+    padding: 0 myrem(8);
   }
 }
 
