@@ -2,14 +2,14 @@
 
 <main>
     <div class="p-voice">
-    <div class="p-voice__mv">
-                <?php if (has_post_thumbnail()) : ?>
-                    <div class="p-voice-mv__thumbnail">
-                        <?php the_post_thumbnail('large'); ?>
-                    </div>
-                <?php endif; ?>
+        <div class="p-voice__mv">
+            <?php if (has_post_thumbnail()) : ?>
+                <div class="p-voice-mv__thumbnail">
+                    <?php the_post_thumbnail('large'); ?>
+                </div>
+            <?php endif; ?>
 
-            </div>
+        </div>
 
         <div class="p-voice__inner l-inner">
             <article class="p-voice__post p-voice-post">
@@ -144,13 +144,12 @@
                         一覧に戻る<span class="c-arrow01__right"></span>
                     </a>
                 </div>
-    
+
             </aside>
         </div>
         <div class="p-voice__swiper">
             <?php get_template_part('template-parts/sections/section-related-swiper'); ?>
         </div>
-    </div>
     </div>
 </main>
 
