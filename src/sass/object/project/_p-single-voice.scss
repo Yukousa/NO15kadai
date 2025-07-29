@@ -1,52 +1,52 @@
 @use "global" as *;
 
-.p-voiceDetail {
-  width: 100%;
-  overflow: clip;
-}
+// .p-voiceDetail {
+//   width: 100%;
+//   overflow: clip;
+// }
 
-.p-voiceDetail__inner {
-  width: 100%;
-  padding-top: myrem(135);
+// .p-voiceDetail__inner {
+//   width: 100%;
+//   padding-top: myrem(135);
 
-  @include mq(md) {
-    padding-top: myrem(180);
-    padding-left: myrem(80);
-  }
-}
+//   @include mq(md) {
+//     padding-top: myrem(180);
+//     padding-left: myrem(80);
+//   }
+// }
 
-.p-voiceDetail-inner__title {
-  font-weight: 800;
-  font-size: myrem(20);
-  line-height: calc(34 / 20);
-  letter-spacing: 0.1em;
+// .p-voiceDetail-inner__title {
+//   font-weight: 800;
+//   font-size: myrem(20);
+//   line-height: calc(34 / 20);
+//   letter-spacing: 0.1em;
 
-  @include mq(md) {
-    font-size: myrem(34);
-    line-height: calc(54 / 34);
-  }
-}
+//   @include mq(md) {
+//     font-size: myrem(34);
+//     line-height: calc(54 / 34);
+//   }
+// }
 
-.p-voiceDetail-inner__eye-catch {
-  width: 100vw;
-  margin: myrem(0) calc(50% - 50vw) 0;
+// .p-voiceDetail-inner__eye-catch {
+//   width: 100vw;
+//   margin: myrem(0) calc(50% - 50vw) 0;
 
-  @include mq(md) {
-    width: 100vw;
-    margin-top: myrem(0);
-  }
-}
+//   @include mq(md) {
+//     width: 100vw;
+//     margin-top: myrem(0);
+//   }
+// }
 
-.p-voiceDetail-inner__eye-catch img {
-  width: 100%;
-  height: 100%;
-  aspect-ratio: 375 / 230;
-  object-fit: cover;
+// .p-voiceDetail-inner__eye-catch img {
+//   width: 100%;
+//   height: 100%;
+//   aspect-ratio: 375 / 230;
+//   object-fit: cover;
 
-  @include mq(md) {
-    aspect-ratio: 1440 / 480;
-  }
-}
+//   @include mq(md) {
+//     aspect-ratio: 1440 / 480;
+//   }
+// }
 
 .p-voiceDetail__wrapper {
   width: 100%;

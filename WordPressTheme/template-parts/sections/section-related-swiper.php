@@ -2,7 +2,7 @@
     if (is_singular(['works', 'voice'])) {
         $post_type = get_post_type();
         $taxonomy = ($post_type === 'voice') ? 'voice_category' : 'works_category';
-        $summary_field = ($post_type === 'voice') ? 'voice_summary' : 'works_summary';
+        $lead_field = ($post_type === 'voice') ? 'voice_lead' : 'works_lead';
 
         $term_ids = [];
         $terms = get_the_terms(get_the_ID(), $taxonomy);
@@ -38,9 +38,9 @@
                         <div class="swiper-slide">
                             <?php
                             $slide_terms = get_the_terms(get_the_ID(), $taxonomy);
-                            $summary = get_field($summary_field);
+                            $lead = get_field('post-lead');
                             ?>
-                            <a href="<?php the_permalink(); ?>" class="c-related-swiper-card">
+                            <a href="<?php the_permalink(); ?>" class="c-related-swiper__card c-related-swiper-card">
                                 <?php if ($slide_terms && !is_wp_error($slide_terms)) : ?>
                                     <span class="c-related-swiper-card__label"><?php echo esc_html($slide_terms[0]->name); ?></span>
                                 <?php endif; ?>
@@ -49,9 +49,9 @@
                                     <?php the_post_thumbnail('large'); ?>
                                 </div>
 
-                                <div class="c-related-swiper-card__summary">
-                                    <?php if ($summary) : ?>
-                                        <p class="c-related-swiper-card__summary-text"><?php echo esc_html($summary); ?></p>
+                                <div class="c-related-swiper-card__lead">
+                                    <?php if ($lead) : ?>
+                                        <p class="c-related-swiper-card__lead-text"><?php echo esc_html( wp_strip_all_tags( $lead, true ) ); ?></p>
                                     <?php endif; ?>
                                 </div>
                             </a>

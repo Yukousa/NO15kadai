@@ -92,11 +92,11 @@ opacity: 1;
   }
 }
 
-.c-related-swiper-card__summary {
+.c-related-swiper-card__lead {
   width: calc(234 / 257 * 100%);
   background-color: $white;
   transform: translateY(-32%);
-  padding-bottom: myrem(10);
+  padding-bottom: myrem(15);
 
   @include mq(md) {
     width: calc(310 / 340 * 100%);
@@ -104,8 +104,8 @@ opacity: 1;
   }
 }
 
-.c-related-swiper-card__summary-text {
-  max-height: 75.6px;
+.c-related-swiper-card__lead-text {
+  max-height: myrem(80);
   font-family: $font-main;
   font-weight: 500;
   font-size: myrem(14);
@@ -116,7 +116,7 @@ opacity: 1;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
   overflow: hidden;
-  padding: myrem(10) myrem(6) myrem(10) myrem(12);
+  padding: myrem(10) myrem(6) myrem(0) myrem(12);
 
   @include mq(md) {
     max-height: 100px;
