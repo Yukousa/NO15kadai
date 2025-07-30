@@ -30,6 +30,12 @@
 margin-top: myrem(40);
 font-size: myrem(16);
 padding-left: myrem(32);
+
+@include mq(md) {
+  margin-top: myrem(65);
+  padding-left: myrem(42);
+
+}
 }
 
 
@@ -58,6 +64,10 @@ padding-left: myrem(32);
     margin-top: myrem(50);
     margin-right: 0;
     margin-left: auto;
+
+    @include mq(md) {
+      margin-top: myrem(10);
+    }
 }
 
 .p-works__inner {
@@ -267,6 +277,20 @@ padding-left: myrem(32);
 
 .p-works__content {
     margin-top: myrem(50);
+
+    @include mq(md) {
+      margin-top: myrem(80);
+    }
+
+}
+
+.p-works-content__post {
+  @include mq(md) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    column-gap: myrem(34);
+        }
 }
 
 .p-works-content__pagenavi {
