@@ -1,8 +1,8 @@
 <?php get_header(); ?>
 <main>
   <div class="p-works">
-    <div class="p-works__mv">
-      <h2 class="p-works-post__title l-inner">
+    <section class="p-works__mv p-works-mv">
+      <h2 class="p-works-mv__post-title l-inner">
         <?php echo get_the_title(); ?>
       </h2>
       <?php if (has_post_thumbnail()) : ?>
@@ -10,7 +10,7 @@
           <?php the_post_thumbnail('large'); ?>
         </div>
       <?php endif; ?>
-    </div>
+    </section>
 
     <div class="p-works__inner">
       <article class="p-works__post p-works-post l-inner">

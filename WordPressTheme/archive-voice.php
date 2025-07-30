@@ -21,21 +21,21 @@
             $terms = get_the_terms(get_the_ID(), 'voice_category');
             $lead = get_field('post-lead');
             ?>
-            <li class="c-archive-card c-archive-card--voice">
+            <li class="c-card01 c-card01--voice">
               <a href="<?php the_permalink(); ?>">
                 <?php if ($terms && !is_wp_error($terms)) : ?>
-                  <span class="c-archive-card__label c-archive-card__label--voice">
+                  <span class="c-card01__label c-card01__label--voice">
                     <?php echo esc_html($terms[0]->name); ?>
                   </span>
                 <?php endif; ?>
 
-                <div class="c-archive-card__image">
+                <div class="c-card01__image">
                   <?php the_post_thumbnail('large'); ?>
                 </div>
 
-                <div class="c-archive-card__lead c-archive-card__lead--voice">
+                <div class="c-card01__lead c-card01__lead--voice">
                   <?php if ($lead) : ?>
-                    <p class="c-archive-card__lead-text"><?php echo esc_html( wp_strip_all_tags( $lead, true ) ); ?></p>
+                    <p class="c-card01__lead-text"><?php echo esc_html( wp_strip_all_tags( $lead, true ) ); ?></p>
                   <?php endif; ?>
                 </div>
               </a>

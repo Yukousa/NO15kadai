@@ -1,6 +1,6 @@
 @use "global" as *;
 
-.c-archive-card {
+.c-card01 {
   position: relative;
   width: 100%;
   margin-bottom: myrem(40); 
@@ -9,25 +9,25 @@
   background-color: $white;
 }
 
-.c-archive-card--voice {
+.c-card01--voice {
   padding-bottom: myrem(45);
 }
 
 
-.c-archive-card--voice a {
+.c-card01--voice a {
 opacity: 1;
 }
 
-.c-archive-card--works {
+.c-card01--works {
   margin-bottom: myrem(26); 
 }
 
-.c-archive-card--works a {
+.c-card01--works a {
   opacity: 1;
 }
 
 
-.c-archive-card__label {
+.c-card01__label {
   position: absolute;
   top: 0;
   right: 0;
@@ -45,7 +45,7 @@ opacity: 1;
 
 }
 
-.c-archive-card__label--works {
+.c-card01__label--works {
   z-index: 20000;
 
   @include mq(md) {
@@ -57,7 +57,7 @@ opacity: 1;
   }
 }
 
-.c-archive-card__label--voice {
+.c-card01__label--voice {
   @include mq(md) {
     width: myrem(115);
     height: myrem(32);
@@ -67,13 +67,13 @@ opacity: 1;
   }
 }
 
-.c-archive-card__image {
+.c-card01__image {
   width: 100%;
   z-index: 1;
   overflow: hidden;
 }
 
-.c-archive-card__image img {
+.c-card01__image img {
   width: 100%;
   height: 100%;
   aspect-ratio: 334 / 226;
@@ -82,7 +82,7 @@ opacity: 1;
   transition: transform 0.4s ease;
 }
 
-.c-archive-card:hover .c-archive-card__image img {
+.c-card01:hover .c-card01__image img {
 
   @include mq(md) {
 
@@ -95,7 +95,7 @@ opacity: 1;
 }
 
 
-.c-archive-card__lead {
+.c-card01__lead {
   position: absolute;
   left: 0;
   width: calc(301 / 335 * 100%);
@@ -110,7 +110,7 @@ opacity: 1;
 }
 
 
-.c-archive-card__lead-text {
+.c-card01__lead-text {
   font-size: myrem(16);
   line-height: calc(24 / 16);
   letter-spacing: 0.06em;
@@ -124,12 +124,12 @@ opacity: 1;
   }
 }
 
-.c-archive-card__lead--works {
+.c-card01__lead--works {
   bottom: myrem(0);
 }
 
 
-.c-archive-card__lead--voice {
+.c-card01__lead--voice {
   bottom: myrem(-20);
 
 }

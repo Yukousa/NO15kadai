@@ -9,7 +9,7 @@
   }
 }
 
-.p-works-post__title {
+.p-works-mv__post-title {
   padding: myrem(0) myrem(20);
 
   font-weight: 800;
@@ -25,6 +25,13 @@
     padding-left: myrem(10);
   }
 }
+
+.p-works-mv__title {
+margin-top: myrem(40);
+font-size: myrem(16);
+padding-left: myrem(32);
+}
+
 
 .p-works-mv__thumbnail {
   width: 100%;
@@ -44,6 +51,13 @@
   @include mq(md) {
     aspect-ratio: 1440 / 480;
   }
+}
+
+.p-works-mv__breadcrumbs {
+    width: fit-content;
+    margin-top: myrem(50);
+    margin-right: 0;
+    margin-left: auto;
 }
 
 .p-works__inner {
@@ -249,4 +263,13 @@
   @include mq(md) {
     padding-top: myrem(80);
   }
+}
+
+.p-works__content {
+    margin-top: myrem(50);
+}
+
+.p-works-content__pagenavi {
+    padding-top: myrem(40);
+    padding-bottom: myrem(100);
 }
