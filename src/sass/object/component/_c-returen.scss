@@ -34,15 +34,7 @@
   }
 }
 
-.c-return--voiceDetail {
-  display: none;
-
-  @include mq(md) {
-    display: flex;
-  }
-}
-
-.c-return--worksDetail {
+.c-return--works {
   width: fit-content;
   font-size: myrem(18);
   margin-left: auto;

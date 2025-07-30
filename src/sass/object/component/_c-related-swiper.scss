@@ -82,7 +82,7 @@ opacity: 1;
   }
 }
 
-.c-related-swiper-card__image:hover img {
+.c-related-swiper-card:hover .c-related-swiper-card__image img {
   
   @include mq(md) {
     

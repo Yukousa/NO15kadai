@@ -150,7 +150,7 @@ jQuery(function ($) {
       speed: 500,
       allowTouchMove: false,
       spaceBetween: 20,
-      // autoplay: { delay: 3000, disableOnInteraction: true },
+      autoplay: { delay: 3000, disableOnInteraction: true },
       breakpoints: {
         0: {
           spaceBetween: 0,

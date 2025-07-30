@@ -1,0 +1,252 @@
+@use "global" as *;
+
+.p-works {
+  width: 100%;
+  padding-top: myrem(135);
+
+  @include mq(md) {
+    padding-top: myrem(180);
+  }
+}
+
+.p-works-post__title {
+  padding: myrem(0) myrem(20);
+
+  font-weight: 800;
+  font-size: myrem(20);
+  line-height: calc(34 / 20);
+  letter-spacing: 0.1em;
+
+  @include mq(md) {
+    font-size: myrem(34);
+    line-height: calc(54 / 34);
+    max-width: 1300px;
+    margin-inline: auto;
+    padding-left: myrem(10);
+  }
+}
+
+.p-works-mv__thumbnail {
+  width: 100%;
+  margin-top: myrem(20);
+
+  @include mq(md) {
+    margin-top: myrem(40);
+  }
+}
+
+.p-works-mv__thumbnail img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 374 / 230;
+  object-fit: cover;
+
+  @include mq(md) {
+    aspect-ratio: 1440 / 480;
+  }
+}
+
+.p-works__inner {
+  width: 100%;
+  margin-top: myrem(55);
+
+  @include mq(md) {
+    max-width: $innerWidth;
+    margin-top: myrem(85);
+    margin-inline: auto;
+
+    display: grid;
+    grid-template-columns: myrem(950) myrem(320);
+    grid-template-rows: auto;
+    row-gap: 0;
+    column-gap: myrem(30);
+  }
+}
+
+.p-works__post {
+  @include mq(md) {
+    padding-inline: 0;
+    grid-column: 1;
+    grid-row: 1;
+  }
+}
+
+.p-works-post__heading .c-heading02--up,
+.p-works-post__heading .c-heading02--left {
+  font-size: myrem(20);
+  letter-spacing: 0em;
+  white-space: nowrap;
+
+  @include mq(md) {
+    font-weight: 800;
+    font-size: myrem(34);
+    line-height: myrem(60);
+    letter-spacing: 0.1em;
+    padding-left: myrem(10);
+    margin-left: 0;
+  }
+}
+
+.p-works-post__heading:not(:first-child) {
+  margin-top: myrem(55);
+
+  @include mq(md) {
+    margin-top: myrem(80);
+  }
+}
+
+.p-works-post__heading-bottom {
+  @include mq(md) {
+    margin-top: myrem(-5);
+  }
+}
+
+// //テーブル
+
+.p-works-post__table {
+  border: 1px solid $black_sub;
+  line-height: calc(24 / 16);
+  letter-spacing: 0.1em;
+  width: 100%;
+  font-size: myrem(16);
+  margin-top: myrem(40);
+  border-collapse: collapse;
+
+  @include mq(md) {
+    display: table;
+    margin-top: myrem(50);
+  }
+}
+
+.p-works-post__table-item {
+  display: block; // SPは縦積み
+
+  @include mq(md) {
+    display: table-row; // PCは横並び
+    padding: myrem(15) myrem(20) myrem(16);
+  }
+}
+
+.p-works-post__table-term,
+.p-works-post__table-desc {
+  display: block; // SPは縦
+  width: 100%;
+
+  @include mq(md) {
+  }
+}
+
+.p-works-post__table-term {
+  font-weight: bold;
+  background-color: #f5f5f5;
+  padding: myrem(10) myrem(15) myrem(11);
+
+  @include mq(md) {
+    display: table-cell;
+    width: 23%;
+    padding: inherit;
+    border: 1px solid $black_sub;
+    vertical-align: top;
+  }
+}
+
+.p-works-post__table-desc {
+  padding: myrem(5) myrem(15) myrem(10);
+
+  @include mq(md) {
+    display: table-cell;
+    padding: inherit;
+    border: 1px solid $black_sub;
+    vertical-align: top;
+    letter-spacing: 0.1em;
+    line-height: calc(24 / 16);
+    font-size: myrem(16);
+  }
+}
+
+.p-works-post__content {
+  margin-top: myrem(20);
+}
+
+.p-works-post__content p {
+  font-size: myrem(16);
+  line-height: calc(28 / 16);
+  letter-spacing: 0.1em;
+}
+
+.p-works-post__content p:not(:first-child) {
+  margin-top: myrem(30);
+}
+
+.p-works-post__navi {
+  margin-top: myrem(30);
+
+  @include mq(md) {
+    margin-top: myrem(65);
+    padding-bottom: myrem(100);
+  }
+}
+
+.p-works__president {
+  margin-top: myrem(40);
+  padding-bottom: myrem(50);
+
+  @include mq(md) {
+    padding-inline: 0;
+    margin-top: myrem(15);
+    position: sticky;
+    top: myrem(120);
+   
+
+    grid-column: 2;
+    grid-row: 1;
+    align-self: start;
+  }
+}
+
+.p-works-president-body__image {
+  width: 100%;
+}
+.p-works-president-body__image img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 335 / 220;
+  object-fit: cover;
+}
+
+.p-works-president-body__text {
+}
+
+.p-works-president-body__text--company {
+  font-weight: 800;
+  font-size: myrem(24);
+  letter-spacing: 0.1em;
+  margin-top: myrem(10);
+}
+
+.p-works-president-body__text--ja {
+}
+
+.p-works-president-body__text--en {
+}
+
+.p-works-president__btn {
+  width: fit-content;
+  margin-top: myrem(25);
+  margin-left: auto;
+  margin-right: 0;
+  display: block;
+
+  @include mq(md) {
+  }
+}
+
+.p-works__swiper {
+  background-color: $black_base;
+  padding-top: myrem(60);
+  padding-bottom: myrem(55);
+
+  @include mq(md) {
+    padding-top: myrem(80);
+  }
+}

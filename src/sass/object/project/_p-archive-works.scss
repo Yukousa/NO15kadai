@@ -1,77 +1,61 @@
 @use "global" as *;
 
-.p-works {
-  width: 100%;
-  padding-top: myrem(175);
 
-  @include mq(md) {
-    padding-top: myrem(0);
-  }
-}
+// .p-works__mv {
+//   width: 100%;
+//   background-color: $white;
 
-.p-works__mv {
-  width: 100%;
-  background-color: $white;
+//   @include mq(md) {
+//     max-width: 1440px;
+//     padding-left: myrem(70);
+//     padding-right: myrem(70);
+//     margin: 0 auto;
+//   }
+// }
 
-  @include mq(md) {
-    max-width: 1440px;
-    padding-left: myrem(70);
-    padding-right: myrem(70);
-    margin: 0 auto;
-  }
-}
+// .p-works-mv_inner {
+//   @include mq(md) {
+//     max-width: 1440px;
+//     margin: 0 auto;
+//     padding-top: myrem(245);
+//   }
+// }
 
-.p-works-mv_inner {
-  @include mq(md) {
-    max-width: 1440px;
-    margin: 0 auto;
-    padding-top: myrem(245);
-  }
-}
+// .p-works-mv__breadcrumbs {
+//   margin-top: myrem(50);
 
-.p-works-mv-inner__title {
-  padding: myrem(0) myrem(20);
+//   @include mq(md) {
+//     margin-top: myrem(10);
+//     margin-right: myrem(-10);
+//   }
+// }
 
-  @include mq(md) {
-    padding: 0;
-  }
-}
+// .p-works__container {
+//   width: 100%;
+//   padding-top: myrem(48);
+//   padding-bottom: myrem(100);
 
-.p-works-mv__breadcrumbs {
-  margin-top: myrem(50);
+//   @include mq(md) {
+//     max-width: 1440px;
+//     padding-top: myrem(78);
+//     margin-bottom: myrem(100);
+//     margin: 0 auto;
+//   }
+// }
 
-  @include mq(md) {
-    margin-top: myrem(10);
-    margin-right: myrem(-10);
-  }
-}
+// .p-works-container__post {
+//   @include mq(md) {
+//     display: flex;
+//     align-items: center;
+//     justify-content: space-between;
+//     gap: myrem(34);
+//   }
+// }
 
-.p-works__container {
-  width: 100%;
-  padding-top: myrem(48);
-  padding-bottom: myrem(100);
+// .p-works__pagenavi {
+//   margin-top: myrem(65);
 
-  @include mq(md) {
-    max-width: 1440px;
-    padding-top: myrem(78);
-    margin-bottom: myrem(100);
-    margin: 0 auto;
-  }
-}
-
-.p-works-container__post {
-  @include mq(md) {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: myrem(34);
-  }
-}
-
-.p-works__pagenavi {
-  margin-top: myrem(65);
-
-  @include mq(md) {
-    margin-top: myrem(35);
-  }
-}
+//   @include mq(md) {
+//     margin-top: myrem(35);
+//   }
+// }
