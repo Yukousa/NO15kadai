@@ -29,7 +29,6 @@ c-heading01 英語と日本語 2色(黒・白)の線の装飾
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  left: 0;
   width: myrem(16);
   height: myrem(4);
   background: linear-gradient(to right, $black 50%, $white 50%);
@@ -62,9 +61,7 @@ c-heading01 英語と日本語 2色(黒・白)の線の装飾
 
 //pc サイドバー用　英語のサイズ違い
 .c-heading01--sidebar::after {
-
   @include mq(md) {
-    
     font-size: myrem(50);
     top: myrem(-65);
     left: myrem(0);
@@ -117,7 +114,6 @@ c-heading01 英語と日本語 2色(黒・白)の線の装飾
     font-size: myrem(16);
     padding: 0 myrem(40);
     padding-left: myrem(50);
-
   }
 }
 
@@ -151,7 +147,6 @@ c-heading01 英語と日本語 2色(黒・白)の線の装飾
   letter-spacing: 0.02em;
   padding-left: myrem(30);
   top: 0;
-
   @include mq(md) {
     font-size: myrem(16);
     padding-left: myrem(117);
@@ -160,7 +155,9 @@ c-heading01 英語と日本語 2色(黒・白)の線の装飾
 
 .c-heading01--large01::before {
   top: 50%;
-  left: myrem(4);
+  margin-left: myrem(-26);
+  position: absolute;
+
   width: myrem(16);
   height: myrem(2);
   background: linear-gradient(to right, $black 50%, #f5f5f5 50%);
@@ -168,19 +165,16 @@ c-heading01 英語と日本語 2色(黒・白)の線の装飾
   @include mq(md) {
     width: myrem(32);
     height: myrem(4);
-    left: myrem(70);
   }
 }
 
 .c-heading01--large01::after {
   font-size: myrem(36);
   top: myrem(-37);
-  left: 0;
 
   @include mq(md) {
     font-size: myrem(60);
     top: myrem(-58);
-    left: myrem(70);
   }
 }
 
@@ -199,7 +193,6 @@ c-heading01 英語と日本語 2色(黒・白)の線の装飾
 
 .c-heading01--large02::before {
   top: 50%;
-  left: myrem(4);
   width: myrem(16);
   height: myrem(2);
   background: linear-gradient(to right, $black 50%, $white 50%);
@@ -214,12 +207,10 @@ c-heading01 英語と日本語 2色(黒・白)の線の装飾
 .c-heading01--large02::after {
   font-size: myrem(36);
   top: myrem(-37);
-  left: 0;
 
   @include mq(md) {
     font-size: myrem(60);
     top: myrem(-58);
-    left: myrem(0);
   }
 }
 
@@ -239,7 +230,6 @@ c-heading01 英語と日本語 2色(黒・白)の線の装飾
 
 .c-heading01--large02small::before {
   top: 20%;
-  left: myrem(4);
   width: myrem(16);
   height: myrem(2);
   background: linear-gradient(to right, $black 50%, $white 50%);
@@ -248,19 +238,16 @@ c-heading01 英語と日本語 2色(黒・白)の線の装飾
     width: myrem(32);
     height: myrem(4);
     top: 50%;
-    left: myrem(0);
   }
 }
 
 .c-heading01--large02small::after {
   font-size: myrem(36);
   top: myrem(-37);
-  left: 0;
 
   @include mq(md) {
     font-size: myrem(50);
     top: myrem(-62);
-    left: myrem(0);
   }
 }
 
@@ -279,7 +266,6 @@ c-heading01 英語と日本語 2色(黒・白)の線の装飾
 
 .c-heading01--large03::before {
   top: 50%;
-  left: myrem(4);
   width: myrem(16);
   height: myrem(2);
   background: linear-gradient(to right, $black 50%, #f5f5f5 50%);
@@ -287,43 +273,15 @@ c-heading01 英語と日本語 2色(黒・白)の線の装飾
   @include mq(md) {
     width: myrem(32);
     height: myrem(4);
-    left: myrem(0);
   }
 }
 
 .c-heading01--large03::after {
   font-size: myrem(36);
   top: myrem(-37);
-  left: 0;
 
   @include mq(md) {
     font-size: myrem(60);
     top: myrem(-58);
-    left: myrem(0);
-  }
-}
-
-//news サイドバー用
-.c-heading01--news {
-  font-size: myrem(14);
-
-  @include mq(md) {
-    font-size: myrem(16);
-    letter-spacing: 0.06em;
-  }
-}
-
-.c-heading01--news::before {
-  left: myrem(2);
-}
-
-.c-heading01--news::after {
-  font-size: myrem(36);
-  top: myrem(-34);
-  left: myrem(2);
-
-  @include mq(md) {
-    font-size: myrem(50);
-    top: myrem(-60);
   }
 }

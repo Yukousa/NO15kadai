@@ -39,13 +39,12 @@
   padding: myrem(10) myrem(4);
 
   @include mq(md) {
-    padding: myrem(20) myrem(10);
+    padding: 0 ;
   }
 }
 
 .c-breadcrumbs__separator {
   margin: 0;
-  padding: myrem(10) 0;
 
   @include mq(md) {
     padding: myrem(20) 0;

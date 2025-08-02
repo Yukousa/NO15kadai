@@ -12,38 +12,101 @@
 .p-service__mv {
   width: 100%;
   background-color: $white;
-}
-
-.p-service-mv_inner {
-  padding-top: myrem(170);
+  padding-top: myrem(180);
 
   @include mq(md) {
-    max-width: 1440px;
     margin: 0 auto;
     padding-top: myrem(245);
   }
 }
 
-.p-service-mv-inner__title {
-  padding: myrem(0) myrem(20);
+.p-service-mv__inner {
+  max-width: 1440px;
+  background-color: #fff;
+  margin-inline: auto;
+}
+
+.c-service__title {
+  display: block;
+  position: relative;
+  font-family: $font-main;
+  color: $black_sub;
+  font-size: myrem(14);
+  line-height: calc(16 / 14);
+  font-weight: bold;
+  letter-spacing: 0.06em;
+  padding-left: myrem(50);
 
   @include mq(md) {
-    padding: 0;
+    width: 100%;
+    max-width: 1440px;
+    font-size: myrem(16);
+    margin: 0 auto;
+    padding-inline: myrem(110);
+  }
+}
+.c-service__title::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: myrem(23);
+  transform: translateY(-50%);
+  width: myrem(16);
+  height: myrem(2);
+  background: linear-gradient(to right, $black 50%, $white 50%);
+
+  @include mq(md) {
+    width: myrem(32);
+    height: myrem(4);
+    top: 60%;
+    left: myrem(70);
   }
 }
 
-.p-service-mv-inner__image {
+.c-service__title::after {
+  content: attr(data-en);
+  display: block;
+  color: $black;
+  font-family: $font-sub;
+  font-size: myrem(36);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  position: absolute;
+  top: myrem(-40);
+  left: myrem(20);
+
+  @include mq(md) {
+    font-size: myrem(60);
+    top: myrem(-60);
+    left: myrem(70);
+  }
+}
+
+.c-service__title--faq::before {
+ @include mq(md) {
+   left: myrem(0);
+ } 
+}
+
+.c-service__title--faq::after {
+@include mq(md) {
+  left:myrem(-5)
+}
+}
+
+.p-service-mv__image {
   width: 100%;
-  margin-top: myrem(25);
+  margin-top: myrem(23);
 
   @include mq(md) {
-    margin-top: myrem(30);
     width: 100vw;
-    margin: myrem(30) calc(50% - 50vw);
+    margin: myrem(35) calc(50% - 50vw) 0;
   }
 }
 
-.p-service-mv-inner__image img {
+.p-service-mv__image img {
   width: 100%;
   height: 100%;
   aspect-ratio: 375 / 230;
@@ -58,413 +121,486 @@
 
 .p-service__breadcrumbs {
   background-color: $black_base;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: 0;
+
+  @include mq(md) {
+    max-width: 1440px;
+    padding-inline: myrem(70);
+  }
 }
 
 .p-service__price {
-  width: 100%;
-  padding-top: myrem(60);
-  font-size: myrem(36);
+  margin-top: myrem(90);
 
   @include mq(md) {
-    font-size: myrem(60);
-    padding-top: 0;
+    margin-top: myrem(100);
   }
 }
 
-.p-service-price__inner {
-  width: 100%;
-
-  @include mq(md) {
-    max-width: $innerWidth;
-    margin: 0 auto;
-    padding-top: myrem(10);
-  }
-}
-
-.p-service-price__title::before {
-  margin-left: 0;
-
-  @include mq(md) {
-    margin-left: 0;
-  }
-}
-
-.p-service-price__title::after {
-  margin-left: 0;
-  font-size: myrem(36);
-
-  @include mq(md) {
-    margin-left: 0;
-    font-size: myrem(60);
-  }
-}
-
-//PRICE グリッド部分
-.p-card-price-grid {
+.p-service-price__list {
   width: 100%;
   background-color: $black_base;
+  padding-top: myrem(40);
 
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: myrem(172) myrem(297) myrem(172) myrem(172);
   column-gap: myrem(10);
   row-gap: myrem(12);
-  padding-top: myrem(30);
 
   @include mq(md) {
     grid-template-columns: myrem(343) 1fr myrem(740);
     grid-template-rows: myrem(407) myrem(396) myrem(310);
-    column-gap: 0;
+    column-gap: myrem(10);
     row-gap: myrem(10);
-    padding-top: myrem(20);
+    padding-top: myrem(40);
     margin-inline: auto;
   }
 }
 
-.p-card-price {
+.p-service-price__card {
   background-color: $white;
   color: $black;
-  padding: myrem(20) myrem(6) myrem(10) myrem(10);
+  padding: myrem(17) myrem(6) myrem(10) myrem(10);
   border-radius: myrem(4);
 
+  display: flex;
+
   @include mq(md) {
-    padding: myrem(50) myrem(65);
+    padding: myrem(50) myrem(60);
   }
 }
 
-.p-card-price__title {
+.p-service-price__card-title {
   font-family: $font-main;
   font-weight: 700;
   font-size: myrem(18);
   letter-spacing: 0.04em;
   color: $black;
+  text-align: left;
 
   @include mq(md) {
     font-size: myrem(32);
   }
 }
 
-.p-card-price__body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.p-card-price-body--estimate {
-  margin-top: myrem(15);
+.p-service-price__card-title::before {
+  margin-left: 0;
 
   @include mq(md) {
-    margin-top: myrem(90);
+    margin-left: 0;
   }
 }
 
-.p-card-price-body--basicFee {
-  flex-direction: column;
-  gap: myrem(15);
+.p-service-price__card-title::after {
+  margin-left: 0;
+  font-size: myrem(36);
 
   @include mq(md) {
-    flex-direction: row;
-    gap: myrem(50);
-    margin-top: myrem(35);
-    transform: translateX(myrem(-5));
+    margin-left: 0;
+    font-size: myrem(60);
   }
 }
 
-.p-card-price-body--animation {
-  margin-top: myrem(100);
-
-  @include mq(md) {
-    margin-top: myrem(80);
-    letter-spacing: 0.02em;
-  }
-}
-
-.p-card-price-body--responsive {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: myrem(40);
-  margin-top: myrem(5);
-  transform: translateX(myrem(11));
-
-  @include mq(md) {
-    margin-top: myrem(40);
-    gap: myrem(10);
-    transform: translateX(myrem(0));
-  }
-}
-
-.p-card-price-body--deadline {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: myrem(30);
-  margin-top: myrem(10);
-
-  @include mq(md) {
-    justify-content: space-between;
-    margin-top: myrem(-35);
-    gap: myrem(40);
-  }
-}
-
-.p-card-price-body__text-block {
-  @include mq(md) {
-    letter-spacing: 0.02em;
-  }
-}
-
-.p-card-price-body__text-block--basicFee {
-  @include mq(md) {
-    text-align: right;
-    transform: translateX(myrem(-7));
-    margin-top: myrem(-7);
-  }
-}
-
-.p-card-price-body__text--animation {
-  @include mq(md) {
-    letter-spacing: 0;
-    margin-left: myrem(-5);
-  }
-}
-
-.p-card-price-body__text {
+.p-service-price__card-price {
   font-family: $font-sub;
   font-weight: 500;
-  font-size: myrem(34);
-  color: $black;
-  line-height: 1;
-  position: relative;
 
   @include mq(md) {
-    font-size: myrem(100);
   }
 }
 
-.p-card-price-body__text::before {
-  content: attr(data-before);
-  font-family: $font-main;
-  font-weight: 700;
-  font-size: myrem(14);
-  letter-spacing: 0.04em;
-  color: $black;
+// お見積り
+.p-service-price__card--estimate {
+  grid-column: 1 / 3;
+  grid-row: 1 / 2;
 
+  flex-direction: column;
   @include mq(md) {
-    font-size: myrem(32);
-    margin-right: myrem(25);
-    margin-top: myrem(-10);
-  }
-}
-
-.p-card-price-body__text::after {
-  content: attr(data-after);
-  font-family: $font-main;
-  font-size: myrem(14);
-  font-weight: bold;
-  vertical-align: baseline;
-
-  @include mq(md) {
-    font-size: myrem(32);
-  }
-}
-
-.p-card-price-body__text--top {
-  @include mq(md) {
-    letter-spacing: 0em;
-  }
-}
-
-.p-card-price-body__text--top:not(:first-child) {
-  @include mq(md) {
-    margin-top: myrem(20);
-  }
-}
-
-.p-card-price-body__text--top::before {
-  display: block;
-  font-size: myrem(13);
-  position: static; // 通常のフローで表示
-
-  @include mq(md) {
-    display: inline-block;
-    vertical-align: middle;
-    line-height: 1;
-    font-size: myrem(32);
-    margin-right: myrem(12);
-  }
-}
-
-.p-card-price-body__text--bottom {
-  margin-top: myrem(12);
-  padding-top: myrem(14);
-
-  @include mq(md) {
-    letter-spacing: 0;
-    padding-top: myrem(10);
-  }
-}
-
-.p-card-price-body__text--bottom::before {
-  position: absolute;
-  top: 0;
-
-  @include mq(md) {
-    position: static;
-    display: inline-block;
-    vertical-align: middle;
-    line-height: 1;
-    font-size: myrem(32);
-    margin-right: myrem(40);
-    letter-spacing: 0;
-  }
-}
-
-.p-card-price-body__text--responsive {
-  transform: translateY(myrem(-10));
-}
-
-.p-card-price-body__text span {
-  font-family: $font-main;
-  font-weight: 700;
-  font-size: myrem(14);
-  letter-spacing: 0.04em;
-  margin-left: myrem(5);
-
-  @include mq(md) {
-    font-size: myrem(32);
-  }
-}
-
-// お見積り金額用のスタイル
-.p-card-price-body__text .js-count-num {
-  font-size: myrem(70);
-  font-family: $font-sub;
-  display: inline-block;
-  // min-width: 3ch;
-  // 数字3桁分のスペースを保持
-  text-align: center;
-  transform: translateX(myrem(5));
-
-  @include mq(md) {
-    font-size: myrem(100);
-  }
-}
-
-.p-card-price-body__image--basicFee {
-  margin-top: myrem(15);
-  width: myrem(77);
-  height: myrem(69);
-  transform: translateX(myrem(8));
-
-  @include mq(md) {
-    width: myrem(216);
-    height: myrem(194);
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
 
     margin-top: myrem(0);
   }
 }
 
-.p-card-price-body__image--responsive {
-  width: myrem(78);
-  height: myrem(102);
+.p-service-price__card-price--estimate {
+  font-size: myrem(70);
+  text-align: center;
+  padding-top: myrem(4);
+  padding-left: myrem(10);
 
   @include mq(md) {
-    width: myrem(145);
-    height: myrem(199);
+    font-size: myrem(100);
+    padding: 0;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: myrem(20);
   }
 }
 
-.p-card-price-body__image--deadline {
-  width: myrem(157);
-  height: myrem(72);
-  transform: translateY(myrem(-5));
+.p-service-price__card-price--estimate::after {
+  content: attr(data-after);
+  font-size: myrem(14);
+  margin-left: myrem(4);
+  font-weight: 700;
+  letter-spacing: 0.04em;
 
   @include mq(md) {
-    width: myrem(480);
-    height: myrem(230);
-    transform: translateY(myrem(-10));
+    font-size: myrem(30);
+    margin-top: myrem(40);
   }
 }
 
-.p-card-price-body__image img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-.p-card-price--estimate {
-  grid-column: 1 / 3;
-  grid-row: 1 / 2;
-
-  @include mq(md) {
-    grid-column: 1 / 2;
-    grid-row: 1 / 2;
-  }
-}
-
-.p-card-price--basicFee {
+// 基本料金
+.p-service-price__card--basic {
   grid-column: 1 / 2;
   grid-row: 2 / 3;
+
+  display: flex;
+  flex-direction: column;
+  gap: myrem(15);
 
   @include mq(md) {
     grid-column: 2 / 4;
     grid-row: 1 / 2;
 
-    margin-left: myrem(10);
+    gap: 0;
   }
 }
 
-.p-card-price--animation {
+.p-service-price__card--basic .p-service-price__card-inner {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  @include mq(md) {
+    flex-direction: row;
+    gap: myrem(80);
+  }
+}
+
+.p-service-price__card-image--basic {
+  width: myrem(77);
+  height: myrem(69);
+  margin-inline: auto;
+  transform: translateX(myrem(7));
+
+  @include mq(md) {
+    width: myrem(208);
+    height: myrem(186);
+  }
+}
+
+.p-service-price__card-image--basic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.p-service-price__card--basic .p-service-price__card-wrapper {
+  width: fit-content;
+  margin: auto;
+  padding-top: myrem(10);
+  @include mq(md) {
+    max-width: $innerWidth;
+    margin: 0 auto;
+    margin-top: myrem(-10);
+  }
+}
+
+.p-service-price__card-top,
+.p-service-price__card-bottom {
+  position: relative;
+  font-size: myrem(34); // 金額部分のフォントサイズ
+  font-family: $font-sub;
+  font-weight: 500;
+
+  @include mq(md) {
+    font-size: myrem(100);
+  }
+}
+
+.p-service-price__card-top::before,
+.p-service-price__card-bottom::before {
+  content: attr(data-before);
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: myrem(13); // トップ・下層ラベル
+  transform: translateY(-50%); // 上に配置
+  letter-spacing: 0.04em;
+  font-weight: 700;
+
+  @include mq(md) {
+    font-size: myrem(32); // トップ・下層ラベル
+    transform: translateY(0);
+    top: 40%;
+    left: myrem(-120);
+  }
+}
+
+.p-service-price__card-bottom::before {
+  @include mq(md) {
+    padding-left: myrem(15);
+  }
+}
+.p-service-price__card-top::after,
+.p-service-price__card-bottom::after {
+  content: attr(data-after);
+  font-size: myrem(14); // 円～
+  margin-left: myrem(4); // 少し余白を空ける
+
+  font-weight: 700;
+  letter-spacing: 0.04em;
+
+  @include mq(md) {
+    font-size: myrem(32);
+  }
+}
+
+.p-service-price__card-bottom {
+  margin-top: myrem(10);
+
+  @include mq(md) {
+    margin-top: myrem(-30);
+  }
+}
+
+// アニメーション
+.p-service-price__card--animation {
   grid-column: 2 / 3;
   grid-row: 2 / 3;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
 
   @include mq(md) {
     grid-column: 1 / 3;
     grid-row: 2 / 3;
+
+    margin-top: 0;
+    letter-spacing: 0.02em;
   }
 }
 
-.p-card-price--responsive {
+.p-service-price__card--animation .p-service-price__card-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  margin-inline: auto;
+  transform: translateY(myrem(-3));
+
+  @include mq(md) {
+    transform: translateY(0);
+    padding-left: myrem(30);
+  }
+}
+
+.p-service-price__card--animation .p-service-price__card-price {
+  position: relative;
+  font-size: myrem(34); // 金額部分のフォントサイズ
+  font-family: $font-sub;
+  font-weight: 500;
+
+  @include mq(md) {
+    font-size: myrem(100);
+  }
+}
+
+.p-service-price__card--animation .p-service-price__card-price::after {
+  content: attr(data-after);
+  font-size: myrem(14); // 円～
+  margin-left: myrem(4); // 少し余白を空ける
+  font-weight: 700;
+  letter-spacing: 0.04em;
+
+  @include mq(md) {
+    font-size: myrem(32);
+  }
+}
+
+// レスポンシブ
+.p-service-price__card--responsive {
   grid-column: 1 / 3;
   grid-row: 3 / 4;
+
+  display: flex;
+  flex-direction: column;
 
   @include mq(md) {
     grid-column: 3 / 4;
     grid-row: 2 / 3;
-
-    margin-left: myrem(10);
+    
   }
 }
 
-.p-card-price--deadline {
+.p-service-price__card--responsive .p-service-price__card-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: myrem(40);
+  margin-top: myrem(5);
+  transform: translateX(myrem(14));
+
+  @include mq(md) {
+    transform: translateX(0);
+    gap: myrem(30);
+    padding-left: myrem(10);
+    padding-top: myrem(25);
+  }
+}
+
+.p-service-price__card--responsive .p-service-price__card-image {
+  width: myrem(78);
+  height: myrem(102);
+
+  @include mq(md) {
+    width: myrem(140);
+    height: myrem(194);
+  }
+}
+
+.p-service-price__card--responsive .p-service-price__card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.p-service-price__card--responsive .p-service-price__card-wrapper {
+  transform: translateY(myrem(-10));
+
+  @include mq(md) {
+    transform: translateY(myrem(0));
+  }
+}
+
+.p-service-price__card-text--responsive {
+  position: relative;
+  font-size: myrem(34); // 金額部分のフォントサイズ
+  font-family: $font-sub;
+  font-weight: 500;
+
+  @include mq(md) {
+    font-size: myrem(100);
+  }
+}
+
+.p-service-price__card-text--responsive::after {
+  content: attr(data-after);
+  font-size: myrem(14); // 円～
+  margin-left: myrem(4); // 少し余白を空ける
+  font-weight: 700;
+  letter-spacing: 0.04em;
+
+  @include mq(md) {
+    font-size: myrem(32);
+  }
+}
+
+// 実務工程
+.p-service-price__card--term {
   grid-column: 1 / 3;
   grid-row: 4 / 5;
+
+  display: flex;
+  flex-direction: column;
 
   @include mq(md) {
     grid-column: 1 / 4;
     grid-row: 3 / 4;
 
-    padding: myrem(50) myrem(235) myrem(10) myrem(225);
+
+    padding: myrem(50) myrem(225) myrem(10);
   }
 }
 
-.p-card-price__note {
-  font-family: $font-main;
+.p-service-price__card--term .p-service-price__card-inner {
+  display: flex;
+  justify-content: center;
+  gap: myrem(30);
+  margin-top: myrem(5);
+
+  @include mq(md) {
+    margin-top: myrem(-10);
+    gap: myrem(95);
+    padding-left: myrem(30);
+  }
+}
+
+.p-service-price__card--term .p-service-price__card-image {
+  width: myrem(157);
+  height: myrem(72);
+
+  @include mq(md) {
+    width: myrem(465);
+    height: myrem(214);
+    margin-top: myrem(-30);
+  }
+}
+
+.p-service-price__card--term .p-service-price__card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.p-service-price__card-term {
+  position: relative;
+  font-size: myrem(34); // 金額部分のフォントサイズ
+  font-family: $font-sub;
+  font-weight: 500;
+  padding-top: myrem(15);
+
+  @include mq(md) {
+    font-size: myrem(100);
+  }
+}
+
+.p-service-price__card-term::before,
+.p-service-price__card-term::after {
+  font-size: myrem(14);
+  margin-left: myrem(4);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+
+  @include mq(md) {
+    font-size: myrem(32);
+  }
+}
+
+.p-service-price__card-term::before {
+  content: attr(data-before);
+}
+
+.p-service-price__card-term::after {
+  content: attr(data-after);
+}
+
+
+.p-service-price__note {
   font-weight: 500;
   font-size: myrem(12);
-  line-height: calc(14 / 12);
   letter-spacing: 0.06em;
   color: #888888;
   text-align: center;
-  margin-top: myrem(8);
-  transform: translateX(myrem(5));
+  margin-top: myrem(12);
+  margin-right: myrem(-8);
 
   @include mq(md) {
-    text-align: left;
     font-size: myrem(16);
-    margin-top: myrem(-45);
-    transform: translateX(myrem(0));
+    text-align: left;
+    margin-top: myrem(-30);
+    margin-right: 0;
     letter-spacing: 0.04em;
   }
 }
@@ -477,10 +613,15 @@
 
   @include mq(md) {
     padding: myrem(180) myrem(70) myrem(110);
+    max-width: 1440px;
+    margin-inline: auto;
   }
 }
 
 .p-service-faq__title {
+  @include mq(md) {
+padding-left:myrem(42)
+  }
 }
 
 .p-service-faq-title__inner {
@@ -502,7 +643,7 @@
 }
 
 .p-service-faq__list {
-  margin-top: myrem(40);
+  margin-top: myrem(50);
 
   @include mq(md) {
     width: 100%;
@@ -546,7 +687,7 @@
   letter-spacing: 0.04em;
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 1;
+  -webkit-line-clamp: 4;
   overflow: hidden;
 
   @include mq(md) {
@@ -554,7 +695,6 @@
     letter-spacing: 0.1em;
   }
 }
-
 
 .p-service-faq-list__item-question {
   font-family: "Open Sans";
@@ -600,15 +740,7 @@
   }
 }
 
-.p-service-faq-list__item-answer p {
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
-  overflow: hidden;
-}
-
 .p-service-faq-list__item.is-open .p-service-faq-list__item-answer {
-  max-height: myrem(500); /* 中身の高さより少し多めに */
   opacity: 1;
   padding-top: myrem(16);
 
