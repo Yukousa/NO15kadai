@@ -306,6 +306,11 @@ add_shortcode('include_profile_content', function () {
 	get_template_part('template-parts/sections/profile-content');
 	return ob_get_clean();
 });
+add_shortcode('include_profile_career', function () {
+	ob_start();
+	get_template_part('template-parts/sections/profile-career');
+	return ob_get_clean();
+});
 add_shortcode('include_faq_list', function () {
 	ob_start();
 	get_template_part('template-parts/sections/faq-list');
@@ -316,9 +321,7 @@ add_shortcode('include_breadcrumbs', function () {
 	get_template_part('template-parts/sections/section-breadcrumbs');
 	return ob_get_clean();
 });
-add_shortcode('theme_url', function () {
-	return get_template_directory_uri();
-});
+
 
 /**
  * 各種フロントセクションのショートコード化

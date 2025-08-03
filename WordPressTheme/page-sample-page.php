@@ -13,7 +13,6 @@
 
 
 <div class="p-profile">
-
     <section class="p-profile__skills p-profile-skills">
         <h2 class="p-mv__title p-mv__title p-mv__title--2line" data-en="CODE SKILL">対応が可能なコーディングスキルと<br u-mobile>デザインデータ</h2>
         <ul class="p-profile-skills__list l-inner">
@@ -128,8 +127,12 @@
         <article class="p-profile__content p-profile-content l-inner">
             [include_profile_content]
             <div class="p-profile-content__photo">
-                <div class="p-profile-container-content__image--01">[image_path src="/assets/images/image28.png" alt="仕事のイメージ画像" width="462" height="286" loading="lazy" ]</div>
-                <div class="p-profile-container-content__image--02">[image_path src="/assets/images/image29.png" alt="仕事のイメージ画像" width="462" height="286" loading="lazy" ]</div>
+                <div class="p-profile-content__photo--01">
+                    <div class="p-profile-container-content__image--01">[image_path src="/assets/images/image28.png" alt="仕事のイメージ画像" width="462" height="286" loading="lazy" ]</div>
+                </div>
+                <div class="p-profile-content__photo--02">
+                    <div class="p-profile-container-content__image--02">[image_path src="/assets/images/image29.png" alt="仕事のイメージ画像" width="462" height="286" loading="lazy" ]</div>
+                </div>
             </div>
         </article>
 
@@ -143,14 +146,7 @@
                 </div>
             </section>
             <section class="p-profile__career p-profile-career">
-                <div class="p-profile-career__wrapper">
-                    <h3 class="p-profile-career__title">経歴</h3>
-                    <p class="p-profile-career__description">acf</p>
-                </div>
-                <div class="p-profile-career__wrapper">
-                    <h3 class="p-profile-career__title">職歴</h3>
-                    <p class="p-profile-career__description">acf</p>
-                </div>
+                [include_profile_career]
             </section>
         </aside>
     </div>

@@ -1,37 +1,40 @@
-<!-- 投稿画面ACF -->
-<?php for ($i = 1; $i <= 2; $i++) : // セクション数に合わせてループ範囲を変更 
-?>
-    <?php
+<?php for ($i = 1; $i <= 3; $i++) : ?>
+  <?php
     $heading_top = get_field("section_post_heading_{$i}_top");
     $heading_bottom = get_field("section_post_heading_{$i}_bottom");
-    $content = get_field("section_post_content_{$i}");
     $image = get_field("section_post_image_{$i}");
+    $content = get_field("section_post_content_{$i}");
 
+    // 全て空ならスキップ
     if (empty($heading_top) && empty($heading_bottom) && empty($content) && empty($image)) {
         continue;
     }
-    ?>
-        <div class="p-profile-content__wrapper">
-            <h3 class="p-profile-content__title--top c-heading02--up">
-                <?php if ($heading_top) : ?>
-                    <?php echo esc_html($heading_top); ?>
-                <?php endif; ?>
-            </h3>
-            <h3 class="p-profile-content__title--bottom c-heading02--left">
-                <?php if ($heading_bottom) : ?>
-                    <span><?php echo esc_html($heading_bottom); ?></span>
-                <?php endif; ?>
-            </h3>
+  ?>
 
-            <?php if ($content) : ?>
-                <p class="p-profile-content__text c-single-content__post c-single-content__post--profile">
-                    <?php echo nl2br(esc_html($content)); ?> </p>
-            <?php endif; ?>
-        </div>
+  <div class="p-profile-content">
+    <?php if ($heading_top) : ?>
+      <h3 class="p-profile-content__title--top c-heading02--up">
+        <?php echo esc_html($heading_top); ?>
+      </h3>
+    <?php endif; ?>
 
-        <?php if ($image) : ?>
-            <div class="p-profile-content__image c-single-content__image--profile">
-                <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" width="950" height="327" loading="lazy">
-            </div>
-        <?php endif; ?>
+    <?php if ($heading_bottom) : ?>
+      <h3 class="p-profile-content__title--bottom c-heading02--left">
+        <span><?php echo esc_html($heading_bottom); ?></span>
+      </h3>
+    <?php endif; ?>
+
+    <?php if ($content) : ?>
+  <div class="p-profile-content__text">
+    <?php echo wp_kses_post(nl2br($content)); ?>
+  </div>
+<?php endif; ?>  </div>
+
+  <?php if ($image) : ?>
+    <div class="p-profile-content__image">
+      <img src="<?php echo esc_url($image['url']); ?>"
+           alt="<?php echo esc_attr($image['alt']); ?>"
+           width="950" height="327" loading="lazy">
+    </div>
+  <?php endif; ?>
 <?php endfor; ?>
