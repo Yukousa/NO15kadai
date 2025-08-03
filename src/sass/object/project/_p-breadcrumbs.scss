@@ -1,0 +1,109 @@
+@use "global" as *;
+
+.p-breadcrumbs {
+  width: 100%;
+  padding-right: myrem(20);
+
+
+  
+}
+
+.p-breadcrumbs--gray {
+  background-color: $black_base;
+
+}
+
+.p-breadcrumbs__list {
+  width: fit-content;
+  font-size: myrem(11);
+  font-weight: 700;
+  text-align: right;
+  letter-spacing: 0;
+  color: $black;
+  display: flex;
+  justify-content: flex-end;
+  text-transform: uppercase;
+  margin-right: 0;
+  margin-left: auto;
+}
+
+.p-breadcrumbs__item {
+  padding-block: myrem(12);
+  display: inline-block;
+
+}
+
+.p-breadcrumbs__item:nth-child(1) {
+padding-left: myrem(10);
+}
+
+
+
+
+.p-breadcrumbs__current {
+  color: $black_sub;
+
+  @include mq(md) {
+  }
+}
+
+.p-breadcrumbs__item + .p-breadcrumbs__item::before {
+  content: '/';
+  margin: 0 0.5em;
+  color: #999;
+}
+
+
+// /****************************
+// service　用
+// ****************************/
+// .c-breadcrumbs__wrapper--service {
+//   background-color: $black_base;
+// }
+
+// /****************************
+// sprofile　用
+// ****************************/
+
+// .c-breadcrumbs__wrapper--profile {
+//   background-color: $black_base;
+// }
+
+// /****************************
+// news　用
+// ****************************/
+// .c-breadcrumbs__wrapper--news {
+//   margin-top: myrem(50);
+
+//   @include mq(md) {
+//     max-width: $innerWidth;
+//     margin-top: myrem(10);
+//   }
+// }
+
+// .c-breadcrumbs__wrapper--profile {
+//   background-color: $black_base;
+// }
+
+// /****************************
+// archive-voice用
+// ****************************/
+
+// .p-archive-voice .c-breadcrumbs__wrapper--voice {
+//   margin-top: myrem(30);
+
+//   @include mq(md) {
+//     margin-top: myrem(40);
+//   }
+// }
+
+// /****************************
+// archive-works用
+// ****************************/
+// .p-archive-works .c-breadcrumbs__wrapper--works {
+//   margin-top: myrem(75);
+
+//   @include mq(md) {
+//     margin-top: myrem(40);
+//   }
+// }

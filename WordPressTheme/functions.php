@@ -311,6 +311,11 @@ add_shortcode('include_faq_list', function () {
 	get_template_part('template-parts/sections/faq-list');
 	return ob_get_clean();
 });
+add_shortcode('include_breadcrumbs', function () {
+	ob_start();
+	get_template_part('template-parts/sections/section-breadcrumbs');
+	return ob_get_clean();
+});
 add_shortcode('theme_url', function () {
 	return get_template_directory_uri();
 });
