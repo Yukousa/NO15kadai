@@ -14,11 +14,11 @@
 
 <div class="p-profile">
     <section class="p-profile__skills p-profile-skills">
-        <h2 class="p-mv__title p-mv__title p-mv__title--2line" data-en="CODE SKILL">対応が可能なコーディングスキルと<br u-mobile>デザインデータ</h2>
+        <h2 class="p-profile-skills__title p-profile-skills__title--2line" data-en="CODE SKILL">対応が可能なコーディングスキルと<br class="u-mobile">デザインデータ</h2>
         <ul class="p-profile-skills__list l-inner">
-            <li class="p-profile-skills__item p-profile-skills-item">
+            <li class="p-profile-skills__item p-profile-skills-item p-profile-skills__item--coding">
                 <h3 class="p-profile-skills-item__title">コーディング</h3>
-                <ul class="p-profile-skills-item__list">
+                <ul class="p-profile-skills-item__list p-profile-skills-item__list--cording">
                     <li class="p-profile-skills-item__icon">
                         <div class="p-profile-skills-item__image p-profile-skills-item__image--html">
                             [image_path src="/assets/images/html.png" alt="html" width="90" height="104" loading="lazy"]
@@ -51,9 +51,9 @@
                     </li>
                 </ul>
             </li>
-            <li class="p-profile-skills__item p-profile-skills-item">
+            <li class="p-profile-skills__item p-profile-skills-item p-profile-skills__item--cms ">
                 <h3 class="p-profile-skills-item__title">cms</h3>
-                <ul class="p-profile-skills-item__list">
+                <ul class="p-profile-skills-item__list p-profile-skills-item__list--cms">
                     <li class="p-profile-skills-item__icon p-profile-skills-item__icon--cells">
                         <div class="p-profile-skills-item__image p-profile-skills-item__image--wp">
                             [image_path src="/assets/images/wordpress.png" alt="wordpress" width="134" height="130" loading="lazy"]
@@ -62,7 +62,7 @@
                     </li>
                 </ul>
             </li>
-            <li class="p-profile-skills__item p-profile-skills-item">
+            <li class="p-profile-skills__item p-profile-skills-item p-profile-skills__item--design">
                 <h3 class="p-profile-skills-item__title">デザイン</h3>
                 <ul class="p-profile-skills-item__list p-profile-skills-item__list--design">
                     <li class="p-profile-skills-item__icon">

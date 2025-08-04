@@ -4,6 +4,9 @@
   width: 100%;
   padding-right: myrem(20);
 
+  @include mq(md) {
+    padding-right: myrem(70);
+  }
 
   
 }
@@ -25,11 +28,19 @@
   text-transform: uppercase;
   margin-right: 0;
   margin-left: auto;
+
+  @include mq(md) {
+    font-size: myrem(14);
+  }
 }
 
 .p-breadcrumbs__item {
   padding-block: myrem(12);
   display: inline-block;
+
+  @include mq(md) {
+    padding-block: myrem(20);
+  }
 
 }
 
@@ -51,6 +62,10 @@ padding-left: myrem(10);
   content: '/';
   margin: 0 0.5em;
   color: #999;
+
+  @include mq(md) {
+    margin: 0 0.8em;
+  }
 }
 
 

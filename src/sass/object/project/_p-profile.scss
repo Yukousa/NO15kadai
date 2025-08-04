@@ -3,10 +3,80 @@
 .p-profile {
   padding-top: myrem(85);
   background-color: $black_base;
+
+  @include mq(md) {
+    padding-top: myrem(100);
+  }
 }
 
 .p-profile__skills {
   padding-bottom: myrem(60);
+
+  @include mq(md) {
+    padding-bottom: myrem(110);
+  }
+}
+
+.p-profile-skills__title {
+  width: 100%;
+  font-family: $font-main;
+  color: $black_sub;
+  font-size: myrem(14);
+  line-height: 1.4;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  display: inline-block;
+  position: relative;
+  padding-left: myrem(50);
+
+  @include mq(md) {
+    width: 100%;
+    max-width: 1440px;
+    font-size: myrem(16);
+    padding-top: myrem(0);
+    padding-left: myrem(110);
+    margin-inline: auto;
+    display: block;
+  }
+}
+
+.p-profile-skills__title::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: myrem(23);
+  width: myrem(16);
+  height: myrem(2);
+  background: linear-gradient(to right, $black 50%, $white 50%);
+
+  @include mq(md) {
+    width: myrem(32);
+    height: myrem(4);
+    top: 50%;
+    left: myrem(70);
+  }
+}
+
+.p-profile-skills__title::after {
+  content: attr(data-en);
+  display: block;
+  color: $black;
+  font-family: $font-sub;
+  font-size: myrem(36);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  position: absolute;
+  top: myrem(-38);
+  left: myrem(20);
+
+  @include mq(md) {
+    font-size: myrem(50);
+    top: myrem(-60);
+    left: myrem(70);
+  }
 }
 
 .p-profile-skills__list {
@@ -16,11 +86,61 @@
   gap: myrem(20);
 
   padding-top: myrem(55);
+
+  @include mq(md) {
+    grid-template-columns: myrem(655) 1fr myrem(413);
+    grid-template-rows: repeat(
+      2,
+      myrem(300)
+    ); // 2段、高さ300px（SCSSならmyrem）
+    gap: myrem(20);
+
+    padding-top: myrem(40);
+  }
 }
 
 .p-profile-skills__item {
   padding: myrem(20) myrem(10);
   background-color: $white;
+
+  @include mq(md) {
+    padding: myrem(30) myrem(40);
+  }
+}
+
+.p-profile-skills__item--coding {
+  @include mq(md) {
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+
+    padding-inline: myrem(27);
+  }
+}
+
+.p-profile-skills__item--cms {
+  @include mq(md) {
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
+  }
+}
+
+.p-profile-skills__item--design {
+  @include mq(md) {
+    grid-column: 1 / 2;
+    grid-row: 2 / 2;
+
+    padding-top: myrem(40);
+    padding-inline: myrem(55);
+  }
+}
+
+.p-profile-skills__item--communication {
+  @include mq(md) {
+    grid-column: 2 / 4;
+    grid-row: 2 / 2;
+
+    padding-top: myrem(40);
+  }
 }
 
 .p-profile-skills-item__title {
@@ -28,6 +148,11 @@
   font-size: myrem(20);
   letter-spacing: 0.1em;
   text-transform: uppercase;
+
+  @include mq(md) {
+    font-size: myrem(28);
+    letter-spacing: 0.1em;
+  }
 }
 
 .p-profile-skills-item__list {
@@ -39,16 +164,43 @@
 
   margin-top: myrem(30);
   margin-inline: auto;
+
+  @include mq(md) {
+    grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+    grid-auto-rows: auto;
+    row-gap: 0;
+
+    margin-top: myrem(44);
+  }
+}
+
+.p-profile-skills-item__list--cording {
+  @include mq(md) {
+    grid-template-columns: repeat(5, auto);
+    transform: translateX(myrem(6));
+  }
+}
+
+.p-profile-skills-item__list--cms {
+  margin-top: myrem(30);
 }
 
 .p-profile-skills-item__list--design {
   margin-top: myrem(20);
   row-gap: myrem(25);
+
+  @include mq(md) {
+    margin-top: myrem(30);
+  }
 }
 
 .p-profile-skills-item__list--communication {
   margin-top: myrem(25);
   row-gap: myrem(35);
+
+  @include mq(md) {
+    transform: translateX(myrem(-7));
+  }
 }
 
 .p-profile-skills-item__icon {
@@ -58,6 +210,10 @@
   flex-direction: column;
   padding-inline: myrem(10);
   gap: myrem(10);
+
+  @include mq(md) {
+    gap: myrem(0);
+  }
 }
 
 .p-profile-skills-item__icon--cells {
@@ -66,9 +222,20 @@
 }
 
 // 各アイコンのサイズ指定
-.p-profile-skills-item__image--html,
+.p-profile-skills-item__image--html {
+  width: myrem(87);
+
+  @include mq(md) {
+    width: myrem(90);
+  }
+}
 .p-profile-skills-item__image--css {
   width: myrem(87);
+
+  @include mq(md) {
+    width: myrem(90);
+    transform: translateX(myrem(10));
+  }
 }
 
 .p-profile-skills-item__image--html img,
@@ -77,14 +244,17 @@
   height: 100%;
   aspect-ratio: 87 / 99;
   object-fit: cover;
-
-  @include mq(md) {
-  }
 }
 
 .p-profile-skills-item__image--sass {
   width: myrem(108);
   transform: translateY(myrem(10));
+
+  @include mq(md) {
+    width: myrem(129);
+    transform: translateY(myrem(-10));
+    transform: translateX(myrem(15));
+  }
 }
 
 .p-profile-skills-item__image--sass img {
@@ -92,14 +262,18 @@
   height: 100%;
   aspect-ratio: 108 / 79;
   object-fit: cover;
-
-  @include mq(md) {
-  }
 }
 
 .p-profile-skills-item__image--js {
   width: myrem(91);
   margin-bottom: myrem(8);
+
+  @include mq(md) {
+    width: myrem(115);
+    margin-bottom: myrem(15);
+    margin-top: myrem(-15);
+    margin-right: myrem(5);
+  }
 }
 
 .p-profile-skills-item__image--js img {
@@ -107,27 +281,32 @@
   height: 100%;
   aspect-ratio: 91 / 91;
   object-fit: cover;
-
-  @include mq(md) {
-  }
 }
 
 .p-profile-skills-item__image--php {
   width: myrem(132);
   margin-top: myrem(-8);
+
+  @include mq(md) {
+    width: myrem(158);
+    margin-top: myrem(0);
+  }
 }
+
 .p-profile-skills-item__image--php img {
   width: 100%;
   height: 100%;
   aspect-ratio: 132 / 69;
   object-fit: cover;
-
-  @include mq(md) {
-  }
 }
 
 .p-profile-skills-item__image--wp {
   width: myrem(109);
+
+  @include mq(md) {
+    width: myrem(133);
+    margin-bottom: myrem(10);
+  }
 }
 
 .p-profile-skills-item__image--wp img {
@@ -135,15 +314,17 @@
   height: 100%;
   aspect-ratio: 109 / 106;
   object-fit: cover;
-
-  @include mq(md) {
-  }
 }
 
 .p-profile-skills-item__image--ai,
 .p-profile-skills-item__image--ps,
 .p-profile-skills-item__image--xd {
   width: myrem(83);
+
+  @include mq(md) {
+    width: myrem(97);
+    margin-bottom: myrem(15);
+  }
 }
 
 .p-profile-skills-item__image--ai img,
@@ -153,13 +334,14 @@
   height: 100%;
   aspect-ratio: 83 / 82;
   object-fit: cover;
-
-  @include mq(md) {
-  }
 }
 
 .p-profile-skills-item__image--figma {
   width: myrem(56);
+
+  @include mq(md) {
+    width: myrem(67);
+  }
 }
 
 .p-profile-skills-item__image--figma img {
@@ -167,23 +349,35 @@
   height: 100%;
   aspect-ratio: 56 / 84;
   object-fit: cover;
+}
+
+.p-profile-skills-item__image--chatwork {
+  width: myrem(100);
 
   @include mq(md) {
+    width: myrem(94);
   }
 }
 
-.p-profile-skills-item__image--chatwork,
 .p-profile-skills-item__image--mail {
   width: myrem(100);
 }
 
 .p-profile-skills-item__image--slack {
   width: myrem(76);
+
+  @include mq(md) {
+    width: myrem(93);
+  }
 }
 
 .p-profile-skills-item__image--line {
   width: myrem(90);
   transform: translateY(myrem(-8));
+
+  @include mq(md) {
+    width: myrem(109);
+  }
 }
 
 .p-profile-skills-item__image--chatwork img,
@@ -202,11 +396,47 @@
   text-align: center;
   letter-spacing: 0.1em;
   color: #000000;
+
+  @include mq(md) {
+    font-size: myrem(18);
+    margin-top: myrem(-5);
+  }
 }
 
 .p-profile__wrapper {
   background-color: $white;
   padding-block: myrem(60);
+
+  @include mq(md) {
+    padding: myrem(105) myrem(70) myrem(115);
+    display: grid;
+    grid-template-columns: myrem(950) myrem(320);
+    grid-template-rows: auto;
+    row-gap: 0;
+    column-gap: myrem(30);
+    margin: auto;
+    max-width: 1440px;
+  }
+}
+
+.p-profile__content {
+
+  @include mq(md) {
+    
+    padding-inline: 0;
+  }
+}
+
+.p-profile-content__title--top {
+  @include mq(md) {
+    margin-left: myrem(10);
+  }
+}
+
+.p-profile-content__title--bottom {
+  @include mq(md) {
+    margin-left: myrem(0);
+  }
 }
 
 .p-profile-content__text {
@@ -222,6 +452,12 @@
   width: 100vw;
   margin: 0 calc(50% - 50vw);
   margin-top: myrem(25);
+
+  @include mq(md) {
+    width: 100%;
+    margin: 0 auto;
+    margin-top: myrem(45);
+  }
 }
 
 .p-profile-content__image img {
@@ -229,19 +465,31 @@
   height: 100%;
   aspect-ratio: 373 / 271;
   object-fit: cover;
+
+  @include mq(md) {
+    aspect-ratio: 950 / 327 ;
+  }
 }
 
 .p-profile-content__image + .p-profile-content {
   margin-top: myrem(55);
+
+  @include mq(md) {
+    margin-top: myrem(90);
+  }
 }
 
 .p-profile-content__photo {
   margin-top: myrem(50);
+
+  @include mq(md) {
+    margin-top: myrem(40);
+  }
 }
 
 .p-profile-content__photo--01,
 .p-profile-content__photo--02 {
-  width:calc( 282 / 375 *100%);
+  width: calc(282 / 375 * 100%);
 }
 
 .p-profile-content__photo--01 img,
@@ -254,16 +502,33 @@
 .p-profile-content__photo--01 {
   margin-left: calc(50% - 50vw);
   margin-right: auto;
+
+  @include mq(md) {
+    width: calc( 462 / 950 *100%);
+    margin: inherit;
+  }
 }
 
 .p-profile-content__photo--02 {
   margin-right: calc(50% - 50vw);
   margin-left: auto;
   margin-top: myrem(25);
+
+  @include mq(md) {
+    width: calc( 462 / 950 *100%);
+    margin-top: myrem(-246);
+    margin-right: 0;
+  }
+
 }
 
 .p-profile__sidebar {
   margin-top: myrem(60);
+
+  @include mq(md) {
+    padding-inline: 0;
+    margin-top: myrem(10);
+  }
 }
 
 .p-profile-president__image {
@@ -274,11 +539,20 @@
   height: 100%;
   aspect-ratio: 335 / 216;
   object-fit: cover;
+
+  @include mq(md) {
+    aspect-ratio: 320 / 210 ;
+  }
 }
 
 .p-profile-president__text {
   text-align: right;
   margin-top: myrem(10);
+
+  @include mq(md) {
+    text-align: left;
+    // margin-top: myrem(15);
+  }
 }
 
 .p-profile-president__name--ja {
@@ -286,6 +560,12 @@
   font-size: myrem(16);
   line-height: 170%;
   letter-spacing: 0.06em;
+
+  @include mq(md) {
+    font-weight: 800;
+    font-size: myrem(24);
+    letter-spacing: 0.1em;
+  }
 }
 
 .p-profile-president__name--en {
@@ -294,10 +574,22 @@
   line-height: 170%;
   letter-spacing: 0.06em;
   color: #929292;
+
+  @include mq(md) {
+    font-size: myrem(14);
+    letter-spacing: 0;
+    line-height: 170%;
+line-height: 1.5;
+
+  }
 }
 
 .p-profile-career__wrapper {
   margin-top: myrem(25);
+  
+  @include mq(md) {
+    margin-top: myrem(40);
+  }
 }
 
 .p-profile-career__title {
@@ -344,4 +636,8 @@
 
 .p-profile-career__wrapper:nth-child(2) {
   margin-top: myrem(50);
+
+  @include mq(md) {
+    margin-top: myrem(40);
+  }
 }
