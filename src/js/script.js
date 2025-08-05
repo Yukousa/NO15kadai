@@ -170,75 +170,61 @@ jQuery(function ($) {
     });
   }
 
+
 /*****************************
   service faq アコーディオン
 *****************************/
+$(function () {
+  $('.js-faq-toggle').on('click', function () {
+    const $toggle = $(this);
+    const $item = $toggle.closest('.p-service-faq-list__item');
+    const $answer = $item.find('.js-faq-answer');
 
-// FAQを開閉する処理（1つだけ開く）
-$(".js-faq-toggle").on("click", function () {
-  const $item = $(this).closest(".p-service-faq-list__item");
-  const $answer = $item.find(".p-service-faq-list__item-answer");
+    const isOpen = $item.hasClass('is-open');
 
-  if ($item.hasClass("is-open")) {
-    const currentHeight = $answer[0].scrollHeight;
-    $answer.css("max-height", currentHeight + "px");
-    setTimeout(() => $answer.css("max-height", 0), 20);
-    setTimeout(() => $item.removeClass("is-open"), 520);
-  } else {
-    // 他を閉じる
-    $(".p-service-faq-list__item.is-open").each(function () {
-      const $otherItem = $(this);
-      const $otherAnswer = $otherItem.find(".p-service-faq-list__item-answer");
-      const otherHeight = $otherAnswer[0].scrollHeight;
-      $otherAnswer.css("max-height", otherHeight + "px");
-      setTimeout(() => $otherAnswer.css("max-height", 0), 20);
-      setTimeout(() => $otherItem.removeClass("is-open"), 520);
-    });
+    // aria属性切り替え
+    const expanded = $toggle.attr('aria-expanded') === 'true';
+    $toggle.attr('aria-expanded', !expanded);
 
-    // 自分を開く
-    $item.addClass("is-open");
-    setTimeout(() => {
+    if (!isOpen) {
+      // 開くとき
+      $item.addClass('is-open');
       const scrollHeight = $answer[0].scrollHeight;
-      $answer.css("max-height", scrollHeight + "px");
-
-      // ✅ 高さ固定を解除してテキスト切れ防止
-      $answer[0].addEventListener("transitionend", function handler(e) {
-        if (e.propertyName === "max-height") {
-          $answer.css("max-height", "none");
-          $answer[0].removeEventListener("transitionend", handler);
-        }
+      $answer.css({
+        maxHeight: scrollHeight + 'px',
+        opacity: 1
       });
-    }, 20);
-  }
-});
 
-// 「もっと見る」ボタン
-$(".js-faq-more").on("click", function () {
-  const $faqItems = $(".p-service-faq-list__item");
-  $faqItems.each(function (index) {
-    if (index >= 7 && index < 15) {
-      $(this).hide().removeClass("is-hidden").slideDown(400);
+      // アニメ完了後にmax-heightをautoにしておく（再開閉用）
+      setTimeout(() => {
+        $answer.css('maxHeight', 'none');
+      }, 400);
+    } else {
+      // 閉じるとき：max-heightを再び設定（autoだと閉じられない）
+      const currentHeight = $answer[0].scrollHeight;
+      $answer.css('maxHeight', currentHeight + 'px');
+
+      // リフローを強制してから閉じる
+      void $answer[0].offsetHeight;
+
+      $answer.css({
+        maxHeight: 0,
+        opacity: 0
+      });
+
+      // is-open クラスを遅延で外す（transition後）
+      setTimeout(() => {
+        $item.removeClass('is-open');
+        $answer.css('maxHeight', '');
+      }, 400);
     }
   });
-  $(this).fadeOut();
 });
 
 // ✅ 初期状態で最初のFAQだけ開く（1件だけ）
 $(window).on("load", function () {
   const $firstItem = $(".p-service-faq-list__item").first();
-  const $firstAnswer = $firstItem.find(".p-service-faq-list__item-answer");
-
   $firstItem.addClass("is-open");
-  const height = $firstAnswer[0].scrollHeight;
-  $firstAnswer.css("max-height", height + "px");
-
-  // ✅ 初期表示でも max-height を解除
-  $firstAnswer[0].addEventListener("transitionend", function handler(e) {
-    if (e.propertyName === "max-height") {
-      $firstAnswer.css("max-height", "none");
-      $firstAnswer[0].removeEventListener("transitionend", handler);
-    }
-  });
 });
 
   /*****************************
@@ -294,93 +280,109 @@ $(window).on("load", function () {
   });
 
 /*****************************
-  serviceのカウントアニメーション
+  serviceのカウントアニメーション（個別トリガー方式）
 *****************************/
 
-let countStarted = false;
-const $countArea = $(".p-service-price__list");
+// カウント済みの要素に付けるクラス
+const countedClass = 'is-counted';
 
-function triggerCountAnimation() {
-  if (countStarted || $countArea.length === 0) return;
+// カウントダウン（お見積もり）
+function triggerCountdown($target) {
+  if ($target.hasClass(countedClass)) return;
 
-  const windowBottom = $(window).scrollTop() + $(window).height();
-  const targetTop = $countArea.offset().top;
-
-  if (windowBottom > targetTop) {
-    countStarted = true;
-
-    // カウントダウン（お見積もり）
-    const $estimateNum = $(".p-service-price__card--estimate .js-count-num");
-    let count = 100;
-    const countdown = setInterval(() => {
-      $estimateNum.text(count);
-      count--;
-      if (count < 0) {
-        clearInterval(countdown);
-        $estimateNum.text("0");
-      }
-    }, 30);
-
-    // カウントアップ（各金額・週数）
-    const countUpTargets = [
-      {
-        selector: ".p-service-price__card--basic .p-service-price__card-top",
-        to: 80000,
-      },
-      {
-        selector: ".p-service-price__card--basic .p-service-price__card-bottom",
-        to: 20000,
-      },
-      {
-        selector: ".p-service-price__card--animation .p-service-price__card-price",
-        to: 30000,
-      },
-      {
-        selector: ".p-service-price__card--responsive .p-service-price__card-text--responsive",
-        to: 25000,
-      },
-      {
-        selector: ".p-service-price__card--term .p-service-price__card-term",
-        to: 3,
-      },
-    ];
-
-    function animateCountUp($el, toValue, duration = 800, delay = 0) {
-      setTimeout(() => {
-        const isNumber = Number.isInteger(toValue);
-        $({ countNum: 0 }).animate(
-          { countNum: toValue },
-          {
-            duration: duration,
-            easing: "swing",
-            step: function () {
-              const val = isNumber
-                ? Math.floor(this.countNum).toLocaleString()
-                : this.countNum.toFixed(0);
-              $el.text(val);
-            },
-            complete: function () {
-              const val = isNumber
-                ? Math.floor(toValue).toLocaleString()
-                : toValue.toFixed(0);
-              $el.text(val);
-            },
-          }
-        );
-      }, delay);
+  $target.addClass(countedClass);
+  let count = 100;
+  const countdown = setInterval(() => {
+    $target.text(count);
+    count--;
+    if (count < 0) {
+      clearInterval(countdown);
+      $target.text("0");
     }
-
-    countUpTargets.forEach((item, index) => {
-      const $target = $(item.selector);
-      if ($target.length > 0) {
-        animateCountUp($target, item.to, 800, index * 300);
-      }
-    });
-  }
+  }, 30);
 }
 
-// スクロール・ロード・リサイズ時にチェック
-$(window).on("scroll load resize", triggerCountAnimation);
+// カウントアップ処理
+function animateCountUp($el, toValue, duration = 800) {
+  if ($el.hasClass(countedClass)) return;
+
+  $el.addClass(countedClass);
+
+  const isNumber = Number.isInteger(toValue);
+  $({ countNum: 0 }).animate(
+    { countNum: toValue },
+    {
+      duration: duration,
+      easing: "swing",
+      step: function () {
+        const val = isNumber
+          ? Math.floor(this.countNum).toLocaleString()
+          : this.countNum.toFixed(0);
+        $el.text(val);
+      },
+      complete: function () {
+        const val = isNumber
+          ? Math.floor(toValue).toLocaleString()
+          : toValue.toFixed(0);
+        $el.text(val);
+      },
+    }
+  );
+}
+
+// 対象が画面内に入ったかチェック
+function isInViewport($el) {
+  const windowTop = $(window).scrollTop();
+  const windowBottom = windowTop + $(window).height();
+  const elTop = $el.offset().top;
+  const elBottom = elTop + $el.outerHeight();
+
+  return elBottom > windowTop && elTop < windowBottom;
+}
+
+// スクロール or 読み込み時にアニメーションをチェック
+function checkCountAnimations() {
+  // カウントダウン
+  const $estimate = $(".p-service-price__card--estimate .js-count-num");
+  if ($estimate.length && isInViewport($estimate)) {
+    triggerCountdown($estimate);
+  }
+
+  // カウントアップ対象リスト
+  const countUpTargets = [
+    {
+      selector: ".p-service-price__card--basic .p-service-price__card-top",
+      to: 80000,
+    },
+    {
+      selector: ".p-service-price__card--basic .p-service-price__card-bottom",
+      to: 20000,
+    },
+    {
+      selector: ".p-service-price__card--animation .p-service-price__card-price",
+      to: 30000,
+    },
+    {
+      selector: ".p-service-price__card--responsive .p-service-price__card-text--responsive",
+      to: 25000,
+    },
+    {
+      selector: ".p-service-price__card--term .p-service-price__card-term",
+      to: 3,
+    },
+  ];
+
+  countUpTargets.forEach((item) => {
+    const $el = $(item.selector);
+    if ($el.length && isInViewport($el)) {
+      animateCountUp($el, item.to);
+    }
+  });
+}
+
+// イベント登録
+$(window).on("scroll load resize", checkCountAnimations);
+
 
 /*****************************
  ヘッダーメールリンクの遷移先をデバイス幅によって切り替え
