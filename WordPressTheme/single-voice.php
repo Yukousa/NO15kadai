@@ -1,16 +1,15 @@
 <?php get_header(); ?>
 
 <main>
-    <div class="p-voice">
-        <div class="p-voice__mv">
-            <?php if (has_post_thumbnail()) : ?>
-                <div class="p-voice-mv__thumbnail">
-                    <?php the_post_thumbnail('large'); ?>
-                </div>
-            <?php endif; ?>
-
+    <section class="p-mv p-mv--voice">
+        <div class="p-mv__inner">
+            <div class="p-mv__image p-mv__image--voice">
+                <?php the_post_thumbnail('large'); ?>
+            </div>
         </div>
+    </section>
 
+    <div class="p-voice">
         <div class="p-voice__inner l-inner">
             <article class="p-voice__post p-voice-post">
                 <div class="p-voice-post__title">

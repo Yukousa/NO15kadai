@@ -7,7 +7,7 @@
     max-width: 1440px;
     margin: 0 auto;
     margin-top: myrem(70);
-    padding-bottom: myrem(80);
+    padding-bottom: myrem(100);
     position: relative;
 
     display: grid;
@@ -256,10 +256,10 @@
 }
 
 .p-news__list {
-  margin-top: myrem(-3);
+  margin-top: myrem(0);
 
   @include mq(md) {
-    margin-top: myrem(-20);
+    margin-top: myrem(-27);
     padding-bottom: myrem(115);
   }
 }
@@ -267,9 +267,10 @@
 .p-news-list__item {
   border-bottom: 2px solid #f5f5f5;
   padding-bottom: myrem(20);
+  line-height: 1.7;
 
   @include mq(md) {
-    padding-bottom: myrem(14);
+    padding-bottom: myrem(12);
   }
 }
 
@@ -287,11 +288,12 @@
   margin-top: myrem(55);
 
   @include mq(md) {
-    margin-top: 0;
+    margin-top: myrem(0);
     position: absolute;
     left: 50%;
     top: 88.5%;
     transform: translateX(-50%);
+    letter-spacing: 0;
   }
 }
 

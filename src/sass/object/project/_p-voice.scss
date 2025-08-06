@@ -5,14 +5,6 @@
   overflow: clip;
 }
 
-.p-voice__mv {
-  width: 100%;
-  padding-top: myrem(135);
-
-  @include mq(md) {
-    padding-top: myrem(180);
-  }
-}
 
 .p-voice__inner {
   width: 100%;
@@ -76,14 +68,7 @@
 }
 
 .p-voice-post__title {
-  font-weight: 800;
-  font-size: myrem(20);
-  line-height: calc(34 / 20);
-
-  @include mq(md) {
-    font-size: myrem(34);
-    line-height: calc(54 / 34);
-  }
+  padding-top: myrem(15);
 }
 
 .p-voice-post__title-top,
@@ -93,8 +78,13 @@
   white-space: nowrap;
 
   @include mq(md) {
-  }
-}
+    font-weight: 800;
+    font-size: myrem(34);
+    line-height: 1;
+    letter-spacing: 0.1em;
+    padding-left: myrem(10);
+    margin-left: 0;
+  }}
 
 .p-voice-post__title-top {
   @include mq(md) {
@@ -127,6 +117,10 @@
 
 .p-voice-post__lead p:not(:first-child) {
   margin-top: myrem(25);
+
+  @include mq(md) {
+    margin-top: myrem(30);
+  }
 }
 
 .p-voice-post__content {
@@ -137,6 +131,7 @@
     margin-top: myrem(75);
   }
 }
+
 
 .p-voice-post-content__text {
   margin-top: myrem(23);
@@ -185,8 +180,8 @@
     grid-column: 1 / 2;
     grid-row: 2;
 
-    margin-top: myrem(0);
-    padding-bottom: myrem(110);
+    margin-top: myrem(70);
+    padding-bottom: myrem(60);
   }
 }
 
@@ -286,11 +281,11 @@
   }
 }
 
-.p-voice-container__post {
-  margin-top: myrem(50);
+.p-voice__list {
+  margin-top: myrem(135);
 
   @include mq(md) {
-    margin-top: myrem(80);
+    margin-top: myrem(150);
 
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -300,7 +295,7 @@
   }
 }
 
-.p-voice-container__pager {
+.p-voice-list__pager {
   margin-top: myrem(105);
   padding-bottom: myrem(100);
 
