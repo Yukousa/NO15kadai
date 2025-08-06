@@ -6,6 +6,10 @@
       <h2 class="p-mv__title l-inner" data-en="voice">お客様の声</h2>
     </div>
   </section>
+  <nav class="p-breadcrumbs" aria-label="breadcrumb">
+    <?php get_template_part('template-parts/sections/section-breadcrumbs'); ?>
+  </nav>
+
 
   <section class="p-voice l-inner">
     <?php if (have_posts()) : ?>
