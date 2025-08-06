@@ -1,21 +1,19 @@
 <?php get_header(); ?>
 
-<main class="p-contact">
-    <section class="p-contact__mv p-contact-mv l-inner">
-        <div class="p-contact-mv_inner p-contact-mv-inner">
-            <div class="p-contact-mv-inner__title">
-                <h2 class="c-heading01 c-heading01--large03" data-en="contact">お問い合わせ</h2>
-            </div>
-            <div class="p-contact-mv-inner__breadcrumbs">
-                <?php get_template_part('template-parts/sections/section-breadcrumbs'); ?>
-            </div>
+<main>
+    <section class="p-mv">
+        <div class="p-mv__inner">
+            <h2 class="p-mv__title l-inner" data-en="contact">お問合せ</h2>
         </div>
     </section>
+    <nav class="p-breadcrumbs" aria-label="breadcrumb">
+        <?php get_template_part('template-parts/sections/section-breadcrumbs'); ?>
+    </nav>
 
-    <section class="p-contact-thanks__inner p-contact-thanks-inner">
-        <div class="p-contact-thanks-inner__text">
-            <p class="p-contact-thanks-inner__text--1">送信が完了いたしました</p>
-            <p class="p-contact-thanks-inner__text--2">お問い合わせいただきありがとうございます。<br>お問い合わせ頂いた内容については、<br class="u-mobile">確認の上ご返信させていただきます。</p>
+    <section class="p-contact-thanks">
+        <div class="p-contact-thanks__text">
+            <p class="p-contact-thanks__text--1">送信が完了いたしました</p>
+            <p class="p-contact-thanks__text--2">お問い合わせいただきありがとうございます。<br>お問い合わせ頂いた内容については、<br class="u-mobile">確認の上ご返信させていただきます。</p>
         </div>
         <div class="p-contact-thanks__back">
             <a href="<?php echo esc_url(home_url('/')); ?>" class="c-readMore c-readMore--thanks">TOPへ戻る<span class="c-arrow01__right c-arrow01__right--white"></span></a>

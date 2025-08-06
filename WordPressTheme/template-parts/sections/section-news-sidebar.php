@@ -1,7 +1,7 @@
 <div class="p-news-sidebar__inner">
     <!-- カテゴリー -->
     <section class="p-news-sidebar__category p-news-sidebar-category">
-        <h3 class="p-news-sidebar__category c-heading01 c-heading01--news" data-en="category">カテゴリー</h3>
+        <h3 class="p-news-sidebar__title" data-en="category">カテゴリー</h3>
         <ul class="p-news-sidebar__list p-news-sidebar-list">
             <?php
             $terms = get_terms(array(
@@ -25,7 +25,7 @@
 
     <!-- アーカイブ -->
     <section class="p-news-sidebar__archive p-news-sidebar-archive">
-        <h3 class="c-heading01 c-heading01--news" data-en="archive">アーカイブ</h3>
+        <h3 class="p-news-sidebar__title" data-en="archive">アーカイブ</h3>
         <ul class="p-news-sidebar__list p-news-sidebar-list">
             <?php
             global $wpdb;

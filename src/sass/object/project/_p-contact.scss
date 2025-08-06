@@ -1,46 +1,6 @@
 @use "global" as *;
 .p-contact {
-  width: 100%;
-  padding-top: myrem(175);
   padding-bottom: myrem(60);
-
-  @include mq(md) {
-    max-width: 1440px;
-    margin: 0 auto;
-    padding-top: myrem(245);
-    padding-bottom: myrem(110);
-  }
-}
-
-.p-contact__mv {
-  width: 100%;
-
-  @include mq(md) {
-    margin: 0 auto;
-  }
-}
-
-.p-contact-mv_inner {
-  @include mq(md) {
-  }
-}
-
-.p-contact-mv-inner__title {
-  @include mq(md) {
-    padding: 0;
-  }
-}
-
-.p-contact-mv-inner__breadcrumbs {
-  margin-top: myrem(50);
-
-  @include mq(md) {
-    margin-top: myrem(10);
-    margin-right: myrem(-10);
-  }
-}
-
-.p-contact__inner {
 }
 
 //form
@@ -663,16 +623,6 @@
 //thanksページ
 
 .p-contact-thanks {
-  padding: myrem(136) myrem(20) myrem(60);
-
-  @include mq(md) {
-    max-width: 1440px;
-    padding: myrem(180) myrem(70) myrem(110);
-    margin: 0 auto;
-  }
-}
-
-.p-contact-thanks__inner {
   width: 100%;
   padding-bottom: myrem(60);
 
@@ -681,13 +631,13 @@
   }
 }
 
-.p-contact-thanks-inner__text {
+.p-contact-thanks__text {
   text-align: center;
   font-weight: 700;
   letter-spacing: 0.06em;
 }
 
-.p-contact-thanks-inner__text--1 {
+.p-contact-thanks__text--1 {
   font-size: myrem(22);
   line-height: 100%;
   margin-top: myrem(50);
@@ -701,7 +651,7 @@
   }
 }
 
-.p-contact-thanks-inner__text--2 {
+.p-contact-thanks__text--2 {
   font-size: myrem(14);
   line-height: 200%;
   margin-top: myrem(24);
@@ -723,7 +673,7 @@
   }
 }
 
-.p-contact__inner--text {
+.p-contact__text {
   margin-top: myrem(30);
   font-weight: bold;
   font-size: myrem(20);

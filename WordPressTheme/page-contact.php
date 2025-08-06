@@ -1,20 +1,18 @@
 <?php get_header(); ?>
 
-<main class="p-contact">
-    <section class="p-contact__mv p-contact-mv l-inner">
-        <div class="p-contact-mv_inner p-contact-mv-inner">
-            <div class="p-contact-mv-inner__title">
-                <h2 class="c-heading01 c-heading01--large03" data-en="contact">お問い合わせ</h2>
-            </div>
-            <div class="p-contact-mv-inner__breadcrumbs">
-                <?php get_template_part('template-parts/sections/section-breadcrumbs'); ?>
-            </div>
+<main>
+    <section class="p-mv">
+        <div class="p-mv__inner">
+            <h2 class="p-mv__title l-inner" data-en="contact">お問合せ</h2>
         </div>
     </section>
+    <nav class="p-breadcrumbs" aria-label="breadcrumb">
+        <?php get_template_part('template-parts/sections/section-breadcrumbs'); ?>
+    </nav>
 
-    <div class="p-contact__inner l-inner">
+    <section class="p-contact l-inner">
         <?php the_content(); ?>
-    </div>
+    </section>
 </main>
 <?php get_template_part('template-parts/sections/section-cta'); ?>
 <?php get_footer(); ?>
