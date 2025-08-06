@@ -72,7 +72,7 @@ padding-left: myrem(10);
 // /****************************
 // service　用
 // ****************************/
-// .c-breadcrumbs__wrapper--service {
+// .p-breadcrumbs__wrapper--service {
 //   background-color: $black_base;
 // }
 
@@ -80,14 +80,14 @@ padding-left: myrem(10);
 // sprofile　用
 // ****************************/
 
-// .c-breadcrumbs__wrapper--profile {
+// .p-breadcrumbs__wrapper--profile {
 //   background-color: $black_base;
 // }
 
 // /****************************
 // news　用
 // ****************************/
-// .c-breadcrumbs__wrapper--news {
+// .p-breadcrumbs__wrapper--news {
 //   margin-top: myrem(50);
 
 //   @include mq(md) {
@@ -96,7 +96,7 @@ padding-left: myrem(10);
 //   }
 // }
 
-// .c-breadcrumbs__wrapper--profile {
+// .p-breadcrumbs__wrapper--profile {
 //   background-color: $black_base;
 // }
 
@@ -104,7 +104,7 @@ padding-left: myrem(10);
 // archive-voice用
 // ****************************/
 
-// .p-archive-voice .c-breadcrumbs__wrapper--voice {
+// .p-archive-voice .p-breadcrumbs__wrapper--voice {
 //   margin-top: myrem(30);
 
 //   @include mq(md) {
@@ -115,7 +115,7 @@ padding-left: myrem(10);
 // /****************************
 // archive-works用
 // ****************************/
-// .p-archive-works .c-breadcrumbs__wrapper--works {
+// .p-archive-works .p-breadcrumbs__wrapper--works {
 //   margin-top: myrem(75);
 
 //   @include mq(md) {

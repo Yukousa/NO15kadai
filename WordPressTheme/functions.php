@@ -301,6 +301,16 @@ add_shortcode('image_path', function ($atts) {
 /**
  * ショートコードでテンプレートパーツを読み込む
  */
+add_shortcode('include_message_content-top', function () {
+	ob_start();
+	get_template_part('template-parts/sections/message-content-top');
+	return ob_get_clean();
+});
+add_shortcode('include_message_content-bottom', function () {
+	ob_start();
+	get_template_part('template-parts/sections/message-content-bottom');
+	return ob_get_clean();
+});
 add_shortcode('include_profile_content', function () {
 	ob_start();
 	get_template_part('template-parts/sections/profile-content');

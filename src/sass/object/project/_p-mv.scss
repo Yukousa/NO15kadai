@@ -97,4 +97,15 @@
     aspect-ratio: 1440 / 480;
   }
 }
+.p-mv__image--message {
+}
+
+.p-mv__image img {
+  aspect-ratio: 375 / 250;
+
+  @include mq(md) {
+    
+    aspect-ratio: 1440 / 480;
+  }
+}
 

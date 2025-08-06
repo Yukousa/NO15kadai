@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<main class="p-message">
+<main>
   <?php
     echo apply_filters('the_content', get_the_content());
   ?>

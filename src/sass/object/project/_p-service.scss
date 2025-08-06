@@ -62,16 +62,16 @@
 }
 
 .p-service__price {
-  margin-top: myrem(90);
+  padding-top: myrem(90);
+  background-color: $black_base;
 
   @include mq(md) {
-    margin-top: myrem(100);
+    padding-top: myrem(100);
   }
 }
 
 .p-service-price__list {
   width: 100%;
-  background-color: $black_base;
   padding-top: myrem(40);
 
   display: grid;
@@ -370,7 +370,6 @@
   @include mq(md) {
     grid-column: 3 / 4;
     grid-row: 2 / 3;
-    
   }
 }
 
@@ -449,7 +448,6 @@
     grid-column: 1 / 4;
     grid-row: 3 / 4;
 
-
     padding: myrem(50) myrem(225) myrem(10);
   }
 }
@@ -516,7 +514,6 @@
   content: attr(data-after);
 }
 
-
 .p-service-price__note {
   font-weight: 500;
   font-size: myrem(12);
@@ -550,7 +547,7 @@
 
 .p-service-faq__title {
   @include mq(md) {
-padding-left:myrem(42)
+    padding-left: myrem(42);
   }
 }
 
@@ -572,37 +569,47 @@ padding-left:myrem(42)
   margin-left: myrem(0);
 }
 
-.p-service-faq__list {
-  margin-top: myrem(50);
-
-  @include mq(md) {
-    width: 100%;
-    max-width: 1440px;
-    padding: 0;
-    margin: myrem(43) auto 0;
-  }
-}
-
 .p-service-faq-list__item {
   background-color: $white;
+  margin-top: myrem(45);
   border-radius: myrem(10);
-  padding: myrem(25) myrem(16) myrem(20);
+  padding: myrem(25) myrem(16) myrem(19);
+  overflow: hidden;
+  transition: max-height 0.6s ease, opacity 0.6s ease;
 
   @include mq(md) {
-    padding: myrem(19) myrem(30) myrem(15);
+    padding: myrem(16) myrem(30) myrem(13);
     border-radius: 0;
   }
 }
 
+.p-service-faq__list {
+  @include mq(md) {
+    padding-inline: 0;
+  }
+}
+
 .p-service-faq-list__item.is-hidden {
+  max-height: 0;
+  opacity: 0;
   display: none;
+  overflow: hidden;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
 }
 
-.p-service-faq-list__item + .p-service-faq-list__item {
-  margin-top: myrem(10);
+.p-service-faq-list__item.is-visible {
+  max-height: 1000px; /* 十分大きい値 */
+  opacity: 1;
 }
 
-.p-service-faq-list__item-label {
+.p-service-faq-list__body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  // padding: myrem(25) myrem(16) myrem(20);
+}
+
+.p-service-faq-list__label {
   flex-shrink: 0; /* Q1 を縮めない */
   font-family: $font-sub;
   font-weight: 500;
@@ -613,46 +620,40 @@ padding-left:myrem(42)
   }
 }
 
-.p-service-faq-list__item-text {
+.p-service-faq-list__question {
+  font-family: "Open Sans";
+  font-size: myrem(18);
+  font-weight: 600;
+  line-height: calc(24 / 18);
+  text-align: left;
   letter-spacing: 0.04em;
+  padding-inline: myrem(10);
+  padding-bottom: myrem(4);
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 4;
   overflow: hidden;
-
-  @include mq(md) {
-    font-size: myrem(20);
-    letter-spacing: 0.1em;
-  }
-}
-
-.p-service-faq-list__item-question {
-  font-family: "Open Sans";
-  font-size: myrem(18);
-  font-weight: 600;
-  letter-spacing: 0.03em;
-  line-height: calc(24 / 18);
-  text-align: left;
-  padding-bottom: myrem(3);
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   cursor: pointer;
-  gap: myrem(10);
 
   @include mq(md) {
     width: 100%;
     max-width: 1300px;
     margin: 0 auto;
     padding-bottom: 0;
+    padding-inline: myrem(25);
+    font-weight: 800;
+    font-size: myrem(20);
+    line-height: calc(18 / 20);
+    letter-spacing: 0.1em;
+
     gap: myrem(23);
-    letter-spacing: 0.11em;
+    font-size: myrem(20);
   }
 }
 
-.p-service-faq-list__item-answer {
-  font-family: "Open Sans";
+.p-service-faq-list__answer {
+  display: block;
+  font-family: "Noto Sans JP";
   font-size: myrem(14);
   font-weight: 400;
   letter-spacing: 0.03em;
@@ -660,29 +661,50 @@ padding-left:myrem(42)
   max-height: 0;
   opacity: 0;
   overflow: hidden;
-  transition: max-height 0.5s ease, opacity 0.5s ease;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
   will-change: max-height, opacity;
-  transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out,
-    padding 0.5s ease-in-out;
+  padding: 0;
 
   @include mq(md) {
     padding: 0 0 0 myrem(62);
+    font-family: "Noto Sans JP";
+    font-size: myrem(16);
+    line-height: calc(28 / 16);
+    letter-spacing: 0;
+
   }
 }
 
-.p-service-faq-list__item.is-open .p-service-faq-list__item-answer {
+.p-service-faq-list__item.is-open .p-service-faq-list__answer {
+  max-height: 800px;
   opacity: 1;
-  padding-top: myrem(16);
+}
+
+.p-service-faq-list__answer-inner {
+  padding-top: myrem(15);
 
   @include mq(md) {
-    padding: myrem(10) 0 0 myrem(62);
-    letter-spacing: 0;
-    line-height: calc(28 / 16);
-    font-size: myrem(16);
+    padding-top: myrem(10);
   }
 }
 
-.p-service-faq-list__item-icon {
+.p-service-faq-list__item + .p-service-faq-list__item {
+  margin-top: myrem(10);
+}
+
+.p-service-faq-list__item.is-hidden {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+}
+
+.p-service-faq-list__item.is-visible {
+  max-height: 1000px; /* 十分大きい値 */
+  opacity: 1;
+}
+
+.p-service-faq-list__icon {
   flex-shrink: 0;
   margin-left: auto; /* 右端に配置 */
   width: 1em;
@@ -694,8 +716,8 @@ padding-left:myrem(42)
   margin-left: auto;
 }
 
-.p-service-faq-list__item-icon::before,
-.p-service-faq-list__item-icon::after {
+.p-service-faq-list__icon::before,
+.p-service-faq-list__icon::after {
   content: "";
   position: absolute;
   background-color: $black;
@@ -704,7 +726,7 @@ padding-left:myrem(42)
 }
 
 /* 横線 */
-.p-service-faq-list__item-icon::before {
+.p-service-faq-list__icon::before {
   top: 50%;
   left: 0;
   width: 100%;
@@ -713,7 +735,7 @@ padding-left:myrem(42)
 }
 
 /* 縦線（＋用） */
-.p-service-faq-list__item-icon::after {
+.p-service-faq-list__icon::after {
   left: 50%;
   top: 0;
   width: 2px;
@@ -722,7 +744,7 @@ padding-left:myrem(42)
 }
 
 /* is-open 時は縦線を消して「−」にする */
-.p-service-faq-list__item.is-open .p-service-faq-list__item-icon::after {
+.p-service-faq-list__item.is-open .p-service-faq-list__icon::after {
   opacity: 0;
 }
 
@@ -730,7 +752,7 @@ padding-left:myrem(42)
   margin-top: myrem(40);
 
   @include mq(md) {
-    margin-top: myrem(45);
+    margin-top: myrem(50);
   }
 }
 

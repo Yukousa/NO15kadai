@@ -49,6 +49,6 @@ else {
 <?php endif; ?>
 
 <!-- パンくずリスト -->
-<div class="c-breadcrumbs__wrapper<?php echo $modifier ? ' c-breadcrumbs__wrapper--' . esc_attr($modifier) : ''; ?>">
+<div class="p-breadcrumbs__wrapper<?php echo $modifier ? ' p-breadcrumbs__wrapper--' . esc_attr($modifier) : ''; ?>">
     <?php get_template_part('template-parts/sections/section-breadcrumbs'); ?>
 </div>

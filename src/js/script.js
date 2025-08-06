@@ -170,250 +170,250 @@ jQuery(function ($) {
     });
   }
 
-
 /*****************************
   service faq アコーディオン
 *****************************/
 $(function () {
-  $('.js-faq-toggle').on('click', function () {
+  // アコーディオン開閉
+  $(".js-faq-toggle").on("click", function () {
     const $toggle = $(this);
-    const $item = $toggle.closest('.p-service-faq-list__item');
-    const $answer = $item.find('.js-faq-answer');
+    const $item = $toggle.closest(".p-service-faq-list__item");
+    const $answer = $item.find(".js-faq-answer");
+    const isOpen = $item.hasClass("is-open");
 
-    const isOpen = $item.hasClass('is-open');
-
-    // aria属性切り替え
-    const expanded = $toggle.attr('aria-expanded') === 'true';
-    $toggle.attr('aria-expanded', !expanded);
+    const expanded = $toggle.attr("aria-expanded") === "true";
+    $toggle.attr("aria-expanded", !expanded);
 
     if (!isOpen) {
-      // 開くとき
-      $item.addClass('is-open');
+      $item.addClass("is-open");
       const scrollHeight = $answer[0].scrollHeight;
-      $answer.css({
-        maxHeight: scrollHeight + 'px',
-        opacity: 1
-      });
-
-      // アニメ完了後にmax-heightをautoにしておく（再開閉用）
-      setTimeout(() => {
-        $answer.css('maxHeight', 'none');
-      }, 400);
+      $answer.css({ maxHeight: scrollHeight + "px", opacity: 1 });
+      setTimeout(() => $answer.css("maxHeight", "none"), 400);
     } else {
-      // 閉じるとき：max-heightを再び設定（autoだと閉じられない）
       const currentHeight = $answer[0].scrollHeight;
-      $answer.css('maxHeight', currentHeight + 'px');
-
-      // リフローを強制してから閉じる
+      $answer.css("maxHeight", currentHeight + "px");
       void $answer[0].offsetHeight;
-
-      $answer.css({
-        maxHeight: 0,
-        opacity: 0
-      });
-
-      // is-open クラスを遅延で外す（transition後）
+      $answer.css({ maxHeight: 0, opacity: 0 });
       setTimeout(() => {
-        $item.removeClass('is-open');
-        $answer.css('maxHeight', '');
+        $item.removeClass("is-open");
+        $answer.css("maxHeight", "");
       }, 400);
     }
   });
-});
 
-// ✅ 初期状態で最初のFAQだけ開く（1件だけ）
-$(window).on("load", function () {
-  const $firstItem = $(".p-service-faq-list__item").first();
-  $firstItem.addClass("is-open");
-});
+  $(".js-faq-more").on("click", function () {
+    const $hiddenItems = $(".p-service-faq-list__item.is-hidden");
+  
+    $hiddenItems
+      .css({ display: "block", opacity: 0 }) // まず表示（透明で）
+      .removeClass("is-hidden")
+      .addClass("is-visible");
+  
+    // 少し間をおいてふわっと表示
+    setTimeout(() => {
+      $hiddenItems.css({ opacity: 1 });
+    }, 10);
+  
+    // アニメーション終了後に is-visible を外し、max-height をリセット
+    setTimeout(() => {
+      $hiddenItems.css({ maxHeight: "" }).removeClass("is-visible");
+    }, 600); // CSSとタイミングを合わせる
+  
+    // ボタンを非表示
+    $(this).fadeOut();
+  });
+  
 
-  /*****************************
+    /*****************************
    フロントページの流れるテキスト
 *****************************/
-  var $lines = $(".p-frontService-bgText");
-  var shuffled = $lines.toArray().sort(() => Math.random() - 0.5);
-  $(shuffled.slice(0, 2)).addClass("is-reverse");
+    var $lines = $(".p-frontService-bgText");
+    var shuffled = $lines.toArray().sort(() => Math.random() - 0.5);
+    $(shuffled.slice(0, 2)).addClass("is-reverse");
 
-  /*****************************
+    /*****************************
  フロントページはFVを超えたら、下層ページはヘッダーを超えたら背景色追加 
 *****************************/
-  const header = $(".p-header__inner");
-  const fv = $(".p-fv"); // フロントページだけ存在
+    const header = $(".p-header__inner");
+    const fv = $(".p-fv"); // フロントページだけ存在
 
-  $(window)
-    .on("scroll", function () {
-      // FVがあればその高さ、なければヘッダー高さを基準に
-      const baseHeight =
-        fv.length && fv.is(":visible")
-          ? fv.outerHeight()
-          : header.outerHeight();
-      const scrollTop = $(this).scrollTop();
+    $(window)
+      .on("scroll", function () {
+        // FVがあればその高さ、なければヘッダー高さを基準に
+        const baseHeight =
+          fv.length && fv.is(":visible")
+            ? fv.outerHeight()
+            : header.outerHeight();
+        const scrollTop = $(this).scrollTop();
 
-      if (scrollTop > baseHeight) {
-        header.addClass("is-scrolled");
-      } else {
-        header.removeClass("is-scrolled");
-      }
-    })
-    .trigger("scroll");
+        if (scrollTop > baseHeight) {
+          header.addClass("is-scrolled");
+        } else {
+          header.removeClass("is-scrolled");
+        }
+      })
+      .trigger("scroll");
 
-  /*****************************
+    /*****************************
 見出しのアニメーション
 *****************************/
-  const $targets = $(".c-heading02--up, .c-heading02--left");
+    const $targets = $(".c-heading02--up, .c-heading02--left");
 
-  const observer = new IntersectionObserver(
-    function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          $(entry.target).addClass("is-inview");
-        }
-      });
-    },
-    {
-      threshold: 0.1,
-    }
-  );
+    const observer = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            $(entry.target).addClass("is-inview");
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+      }
+    );
 
-  $targets.each(function () {
-    observer.observe(this);
-  });
+    $targets.each(function () {
+      observer.observe(this);
+    });
 
-/*****************************
+    /*****************************
   serviceのカウントアニメーション（個別トリガー方式）
 *****************************/
 
-// カウント済みの要素に付けるクラス
-const countedClass = 'is-counted';
+    // カウント済みの要素に付けるクラス
+    const countedClass = "is-counted";
 
-// カウントダウン（お見積もり）
-function triggerCountdown($target) {
-  if ($target.hasClass(countedClass)) return;
+    // カウントダウン（お見積もり）
+    function triggerCountdown($target) {
+      if ($target.hasClass(countedClass)) return;
 
-  $target.addClass(countedClass);
-  let count = 100;
-  const countdown = setInterval(() => {
-    $target.text(count);
-    count--;
-    if (count < 0) {
-      clearInterval(countdown);
-      $target.text("0");
+      $target.addClass(countedClass);
+      let count = 100;
+      const countdown = setInterval(() => {
+        $target.text(count);
+        count--;
+        if (count < 0) {
+          clearInterval(countdown);
+          $target.text("0");
+        }
+      }, 30);
     }
-  }, 30);
-}
 
-// カウントアップ処理
-function animateCountUp($el, toValue, duration = 800) {
-  if ($el.hasClass(countedClass)) return;
+    // カウントアップ処理
+    function animateCountUp($el, toValue, duration = 1500) {
+      if ($el.hasClass(countedClass)) return;
 
-  $el.addClass(countedClass);
+      $el.addClass(countedClass);
 
-  const isNumber = Number.isInteger(toValue);
-  $({ countNum: 0 }).animate(
-    { countNum: toValue },
-    {
-      duration: duration,
-      easing: "swing",
-      step: function () {
-        const val = isNumber
-          ? Math.floor(this.countNum).toLocaleString()
-          : this.countNum.toFixed(0);
-        $el.text(val);
-      },
-      complete: function () {
-        const val = isNumber
-          ? Math.floor(toValue).toLocaleString()
-          : toValue.toFixed(0);
-        $el.text(val);
-      },
+      const isNumber = Number.isInteger(toValue);
+      $({ countNum: 0 }).animate(
+        { countNum: toValue },
+        {
+          duration: duration,
+          easing: "swing",
+          step: function () {
+            const val = isNumber
+              ? Math.floor(this.countNum).toLocaleString()
+              : this.countNum.toFixed(0);
+            $el.text(val);
+          },
+          complete: function () {
+            const val = isNumber
+              ? Math.floor(toValue).toLocaleString()
+              : toValue.toFixed(0);
+            $el.text(val);
+          },
+        }
+      );
     }
-  );
-}
 
-// 対象が画面内に入ったかチェック
-function isInViewport($el) {
-  const windowTop = $(window).scrollTop();
-  const windowBottom = windowTop + $(window).height();
-  const elTop = $el.offset().top;
-  const elBottom = elTop + $el.outerHeight();
+    // 対象が画面内に入ったかチェック
+    function isInViewport($el) {
+      const windowTop = $(window).scrollTop();
+      const windowBottom = windowTop + $(window).height();
+      const elTop = $el.offset().top;
+      const elBottom = elTop + $el.outerHeight();
 
-  return elBottom > windowTop && elTop < windowBottom;
-}
-
-// スクロール or 読み込み時にアニメーションをチェック
-function checkCountAnimations() {
-  // カウントダウン
-  const $estimate = $(".p-service-price__card--estimate .js-count-num");
-  if ($estimate.length && isInViewport($estimate)) {
-    triggerCountdown($estimate);
-  }
-
-  // カウントアップ対象リスト
-  const countUpTargets = [
-    {
-      selector: ".p-service-price__card--basic .p-service-price__card-top",
-      to: 80000,
-    },
-    {
-      selector: ".p-service-price__card--basic .p-service-price__card-bottom",
-      to: 20000,
-    },
-    {
-      selector: ".p-service-price__card--animation .p-service-price__card-price",
-      to: 30000,
-    },
-    {
-      selector: ".p-service-price__card--responsive .p-service-price__card-text--responsive",
-      to: 25000,
-    },
-    {
-      selector: ".p-service-price__card--term .p-service-price__card-term",
-      to: 3,
-    },
-  ];
-
-  countUpTargets.forEach((item) => {
-    const $el = $(item.selector);
-    if ($el.length && isInViewport($el)) {
-      animateCountUp($el, item.to);
+      return elBottom > windowTop && elTop < windowBottom;
     }
-  });
-}
 
-// イベント登録
-$(window).on("scroll load resize", checkCountAnimations);
+    // スクロール or 読み込み時にアニメーションをチェック
+    function checkCountAnimations() {
+      // カウントダウン
+      const $estimate = $(".p-service-price__card--estimate .js-count-num");
+      if ($estimate.length && isInViewport($estimate)) {
+        triggerCountdown($estimate);
+      }
 
+      // カウントアップ対象リスト
+      const countUpTargets = [
+        {
+          selector: ".p-service-price__card--basic .p-service-price__card-top",
+          to: 80000,
+        },
+        {
+          selector:
+            ".p-service-price__card--basic .p-service-price__card-bottom",
+          to: 20000,
+        },
+        {
+          selector:
+            ".p-service-price__card--animation .p-service-price__card-price",
+          to: 30000,
+        },
+        {
+          selector:
+            ".p-service-price__card--responsive .p-service-price__card-text--responsive",
+          to: 25000,
+        },
+        {
+          selector: ".p-service-price__card--term .p-service-price__card-term",
+          to: 3,
+        },
+      ];
 
-/*****************************
+      countUpTargets.forEach((item) => {
+        const $el = $(item.selector);
+        if ($el.length && isInViewport($el)) {
+          animateCountUp($el, item.to);
+        }
+      });
+    }
+
+    // イベント登録
+    $(window).on("scroll load resize", checkCountAnimations);
+
+    /*****************************
  ヘッダーメールリンクの遷移先をデバイス幅によって切り替え
  PC：#contact（ページ内遷移） / SP：/contact/（ページ遷移）
 *****************************/
-  $(document).on("click", "#js-mail-link", function (e) {
-    const isDrawerOpen = $(".js-drawer").hasClass("is-active");
-    const scrollTarget = $("#contact");
+    $(document).on("click", "#js-mail-link", function (e) {
+      const isDrawerOpen = $(".js-drawer").hasClass("is-active");
+      const scrollTarget = $("#contact");
 
-    e.preventDefault();
+      e.preventDefault();
 
-    if (isDrawerOpen) {
-      // ✅ ドロワーが開いているとき → 閉じて、フェードアウトしてから遷移
-      $(".js-drawer").removeClass("is-active");
-      $(".p-header__nav").removeClass("is-active");
-      $("body").removeClass("is-fixed");
+      if (isDrawerOpen) {
+        // ✅ ドロワーが開いているとき → 閉じて、フェードアウトしてから遷移
+        $(".js-drawer").removeClass("is-active");
+        $(".p-header__nav").removeClass("is-active");
+        $("body").removeClass("is-fixed");
 
-      // 少し待ってからフェードアウト
-      setTimeout(() => {
-        $("body").addClass("fade-out");
-
+        // 少し待ってからフェードアウト
         setTimeout(() => {
-          window.location.href = "/contact/";
-        }, 600); // CSSのtransition時間と一致
-      }, 200); // ドロワー閉じるまで少し待つ
-    } else {
-      // ✅ ドロワーが開いていないとき → スムーススクロール
-      if (scrollTarget.length) {
-        const position = scrollTarget.offset().top;
-        $("html, body").animate({ scrollTop: position }, 600);
+          $("body").addClass("fade-out");
+
+          setTimeout(() => {
+            window.location.href = "/contact/";
+          }, 600); // CSSのtransition時間と一致
+        }, 200); // ドロワー閉じるまで少し待つ
+      } else {
+        // ✅ ドロワーが開いていないとき → スムーススクロール
+        if (scrollTarget.length) {
+          const position = scrollTarget.offset().top;
+          $("html, body").animate({ scrollTop: position }, 600);
+        }
       }
-    }
+    });
   });
 });
