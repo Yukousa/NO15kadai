@@ -7,13 +7,19 @@
   @include mq(md) {
     padding-right: myrem(70);
   }
-
-  
 }
 
 .p-breadcrumbs--gray {
   background-color: $black_base;
 
+}
+
+.p-breadcrumbs--height {
+margin-top: myrem(50);
+
+@include mq(md) {
+  margin-top: myrem(15);
+}
 }
 
 .p-breadcrumbs__list {
