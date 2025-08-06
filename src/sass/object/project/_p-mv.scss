@@ -5,6 +5,14 @@
   padding-top: myrem(173);
 }
 
+.p-mv--voice {
+  padding-top: myrem(116);
+
+  @include mq(md) {
+    margin-top: myrem(35);
+  }
+}
+
 .p-mv__inner {
 }
 
@@ -105,6 +113,17 @@
 
   @include mq(md) {
     
+    aspect-ratio: 1440 / 480;
+  }
+}
+
+.p-mv__image--voice img {
+}
+
+.p-mv__image--voice img {
+  aspect-ratio: 374 / 230;
+
+  @include mq(md) {
     aspect-ratio: 1440 / 480;
   }
 }
