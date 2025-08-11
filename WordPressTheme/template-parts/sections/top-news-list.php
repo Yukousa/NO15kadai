@@ -35,7 +35,7 @@
 
                   <h3 class="p-top-news-inner-content-list-link-post__title p-top-news-inner-content-list-link-post-title">
                     <p class="p-top-news-inner-content-list-link-post-title__text">
-                      <?php echo esc_html(get_the_title()); ?>
+                    <?php echo esc_html(wp_strip_all_tags(get_the_title())); ?>
                     </p>
                   </h3>
 

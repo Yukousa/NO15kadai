@@ -25,6 +25,8 @@
   opacity: 1;
   box-shadow: none;
 
+  transition: background-color .28s ease, box-shadow .36s ease; 
+
   @include mq(md) {
     padding-left: myrem(70);
     padding-right: 0;

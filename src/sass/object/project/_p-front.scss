@@ -323,6 +323,7 @@
   max-width: myrem(315);
   max-height: 300px;
   margin-left: myrem(10);
+  pointer-events: none;
 
   @include mq(md) {
     max-width: myrem(369);
@@ -332,7 +333,9 @@
 }
 
 .p-top-works-swiper .swiper-slide a {
-  opacity: 1;
+  pointer-events: auto;
+  position: relative;
+  z-index: 10;
 }
 
 .p-top-works-swiper__card {
@@ -545,6 +548,10 @@
     border-right: 1px solid white;
     transform: translate(-70%, -50%) rotate(45deg);
   }
+}
+
+.p-top-works-swiper .swiper-slide-duplicate {
+  pointer-events: none;
 }
 
 .p-top-works__readMore {

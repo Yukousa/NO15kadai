@@ -121,10 +121,15 @@ jQuery(function ($) {
   if (document.querySelector(".p-top-works-swiper")) {
     new Swiper(".p-top-works-swiper", {
       loop: true,
-      speed: 500,
-      allowTouchMove: false,
+      speed: 1000,
+      allowTouchMove: true,
       spaceBetween: 20,
-      autoplay: { delay: 3000, disableOnInteraction: true },
+      autoplay: {
+        delay: 4000,
+        disableOnInteraction: false,
+        waitForTransition: false,
+      },
+
       breakpoints: {
         0: {
           spaceBetween: 20,
@@ -147,82 +152,91 @@ jQuery(function ($) {
   if (document.querySelector(".c-related-swiper")) {
     new Swiper(".c-related-swiper", {
       loop: true,
-      speed: 500,
-      allowTouchMove: false,
+      speed: 1000,
+      slidesPerView: 1.42,
+      centeredSlides: true,
       spaceBetween: 20,
-      autoplay: { delay: 3000, disableOnInteraction: true },
+      allowTouchMove: true,
+
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true, 
+      },
+
       breakpoints: {
         0: {
-          spaceBetween: 0,
-          centeredSlides: false,
-          slidesPerView: "auto",
+          slidesPerView: 1.42,
+          spaceBetween: 20,
+          centeredSlides: true,
         },
         768: {
-          slidesPerView: "auto",
-          centeredSlides: false,
-          spaceBetween: 0,
+          slidesPerView: 3.82,
+          spaceBetween: 50,
+          allowTouchMove: true,
         },
       },
+
       navigation: {
         nextEl: ".c-related-swiper-nav__next",
         prevEl: ".c-related-swiper-nav__prev",
       },
+
+      
     });
   }
-
 /*****************************
   service faq アコーディオン
 *****************************/
-$(function () {
-  // アコーディオン開閉
-  $(".js-faq-toggle").on("click", function () {
-    const $toggle = $(this);
-    const $item = $toggle.closest(".p-service-faq-list__item");
-    const $answer = $item.find(".js-faq-answer");
-    const isOpen = $item.hasClass("is-open");
+  $(function () {
+    // アコーディオン開閉
+    $(".js-faq-toggle").on("click", function () {
+      const $toggle = $(this);
+      const $item = $toggle.closest(".p-service-faq-list__item");
+      const $answer = $item.find(".js-faq-answer");
+      const isOpen = $item.hasClass("is-open");
 
-    const expanded = $toggle.attr("aria-expanded") === "true";
-    $toggle.attr("aria-expanded", !expanded);
+      const expanded = $toggle.attr("aria-expanded") === "true";
+      $toggle.attr("aria-expanded", !expanded);
 
-    if (!isOpen) {
-      $item.addClass("is-open");
-      const scrollHeight = $answer[0].scrollHeight;
-      $answer.css({ maxHeight: scrollHeight + "px", opacity: 1 });
-      setTimeout(() => $answer.css("maxHeight", "none"), 400);
-    } else {
-      const currentHeight = $answer[0].scrollHeight;
-      $answer.css("maxHeight", currentHeight + "px");
-      void $answer[0].offsetHeight;
-      $answer.css({ maxHeight: 0, opacity: 0 });
+      if (!isOpen) {
+        $item.addClass("is-open");
+        const scrollHeight = $answer[0].scrollHeight;
+        $answer.css({ maxHeight: scrollHeight + "px", opacity: 1 });
+        setTimeout(() => $answer.css("maxHeight", "none"), 400);
+      } else {
+        const currentHeight = $answer[0].scrollHeight;
+        $answer.css("maxHeight", currentHeight + "px");
+        void $answer[0].offsetHeight;
+        $answer.css({ maxHeight: 0, opacity: 0 });
+        setTimeout(() => {
+          $item.removeClass("is-open");
+          $answer.css("maxHeight", "");
+        }, 400);
+      }
+    });
+
+    $(".js-faq-more").on("click", function () {
+      const $hiddenItems = $(".p-service-faq-list__item.is-hidden");
+
+      $hiddenItems
+        .css({ display: "block", opacity: 0 }) // まず表示（透明で）
+        .removeClass("is-hidden")
+        .addClass("is-visible");
+
+      // 少し間をおいてふわっと表示
       setTimeout(() => {
-        $item.removeClass("is-open");
-        $answer.css("maxHeight", "");
-      }, 400);
-    }
-  });
+        $hiddenItems.css({ opacity: 1 });
+      }, 10);
 
-  $(".js-faq-more").on("click", function () {
-    const $hiddenItems = $(".p-service-faq-list__item.is-hidden");
-  
-    $hiddenItems
-      .css({ display: "block", opacity: 0 }) // まず表示（透明で）
-      .removeClass("is-hidden")
-      .addClass("is-visible");
-  
-    // 少し間をおいてふわっと表示
-    setTimeout(() => {
-      $hiddenItems.css({ opacity: 1 });
-    }, 10);
-  
-    // アニメーション終了後に is-visible を外し、max-height をリセット
-    setTimeout(() => {
-      $hiddenItems.css({ maxHeight: "" }).removeClass("is-visible");
-    }, 600); // CSSとタイミングを合わせる
-  
-    // ボタンを非表示
-    $(this).fadeOut();
-  });
-  
+      // アニメーション終了後に is-visible を外し、max-height をリセット
+      setTimeout(() => {
+        $hiddenItems.css({ maxHeight: "" }).removeClass("is-visible");
+      }, 600); // CSSとタイミングを合わせる
+
+      // ボタンを非表示
+      $(this).fadeOut();
+    });
 
     /*****************************
    フロントページの流れるテキスト
