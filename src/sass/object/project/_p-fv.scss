@@ -1,0 +1,266 @@
+@use "global" as *;
+
+/***********************************
+フロントページのfv
+***********************************/
+.p-fv {
+  width: 100%;
+  height: myrem(600);
+  position: relative;
+
+  @include mq(md) {
+    height: myrem(750);
+  }
+}
+
+// swiper
+.p-fv-swiper .swiper-wrapper {
+  overflow: hidden;
+  @include mq(md) {
+    height: myrem(750);
+  }
+}
+
+.p-fv-swiper .swiper-slide {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  @include mq(md) {
+  }
+}
+
+.p-fv-swiper .swiper-slide img {
+  width: 100%;
+  height: myrem(600);
+  object-fit: cover;
+  display: block;
+
+  @include mq(md) {
+    height: myrem(750);
+    aspect-ratio: 1440 / 750;
+  }
+}
+
+@keyframes zoomUp {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.15);
+  }
+}
+
+.p-fv-swiper .swiper-slide-active img,
+.p-fv-swiper .swiper-slide-duplicate-active img,
+.p-fv-swiper .swiper-slide-prev img {
+  animation: zoomUp 7s linear 0s normal both;
+}
+
+// テキスト部分
+.p-fv__text {
+  width: fit-content;
+  min-height: myrem(240); /* テキストの高さを先に確保する */
+  position: absolute;
+  top: 50%;
+  transform: translateY(-37%);
+  left: calc(21 / 375 * 100%);
+  z-index: 10;
+  color: $white;
+  line-height: 1;
+  margin: 0 auto;
+
+  @include mq(md) {
+    min-height: myrem(240); /* テキストの高さを先に確保する */
+    width: fit-content;
+    left: myrem(70);
+    top: calc(433 / 750 * 100%);
+    transform: translate(0, 0);
+  }
+}
+
+.p-fv-text__catch3 {
+  width: 100%;
+  display: inline-flex;
+  align-items: baseline;
+  font-family: $font-sub;
+  font-weight: 600;
+  font-size: myrem(18);
+  letter-spacing: 0.1em;
+  position: relative;
+  gap: myrem(10);
+  opacity: 0;
+  transform: translateY(myrem(20));
+  transition: none;
+
+  @include mq(md) {
+    font-size: myrem(40);
+    align-items: center;
+    margin-left: myrem(10);
+  }
+}
+
+.p-fv-text__catch3.is-animated {
+  animation: fadeUp 0.6s ease-out 0.6s forwards;
+}
+
+.p-fv-text__catch3::after {
+  content: "";
+  width: 0;
+  position: absolute;
+  left: myrem(180);
+  top: 50%;
+  height: 2px;
+  background-color: $white;
+  display: inline-block;
+  pointer-events: none;
+  opacity: 0;
+
+  @include mq(md) {
+    left: myrem(385);
+  }
+}
+
+.is-animated.p-fv-text__catch3::after {
+  opacity: 1;
+  animation: underlineGrow-sm 0.6s ease-out 1.2s forwards;
+
+  @include mq(md) {
+    animation: underlineGrow-md 0.6s ease-out 1.2s forwards;
+  }
+}
+
+// キャッチコピー英語部分のアニメーション
+// 線を左から右へ伸ばす
+@keyframes underlineGrow-sm {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: myrem(125);
+  }
+}
+
+@keyframes underlineGrow-md {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: myrem(230);
+  }
+}
+
+// テキストを下からフェードアップ
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(myrem(20));
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.p-fv-text__catch1 {
+  font-family: $font-main;
+  font-size: myrem(44);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  margin-top: myrem(15);
+
+  @include mq(md) {
+    font-size: myrem(74);
+    margin-top: myrem(10);
+  }
+}
+
+.p-fv-text__catch1--small {
+  font-size: myrem(32);
+  margin-left: myrem(-10);
+  @include mq(md) {
+    font-size: myrem(62);
+  }
+}
+
+.p-fv-text__catch2 {
+  font-family: $font-main;
+  font-size: myrem(52);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  margin-top: myrem(10);
+
+  @include mq(md) {
+    font-size: myrem(99);
+    font-weight: 800;
+    margin-top: myrem(15);
+  }
+}
+
+// スクロールアニメーション
+.p-fv__scroll {
+  display: block;
+  position: absolute;
+  bottom: myrem(0);
+  right: clamp(4%, 7.3%, 300px);
+  width: 2px;
+  height: myrem(120);
+  background: linear-gradient(
+    to bottom,
+    $black,
+    $black myrem(0),
+    $white myrem(0),
+    $white 100%
+  );
+  z-index: 10;
+}
+
+.p-fv-scroll__text {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-size: myrem(16);
+  font-family: $font-sub;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: $black;
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-transform: uppercase;
+  padding-bottom: myrem(16);
+}
+
+/* アニメーションする縦線 */
+.p-fv-scroll::after {
+  content: "";
+  position: absolute;
+  top: myrem(0); // ← 開始位置
+  left: 0;
+  width: 100%;
+  height: myrem(120);
+  background-color: $black;
+  transform: scaleY(0);
+  transform-origin: top;
+  animation: drawBlackDown 2s ease-in-out infinite;
+}
+
+@keyframes drawBlackDown {
+  0% {
+    transform-origin: top;
+    transform: scaleY(0);
+  }
+  45% {
+    transform-origin: top;
+    transform: scaleY(1);
+  }
+  55% {
+    transform-origin: bottom;
+    transform: scaleY(1);
+  }
+  100% {
+    transform-origin: bottom;
+    transform: scaleY(0);
+  }
+}
+

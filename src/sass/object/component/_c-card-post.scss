@@ -11,9 +11,7 @@
 }
 
 .c-card-post:hover {
-
   @include mq(md) {
-    
     transform: scale(1.1);
   }
 }

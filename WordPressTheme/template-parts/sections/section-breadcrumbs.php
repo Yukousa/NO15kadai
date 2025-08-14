@@ -1,45 +1,66 @@
-    <ul class="p-breadcrumbs__list">
-        <li class="p-breadcrumbs__item">
-            <a href="<?php echo esc_url(home_url('/')); ?>" class="p-breadcrumbs__link">TOP</a>
-        </li>
+<?php
+// 表示条件：フロントでは非表示にしたい場合は return;
+if ( is_front_page() ) {
+  return;
+}
 
-        <?php
-        // contact / confirm / thanks ページは CONTACT に統一
-        if (is_page('contact') || is_page('confirm') || is_page('thanks')) {
-            echo '<li class="p-breadcrumbs__item">CONTACT</li>';
+// 固定ページ → ラベル対応表
+$fixed_map = [
+  'message' => 'MESSAGE',
+  'service' => 'SERVICE',
+  'profile' => 'PROFILE',
+  // contact系はすべて CONTACT に統一
+  'contact' => 'CONTACT',
+  'confirm' => 'CONTACT',
+  'thanks'  => 'CONTACT',
+];
 
-        // 固定ページ
-        } elseif (is_page()) {
-            $ancestors = get_post_ancestors(get_the_ID());
-            if (!empty($ancestors)) {
-                $parent_id = end($ancestors);
-                echo '<li class="p-breadcrumbs__item"><a href="' . esc_url(get_permalink($parent_id)) . '" class="p-breadcrumbs__link">' . esc_html(get_the_title($parent_id)) . '</a></li>';
-            }
-            echo '<li class="p-breadcrumbs__item" aria-current="page">' . esc_html(get_the_title()) . '</li>';
+$label = null;
 
-        // 投稿（シングル）
-        } elseif (is_single()) {
-            echo '<li class="p-breadcrumbs__item" aria-current="page">NEWS</li>';
+// 1) 固定ページ（スラッグで判定）
+if ( is_page() ) {
+  $slug = get_post_field( 'post_name', get_queried_object_id() );
+  if ( isset($fixed_map[$slug]) ) {
+    $label = $fixed_map[$slug];
+  }
+}
 
-        // カテゴリーアーカイブ
-        } elseif (is_category()) {
-            echo '<li class="p-breadcrumbs__item"><a href="' . esc_url(home_url('/news/')) . '" class="p-breadcrumbs__link">NEWS</a></li>';
-            echo '<li class="p-breadcrumbs__item" aria-current="page">' . single_cat_title('', false) . '</li>';
+// 2) アーカイブ：WORKS / VOICE / NEWS（一覧・月別・カテゴリ別 すべて NEWS 表示）
+if ( !$label ) {
+  if ( is_post_type_archive('works') ) {
+    $label = 'WORKS';
+  } elseif ( is_post_type_archive('voice') ) {
+    $label = 'VOICE';
+  } elseif ( is_post_type_archive('news') ) {
+    $label = 'NEWS';
+  }
+}
 
-        // 月別アーカイブ
-        } elseif (is_date()) {
-            echo '<li class="p-breadcrumbs__item"><a href="' . esc_url(home_url('/news/')) . '" class="p-breadcrumbs__link">NEWS</a></li>';
-            if (is_year()) {
-                echo '<li class="p-breadcrumbs__item" aria-current="page">' . get_the_time('Y年') . '</li>';
-            } elseif (is_month()) {
-                echo '<li class="p-breadcrumbs__item" aria-current="page">' . get_the_time('Y年n月') . '</li>';
-            } elseif (is_day()) {
-                echo '<li class="p-breadcrumbs__item" aria-current="page">' . get_the_time('Y年n月j日') . '</li>';
-            }
+// 3) NEWS の派生（CPT の single / taxonomy / 月別などもすべて NEWS）
+if ( !$label ) {
+  if ( is_singular('news') ) {
+    $label = 'NEWS';
+  } elseif ( is_tax('news_category') ) {
+    $label = 'NEWS';
+  } elseif ( is_date() && ( get_query_var('post_type') === 'news' ) ) {
+    // 月別アーカイブを news 用に組んでいる場合
+    $label = 'NEWS';
+  } elseif ( is_home() ) {
+    // 万一、通常投稿を NEWS として使う構成にも対応
+    $label = 'NEWS';
+  }
+}
 
-        // 投稿一覧（home）
-        } elseif (is_home()) {
-            echo '<li class="p-breadcrumbs__item" aria-current="page">NEWS</li>';
-        }
-        ?>
-    </ul>
+// ラベルが決まらなければ出力しない（必要ならデフォルト文言を設定）
+if ( !$label ) {
+  return;
+}
+?>
+<nav class="p-breadcrumbs__immer c-breadcrumbs" aria-label="breadcrumb">
+  <ul class="p-breadcrumbs__list">
+    <li class="p-breadcrumbs__item">
+      <a href="<?php echo esc_url( home_url('/') ); ?>" class="p-breadcrumbs__link">TOP</a>
+    </li>
+    <li class="p-breadcrumbs__item" aria-current="page"><?php echo esc_html( $label ); ?></li>
+  </ul>
+</nav>

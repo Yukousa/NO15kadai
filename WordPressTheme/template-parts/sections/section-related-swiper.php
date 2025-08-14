@@ -52,7 +52,7 @@ if (is_singular(['works', 'voice'])) {
                             <div class="c-related-swiper-card__lead">
                                 <?php if ($lead) : ?>
                                     <p class="c-related-swiper-card__lead-text">
-                                        <?php echo esc_html( wp_strip_all_tags( $lead, true ) ); ?>
+                                        <?php echo esc_html(wp_strip_all_tags($lead, true)); ?>
                                     </p>
                                 <?php endif; ?>
                             </div>
@@ -63,20 +63,19 @@ if (is_singular(['works', 'voice'])) {
         </div>
 
         <nav class="c-related-swiper__nav c-related-swiper-nav" aria-label="スライド操作">
-            <div class="c-related-swiper-nav__prev" aria-label="前へ">
-                <div class="c-arrow-svg">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <div class="c-related-swiper-nav__inner">
+                <div class="c-related-swiper-nav__prev">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <polyline points="16 4 8 12 16 20" />
                     </svg>
                 </div>
-            </div>
-            <div class="c-related-swiper-nav__next" aria-label="次へ">
-                <div class="c-arrow-svg c-arrow-svg--left">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <div class="c-related-swiper-nav__next">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <polyline points="8 4 16 12 8 20" />
                     </svg>
                 </div>
             </div>
+
         </nav>
         <?php wp_reset_postdata(); ?>
 <?php

@@ -2,7 +2,7 @@
 <main>
     <section class="p-mv">
         <div class="p-mv__inner">
-            <h2 class="p-mv__title l-inner" data-en="news">お知らせ</h2>
+            <p class="p-mv__title l-inner" data-en="news">お知らせ</p>
         </div>
     </section>
     <nav class="p-breadcrumbs p-breadcrumbs--height" aria-label="breadcrumb">
@@ -37,9 +37,7 @@
             </section>
     
             <div class="p-news__return">
-                <a href="<?php echo esc_url(get_post_type_archive_link('news')); ?>" class="c-return">
-                    一覧に戻る<span class="c-arrow01__right"></span>
-                </a>
+                <a href="<?php echo esc_url(get_post_type_archive_link('news')); ?>" class="c-btn02">一覧に戻る</a>
             </div>
         </article>    
         <aside class="p-news__sidebar">

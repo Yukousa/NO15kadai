@@ -427,17 +427,6 @@
   }
 }
 
-.p-profile-content__title--top {
-  @include mq(md) {
-    margin-left: myrem(10);
-  }
-}
-
-.p-profile-content__title--bottom {
-  @include mq(md) {
-    margin-left: myrem(0);
-  }
-}
 
 .p-profile-content__text {
   margin-top: myrem(20);

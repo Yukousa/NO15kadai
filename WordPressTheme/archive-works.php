@@ -4,7 +4,7 @@
 
   <section class="p-mv">
     <div class="p-mv__inner">
-      <h2 class="p-mv__title c-heading01 c-heading01--large03" data-en="works">実績</h2>
+      <p class="p-mv__title c-heading01 c-heading01--large03" data-en="works">実績</p>
     </div>
   </section>
   <nav class="p-breadcrumbs p-breadcrumbs--height" aria-label="breadcrumb">

@@ -3,7 +3,7 @@
 <main>
   <section class="p-mv">
     <div class="p-mv__inner">
-      <h2 class="p-mv__title l-inner" data-en="voice">お客様の声</h2>
+      <p class="p-mv__title l-inner" data-en="voice">お客様の声</p>
     </div>
   </section>
   <nav class="p-breadcrumbs" aria-label="breadcrumb">

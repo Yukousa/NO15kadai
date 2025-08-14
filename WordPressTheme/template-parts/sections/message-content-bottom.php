@@ -7,17 +7,17 @@ $content = get_field('section_post_content_2');
 // 全て空なら出力しない
 if (!empty($heading_top) || !empty($heading_bottom) || !empty($content) || !empty($image)) :
 ?>
-  <div class="c-content">
+  <div class="p-message-content-bottom__inner c-content">
     <?php if ($heading_top) : ?>
-      <h3 class="c-content__title--top c-heading02--up">
+      <h2 class="p-message-content-bottom__title c-heading02 u-slide-up">
         <?php echo esc_html($heading_top); ?>
-      </h3>
+      </h2>
     <?php endif; ?>
 
     <?php if ($heading_bottom) : ?>
-      <h3 class="c-content__title--bottom c-heading02--left">
+      <h2 class="p-message-content-bottom__title c-heading02 c-heading02--black u-slide-left">
         <span><?php echo esc_html($heading_bottom); ?></span>
-      </h3>
+      </h2>
     <?php endif; ?>
 
     <?php if ($content) : ?>

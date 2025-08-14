@@ -1,0 +1,43 @@
+@use "global" as *;
+
+/***************************************
+見出し　２種類のアニメーション
+****************************************/
+
+// スライドアップ　アニメーション
+.u-slide-up.is-inview {
+  animation: slide-up 0.8s ease-out forwards;
+}
+
+@keyframes slide-up {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+// スライドイン（左から）　アニメーション
+.u-slide-left {
+  opacity: 0;
+}
+
+.u-slide-left.is-inview {
+  opacity: 1;
+}
+
+.u-slide-left.is-inview::before {
+  animation: slide-left 0.8s ease-out forwards;
+}
+
+@keyframes slide-left {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}

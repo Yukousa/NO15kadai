@@ -13,13 +13,13 @@
 
   <div class="p-profile-content">
     <?php if ($heading_top) : ?>
-      <h3 class="p-profile-content__title--top c-heading02--up">
+      <h3 class="p-profile-content__title c-heading02 u-slide-up">
         <?php echo esc_html($heading_top); ?>
       </h3>
     <?php endif; ?>
 
     <?php if ($heading_bottom) : ?>
-      <h3 class="p-profile-content__title--bottom c-heading02--left">
+      <h3 class="p-profile-content__title c-heading02 c-heading02--black u-slide-left">
         <span><?php echo esc_html($heading_bottom); ?></span>
       </h3>
     <?php endif; ?>

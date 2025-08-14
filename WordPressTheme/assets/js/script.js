@@ -20,7 +20,7 @@ jQuery(function ($) {
 
   /*****************************
    スムーススクロール
-*****************************/
+  *****************************/
   $(document).on("click", 'a[href*="#"]', function () {
     let time = 400;
     let header = $("header").innerHeight();
@@ -33,22 +33,38 @@ jQuery(function ($) {
 
   /*****************************
    ハンバーガーボタン
-*****************************/
+  *****************************/
+  function closeDrawer() {
+    $(".js-hamburger").removeClass("is-active");
+    $(".js-drawer").removeClass("is-active");
+    $("body").removeClass("is-drawer-open");
+  }
+
+  // ハンバーガー開閉
   $(".js-hamburger").on("click", function () {
     $(this).toggleClass("is-active");
     $(".js-drawer").toggleClass("is-active");
     $("body").toggleClass("is-drawer-open");
   });
 
-  $(".js-drawer-overlay, .js-drawer a").on("click", function () {
-    $(".js-hamburger").removeClass("is-active");
-    $(".js-drawer").removeClass("is-active");
-    $("body").removeClass("is-drawer-open");
+  // オーバーレイだけで閉じる
+  $(".js-drawer-overlay").on("click", closeDrawer);
+
+  // 768px以上になったら強制クローズ
+  window.matchMedia("(min-width: 768px)").addEventListener("change", (mq) => {
+    if (mq.matches) closeDrawer();
   });
 
+  // 同一ページ内 #id へのリンクのみ閉じる
+  $(".js-drawer a").on("click", function () {
+    const href = this.getAttribute("href") || "";
+    if (href.startsWith("#") || (this.pathname === location.pathname && this.hash)) {
+      closeDrawer();
+    }
+  })
   /*****************************
    FVアニメーション
-*****************************/
+  *****************************/
   const $typingParts = $(".typing-part");
   let partIndex = 0;
   let charIndex = 0;
@@ -96,8 +112,8 @@ jQuery(function ($) {
   }
 
   /*****************************
-   Swiper 初期化
-*****************************/
+   Swiper 
+  *****************************/
 
   if (document.querySelector(".js-fv-swiper")) {
     new Swiper(".p-fv-swiper", {
@@ -125,9 +141,9 @@ jQuery(function ($) {
       allowTouchMove: true,
       spaceBetween: 20,
       autoplay: {
-        delay: 4000,
+        delay: 3000,
         disableOnInteraction: false,
-        waitForTransition: false,
+        pauseOnMouseEnter: true,
       },
 
       breakpoints: {
@@ -161,7 +177,7 @@ jQuery(function ($) {
       autoplay: {
         delay: 3000,
         disableOnInteraction: false,
-        pauseOnMouseEnter: true, 
+        pauseOnMouseEnter: true,
       },
 
       breakpoints: {
@@ -181,13 +197,11 @@ jQuery(function ($) {
         nextEl: ".c-related-swiper-nav__next",
         prevEl: ".c-related-swiper-nav__prev",
       },
-
-      
     });
   }
-/*****************************
+  /*****************************
   service faq アコーディオン
-*****************************/
+  *****************************/
   $(function () {
     // アコーディオン開閉
     $(".js-faq-toggle").on("click", function () {
@@ -240,14 +254,14 @@ jQuery(function ($) {
 
     /*****************************
    フロントページの流れるテキスト
-*****************************/
+  *****************************/
     var $lines = $(".p-frontService-bgText");
     var shuffled = $lines.toArray().sort(() => Math.random() - 0.5);
     $(shuffled.slice(0, 2)).addClass("is-reverse");
 
     /*****************************
- フロントページはFVを超えたら、下層ページはヘッダーを超えたら背景色追加 
-*****************************/
+   フロントページはFVを超えたら、下層ページはヘッダーを超えたら背景色追加 
+  *****************************/
     const header = $(".p-header__inner");
     const fv = $(".p-fv"); // フロントページだけ存在
 
@@ -268,31 +282,34 @@ jQuery(function ($) {
       })
       .trigger("scroll");
 
-    /*****************************
-見出しのアニメーション
-*****************************/
-    const $targets = $(".c-heading02--up, .c-heading02--left");
+ /*****************************
+   見出しのアニメーション
+  *****************************/
+const $targets = $(".u-slide-up, .u-slide-left");
 
-    const observer = new IntersectionObserver(
-      function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            $(entry.target).addClass("is-inview");
-          }
-        });
-      },
-      {
-        threshold: 0.1,
+const ioOnce = new IntersectionObserver(
+  (entries, obs) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-inview");
+        obs.unobserve(entry.target); // ← 一度入ったら監視解除
       }
-    );
-
-    $targets.each(function () {
-      observer.observe(this);
     });
+  },
+  {
+    root: null,
+    rootMargin: "0px 0px -10% 0px", // 画面下から10%手前で発火したい時はマイナス
+    threshold: 0.1,
+  }
+);
+
+$targets.each(function () {
+  ioOnce.observe(this);
+});
 
     /*****************************
-  serviceのカウントアニメーション（個別トリガー方式）
-*****************************/
+   serviceのカウントアニメーション（個別トリガー方式）
+  *****************************/
 
     // カウント済みの要素に付けるクラス
     const countedClass = "is-counted";
@@ -398,9 +415,9 @@ jQuery(function ($) {
     $(window).on("scroll load resize", checkCountAnimations);
 
     /*****************************
- ヘッダーメールリンクの遷移先をデバイス幅によって切り替え
- PC：#contact（ページ内遷移） / SP：/contact/（ページ遷移）
-*****************************/
+   ヘッダーメールリンクの遷移先をデバイス幅によって切り替え
+   PC：#contact（ページ内遷移） / SP：/contact/（ページ遷移）
+  *****************************/
     $(document).on("click", "#js-mail-link", function (e) {
       const isDrawerOpen = $(".js-drawer").hasClass("is-active");
       const scrollTarget = $("#contact");

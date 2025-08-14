@@ -11,7 +11,7 @@
 .p-cta__inner {
   width: 100%;
   height: myrem(225);
-  // aspect-ratio: 375 / 225;
+
   position: relative;
   overflow: hidden;
 
@@ -19,7 +19,7 @@
     width: 50%;
     height: myrem(410);
 
-    // aspect-ratio: 720 / 410;
+
   }
 }
 
@@ -52,13 +52,6 @@
   }
 }
 
-.p-cta__inner:hover::before {
-  @include mq(md) {
-    
-    transform: scale(1.1);
-    opacity: 1;
-  }
-}
 
 .p-cta__inner::after {
   content: "";
@@ -148,4 +141,14 @@
   @include mq(md) {
     font-size: myrem(60);
   }
+}
+
+.p-cta__inner::before,
+.p-cta__inner::after {
+  pointer-events: none;
+}
+
+.p-cta-inner__item {
+  position: relative;
+  z-index: 1;
 }

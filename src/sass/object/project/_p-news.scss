@@ -7,7 +7,7 @@
     max-width: 1440px;
     margin: 0 auto;
     margin-top: myrem(70);
-    padding-bottom: myrem(100);
+    padding-bottom: myrem(90);
     position: relative;
 
     display: grid;
@@ -98,7 +98,7 @@
   @include mq(md) {
     grid-column-start: 1;
     grid-row-start: 2;
-    margin-top: myrem(80);
+    margin-top: myrem(85);
   }
 }
 

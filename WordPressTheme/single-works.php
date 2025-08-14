@@ -3,9 +3,9 @@
 
   <section class="p-mv p-mv--works">
     <div class="p-mv__inner">
-      <h2 class="p-mv__title--post l-inner">
+      <p class="p-mv__title--post l-inner">
         <?php echo get_the_title(); ?>
-      </h2>
+      </p>
       <?php if (has_post_thumbnail()) : ?>
         <div class="p-mv__image p-mv__image--works">
           <?php the_post_thumbnail('large'); ?>
@@ -21,10 +21,10 @@
         <div class="p-works-post__heading">
           <?php if (get_field('works_post__heading_1_top') || get_field('works_post__heading_1_bottom')) : ?>
             <?php if (get_field('works_post__heading_1_top')) : ?>
-              <p class="p-works-post__heading-top c-heading02--up"><?php the_field('works_post__heading_1_top'); ?></p>
+              <h2 class="p-works-post__title c-heading02 u-slide-up"><?php the_field('works_post__heading_1_top'); ?></h2>
             <?php endif; ?>
             <?php if (get_field('works_post__heading_1_bottom')) : ?>
-              <p class="p-works-post__heading-bottom c-heading02--left"><span><?php the_field('works_post__heading_1_bottom'); ?></span></p>
+              <h2 class="p-works-post__title c-heading02 c-heading02--black u-slide-left"><?php the_field('works_post__heading_1_bottom'); ?></h2>
             <?php endif; ?>
           <?php endif; ?>
         </div>
@@ -93,10 +93,10 @@
         <div class="p-works-post__heading">
           <?php if (get_field('works_post__heading_2_top') || get_field('works_post__heading_2_bottom')) : ?>
             <?php if (get_field('works_post__heading_2_top')) : ?>
-              <h3 class="p-works-post__heading-top c-heading02--up"><?php the_field('works_post__heading_2_top'); ?></h3>
+              <h2 class="p-works-post__title c-heading02 u-slide-up"><?php the_field('works_post__heading_2_top'); ?></h2>
             <?php endif; ?>
             <?php if (get_field('works_post__heading_2_bottom')) : ?>
-              <h3 class="p-works-post__heading-bottom c-heading02--left"><span><?php the_field('works_post__heading_2_bottom'); ?></span></h3>
+              <h2 class="p-works-post__title c-heading02 c-heading02--black u-slide-left"><?php the_field('works_post__heading_2_bottom'); ?></h2>
             <?php endif; ?>
           <?php endif; ?>
         </div>
@@ -108,21 +108,10 @@
   
         <nav class="p-works-post__navi c-single-page-nation">
           <?php if ($prev_post = get_previous_post(false)) : ?>
-            <div class="c-single-page-nation__prev">
-              <a href="<?php echo get_permalink($prev_post->ID); ?>" class="c-single-page-nation__link">
-                <div class="c-arrow02__right"></div>
-                <span>前の記事へ</span>
-              </a>
-            </div>
-          <?php endif; ?>
-  
+              <a href="<?php echo get_permalink($prev_post->ID); ?>" class="c-single-page-nation__prev">前の記事へ</a>  
+          <?php endif; ?>  
           <?php if ($next_post = get_next_post(false)) : ?>
-            <div class="c-single-page-nation__next">
-              <a href="<?php echo get_permalink($next_post->ID); ?>" class="c-single-page-nation__link">
-                <span>次の記事へ</span>
-                <div class="c-arrow02__left"></div>
-              </a>
-            </div>
+              <a href="<?php echo get_permalink($next_post->ID); ?>" class="c-single-page-nation__next">次の記事へ</a>
           <?php endif; ?>
         </nav>
       </section>
@@ -136,9 +125,7 @@
         </div>
       </div>
       <div class="p-works-president__btn">
-        <a href="/works/" class="c-return c-return--works">
-          一覧に戻る<span class="c-arrow01__right c-arrow01__right--large"></span>
-        </a>
+        <a href="/works/" class="c-btn02">一覧に戻る</a>
       </div>
     </aside>
     </div>

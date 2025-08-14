@@ -57,12 +57,10 @@ padding-left: myrem(10);
 
 
 
-.p-breadcrumbs__current {
+.p-breadcrumbs__item[aria-current="page"] {
   color: $black_sub;
-
-  @include mq(md) {
-  }
 }
+
 
 .p-breadcrumbs__item + .p-breadcrumbs__item::before {
   content: '/';

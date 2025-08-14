@@ -1,184 +1,153 @@
-<main>
-
-    <!-- fv -->
-    <section class="p-fv">
-        <div class="p-fv__text p-fv-text">
-            <p class="p-fv-text__catch3">High quality code</p>
-            <h2 class="p-fv-text__catch1">
-                <span class="typing-part" data-text="スキル"></span>
-                <span class="p-fv-text__catch1--small typing-part" data-text="だけじゃない"></span>
-            </h2>
-            <p class="p-fv-text__catch2 typing-part" data-text="パートナーに。"></p>
+<section class="p-mv">
+    <div class="p-mv__inner">
+        <p class="p-mv__title l-inner" data-en="profile">職歴・経歴</p>
+        <div class="p-mv__image">
+            [image_path src="/assets/images/image08.png" alt="イメージ画像" width="1440" height="480"]
         </div>
-        <!-- swiper -->
-        <div class="swiper p-fv-swiper js-fv-swiper">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide"> [image_path src="/assets/images/fv-top01.png" alt="イメージ画像" width="1440" height="750"] </div>
-                <div class="swiper-slide"> [image_path src="/assets/images/fv-top02.png" alt="イメージ画像" width="1440" height="750"] </div>
-                <div class="swiper-slide"> [image_path src="/assets/images/fv-top03.png" alt="イメージ画像" width="1440" height="750"] </div>
-            </div>
-            <!-- スクロールアニメーション -->
-            <div class="p-fv__scroll p-fv-scroll"><span class="p-fv-scroll__text">scroll</span></div>
-        </div>
-    </section>
-    <!-- works -->
-    <section class="p-top-works js-top-works">
-        <div class="p-top-works__title">
-            <a href="/works/">
-                <h2 class="c-heading01" data-en="works">実績</h2>
-            </a>
-        </div> [include_top-works-swiper]
-        <div class="p-top-works__readMore"> <a href="/works/" class="c-readMore ">Read more<span class="c-arrow01__right"></span></a> </div>
-    </section>
+    </div>
+</section>
 
-    <section class="p-top-content">
-        <div class="p-top-content__inner p-top-content-inner">
-            <div class="p-top-content__wrapper p-top-content-wrapper">
-                <!-- リード文-->
-                <article class="p-top-content__lead p-top-content-lead">
-                    <div class="p-top-content-lead__text p-top-content-lead-text">
-                        <p class="p-top-content-lead-text c-heading02--up">丁寧な作業とコミュニケーションで</p>
-                        <p class="p-top-content-lead-text c-heading02--left"><span>ハイクオリティなコードを納品。</span></p>
-                    </div>
-                    <div class="p-top-content-lead__text p-top-content-lead-text">
-                        <p class="p-top-content-lead-text c-heading02--up">ここにテキストここにテキストここにテキスト<br>ここにテキストここにテキスト</p>
-                        <p class="p-top-content-lead-text c-heading02--left"><span>ここにテキストここにテキスト</span></p>
-                    </div>
-                    <div class="p-top-content-lead__text p-top-content-lead-text">
-                        <p class="p-top-content-lead-text c-heading02--up">ここにテキストここにテキストここにテキスト<br>ここにテキストここにテキスト
-                        </p>
-                    </div>
-                    <div class="p-top-content-lead__text p-top-content-lead-text">
-                        <p class="p-top-content-lead__text c-heading02--up">ここにテキストここにテキスト</p>
-                        <p class="p-top-content-lead-text c-heading02--left"><span>ここにテキスト</span></p>
-                    </div>
-                </article>
-                <div class="p-top-content__image"> [image_path src="/assets/images/image20.png" alt="画像の説明" width="950" height="440" loading="lazy"] </div>
-                <!-- message -->
-                <article class="p-top-message p-top-message">
-                    <div class="p-top-message__title p-top-message-title">
-                        <a href="/message/">
-                            <h2 class="p-top-message-title c-heading01 c-heading01--linegray" data-en="message">メッセージ</h2>
-                        </a>
-                    </div>
-                    <!-- sp 非表示 -->
-                    <div class="p-top-message__text p-top-message-text u-desktop">
-                        <p class="p-top-message-text c-heading02--up">丁寧な作業とコミュニケーションで</p>
-                        <p class="p-top-message-text c-heading02--left"><span>ハイクオリティなコードを納品。</span></p>
-                        <div class="p-top-message-text__readMore p-top-message-text-readMore">
-                            <a href="/message/" class="p-top-message-text-readMore c-readMore">Read more<span class="c-arrow01__right"></span></a>
+<nav class="p-breadcrumbs p-breadcrumbs--gray" aria-label="breadcrumb">
+    [include_breadcrumbs]
+</nav>
+
+
+<div class="p-profile">
+    <section class="p-profile__skills p-profile-skills">
+        <h2 class="p-profile-skills__title p-profile-skills__title--2line" data-en="CODE SKILL">対応が可能なコーディングスキルと<br class="u-mobile">デザインデータ</h2>
+        <ul class="p-profile-skills__list l-inner">
+            <li class="p-profile-skills__item p-profile-skills-item p-profile-skills__item--coding">
+                <h3 class="p-profile-skills-item__title">コーディング</h3>
+                <ul class="p-profile-skills-item__list p-profile-skills-item__list--cording">
+                    <li class="p-profile-skills-item__icon">
+                        <div class="p-profile-skills-item__image p-profile-skills-item__image--html">
+                            [image_path src="/assets/images/html.png" alt="html" width="90" height="104" loading="lazy"]
                         </div>
-                    </div>
-                    <!-- 画像エリア -->
-                    <div class="p-top-message__inner p-top-message-inner">
-                        <div class="p-top-message-inner__bgGray"></div>
-                        <div class="p-top-message-inner__image p-top-message-inner-image">
-                            <div class="p-top-message-inner-image__image01">[image_path src="/assets/images/president01.png" alt="会社代表" width="938" height="502"]</div>
-                            <!-- 背景の動く文字レイヤー -->
-                            <div class="p-top-message-inner__telop p-top-message-inner-telop">
-                                <ul class="p-top-message-inner-telop__list p-top-message-inner-telop-list">
-                                    <li class="p-top-message-inner-telop-list__item p-top-message-inner-telop-list-item">
-                                        <p class="p-top-message-inner-telop-list-item__code">CODO</p>
-                                        <span class="p-top-message-inner-telop-list-item__assist">[image_path src="/assets/images/assist.png" alt="assist" width="620" height="111"]</span>
-                                    </li>
-                                    <li class="p-top-message-inner-telop-list__item p-top-message-inner-telop-list-item">
-                                        <p class="p-top-message-inner-telop-list-item__code">CODO</p>
-                                        <span class="p-top-message-inner-telop-list-item__assist">[image_path src="/assets/images/assist.png" alt="assist" width="620" height="111"]</span>
-                                    </li>
-                                    <li class="p-top-message-inner-telop-list__item p-top-message-inner-telop-list-item">
-                                        <p class="p-top-message-inner-telop-list-item__code">CODO</p>
-                                        <span class="p-top-message-inner-telop-list-item__assist">[image_path src="/assets/images/assist.png" alt="assist" width="620" height="111"]</span>
-                                    </li>
-                                    <li class="p-top-message-inner-telop-list__item p-top-message-inner-telop-list-item">
-                                        <p class="p-top-message-inner-telop-list-item__code">CODO</p>
-                                        <span class="p-top-message-inner-telop-list-item__assist">[image_path src="/assets/images/assist.png" alt="assist" width="620" height="111"]</span>
-                                    </li>
-                                </ul>
-                                <ul class="p-top-message-inner-telop__list p-top-message-inner-telop-list">
-                                    <li class="p-top-message-inner-telop-list__item p-top-message-inner-telop-list-item">
-                                        <p class="p-top-message-inner-telop-list-item__code">CODO</p>
-                                        <span class="p-top-message-inner-telop-list-item__assist">[image_path src="/assets/images/assist.png" alt="assist" width="620" height="111"]</span>
-                                    </li>
-                                    <li class="p-top-message-inner-telop-list__item p-top-message-inner-telop-list-item">
-                                        <p class="p-top-message-inner-telop-list-item__code">CODO</p>
-                                        <span class="p-top-message-inner-telop-list-item__assist">[image_path src="/assets/images/assist.png" alt="assist" width="620" height="111"]</span>
-                                    </li>
-                                    <li class="p-top-message-inner-telop-list__item p-top-message-inner-telop-list-item">
-                                        <p class="p-top-message-inner-telop-list-item__code">CODO</p>
-                                        <span class="p-top-message-inner-telop-list-item__assist">[image_path src="/assets/images/assist.png" alt="assist" width="620" height="111"]</span>
-                                    </li>
-                                    <li class="p-top-message-inner-telop-list__item p-top-message-inner-telop-list-item">
-                                        <p class="p-top-message-inner-telop-list-item__code">CODO</p>
-                                        <span class="p-top-message-inner-telop-list-item__assist">[image_path src="/assets/images/assist.png" alt="assist" width="620" height="111"]</span>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="p-top-message-inner__image02"> [image_path src="/assets/images/image06.png" alt="イメージ画像" width="724" height="388" loading="lazy"] </div>
-                            <div class="p-top-message-inner__image03"> [image_path src="/assets/images/image07.png" alt="イメージ画像" width="625" height="285" loading="lazy"] </div>
+                        <p class="p-profile-skills-item__mane">HTML</p>
+                    </li>
+                    <li class="p-profile-skills-item__icon">
+                        <div class="p-profile-skills-item__image p-profile-skills-item__image--css">
+                            [image_path src="/assets/images/css.png" alt="css" width="90" height="104" loading="lazy"]
                         </div>
-                    </div>
-                </article>
-            </div>
-            <!-- voice pc時　サイドバー　 -->
-            <aside class="p-top-voice">
-                <div class="p-top-voice__title p-top-voice-title">
-                    <a href="/voice/">
-                        <h2 class="p-top-voice-title c-heading01 c-heading01--sidebar" data-en="voice">お客様の声</h2>
-                    </a>
+                        <p class="p-profile-skills-item__mane">CSS</p>
+                    </li>
+                    <li class="p-profile-skills-item__icon">
+                        <div class="p-profile-skills-item__image p-profile-skills-item__image--sass">
+                            [image_path src="/assets/images/sass.png" alt="sass" width="129" height="97" loading="lazy"]
+                        </div>
+                        <p class="p-profile-skills-item__mane">Sass</p>
+                    </li>
+                    <li class="p-profile-skills-item__icon">
+                        <div class="p-profile-skills-item__image p-profile-skills-item__image--js">
+                            [image_path src="/assets/images/js.png" alt="js" width="115" height="115" loading="lazy"]
+                        </div>
+                        <p class="p-profile-skills-item__mane">JavaScript</p>
+                    </li>
+                    <li class="p-profile-skills-item__icon">
+                        <div class="p-profile-skills-item__image p-profile-skills-item__image--php">
+                            [image_path src="/assets/images/php.png" alt="php" width="158" height="83" loading="lazy"]
+                        </div>
+                        <p class="p-profile-skills-item__mane">PHP</p>
+                    </li>
+                </ul>
+            </li>
+            <li class="p-profile-skills__item p-profile-skills-item p-profile-skills__item--cms ">
+                <h3 class="p-profile-skills-item__title">cms</h3>
+                <ul class="p-profile-skills-item__list p-profile-skills-item__list--cms">
+                    <li class="p-profile-skills-item__icon p-profile-skills-item__icon--cells">
+                        <div class="p-profile-skills-item__image p-profile-skills-item__image--wp">
+                            [image_path src="/assets/images/wordpress.png" alt="wordpress" width="134" height="130" loading="lazy"]
+                        </div>
+                        <p class="p-profile-skills-item__mane">WordPress</p>
+                    </li>
+                </ul>
+            </li>
+            <li class="p-profile-skills__item p-profile-skills-item p-profile-skills__item--design">
+                <h3 class="p-profile-skills-item__title">デザイン</h3>
+                <ul class="p-profile-skills-item__list p-profile-skills-item__list--design">
+                    <li class="p-profile-skills-item__icon">
+                        <div class="p-profile-skills-item__image p-profile-skills-item__image--ai">
+                            [image_path src="/assets/images/ai.png" alt="ai" width="97" height="97" loading="lazy"]
+                        </div>
+                        <p class="p-profile-skills-item__mane">Illustrator</p>
+                    </li>
+                    <li class="p-profile-skills-item__icon">
+                        <div class="p-profile-skills-item__image p-profile-skills-item__image--ps">
+                            [image_path src="/assets/images/ps.png" alt="ps" width="97" height="97" loading="lazy"]
+                        </div>
+                        <p class="p-profile-skills-item__mane">Photoshop</p>
+                    </li>
+                    <li class="p-profile-skills-item__icon">
+                        <div class="p-profile-skills-item__image p-profile-skills-item__image--xd">
+                            [image_path src="/assets/images/xd.png" alt="xd" width="97" height="97" loading="lazy"]
+                        </div>
+                        <p class="p-profile-skills-item__mane">XD</p>
+                    </li>
+                    <li class="p-profile-skills-item__icon">
+                        <div class="p-profile-skills-item__image p-profile-skills-item__image--figma">
+                            [image_path src="/assets/images/figma.png" alt="figma" width="67" height="100" loading="lazy"]
+                        </div>
+                        <p class="p-profile-skills-item__mane">Figma</p>
+                    </li>
+                </ul>
+            </li>
+            <li class="p-profile-skills__item p-profile-skills-item p-profile-skills__item--communication">
+                <h3 class="p-profile-skills-item__title">コミュニケーション</h3>
+                <ul class="p-profile-skills-item__list p-profile-skills-item__list--communication">
+                    <li class="p-profile-skills-item__icon">
+                        <div class="p-profile-skills-item__image p-profile-skills-item__image--chatwork">
+                            [image_path src="/assets/images/chatwork.png" alt="chatwork" width="94" height="94" loading="lazy"]
+                        </div>
+                        <p class="p-profile-skills-item__mane">chatwork</p>
+                    </li>
+                    <li class="p-profile-skills-item__icon">
+                        <div class="p-profile-skills-item__image p-profile-skills-item__image--mail">
+                            [image_path src="/assets/images/mail.png" alt="mail" width="100" height="100" loading="lazy"]
+                        </div>
+                        <p class="p-profile-skills-item__mane">メール</p>
+                    </li>
+                    <li class="p-profile-skills-item__icon">
+                        <div class="p-profile-skills-item__image p-profile-skills-item__image--slack">
+                            [image_path src="/assets/images/slack.png" alt="slack" width="93" height="93" loading="lazy"]
+                        </div>
+                        <p class="p-profile-skills-item__mane">slack</p>
+                    </li>
+                    <li class="p-profile-skills-item__icon">
+                        <div class="p-profile-skills-item__image p-profile-skills-item__image--line">
+                            [image_path src="/assets/images/line.png" alt="line" width="109" height="109" loading="lazy"]
+                        </div>
+                        <p class="p-profile-skills-item__mane">line</p>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+
+    <div class="p-profile__wrapper">
+        <article class="p-profile__content p-profile-content l-inner">
+            [include_profile_content]
+            <div class="p-profile-content__photo">
+                <div class="p-profile-content__photo--01">
+                    <div class="p-profile-container-content__image--01">[image_path src="/assets/images/image28.png" alt="仕事のイメージ画像" width="462" height="286" loading="lazy" ]</div>
                 </div>
-                <!-- voice 記事のリスト -->[include_top-voice-list]
-                <div class="p-top-voice__readMore"> <a href="/voice/" class="c-readMore ">Read more<span class="c-arrow01__right"></span></a> </div>
-            </aside>
-        </div>
-    </section>
-    <!-- フロント　service -->
-    <section class="p-top-service">
-        <div class="p-top-service__header p-top-service-header">
-            <div class="p-top-service-header__title">
-                <a href="/service/">
-                    <h2 class="c-heading01 c-heading01--white" data-en="service">サービス</h2>
-                </a>
-            </div>
-            <div class="p-top-service-header__readMore"> <a href="/service/" class="c-readMore c-readMore--white">Read more<span class="c-arrow01__right c-arrow01__right--white"></span></a> </div>
-        </div>
-        <div class="p-top-service__bgTextWrapper p-top-service-bgTextWrapper">
-            <div class="p-top-service-bgText line1"> <span class="line1-01">対応ソフトは？<span class="line1-02">得意分野は？</span><span class="line1-03">Figmaも対応できてる？</span></span> <span class="line1-01">対応ソフトは？<span class="line1-02">得意分野は？</span><span class="line1-03">Figmaも対応できてる？</span></span>
-            </div>
-            <div class="p-top-service-bgText line2"> <span class="line2-01">得意分野は？ Figmaも対応できてる？</span><span class="line2-02">WordPressも大丈夫？</span><span class="line2-03">PHPのフォームは作れる？</span> <span class="line2-01">得意分野は？ Figmaも対応できてる？</span><span class="line2-02">WordPressも大丈夫？</span><span class="line2-03">PHPのフォームは作れる？</span> </div>
-            <div class="p-top-service-bgText line3"> <span class="line3-01">WordPressも大丈夫？<span class="line3-02">対応ソフトは？</span><span class="line3-03">得意分野は？</span></span> <span class="line3-01">WordPressも大丈夫？<span class="line3-02">対応ソフトは？</span><span class="line3-03">得意分野は？</span></span>
-            </div>
-            <div class="p-top-service-bgText line4"> <span class="line4-01">PHPのフォームは作れる？</span> <span class="line4-01">PHPのフォームは作れる？</span> </div>
-            <div class="p-top-service-bgText line5"> <span class="line5-01">得意分野は？ Figmaも対応できてる？</span> <span class="line5-01">得意分野は？ Figmaも対応できてる？</span> </div>
-            <div class="p-top-service-bgText line6"> <span class="line6-01">対応ソフトは？ <span class="line6-02">得意分野は？</span></span> <span class="line6-01">対応ソフトは？ <span class="line6-02">得意分野は？</span></span>
-            </div>
-        </div>
-    </section>
-    <!-- profile -->
-    <section class="p-top-profile">
-        <a href="/profile/" class="p-top-profile__inner">
-            <div class="p-top-profile__title">
-                <h2 class="p-top-profile__title c-heading01 c-heading01--white" data-en="profile">経歴・職歴</h2>
-                <p class="p-top-profile-title__text">ここにテキスト入れるここにテキスト入れるここにテキスト入れる<br class="u-desktop">ここにテキスト入れるここにテキスト入れる</p>
-            </div>
-        </a>
-    </section>
-
-
-    <!-- フロント　news -->
-    <section class="p-top-news">
-        <div class="p-top-news__inner p-top-news-inner">
-            <div class="p-top-news-inner__titleArea p-top-news-inner-titleArea">
-                <div class="p-top-news-inner-titleArea__title p-top-news-inner-titleArea-title">
-                    <a href="/news/">
-                        <h2 class="p-top-news-inner-titleArea-title c-heading01" data-en="news">お知らせ</h2>
-                    </a>
+                <div class="p-profile-content__photo--02">
+                    <div class="p-profile-container-content__image--02">[image_path src="/assets/images/image29.png" alt="仕事のイメージ画像" width="462" height="286" loading="lazy" ]</div>
                 </div>
-                <div class="p-top-news-inner-titleArea__readMore u-desktop"> <a href="/news/" class="c-readMore">Read more<span class="c-arrow01__right"></span></a> </div>
             </div>
-            <!-- newsのリスト -->
-            <div class="p-top-news-inner__content p-top-news-inner-content"> [include_top-news-list] </div>
-        </div>
-        <div class="p-top-news-inner__readMore u-mobile"> <a href="/news/" class="c-readMore">Read more<span class="c-arrow01__right"></span></a> </div>
-    </section>
+        </article>
 
-</main>
+        <aside class="p-profile__sidebar l-inner">
+            <section class="p-profile__president p-profile-president">
+                <div class="p-profile-president__image">
+                    [image_path src="/assets/images/president01.png" alt="代表 田中 太郎の写真" width="320" height="200" loading="lazy" ] </div>
+                <div class="p-profile-president__text">
+                    <p class="p-profile-president__name--ja">田中 太郎</p>
+                    <p class="p-profile-president__name--en">Tanaka Taro</p>
+                </div>
+            </section>
+            <section class="p-profile__career p-profile-career">
+                [include_profile_career]
+            </section>
+        </aside>
+    </div>
+</div>

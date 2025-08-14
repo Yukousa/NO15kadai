@@ -12,16 +12,14 @@
     <div class="p-voice">
         <div class="p-voice__inner l-inner">
             <article class="p-voice__post p-voice-post">
-                <div class="p-voice-post__title">
-                    <?php if (get_field('voice_heading_top') || get_field('voice_heading_bottom')) : ?>
-                        <?php if (get_field('voice_heading_top')) : ?>
-                            <h2 class="p-voice-post__title-top c-heading02--up"><?php the_field('voice_heading_top'); ?></h2>
-                        <?php endif; ?>
-                        <?php if (get_field('voice_heading_bottom')) : ?>
-                            <h2 class="p-voice-post__title-bottom c-heading02--left"><span><?php the_field('voice_heading_bottom'); ?></span></h2>
-                        <?php endif; ?>
+                <?php if (get_field('voice_heading_top') || get_field('voice_heading_bottom')) : ?>
+                    <?php if (get_field('voice_heading_top')) : ?>
+                        <h2 class="p-voice-post__title c-heading02 u-slide-up"><?php the_field('voice_heading_top'); ?></h2>
                     <?php endif; ?>
-                </div>
+                    <?php if (get_field('voice_heading_bottom')) : ?>
+                        <h2 class="p-voice-post__title c-heading02 c-heading02--black u-slide-left"><span><?php the_field('voice_heading_bottom'); ?></span></h2>
+                    <?php endif; ?>
+                <?php endif; ?>
 
                 <?php if (get_field('post-lead')) : ?>
                     <div class="p-voice-post__lead">
@@ -35,10 +33,10 @@
                 ?>
                     <section class="p-voice-post__content p-voice-post__content--1 p-voice-post-content">
                         <?php if (get_field('section_post_heading_1_top')) : ?>
-                            <p class="p-voice-post-content__title c-heading02--up"><?php the_field('section_post_heading_1_top'); ?></p>
+                            <h2 class="p-voice-post-content__title c-heading02 u-slide-up"><?php the_field('section_post_heading_1_top'); ?></h2>
                         <?php endif; ?>
                         <?php if (get_field('section_post_heading_1_bottom')) : ?>
-                            <p class="p-voice-post-content__title c-heading02--left"><span><?php the_field('section_post_heading_1_bottom'); ?></span></p>
+                            <h2 class="p-voice-post-content__title c-heading02 c-heading u-slide--left"><span><?php the_field('section_post_heading_1_bottom'); ?></span></h2>
                         <?php endif; ?>
 
                         <?php
@@ -63,10 +61,10 @@
                 ?>
                     <section class="p-voice-post__content p-voice-post__content--2 p-voice-post-content">
                         <?php if (get_field('section_post_heading_2_top')) : ?>
-                            <p class="p-voice-post-content__title c-heading02--up"><?php the_field('section_post_heading_2_top'); ?></p>
+                            <h2 class="p-voice-post-content__title c-heading02 u-slide-up"><?php the_field('section_post_heading_2_top'); ?></h2>
                         <?php endif; ?>
                         <?php if (get_field('section_post_heading_2_bottom')) : ?>
-                            <p class="p-voice-post-content__title c-heading02--left"><span><?php the_field('section_post_heading_2_bottom'); ?></span></p>
+                            <h2 class="p-voice-post-content__title c-heading02 c-heading02--black u-slide-left"><span><?php the_field('section_post_heading_2_bottom'); ?></span></h2>
                         <?php endif; ?>
 
                         <?php
@@ -139,9 +137,7 @@
                     </div>
                 </div>
                 <div class="p-voice-president__btn u-desktop">
-                    <a href="/voice/" class="c-return c-return--voice">
-                        一覧に戻る<span class="c-arrow01__right"></span>
-                    </a>
+                    <a href="/voice/" class="c-btn02">一覧に戻る</a>
                 </div>
 
             </aside>

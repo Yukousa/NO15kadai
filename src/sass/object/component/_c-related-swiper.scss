@@ -4,9 +4,7 @@
 
 .c-related-swiper {
   position: relative;
-
 }
-
 
 .c-related-swiper .swiper-slide {
   width: auto;
@@ -17,9 +15,8 @@
 }
 
 .c-related-swiper .swiper-slide a {
-opacity: 1;
+  opacity: 1;
 }
- 
 
 .c-related-swiper__card {
   width: 100%;
@@ -55,13 +52,12 @@ opacity: 1;
 .c-related-swiper-card__image {
   width: 100%;
   overflow: hidden;
-  
 }
 
 .c-related-swiper-card__image img {
   width: 100%;
   height: auto;
-  aspect-ratio: 257 / 173; 
+  aspect-ratio: 257 / 173;
 
   object-fit: cover;
   transition: transform 0.4s ease;
@@ -69,17 +65,13 @@ opacity: 1;
   @include mq(md) {
     aspect-ratio: 340 / 230;
   }
-
-
 }
 
 .c-related-swiper-card:hover .c-related-swiper-card__image img {
-  
   @include mq(md) {
-    
     transform: scale(1.1);
     transition: 1s all;
-    opacity: .6;
+    opacity: 0.6;
   }
 }
 
@@ -117,21 +109,28 @@ opacity: 1;
 }
 
 .c-related-swiper__nav {
-  width: fit-content;
-  display: flex;
-  justify-content: flex-end;
-  gap: myrem(15);
-  z-index: 10;
+  width: 100%;
   padding: 0 myrem(20);
   margin-top: myrem(5);
+
+  @include mq(md) {
+    max-width: 1440px;
+    margin-inline: auto;
+    margin-top: myrem(-10);
+    padding-inline: myrem(70);
+  }
+}
+
+.c-related-swiper-nav__inner {
   margin-right: 0;
   margin-left: auto;
 
+  display: flex;
+  justify-content: flex-end;
+  gap: myrem(15);
+
   @include mq(md) {
-    gap: myrem(30);
-    margin-top: myrem(25);
-    margin-right: myrem(70);
-    padding-right: myrem(8);
+    gap: myrem(20);
   }
 }
 
@@ -139,18 +138,28 @@ opacity: 1;
 .c-related-swiper-nav__next {
   width: myrem(50);
   height: myrem(50);
+  border: 2px solid black;
+  border-radius: 50%;
+
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: transform 0.3s ease;
+
+  @include mq(md) {
+    width: myrem(60);
+    height: myrem(60);
+    gap: myrem(20);
+  }
 }
 
-.c-related-swiper-nav__prev {
-  left: myrem(18);
-}
+.c-related-swiper-nav__prev svg,
+.c-related-swiper-nav__next svg {
+  width: myrem(20);
+  height: myrem(20);
 
-.c-related-swiper-nav__next {
-  right: myrem(22);
+  @include mq(md) {
+    width: myrem(22);
+    height: myrem(22);
+  }
 }
-

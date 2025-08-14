@@ -2,7 +2,7 @@
 <main>
   <section class="p-mv">
     <div class="p-mv__inner">
-      <h2 class="p-mv__title l-inner" data-en="news">お知らせ</h2>
+      <p class="p-mv__title l-inner" data-en="news">お知らせ</p>
     </div>
   </section>
   <nav class="p-breadcrumbs p-breadcrumbs--height" aria-label="breadcrumb">

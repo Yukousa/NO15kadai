@@ -627,6 +627,7 @@
   padding-bottom: myrem(60);
 
   @include mq(md) {
+    padding-top: myrem(80);
     padding-bottom: myrem(110);
   }
 }
@@ -643,7 +644,7 @@
   margin-top: myrem(50);
 
   @include mq(md) {
-    margin-top: myrem(40);
+    margin-top: myrem(0);
     font-weight: 700;
     font-size: myrem(32);
     line-height: 100%;
@@ -662,15 +663,13 @@
   }
 }
 
-.p-contact-thanks__back .c-readMore {
-  width: myrem(300);
-  height: myrem(60);
-  margin-top: myrem(40);
-  margin-inline: auto;
+.p-contact-thanks__back {
+    margin-top: myrem(40);
 
-  @include mq(md) {
-    margin-top: myrem(60);
-  }
+    @include mq(md) {
+      margin-top: myrem(60);
+    }
+
 }
 
 .p-contact__text {

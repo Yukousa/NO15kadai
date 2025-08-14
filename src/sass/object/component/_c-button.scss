@@ -1,0 +1,176 @@
+@use "global" as *;
+
+// btn01
+.c-btn01 {
+  position: relative;
+  display: inline-block;
+  font-family: $font-sub;
+  font-weight: 500;
+  font-size: myrem(22);
+  letter-spacing: 0.1em;
+  color: $black;
+  padding: myrem(10) 0;
+  white-space: nowrap;
+  padding-right: myrem(40);
+
+  @include mq(md) {
+    padding-right: myrem(55);
+  }
+}
+
+.c-btn01::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+
+  width: myrem(12);
+  height: myrem(12);
+  background-color: $white;
+  clip-path: polygon(0 0, 0 100%, 80% 50%);
+  transform: translate(-45%, -45%);
+  transition: transform 0.3s ease;
+  z-index: 1;
+
+  @include mq(md) {
+    width: myrem(16);
+    height: myrem(16);
+
+    transform: translate(-60%, -50%);
+  }
+}
+
+.c-btn01::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: myrem(30);
+  height: myrem(30);
+  border-radius: 50%;
+  background: linear-gradient(to bottom, #000000 0%, #929292 100%);
+  transition: transform 0.4s ease;
+
+  @include mq(md) {
+    width: myrem(42);
+    height: myrem(42);
+  }
+}
+
+.c-btn01:hover::after {
+  @include mq(md) {
+    transform: translateY(-50%) scale(1.15);
+  }
+}
+
+.c-btn01--white {
+  color: $white;
+}
+
+.c-btn01--white::before {
+  background-color: $black;
+}
+
+.c-btn01--white::after {
+  background: $white;
+}
+
+// btn02(single works,voice,news共通)
+.c-btn02 {
+font-weight: 700;
+font-size: myrem(16);
+line-height: calc( 28 / 16);
+text-align: right;
+letter-spacing: 0.1em;
+position: relative;
+padding-right: myrem(40);
+
+@include mq(md) {
+  font-size: myrem(18);
+  line-height: calc( 28 / 18);
+  padding-right: myrem(55);
+
+}
+}
+
+.c-btn02::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+
+  width: myrem(12);
+  height: myrem(12);
+  background-color: $white;
+  clip-path: polygon(0 0, 0 100%, 80% 50%);
+  transform: translate(-45%, -45%);
+  transition: transform 0.3s ease;
+  z-index: 1;
+
+  @include mq(md) {
+    width: myrem(16);
+    height: myrem(16);
+
+    transform: translate(-60%, -50%);
+  }
+}
+
+
+.c-btn02::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: myrem(30);
+  height: myrem(30);
+  border-radius: 50%;
+  background: linear-gradient(to bottom, #000000 0%, #929292 100%);
+  transition: transform 0.4s ease;
+
+  @include mq(md) {
+    width: myrem(42);
+    height: myrem(42);
+  }
+}
+
+.c-btn02:hover::after {
+  @include mq(md) {
+    width: myrem(56);
+    height: myrem(56);
+  }
+}
+
+
+// btn03
+.c-btn03 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: myrem(300);
+  height: myrem(60);
+  border: 2px solid $black;
+  border-radius: myrem(30);
+  font-family: "Open Sans";
+  font-weight: 800;
+  font-size: myrem(20);
+  text-align: center;
+  letter-spacing: 0.1em;
+  margin-inline: auto;
+  position: relative;
+}
+
+.c-btn03::after {
+  content: "";
+  width: myrem(16);
+  height: myrem(16);
+  background-color: $black;
+  clip-path: polygon(0 0, 0 100%, 80% 50%);
+  position: absolute;
+  top: 50%;
+  right: 20%;
+  transform: translateY(-50%);
+ 
+
+} 
